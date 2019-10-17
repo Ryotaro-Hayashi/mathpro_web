@@ -3,11 +3,10 @@
 <html>
   <head>
     <meta charset="utf-8">
-  	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- 各ページで入力されたタイトルにしたがって動的にタイトルを出力 -->
-    <title><%= yield(:title) %>
-      | Math Pro</title>
+    <title><%= yield(:title) %> | Math Pro</title>
     <!-- Web攻撃手法の１つであるクロスサイトリクエストフォージェリーを防ぐためのコード -->
     <%= csrf_meta_tags %>
 
@@ -18,33 +17,26 @@
   <body background="images/back1.gif">
     <header class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container">
-        <%= link_to "sample", '#', id: "logo" %>
+        <%= link_to "sample", root_path, id: "logo" %>
         <nav>
-          <ul class="nav navbar-nav ml-auto">
-            <li><%= link_to "Home", '#' %></li>
-            <li><%= link_to "About", '#' %></li>
-            <li><%= link_to "質問", '#' %></li>
+          <ul class="navbar-nav ml-auto">
+            <li class="navbar-text"><%= link_to "Home", root_path %></li>
+            <li class="navbar-text"><%= link_to "About", about_path %></li>
+            <li class="navbar-text"><%= link_to "質問", question_path %></li>
             <!-- ログインボタンの作成 -->
-            <li class="navbar-text btn btn-primary"><%= link_to "ログイン", '#' %></li>
+            <li class="navbar-text btn btn-primary"><%= link_to "ログイン", login_path %></li>
           </ul>
-        <nav>
+        </nav>
       </div>
     </header>
     <div class="container">
-      <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
-          <!-- 右寄せのナビゲーションバーを作成 -->
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="index.html">ホーム<span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="frie.html">フーリエ変換</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="deep.html">ディープラーニング</a>
-            </li>
-          </ul>
-        </div>
+      <nav class="navbar navbar-expand-lg navbar-light bg-secondary">
+        <!-- 右寄せのナビゲーションバーを作成 -->
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item"><%= link_to "Home", root_path %></li>
+          <li class="nav-item"><%= link_to "フーリエ変換", frie_path %></li>
+          <li class="nav-item"><%= link_to "ニュートン法", newton_path %></li>
+        </ul>
       </nav>
       <!-- 各ページの内容を出力 -->
       <%= yield %>
