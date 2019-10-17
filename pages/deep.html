@@ -1,0 +1,152 @@
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>ディープラーニング</title>
+	<!-- bootstrap.min.css の読み込み -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML">
+  </script>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    TeX: { equationNumbers: { autoNumber: "AMS" }},
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    },
+    "HTML-CSS":{ matchFontHeight: false },
+    displayAlign: "left",
+    displayIndent: "2em"
+  });
+  </script>
+</head>
+
+<body background="images/back1.gif">
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <!-- navbar-brand の設定 -->
+    <a class="navbar-brand" href="/index.html"><img src="images/math.jpg" width="210" height="88" alt="welcome"></a>
+		<div class="collapse navbar-collapse" id="navbarText">
+      <!-- 右寄せのナビゲーションバーを作成 -->
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="about.html">About</a>
+        </li>
+        <li class="nav-item" style="margin-right:20px">
+          <a class="nav-link" href="qa.html">質問</a>
+        </li>
+      </ul>
+      <!-- ログインボタンの作成 -->
+      <span class="navbar-text"><a href="loginForm.html" class="btn btn-primary">ログイン</a></span>
+    </div>
+  </nav>
+
+	<nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+      <!-- 右寄せのナビゲーションバーを作成 -->
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">ホーム</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="frie.html">フーリエ変換</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="deep.html">ディープラーニング<span class="sr-only">(current)</span></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+<div align="center">
+  
+  光は真空中を１秒間に約 $3.0 × 10^8$ メートル進む。<br>
+
+  ディープラーニングにはこういう風に数学が使われているよ<br>
+  こんな式が出て来たりこんな関数を微分するよ<br>
+  だから1年生の必修の解析は重要だよね微分をできるようにしよう<br>
+  それでは実際にこの式を微分してみて実世界で使われている数学を体験してみよう<br>
+  もっと詳しい内容が知りたい方は下記のサイトをのぞいてみてもいいかもしれません<br>
+  <a href="http://shishamo.biz/" target="_blank">ディープラーニングに使われている数学</a><br>
+  $3.0 × 10^8$ <br>
+=======
+<html>
+<head>
+        <title>ディープラーニング</title>
+        <!--<script type="text/javascript"                                                                                                                                                                  
+          src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML HTMLorMML">                                                                                                              
+        </script>-->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML">
+        </script>
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+                TeX: { equationNumbers: { autoNumber: "AMS" }},
+                tex2jax: {
+                  inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                  processEscapes: true
+                },
+                "HTML-CSS":{ matchFontHeight: false },
+                displayAlign: "left",
+                displayIndent: "2em"
+        });
+        </script>
+
+</head>
+<body background="../image/back1.gif">
+<div align="center">
+        <img src="../image/math.jpg"
+        width="210" height="88" alt="welcome">
+        <br><br>
+
+        <hr width="500">
+        <a href="index.html">トップ</a>
+        　<a href="about.html">ディープラーニング</a>
+        　<a href="link.html">天気予報</a><br>
+        <hr width="500"><br><br>
+        光は真空中を１秒間に約 $3.0 × 10^8$ メートル進む。<br>
+
+        ディープラーニングにはこういう風に数学が使われているよ<br>
+        こんな式が出て来たりこんな関数を微分するよ<br>
+        だから1年生の必修の解析は重要だよね微分をできるようにしよう<br>
+        それでは実際にこの式を微分してみて実世界で使われている数学を体験してみよう<br>
+        もっと詳しい内容が知りたい方は下記のサイトをのぞいてみてもいいかもしれません<br>
+        <a href="http://shishamo.biz/" target="_blank">ディープラーニングに使われている数学</a><br>
+        $3.0 × 10^8$ <br>
+>>>>>>> 31b6210b6ee9e8892622d91be7693415a3522e2c
+\[
+  \frac{\pi}{2} =
+  \left( \int_{0}^{\infty} \frac{\sin x}{\sqrt{x}} dx \right)^2 =
+  \sum_{k=0}^{\infty} \frac{(2k)!}{2^{2k}(k!)^2} \frac{1}{2k+1} =
+  \prod_{k=1}^{\infty} \frac{4k^2}{4k^2 - 1}
+\]
+$a$に代入
+\begin{equation}
+u_t = \Delta u
+\end{equation}
+\centerline{aaa}
+
+
+<<<<<<< HEAD
+  <hr width="500">
+  <a href="index.html">戻る</a>
+  　<a href="m.html">関数の微分</a>
+</div>
+</body>
+
+<!-- bootstrap.min.js popper.min.js jquery.min.js -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+=======
+        <hr width="500">
+        <a href="index.html">戻る</a>
+        　<a href="m.html">関数の微分</a>
+</div>
+
+</body>
+>>>>>>> 31b6210b6ee9e8892622d91be7693415a3522e2c
+</html>
