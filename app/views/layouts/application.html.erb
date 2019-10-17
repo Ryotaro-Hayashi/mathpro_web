@@ -6,7 +6,7 @@
   	<meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- 各ページで入力されたタイトルにしたがって動的にタイトルを出力 -->
-    <title>><%= yield(:title) %>
+    <title><%= yield(:title) %>
       | Math Pro</title>
     <!-- Web攻撃手法の１つであるクロスサイトリクエストフォージェリーを防ぐためのコード -->
     <%= csrf_meta_tags %>
@@ -16,7 +16,7 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body background="images/back1.gif">
-    <header class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <header class="navbar navbar-expand-lg navbar-light bg-dark">
       <div class="container">
         <%= link_to "sample", '#', id: "logo" %>
         <nav>
