@@ -1,14 +1,19 @@
+<!-- 各ページで共通の部分を記述するためのファイル -->
 <!DOCTYPE html>
 <html>
   <head>
-    <title>MathproWeb</title>
+    <!-- 各ページで入力されたタイトルにしたがって動的にタイトルを出力 -->
+    <title>><%= yield(:title) %> | Math Pro</title>
+    <!-- Web攻撃手法の１つであるクロスサイトリクエストフォージェリーを防ぐためのコード -->
     <%= csrf_meta_tags %>
 
+    <!-- CSSとJavaScriptをページ内で展開するためのコード -->
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <!-- 各ページの内容を出力 -->
     <%= yield %>
   </body>
 </html>
