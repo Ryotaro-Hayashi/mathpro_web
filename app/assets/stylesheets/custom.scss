@@ -1,1 +1,14 @@
 @import "bootstrap";
+
+// フッターの背景や文字色、中央寄せ
+footer {
+  text-align: center;
+  color: #ffffff;
+  padding: 20px 0;
+  background-color: #767671
+}
+
+// フッター内の文字サイズ
+footer small {
+  font-size: 12px;
+}
