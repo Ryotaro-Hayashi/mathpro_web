@@ -1,6 +1,113 @@
 <!-- タイトルを動的に出力するためにタイトル(Home)を入力 -->
 <% provide(:title, "Home") %>
 
+<div class="container">
+<div class="row">
+<div class="col-xl-9">
 <div align="center">
-<font size="5">ニュートン法<br></font>
+<font size="8">ニュートン法<br></font>
+</div>
+<div>
+  <tbody>
+    <tr><td align="left"><font size="10">1.活用例・職業<br></font>
+      <font size="6">&emsp;<データサイエンティスト><br></font>
+      <font size="4">&emsp;&emsp;&emsp;・データサイエンティストとは、ビッグデータを分析し、実務の場で分析結果から導かれた手法を活用することで企業に貢献する職業。<br></font>
+      <font size="4">&emsp;&emsp;&emsp;・どんな仕事か？<br></font>
+      <font size="2">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;1,データを分析して課題を発見する<br></font>
+      <font size="2">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;2,分析したデータに意味を与える<br></font>
+      <font size="2">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;3,そのデータから事業戦略を導き出す<br></font>
+      <font size="4">&emsp;&emsp;&emsp;・なるためには？<br></font>
+&emsp;&emsp;&emsp;&emsp;&emsp;
+        <div style="display:inline-block; background:#fcfcff; padding:15px; border:1px solid #3b5998; border-radius:10px; word-break:break-all;"><font size="2">ビジネススキル&emsp;・ビジネスに関わる深い理解<br>
+          &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;・ロジカルシンキング<br>
+          &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;・ドキュメンテーション/プレゼンテーション<br>
+          ITスキル&emsp;&emsp;&emsp;&ensp;&ensp;・IT知識<br>
+          &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;・大規模データ処理に関する知識<br>
+          &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;・データベース<br>
+          &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;・プログラミング<br>
+          統計解析スキル&emsp;・数学<br>
+          &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;・データ分析手法の理解<br>
+          &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;・データ分析ソフトウェアのスキル<br>
+        </font></div><br><br>
+      <font size="4">&emsp;&emsp;&emsp;&emsp;(数学)<br></font>
+      <font size="2">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;・データ分析の共通語は数学<br></font>
+      <font size="2">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;→専門書の理解のためには、確率、統計、微分積分、行列等、<br></font>
+      <font size="2">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;大学初級程度の解析学、線形代数学を習得しているとよい。<br></font>
+      <font size="4">&emsp;&emsp;&emsp;&emsp;(データ分析手法の理解)<br></font>
+      <font size="2">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;・データの統計処理や数理モデルを作成することで分析<br></font>
+      <font size="2">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;→統計処理手法やデータマイニング手法について理解しておく必要がある。<br></font>
+      <font size="2">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;→自らが必要とする結論をだすためにどのような分析手法を用いれば良いか<br></font>
+      <font size="2">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;知っておくことも重要。<br></font>
+      <br>
+      <font size="4">&emsp;&emsp;&emsp;&emsp;※分析し、’数値’結果を導く数値解析も必要分析手法の１つである。<br></font>
+      <font size="4">&emsp;&emsp;&emsp;&emsp;&emsp;数値解を導く１つの手法として’ニュートン法’がある。<br></font>
+        </td>
+        </tr>
+  </tbody>
+  <tbody>
+    <br>
+    <tr><td align="left"><font size="10">2.ニュートン法とは？<br></font>
+      <font size="4">&emsp;・$f(x)=0$となる解$x$の近似値を求めるための効率の良い方法。<br></font>
+      <font size="4">&emsp;・$f(x)=0$の解を求める↔︎$y=f(x)$のグラフと$x$軸の交点の座標を求める。<br></font>
+      <!--<iframe id="iframepdf" src="files/ECS1_report02.pdf"></iframe><br>-->
+      <!--<iframe src="./web/viewer.html?file=./ECS1_report02.pdf"></iframe>-->
+      <font size="4">&emsp;・原理<br></font>
+      <font size="4">&emsp;&emsp;①&ensp;解αの付近で初期値$x_0$をとる<br></font>
+      <font size="4">&emsp;&emsp;②&ensp;点$(x_0,f(x_0))$での接線を引く<br></font>
+      <font size="4">&emsp;&emsp;③&ensp;②の接線とx軸の交点をx1とする<br></font>
+      <font size="4">&emsp;&emsp;④&ensp;点$(x_1,f(x_1))$での接線を引く<br></font>
+      <font size="4">&emsp;&emsp;⑤&ensp;④の接線と$x$軸の交点を$x_2$とする<br></font>
+      <font size="4">&emsp;&emsp;…以降この作業を繰り返す<br></font>
+      </td>
+      </tr>
+      </tbody>
+    <tbody>
+      <br>
+      <tr><td align="left"><font size="10">3.実際にやってみよう<br></font>
+        <font size="5">&emsp;・問題1:</font><font size="4">$f(x)=x^2-3=0$の解$(\sqrt{3})$を実際にニュートン法で求めてみる。<br></font>
+        <font size="4">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;・初期値を$x_0=2$とする。<br></font>
+        <font size="4">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;・$x_0=2,f(x_0)=1$より$(2,1)$での接線を求める。<br>
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;$f' (x)=\underline{2x}$より$f' (x_0)=4$<br>
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;よって、接線は$y=4(x-\underline{2})+\underline{1}$<br>
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Ans,$y=\underline{4x-7}$<br></font>
+        <font size="4">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;・この接線と$x$軸との交点$x_1$を求める。<br>
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;$x$軸との交点なので$y=0$<br>
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;したがって,$0=\underline{4x-7}$を解いて$x=\underline{1.75}$<br>
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;よって、$x_1=\underline{1.75}$<br>
+        </font>
+        <font size="4">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;・$x_1=\underline{1.75},f(x_1)=0.0625$より$(1.75,0.0625)$での接線を求める。<br>
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;$f' (x)=\underline{2x}$より、$f' (x_1)=3.5$<br>
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;よって、接線は$y=3.5(x-1.75)+0.0625$<br>
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Ans,$y=3.5x-6.0625$<br>
+        </font>
+        <font size="4">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;・この接線と$x$軸との交点$x_2$を求める。<br>
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;$x$軸との交点なので$y=0$<br>
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;したがって、$0=3.5x-6.0625$を解いて<br>
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;$x=1.732142857142857$<br>
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;よって、$x_2=\underline{1.732}142857142857$<br>
+        </font>
+        <font size="4">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;・真の値$\sqrt{3}=\underline{1.732}050807568877...$と比べて見ても<br>
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;$4$桁ほど一致する。<br>
+        </font>
+        <font size="15"><a href="http://shishamo.biz/">疲れたので完成ついでにSHISHAMO普及</a><br></font>
+        </td>
+        </tr>
+        </tbody>
+</div>
+</div>
+<div class="col-xl-3">ここにURLを貼る<br>
+<div>
+  <tbody>
+    <tr>
+      <font size="2"><br><br><br><br><br><br><br><a href="https://tech-camp.in/note/pickup/27559/">詳しくはこちら</a><br></font>
+      <font size="2"><br><br><br><br><br><a href="https://www.liber.co.jp/knowhow/careerlab/ds">詳しくはこちら</a><br></font>
+      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      <br>
+      <font size="2"><a href="http://www.math.u-ryukyu.ac.jp/~suga/ssh4/node3.html">詳しくはこちら</a><br></font>
+    </tr>
+  </tbody>
+</div>
+</div>
+</div>
 </div>
