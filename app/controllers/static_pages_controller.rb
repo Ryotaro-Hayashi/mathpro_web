@@ -2,13 +2,10 @@ class StaticPagesController < ApplicationController
   def home
   end
 
-  def about
+  def concept
   end
 
-  def question
-  end
-
-  def login
+  def usage
   end
 
   def frie
