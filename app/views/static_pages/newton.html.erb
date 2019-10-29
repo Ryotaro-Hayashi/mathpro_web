@@ -112,3 +112,16 @@
 </div>
 </div>
 </div>
+
+<!-- ページ読み込み後にリロードしてTEXを表示 -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script language="JavaScript">
+$(document).ready( function(){
+if (window.name != "test") {
+location.reload();
+window.name = "test";
+} else {
+window.name = "";
+}
+});
+</script>
