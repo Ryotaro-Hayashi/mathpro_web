@@ -1,5 +1,11 @@
 @import "bootstrap";
 
+header {
+  width: 960px;
+  height: 100px;
+  margin: 0 auto;
+}
+
 // フッターの背景や文字色、中央寄せ
 footer {
   text-align: center;
@@ -14,7 +20,7 @@ footer small {
 }
 
 #FUN {
-  background-image: url(../images/FUN.jpg);
+  background-image: image-url("FUN.jpg");
   background-repeat: no-repeat;
   background-position: center top;
   background-attachment: fixed;
@@ -41,4 +47,11 @@ footer small {
   border-bottom: 2px solid #ffffff;
   padding-bottom: 3px;
   text-decoration: none;
+}
+
+#wrap {
+  clear: both;
+  background-color: #ffffff;
+  margin-top: 220px;
+  padding: 35px 0;
 }
