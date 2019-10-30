@@ -1,5 +1,11 @@
 @import "bootstrap";
 
+header {
+  width: 960px;
+  height: 100px;
+  margin: 0 auto;
+}
+
 // フッターの背景や文字色、中央寄せ
 footer {
   text-align: center;
@@ -14,9 +20,38 @@ footer small {
 }
 
 #FUN {
-  background-image: url(../images/FUN.jpg);
+  background-image: image-url("sky.jpg");
   background-repeat: no-repeat;
   background-position: center top;
   background-attachment: fixed;
   background-size: 100% auto;
+}
+
+.global-nav {
+  float: right;
+  margin-top: 90px;
+}
+
+.global-nav li {
+  float: left;
+  margin: 0 20px;
+  font-size: 20px;
+  list-style: none;
+}
+
+.global-nav li a {
+  color: #ffffff;
+}
+
+.global-nav li a:hover {
+  border-bottom: 2px solid #ffffff;
+  padding-bottom: 3px;
+  text-decoration: none;
+}
+
+#wrap {
+  clear: both;
+  background-color: #ffffff;
+  margin-top: 220px;
+  padding: 35px 0;
 }
