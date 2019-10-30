@@ -173,6 +173,25 @@
       </nav>
       <!-- 各ページの内容を出力 -->
       <%= yield %>
+  <body id="FUN">
+    <header>
+      <nav class="navbar navbar-expand-lg">
+        <div class="navbar-brand"><%= link_to "LOGO", root_path, id: "logo" %></div>
+        <ul class="global-nav navbar-nav mx-auto">
+          <li class="nav-item nav-link"><%= link_to "フーリエ変換", frie_path %></li>
+          <li class="nav-item nav-link"><%= link_to "ニュートン法", newton_path %></li>
+          <div class="mr-auto">
+            <li class="navbar-item nav-link"><%= link_to "コンセプト", concept_path %></li>
+            <li class="navbar-item nav-link" style="margin-right:10px"><%= link_to "使い方", usage_path %></li>
+          </div>
+        </ul>
+      </nav>
+    </header>
+    <div id="wrap">
+      <div class="container">
+        <!-- 各ページの内容を出力 -->
+        <%= yield %>
+      </div>
     </div>
     <footer>
       <small>(C)2019 Math Pro.</small>
