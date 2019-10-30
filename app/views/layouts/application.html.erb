@@ -46,13 +46,13 @@
     <header>
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="navbar-brand"><%= link_to "sample", root_path, id: "logo" %></div>
-        <ul class="navbar-nav mx-auto">
+        <ul class="global-nav navbar-nav mx-auto">
           <li class="nav-item nav-link"><%= link_to "フーリエ変換", frie_path %></li>
           <li class="nav-item nav-link"><%= link_to "ニュートン法", newton_path %></li>
-        </ul>
-        <ul class="navbar-nav ml-auto">
-          <li class="navbar-item nav-link"><%= link_to "コンセプト", concept_path %></li>
-          <li class="navbar-item nav-link" style="margin-right:10px"><%= link_to "使い方", usage_path %></li>
+          <div class="mr-auto">
+            <li class="navbar-item nav-link"><%= link_to "コンセプト", concept_path %></li>
+            <li class="navbar-item nav-link" style="margin-right:10px"><%= link_to "使い方", usage_path %></li>
+          </div>
         </ul>
       </nav>
     </header>
