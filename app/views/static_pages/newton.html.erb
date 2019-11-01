@@ -1,231 +1,217 @@
 <!-- タイトルを動的に出力するためにタイトル(Home)を入力 -->
 <% provide(:title, "ニュートン法") %>
 
-  <div class="container">
-    <div class="row">
-      <div align="center">
-        <font size="8">ニュートン法<br></font>
+<div class="title">
+  ニュートン法
+</div>
+
+<body>
+<div class="all">
+  <div class="main">
+    
+    <div class="caption">活用例・職業</div>
+
+    <font size="5">&emsp;<データサイエンティスト><br></font>
+    <font size="4">&emsp;&emsp;&emsp;・データサイエンティストとは、ビッグデータを分析し、実務の場で分析結果<br>&emsp;&emsp;&emsp;&emsp;から導かれた手法を活用することで企業に貢献する職業。<br></font>
+    <font size="4">&emsp;&emsp;&emsp;・どんな仕事か？<br></font>
+    <font size="3">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;1,データを分析して課題を発見する<br></font>
+    <font size="3">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;2,分析したデータに意味を与える<br></font>
+    <font size="3">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;3,そのデータから事業戦略を導き出す<br></font>
+    <font size="4">&emsp;&emsp;&emsp;・なるためには？<br></font>
+    &emsp;&emsp;&emsp;&emsp;&emsp;
+    <div style="display:inline-block; background:#fcfcff; padding:15px; border:1px solid #3b5998; border-radius:10px; word-break:break-all;">
+    <font size="3">ビジネススキル&emsp;・ビジネスに関わる深い理解<br>
+      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;・ロジカルシンキング<br>
+      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;・ドキュメンテーション/プレゼンテーション<br>
+      ITスキル&emsp;&emsp;&emsp;&ensp;&ensp;・IT知識<br>
+      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;・大規模データ処理に関する知識<br>
+      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;・データベース<br>
+      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;・プログラミング<br>
+      統計解析スキル &nbsp;&nbsp;&nbsp;・数学<br>
+      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;・データ分析手法の理解<br>
+      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;・データ分析ソフトウェアのスキル<br>
+    </font>
+    </div><br><br>
+    <font size="4">&emsp;&emsp;&emsp;&emsp;(数学)<br></font>
+    <font size="3">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;・データ分析の共通語は数学<br></font>
+    <font size="3">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;→専門書の理解のためには、確率、統計、微分積分、行列等、<br></font>
+    <font size="3">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;大学初級程度の解析学、線形代数学を習得しているとよい。<br></font>
+    <font size="4">&emsp;&emsp;&emsp;&emsp;(データ分析手法の理解)<br></font>
+    <font size="3">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;・データの統計処理や数理モデルを作成することで分析<br></font>
+    <font size="3">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;→統計処理手法やデータマイニング手法について理解しておく必要がある。<br></font>
+    <font size="3">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;→自らが必要とする結論をだすためにどのような分析手法を用いれば良いか<br></font>
+    <font size="3">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;知っておくことも重要。<br></font>
+    <br>
+    <font size="4">&emsp;&emsp;&emsp;&emsp;※分析し、’数値’結果を導く数値解析も必要分析手法の１つである。<br></font>
+    <font size="4">&emsp;&emsp;&emsp;&emsp;&emsp;数値解を導く１つの手法として’ニュートン法’がある。<br></font>
+    <br>
+    <font size="4">&emsp;&emsp;&emsp;&emsp;CAE技術者とは<br>
+      &emsp;&emsp;&emsp;&emsp;&emsp;CAE技術者とは、これから設計しようとする製品をコンピュータ上に<br>
+      &emsp;&emsp;&emsp;&emsp;&emsp;仮想的に構築し、その中で変形や振動、熱伝導、流体などの様々な力学挙動を<br>
+      &emsp;&emsp;&emsp;&emsp;&emsp;精密に評価することにより、製品開発の効率化を図り、同時に性能向上や<br>
+      &emsp;&emsp;&emsp;&emsp;&emsp;品質向上を目指す人をいいます。自動車開発、精密部品、建築構造物など、 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;様々な分野で より高品質で安全性の高い製品を世に出すために、CAE技術者が<br>
+      &emsp;&emsp;&emsp;&emsp;&emsp;必要とされています。CAEでは、多くの非線形問題（関数$f(x)$が$x$に関する1次関数 &emsp;&emsp;&emsp;&emsp;&emsp;以外の方程式）に対してニュートン法が用いられています。<br>
+    </font>
+                   
+    <div class="caption">ニュートン法とは？</div>
+    
+    <font size="4">&emsp;・$f(x)=0$となる解$x$の近似値を求めるための効率の良い方法。<br></font>
+    <font size="4">&emsp;・$f(x)=0$の解を求める↔︎$y=f(x)$のグラフと$x$軸の交点の座標を求める。<br></font>
+    <!--<iframe id="iframepdf" src="files/ECS1_report02.pdf"></iframe><br>-->
+    <!--<iframe src="./web/viewer.html?file=./ECS1_report02.pdf"></iframe>-->
+    <font size="4">&emsp;・原理<br></font>
+    <font size="4">&emsp;&emsp;①&ensp;解αの付近で初期値$x_0$をとる<br></font>
+    <font size="4">&emsp;&emsp;②&ensp;点$(x_0,f(x_0))$での接線を引く<br></font>
+    <font size="4">&emsp;&emsp;③&ensp;②の接線と$x$軸の交点を$x1$とする<br></font>
+    <font size="4">&emsp;&emsp;④&ensp;点$(x_1,f(x_1))$での接線を引く<br></font>
+    <font size="4">&emsp;&emsp;⑤&ensp;④の接線と$x$軸の交点を$x_2$とする<br></font>
+    <font size="4">&emsp;&emsp;…以降この作業を繰り返す<br></font>
+    <iframe
+      src="https://docs.google.com/presentation/d/e/2PACX-1vSy8jQbI4dpevzSp69y5sxbnsJsSnapI9xTwhAT9VutVpvLYsESpkN6PfOD3gzA_KQ1OySjgZS4anTe/embed?start=false&loop=true&delayms=3000"
+      frameborder="0"
+      width="480"
+      height="299"
+      allowfullscreen="true"
+      mozallowfullscreen="true"
+      webkitallowfullscreen="true">
+    </iframe>
+          
+    <div class="caption">実際にやってみよう</div>
+    
+    <font size="5">&emsp;・問題1:</font>
+    <font size="4">$f(x)=x^2-3=0$の解$(\sqrt{3})$を実際にニュートン法で求めてみる。<br></font>
+    <font size="4">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;・初期値を$x_0=$</font>とする。<br>
+    <font size="4">
+      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;・$x_0=2,f(x_0)=1$より$(2,1)$での接線を求める。<br>
+      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;$f' (x)=①\underline{&emsp;&emsp;}$より$f' (x_0)=4$<br>
+      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;よって、接線は$y=4(x-②\underline{&emsp;})+③\underline{&emsp;}$<br>
+      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Ans,$y=④\underline{&emsp;&emsp;}$<br>
+    </font>
+    <font size="4">
+      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;・この接線と$x$軸との交点$x_1$を求める。<br>
+      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;$x$軸との交点なので$y=0$<br>
+      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;したがって,$0=④\underline{&emsp;&emsp;}$を解いて$x=⑤\underline{&emsp;&emsp;}$<br>
+      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;よって、$x_1=⑤\underline{&emsp;&emsp;}$<br>
+    </font>
+    <font size="4">
+      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;・$x_1=⑤\underline{&emsp;&emsp;},f(x_1)=0.0625$より$(1.75,0.0625)$での接線を求める。<br>
+      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;$f' (x)=①\underline{&emsp;&emsp;}$より、$f' (x_1)=3.5$<br>
+      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;よって、接線は$y=3.5(x-1.75)+0.0625$<br>
+      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Ans,$y=3.5x-6.0625$<br>
+    </font>
+    <font size="4">
+      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;・この接線と$x$軸との交点$x_2$を求める。<br>
+      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;$x$軸との交点なので$y=0$<br>
+      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;したがって、$0=3.5x_2-6.0625$を解いて<br>
+      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;$x_2=1.732142857142857$<br>
+      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;よって、$x_2=⑥\underline{&emsp;&emsp;}142857142857$<br>
+    </font>
+    <font size="4">
+      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;・真の値$\sqrt{3}=⑥\underline{&emsp;&emsp;}050807568877...$と比べて見ても<br>
+      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;$4$桁ほど一致する。<br>
+    </font>       
+  </div>
+
+  <div class="sub">
+    <div style="display:inline-block; background:#fcfcff; padding:15px; border:1px solid #3b5998; border-radius:10px; word-break:break-all;">
+      <font size="2"><br><br>
+        <a href="https://tech-camp.in/note/pickup/27559/">詳しくはこちら</a><br>
+      </font>
+      <font size="2"><br><br><br>
+        <br<br>
+        <a href="https://www.liber.co.jp/knowhow/careerlab/ds">詳しくはこちら</a><br>
+      </font>
+      <br><br><br>
+      <br<br><br><br><br><br><br>
+      <br<br><br><br><br><br><br>
+      <br<br><br><br>
+      <br><br><br>
+      <br<br><br><br><br><br><br>
+      <br<br><br><br><br><br><br>
+      <br<br><br><br>
+      <font size="2">CAEとは製品開発の初期段階から、<br>コンピュータを用いた仮想試作・仮想試験を十分に行い、できるだけ少ない試作回数で、 素性のよい、高品質な製品開発を<br>行うためのコンピュータを活用した設計技術です。</font>
+      <br><br><br><br><br>
+      <font size="2">
+        <a href="http://www.math.u-ryukyu.ac.jp/~suga/ssh4/node3.html">詳しくはこちら</a><br>
+      </font>
+      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      <font size="4">①</font>
+      <div style="display:inline-block; background:#fcfcff; padding:15px; border:1px solid #3b5998; border-radius:10px; word-break:break-all;">
+        <input id="Radio1" name="RadioGroup1" type="radio" onchange="onRadioButtonChange1();">
+        <label for="Radio1">$2x$</label>&emsp;
+        <input id="Radio2" name="RadioGroup1" type="radio" onchange="onRadioButtonChange1();">
+        <label for="Radio2">$2x-3$</label>&emsp;
+        <input id="Radio3" name="RadioGroup1" type="radio" onchange="onRadioButtonChange1();">
+        <label for="Radio3">$x$</label>
       </div>
-      <div class="col-xl-9">
-        <div>
-          <div>
-            <tbody>
-              <div style="display:inline-block; background:#fcfcff; padding:15px; border:1px solid #3b5998; border-radius:10px; word-break:break-all;">
-                <tr>
-                  <td align="left">
-                    <font size="6">1.活用例・職業<br></font>
-                    <font size="5">&emsp;<データサイエンティスト><br></font>
-                      <font size="4">&emsp;&emsp;&emsp;・データサイエンティストとは、ビッグデータを分析し、実務の場で分析結果<br>&emsp;&emsp;&emsp;&emsp;から導かれた手法を活用することで企業に貢献する職業。<br></font>
-                      <font size="4">&emsp;&emsp;&emsp;・どんな仕事か？<br></font>
-                      <font size="3">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;1,データを分析して課題を発見する<br></font>
-                      <font size="3">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;2,分析したデータに意味を与える<br></font>
-                      <font size="3">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;3,そのデータから事業戦略を導き出す<br></font>
-                      <font size="4">&emsp;&emsp;&emsp;・なるためには？<br></font>
-                      &emsp;&emsp;&emsp;&emsp;&emsp;
-                      <div style="display:inline-block; background:#fcfcff; padding:15px; border:1px solid #3b5998; border-radius:10px; word-break:break-all;">
-                        <font size="3">ビジネススキル&emsp;・ビジネスに関わる深い理解<br>
-                          &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;・ロジカルシンキング<br>
-                          &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;・ドキュメンテーション/プレゼンテーション<br>
-                          ITスキル&emsp;&emsp;&emsp;&ensp;&ensp;・IT知識<br>
-                          &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;・大規模データ処理に関する知識<br>
-                          &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;・データベース<br>
-                          &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;・プログラミング<br>
-                          統計解析スキル &nbsp;&nbsp;&nbsp;・数学<br>
-                          &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;・データ分析手法の理解<br>
-                          &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;・データ分析ソフトウェアのスキル<br>
-                        </font>
-                      </div><br><br>
-                      <font size="4">&emsp;&emsp;&emsp;&emsp;(数学)<br></font>
-                      <font size="3">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;・データ分析の共通語は数学<br></font>
-                      <font size="3">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;→専門書の理解のためには、確率、統計、微分積分、行列等、<br></font>
-                      <font size="3">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;大学初級程度の解析学、線形代数学を習得しているとよい。<br></font>
-                      <font size="4">&emsp;&emsp;&emsp;&emsp;(データ分析手法の理解)<br></font>
-                      <font size="3">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;・データの統計処理や数理モデルを作成することで分析<br></font>
-                      <font size="3">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;→統計処理手法やデータマイニング手法について理解しておく必要がある。<br></font>
-                      <font size="3">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;→自らが必要とする結論をだすためにどのような分析手法を用いれば良いか<br></font>
-                      <font size="3">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;知っておくことも重要。<br></font>
-                      <br>
-                      <font size="4">&emsp;&emsp;&emsp;&emsp;※分析し、’数値’結果を導く数値解析も必要分析手法の１つである。<br></font>
-                      <font size="4">&emsp;&emsp;&emsp;&emsp;&emsp;数値解を導く１つの手法として’ニュートン法’がある。<br></font>
-                      <br>
-                      <font size="4">&emsp;&emsp;&emsp;&emsp;CAE技術者とは<br>
-                        &emsp;&emsp;&emsp;&emsp;&emsp;CAE技術者とは、これから設計しようとする製品をコンピュータ上に<br>
-                        &emsp;&emsp;&emsp;&emsp;&emsp;仮想的に構築し、その中で変形や振動、熱伝導、流体などの様々な力学挙動を<br>
-                        &emsp;&emsp;&emsp;&emsp;&emsp;精密に評価することにより、製品開発の効率化を図り、同時に性能向上や<br>
-                        &emsp;&emsp;&emsp;&emsp;&emsp;品質向上を目指す人をいいます。自動車開発、精密部品、建築構造物など、 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;様々な分野で より高品質で安全性の高い製品を世に出すために、CAE技術者が<br>
-                        &emsp;&emsp;&emsp;&emsp;&emsp;必要とされています。CAEでは、多くの非線形問題（関数$f(x)$が$x$に関する1次関数 &emsp;&emsp;&emsp;&emsp;&emsp;以外の方程式）に対してニュートン法が用いられています。<br></font>
-                    </td>
-                  </tr>
-                </tbody>
-                <tbody>
-                  <br>
-                  <tr>
-                    <td align="left">
-                      <font size="6">2.ニュートン法とは？<br></font>
-                      <font size="4">&emsp;・$f(x)=0$となる解$x$の近似値を求めるための効率の良い方法。<br></font>
-                      <font size="4">&emsp;・$f(x)=0$の解を求める↔︎$y=f(x)$のグラフと$x$軸の交点の座標を求める。<br></font>
-                      <!--<iframe id="iframepdf" src="files/ECS1_report02.pdf"></iframe><br>-->
-                      <!--<iframe src="./web/viewer.html?file=./ECS1_report02.pdf"></iframe>-->
-                      <font size="4">&emsp;・原理<br></font>
-                      <font size="4">&emsp;&emsp;①&ensp;解αの付近で初期値$x_0$をとる<br></font>
-                      <font size="4">&emsp;&emsp;②&ensp;点$(x_0,f(x_0))$での接線を引く<br></font>
-                      <font size="4">&emsp;&emsp;③&ensp;②の接線と$x$軸の交点を$x1$とする<br></font>
-                      <font size="4">&emsp;&emsp;④&ensp;点$(x_1,f(x_1))$での接線を引く<br></font>
-                      <font size="4">&emsp;&emsp;⑤&ensp;④の接線と$x$軸の交点を$x_2$とする<br></font>
-                      <font size="4">&emsp;&emsp;…以降この作業を繰り返す<br></font>
-                      <iframe
-                        src="https://docs.google.com/presentation/d/e/2PACX-1vSy8jQbI4dpevzSp69y5sxbnsJsSnapI9xTwhAT9VutVpvLYsESpkN6PfOD3gzA_KQ1OySjgZS4anTe/embed?start=false&loop=true&delayms=3000"
-                        frameborder="0"
-                        width="480"
-                        height="299"
-                        allowfullscreen="true"
-                        mozallowfullscreen="true"
-                        webkitallowfullscreen="true"></iframe>
-                    </td>
-                  </tr>
-                </tbody>
-                <tbody>
-                  <br>
-                  <tr>
-                    <td align="left">
-                      <font size="6">3.実際にやってみよう<br></font>
-                      <font size="5">&emsp;・問題1:</font>
-                      <font size="4">$f(x)=x^2-3=0$の解$(\sqrt{3})$を実際にニュートン法で求めてみる。<br></font>
-                      <font size="4">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;・初期値を$x_0=$</font>とする。<br>
-                      <font size="4">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;・$x_0=2,f(x_0)=1$より$(2,1)$での接線を求める。<br>
-                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;$f' (x)=①\underline{&emsp;&emsp;}$より$f' (x_0)=4$<br>
-                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;よって、接線は$y=4(x-②\underline{&emsp;})+③\underline{&emsp;}$<br>
-                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Ans,$y=④\underline{&emsp;&emsp;}$<br></font>
-                      <font size="4">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;・この接線と$x$軸との交点$x_1$を求める。<br>
-                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;$x$軸との交点なので$y=0$<br>
-                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;したがって,$0=④\underline{&emsp;&emsp;}$を解いて$x=⑤\underline{&emsp;&emsp;}$<br>
-                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;よって、$x_1=⑤\underline{&emsp;&emsp;}$<br>
-                      </font>
-                      <font size="4">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;・$x_1=⑤\underline{&emsp;&emsp;},f(x_1)=0.0625$より$(1.75,0.0625)$での接線を求める。<br>
-                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;$f' (x)=①\underline{&emsp;&emsp;}$より、$f' (x_1)=3.5$<br>
-                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;よって、接線は$y=3.5(x-1.75)+0.0625$<br>
-                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Ans,$y=3.5x-6.0625$<br>
-                      </font>
-                      <font size="4">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;・この接線と$x$軸との交点$x_2$を求める。<br>
-                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;$x$軸との交点なので$y=0$<br>
-                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;したがって、$0=3.5x_2-6.0625$を解いて<br>
-                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;$x_2=1.732142857142857$<br>
-                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;よって、$x_2=⑥\underline{&emsp;&emsp;}142857142857$<br>
-                      </font>
-                      <font size="4">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;・真の値$\sqrt{3}=⑥\underline{&emsp;&emsp;}050807568877...$と比べて見ても<br>
-                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;$4$桁ほど一致する。<br>
-                      </font>
-                    </div>
-                  </td>
-                </tr>
-              </tbody>
-            </div>
-          </div>
-        </div>
-        <div class="col-xl-3">
-          <div>
-            <tbody>
-              <tr>
-                <div style="display:inline-block; background:#fcfcff; padding:15px; border:1px solid #3b5998; border-radius:10px; word-break:break-all;">
-                  <font size="2"><br><br>
-                    <a href="https://tech-camp.in/note/pickup/27559/">詳しくはこちら</a><br></font>
-                  <font size="2"><br><br><br>
-                    <br<br>
-                      <a href="https://www.liber.co.jp/knowhow/careerlab/ds">詳しくはこちら</a><br></font>
-                    <br><br><br>
-                    <br<br><br><br><br><br><br>
-                      <br<br><br><br><br><br><br>
-                        <br<br><br><br>
-                          <br><br><br>
-                          <br<br><br><br><br><br><br>
-                            <br<br><br><br><br><br><br>
-                              <br<br><br><br>
 
-                                <font size="2">CAEとは製品開発の初期段階から、<br>コンピュータを用いた仮想試作・仮想試験を十分に行い、できるだけ少ない試作回数で、 素性のよい、高品質な製品開発を<br>行うためのコンピュータを活用した設計技術です。</font>
-                                <br><br><br><br><br>
-                                <font size="2">
-                                  <a href="http://www.math.u-ryukyu.ac.jp/~suga/ssh4/node3.html">詳しくはこちら</a><br></font>
-                                <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-                                <font size="4">①</font>
-                                <div style="display:inline-block; background:#fcfcff; padding:15px; border:1px solid #3b5998; border-radius:10px; word-break:break-all;">
-                                  <input id="Radio1" name="RadioGroup1" type="radio" onchange="onRadioButtonChange1();">
-                                  <label for="Radio1">$2x$</label>&emsp;
-                                  <input id="Radio2" name="RadioGroup1" type="radio" onchange="onRadioButtonChange1();">
-                                  <label for="Radio2">$2x-3$</label>&emsp;
-                                  <input id="Radio3" name="RadioGroup1" type="radio" onchange="onRadioButtonChange1();">
-                                  <label for="Radio3">$x$</label>
-                                </div>
-                                <div id="output1"></div><br>
+      <div id="output1"></div><br>
+      <font size="4">②</font>
+      <div style="display:inline-block; background:#fcfcff; padding:15px; border:1px solid #3b5998; border-radius:10px; word-break:break-all;">
+        <input id="Radio4" name="RadioGroup2" type="radio" onchange="onRadioButtonChange2();">
+        <label for="Radio4">$2$</label>&emsp;
+        <input id="Radio5" name="RadioGroup2" type="radio" onchange="onRadioButtonChange2();">
+        <label for="Radio5">$2x-3$</label>&emsp;
+        <input id="Radio6" name="RadioGroup2" type="radio" onchange="onRadioButtonChange2();">
+        <label for="Radio6">$x$</label>
+      </div>
 
-                                <font size="4">②</font>
-                                <div style="display:inline-block; background:#fcfcff; padding:15px; border:1px solid #3b5998; border-radius:10px; word-break:break-all;">
-                                  <input id="Radio4" name="RadioGroup2" type="radio" onchange="onRadioButtonChange2();">
-                                  <label for="Radio4">$2$</label>&emsp;
-                                  <input id="Radio5" name="RadioGroup2" type="radio" onchange="onRadioButtonChange2();">
-                                  <label for="Radio5">$2x-3$</label>&emsp;
-                                  <input id="Radio6" name="RadioGroup2" type="radio" onchange="onRadioButtonChange2();">
-                                  <label for="Radio6">$x$</label>
-                                </div>
-                                <div id="output2"></div><br>
+      <div id="output2"></div><br>
+      <font size="4">③</font>
+      <div style="display:inline-block; background:#fcfcff; padding:15px; border:1px solid #3b5998; border-radius:10px; word-break:break-all;">
+        <input id="Radio7" name="RadioGroup3" type="radio" onchange="onRadioButtonChange3();">
+        <label for="Radio7">$1$</label>&emsp;
+        <input id="Radio8" name="RadioGroup3" type="radio" onchange="onRadioButtonChange3();">
+        <label for="Radio8">$2x-3$</label>&emsp;
+        <input id="Radio9" name="RadioGroup3" type="radio" onchange="onRadioButtonChange3();">
+        <label for="Radio9">$x$</label>
+      </div>
 
-                                <font size="4">③</font>
-                                <div style="display:inline-block; background:#fcfcff; padding:15px; border:1px solid #3b5998; border-radius:10px; word-break:break-all;">
-                                  <input id="Radio7" name="RadioGroup3" type="radio" onchange="onRadioButtonChange3();">
-                                  <label for="Radio7">$1$</label>&emsp;
-                                  <input id="Radio8" name="RadioGroup3" type="radio" onchange="onRadioButtonChange3();">
-                                  <label for="Radio8">$2x-3$</label>&emsp;
-                                  <input id="Radio9" name="RadioGroup3" type="radio" onchange="onRadioButtonChange3();">
-                                  <label for="Radio9">$x$</label>
-                                </div>
-                                <div id="output3"></div><br>
+      <div id="output3"></div><br>
+      <font size="4">④</font>
+      <div style="display:inline-block; background:#fcfcff; padding:15px; border:1px solid #3b5998; border-radius:10px; word-break:break-all;">
+        <input id="Radio10" name="RadioGroup4" type="radio" onchange="onRadioButtonChange4();">
+        <label for="Radio10">$4x-7$</label>&emsp;
+        <input id="Radio11" name="RadioGroup4" type="radio" onchange="onRadioButtonChange4();">
+        <label for="Radio11">$2x-3$</label>&emsp;
+        <input id="Radio12" name="RadioGroup4" type="radio" onchange="onRadioButtonChange4();">
+        <label for="Radio12">$x$</label>
+      </div>
+            
+      <div id="output4"></div><br>
+      <font size="4">⑤</font>
+      <div style="display:inline-block; background:#fcfcff; padding:15px; border:1px solid #3b5998; border-radius:10px; word-break:break-all;">
+        <input id="Radio13" name="RadioGroup5" type="radio" onchange="onRadioButtonChange5();">
+        <label for="Radio13">$1.75$</label>&emsp;
+        <input id="Radio14" name="RadioGroup5" type="radio" onchange="onRadioButtonChange5();">
+        <label for="Radio14">$2x-3$</label>&emsp;
+        <input id="Radio15" name="RadioGroup5" type="radio" onchange="onRadioButtonChange5();">
+        <label for="Radio15">$x$</label>
+      </div>
 
-                                <font size="4">④</font>
-                                <div style="display:inline-block; background:#fcfcff; padding:15px; border:1px solid #3b5998; border-radius:10px; word-break:break-all;">
-                                  <input id="Radio10" name="RadioGroup4" type="radio" onchange="onRadioButtonChange4();">
-                                  <label for="Radio10">$4x-7$</label>&emsp;
-                                  <input id="Radio11" name="RadioGroup4" type="radio" onchange="onRadioButtonChange4();">
-                                  <label for="Radio11">$2x-3$</label>&emsp;
-                                  <input id="Radio12" name="RadioGroup4" type="radio" onchange="onRadioButtonChange4();">
-                                  <label for="Radio12">$x$</label>
-                                </div>
-                                <div id="output4"></div><br>
+      <div id="output5"></div><br>
+      <font size="4">⑥</font>
+      <div style="display:inline-block; background:#fcfcff; padding:12px; border:1px solid #3b5998; border-radius:8px; word-break:break-all;">
+        <input id="Radio16" name="RadioGroup6" type="radio" onchange="onRadioButtonChange6();">
+        <label for="Radio16">$1.732$</label>&emsp;
+        <input id="Radio17" name="RadioGroup6" type="radio" onchange="onRadioButtonChange6();">
+        <label for="Radio17">$2x-3$</label>&emsp;
+        <input id="Radio18" name="RadioGroup6" type="radio" onchange="onRadioButtonChange6();">
+        <label for="Radio18">$x$</label>
+      </div>
+            
+      <div id="output6"></div><br>
+    </div>      
+  </div>
+</div>
+</body>
 
-                                <font size="4">⑤</font>
-                                <div style="display:inline-block; background:#fcfcff; padding:15px; border:1px solid #3b5998; border-radius:10px; word-break:break-all;">
-                                  <input id="Radio13" name="RadioGroup5" type="radio" onchange="onRadioButtonChange5();">
-                                  <label for="Radio13">$1.75$</label>&emsp;
-                                  <input id="Radio14" name="RadioGroup5" type="radio" onchange="onRadioButtonChange5();">
-                                  <label for="Radio14">$2x-3$</label>&emsp;
-                                  <input id="Radio15" name="RadioGroup5" type="radio" onchange="onRadioButtonChange5();">
-                                  <label for="Radio15">$x$</label>
-                                </div>
-                                <div id="output5"></div><br>
-
-                                <font size="4">⑥</font>
-                                <div style="display:inline-block; background:#fcfcff; padding:12px; border:1px solid #3b5998; border-radius:8px; word-break:break-all;">
-                                  <input id="Radio16" name="RadioGroup6" type="radio" onchange="onRadioButtonChange6();">
-                                  <label for="Radio16">$1.732$</label>&emsp;
-                                  <input id="Radio17" name="RadioGroup6" type="radio" onchange="onRadioButtonChange6();">
-                                  <label for="Radio17">$2x-3$</label>&emsp;
-                                  <input id="Radio18" name="RadioGroup6" type="radio" onchange="onRadioButtonChange6();">
-                                  <label for="Radio18">$x$</label>
-                                </div>
-                                <div id="output6"></div><br>
-
-                              </div>
-
-                            </tr>
-                          </tbody>
-                        </div>
-                      </div>
-                    </div>
-
-                    <!-- ページ読み込み後にリロードしてTEXを表示 -->
-                    <script language="JavaScript">
-                      {
-                        if(window.name != "abc") {
-                          location.reload();
-                          window.name = "abc";
-                        } else {}
-                      }
-                    </script>
+<!-- ページ読み込み後にリロードしてTEXを表示 -->
+<script language="JavaScript">
+{
+  if(window.name != "abc") {
+  location.reload();
+  window.name = "abc";
+  } else {}
+}
+</script>
