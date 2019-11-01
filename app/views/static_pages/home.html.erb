@@ -1,19 +1,13 @@
 <!-- タイトルを動的に出力するためにタイトル(Home)を入力 -->
 <% provide(:title, "Home") %>
 
-<div align="center">
-<font size="5">このサイトのホームページです。<br></font>
-</div>
+  <div align="center">
+    <font size="5">このサイトのホームページです。<br></font>
+  </div>
 
-<script language="JavaScript">
-{
-  if (window.name != "xyz")
-  {
-    location.reload();
-    window.name = "xyz";
-  }
-  else{
-
-  }
-}
-</script>
+  <script language="JavaScript">
+    if (window.name != "xyz") {
+      location.reload();
+      window.name = "xyz";
+    }
+  </script>
