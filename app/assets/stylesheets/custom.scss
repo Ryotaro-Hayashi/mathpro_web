@@ -10,6 +10,13 @@ body {
   line-height: 2;
 }
 
+// フッターの背景や文字色、中央寄せ
+footer {
+  text-align: center;
+  color: #ffffff;
+  padding: 20px 0;
+  background-color: #767671;
+
 h1,
 h2,
 h3,
@@ -115,4 +122,5 @@ a img:hover {
   background-position: center top;
   background-attachment: fixed;
   background-size: 100% auto;
+  font-family: "游ゴシック", "Yu Gothic", "游ゴシック体", YuGothic, sans-serif;
 }
