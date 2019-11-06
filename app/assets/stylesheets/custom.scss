@@ -1,9 +1,13 @@
 @import "bootstrap";
+@charset "utf-8";
 
-header {
-  width: 960px;
-  height: 100px;
-  margin: 0 auto;
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #cccccc;
+  color: #333333;
+  font-size: 15px;
+  line-height: 2;
 }
 
 // フッターの背景や文字色、中央寄せ
@@ -11,25 +15,56 @@ footer {
   text-align: center;
   color: #ffffff;
   padding: 20px 0;
-  background-color: #767671
+  background-color: #767671;
 }
 
-// フッター内の文字サイズ
-footer small {
-  font-size: 12px;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-top: 0;
 }
 
-#FUN {
-  background-image: image-url("sky.jpg");
-  background-repeat: no-repeat;
-  background-position: center top;
-  background-attachment: fixed;
-  background-size: 100% auto;
+img {
+  vertical-align: bottom;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: #3583aa;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #788d98;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+header {
+  width: 960px;
+  height: 200px;
+  margin: 0 auto
+}
+
+#logo {
+  float: left;
+  width: 30px;
+  height: auto;
 }
 
 .global-nav {
   float: right;
-  margin-top: 90px;
+  margin-top: 60px;
 }
 
 .global-nav li {
@@ -54,4 +89,39 @@ footer small {
   background-color: #ffffff;
   margin-top: 220px;
   padding: 35px 0;
+}
+
+.content {
+  width: 960px;
+  margin: 0 auto;
+}
+
+footer {
+  text-align: center;
+  color: #ffffff;
+  padding: 20px 0;
+  background-color: #767671;
+}
+
+footer small {
+  font-size: 12px;
+}
+
+.main {
+  width: 700px;
+  margin: 0 10px;
+  float: left;
+}
+
+a img:hover {
+  opacity: 0.8;
+}
+
+#FUN {
+  background-image: image-url("FUN.jpg");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-attachment: fixed;
+  background-size: 100% auto;
+  font-family: "游ゴシック", "Yu Gothic", "游ゴシック体", YuGothic, sans-serif;
 }
