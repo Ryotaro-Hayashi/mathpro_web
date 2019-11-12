@@ -9,3 +9,60 @@
 フーリエ級数は何に使われているのだろうか<br>
 
 <%= link_to image_tag("test.gif", alt: "gif") %>
+
+<br><br><br><br>
+
+<canvas id="canvas1" width="400" height="300"></canvas>
+<script type="text/javascript">
+  // canvas要素のDOMオブジェクトを取得
+  var canvas = document.getElementById("canvas1");
+  // 描画コンテキストを取得する
+  var context = canvas.getContext("2d");
+  var mouseX = 0;
+  var mouseY = 0;
+
+  function movehandler(event) {
+    mouseX = event.offsetX;
+    mouseY = event.offsetY;
+    inclination = mouseX / mouseY
+  }
+  window.onmousemove = movehandler;
+
+  function sum(n, m) {
+    return n + m;
+  }
+
+  function draw() {
+    // letは変数のスコープをブロックに限定する。
+    let str;
+
+    context.fillStyle = "rgb(255, 255, 255)";
+    context.fillRect(0, 0, canvas.width, canvas.height);
+
+    context.fillStyle = "rgb(0, 0, 0)";
+
+
+    str1 = "y = " + inclination + " x"
+    context.fillText(str1, mouseX+10, mouseY-10);
+
+    context.fillStyle = "rgb(200, 0, 0)";
+    // beginPathメソッドを呼び出すことで、描画コンテキストへのパスの記録が開始され、図形を書くことができる。
+  	context.beginPath();
+    // moveToメソッドによって、指定した点まで移動する。
+  	context.moveTo(0, canvas.height);
+    // 現在の点から指定した点までの線分を定義する。
+  	context.lineTo(mouseX, mouseY);
+
+    context.moveTo(0, canvas.height);
+    context.lineTo(canvas.width, canvas.height);
+
+    context.moveTo(0, canvas.height);
+    context.lineTo(0, 0);
+    // strokeメソッドで描画コンテキストに記録されたパスをCanvasに描画
+  	context.stroke();
+  }
+
+
+
+  setInterval(draw, 30);
+</script>
