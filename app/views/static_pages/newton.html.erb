@@ -30,11 +30,11 @@
       ここでは実際にどんな風に数学が使われているのかを知ってもらう事で<br>
       そんな疑問たちを解決し少しでも数学に興味を持ってもらえればと思い、<br>
       実際に世の中で使われている数学の1つとして最小二乗法というものを紹介します<br><br>
-      <!--そんな疑問を解決し少しでも数学に興味を持ってもらえればと思い<!--にお答えするために
-        ここでは実際に世の中で使われている数学として最小二乗法というものを紹介します-->
+
         <div class="caption2">最小二乗法</div>
+        （最小二乗法とは、ざっくり言うと未来を予測することができます。<br>
         最小二乗法とは、以下の図のようなデータの関係を表すための線を引く方法です。<br>
-        <br>ここにグラフ入れる感じかな<br><br>
+        <br><%= link_to image_tag("newton1.png", alt: "newton1") %><br><br>
         最小二乗法を利用すると未来に起こることを予測することができます。<br>
         例えば、<br>
             <span class="padl-10">・顧客の売上を予測したい</span><br>
@@ -43,13 +43,20 @@
             <span class="padl-10">・既存の顧客情報から売上に関係している要因を抽出して売上を予測する</span><br>
             <span class="padl-10">・天気に関係している気温と降水量から電力を予測する</span><br>
             といったことです。<br><br>
+          （機械学習やデータ分析では、実際の値と計算して算出した値の差（以降、誤差と呼ぶ）が小さければ小さいほどより良いものとなります。なのでここでは、ニュートン法を用いて誤差を小さくする方法の1つを紹介します。）<br>
           最小二乗法でデータの関係を表すための線を引く方法をとても簡単に説明すると、<br>
           実際のデータの値と計算して算出した値の差（以降、誤差と呼ぶ）を小さくすることです。<br><br>
           ここでは最小二乗法、つまり誤差を小さくする方法の一つとしてニュートン法を紹介します。<br><br><br>
           青い点は実際の値、赤い線は計算で算出した値の集まり、↔は誤差を表します。<br>
-          <br>ここに図が入る<br><br>
+          <br><%= link_to image_tag("newton2.png", alt: "newton2") %><br><br>
           上の図のようにデータから予測される直線を引くためにはどのようにすればよいでしょう。係数a,bの値を動かしてみましょう。<br>
-          <br>ここにgif入る<br><br><br>
+          <br><iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRuju4N5HK3oPwgN2yal8j_cMmwZaiMpJTOhybRBDqKv1GcJO-3q7JkGBqwsXvAVwhnPW0MQ7GtBz-c/embed?start=true&loop=true&delayms=3000"
+          frameborder="0"
+          width="480" height="300"
+          allowfullscreen="true"
+          mozallowfullscreen="true"
+          webkitallowfullscreen="true">
+        </iframe><br><br><br>
           初めはa20/3 b=10　　　次はa=10. b=0　　　　最後はa=10 b=-15でした。<br>
           つまり、適切な係数a,bを求めることによって誤差を小さくする事ができると考えられます。<br>
           これらをふまえて誤差を小さくするためにどのような計算を行っているのか簡単に説明します。<br><br>
@@ -58,7 +65,7 @@
           しかし、実際の値から計算で算出した値を引いた値をそのまま足すと<br>
           下の図のように誤差の和としては0で最小となりますが、<br>
           求めたい直線とは違っているようなことが起こることが考えられます。<br>
-          <br>ここに図が入る<br><br>
+          <br><%= link_to image_tag("newton3.png", alt: "newton3") %><br><br>
           そのため、誤差を二乗して、正の数にします。 誤差の二乗の和を数式で表すと<br>
           $E=\sum_{i=1}^{n} \{y_i-(ax_i+b)\}^2$&emsp;(nはデータ数)<br>
           となります。<br>
@@ -66,15 +73,21 @@
           関数Eを展開すると<br>
           $E=\sum_{i=1}^{n} $(展開の式間違っている気がするので一旦この先省略)<!--\{x_i^2\times b^2+2x_i(a-y_i)b+(a-y_i)^2\}$--><br>
           となります。この関数は最大次数が2なので下図のような2次関数であることがわかります。<br>
-          <br>ここに図が入る<br><br>
+
+          <br><%= link_to image_tag("newton4.2.png", alt: "newton4.2") %><br><br>
+          (↑どちらかを使う)<br>
           データから予測される直線の傾き（aの値）を１０で固定して切片（bの値）を変えるときの誤差の二乗の和の変化を確認しましょう。<br>
-          <br>ここにスライド入る<br><br>
+          <br><iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSRTf7To_0uda8SlRqKZo2F9xog5EeW03EVk7yvAwz9SREoAP1BDDXU_4Auyza9yOzsZy5ZyBlXchOH/embed?start=true&loop=true&delayms=3000"
+          frameborder="0"
+          width="480" height="300"
+          allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true">
+        </iframe><br><br>
           上のスライドから誤差を小さくするためにはこの関数の極小値を求めればよいことがわかります。<br>
           関数の極小値は傾きが0になる点です。つまり微分して$0(E’=0)$になる点$a,b$を探せばよいということになります。<br>
           このとき、$E’=0$を求めるためにニュートン法が用いることができます。<br>
           ここまで長々と説明してきましたが、実は誤差の小さい<u>直線を求めるとき</u>は連立方程式を<br>
           立てて解を求めるほうが簡単にできるのでニュートン法を用いられているとは言い難いのです。<br>
-          <br>ここに画像入る<br><br>
+          <br><%= link_to image_tag("newton5.png", alt: "newton5") %><br><br>
           ここまでは直線について話してきましたが、実際は誤差を小さくしようとすると<br>
           上の図のように曲線のほうが適していることが多いのです。<br>
           このような曲線では連立方程式を立てても解が一つに確定しないので、<br>
@@ -154,7 +167,7 @@
       src="https://docs.google.com/presentation/d/e/2PACX-1vSy8jQbI4dpevzSp69y5sxbnsJsSnapI9xTwhAT9VutVpvLYsESpkN6PfOD3gzA_KQ1OySjgZS4anTe/embed?start=false&loop=true&delayms=3000"
       frameborder="0"
       width="480"
-      height="299"
+      height="300"
       allowfullscreen="true"
       mozallowfullscreen="true"
       webkitallowfullscreen="true">
