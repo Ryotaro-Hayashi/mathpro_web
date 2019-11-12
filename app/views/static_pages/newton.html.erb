@@ -2,24 +2,48 @@
 <% provide(:title, "ニュートン法") %>
 
 <div class="title">
-  ニュートン法
+  最小二乗法とニュートン法
 </div>
 
 <body>
 <div class="all">
   <div class="main">
-    
-    <div class="caption">活用例・職業</div>
 
-    <div class="caption2"><データサイエンティスト></div>
+    <!--<div class="caption">活用例・職業</div>-->
+    <div class="caption">はじめに</div>
 
-    <div class="text">
+    <!--<div class="caption2"><データサイエンティスト></div>-->
+
+
+    <!--<div class="text">
       ・データサイエンティストとは、ビッグデータを分析し、実務の場で分析結果から導かれた手法を活用することで企業に貢献する職業。<br>
       ・どんな仕事か？<br>
       <span class="padl-10">1.データを分析して課題を発見する</span><br>
       <span class="padl-10">2.分析したデータに意味を与える</span><br>
       <span class="padl-10">3.そのデータから事業戦略を導き出す</span><br>
-    </div>
+    </div>-->
+    <div class="text">突然ですがみなさん、<br>
+      1年生の必修科目として大学で数学を学んでいるけど、将来本当に必要なの？<br><!--ここと-->
+      とか、<br>
+      数学を学ぶ意味がわからない!<br><!--ここを太字とかにしてみてはどうだろうか？-->
+      などなど、今ままで数学を学んできてそんな事を疑問に思ったことはありませんか？<br>
+      ここでは実際にどんな風に数学が使われているのかを知ってもらう事で<br>
+      そんな疑問たちを解決し少しでも数学に興味を持ってもらえればと思い、<br>
+      実際に世の中で使われている数学の1つとして最小二乗法というものを紹介します<br><br>
+      <!--そんな疑問を解決し少しでも数学に興味を持ってもらえればと思い<!--にお答えするために
+        ここでは実際に世の中で使われている数学として最小二乗法というものを紹介します-->
+        <div class="caption2">最小二乗法</div>
+        最小二乗法とは、以下の図のようなデータの関係を表すための線を引く方法です。<br>
+        <br>ここにグラフ入れる感じかな<br><br>
+        最小二乗法を利用すると未来に起こることを予測することができます。<br>
+        例えば、<br>
+            <span class="padl-10">・顧客の売上を予測したい</span><br>
+            <span class="padl-10">・天気から使用される電力を予測したい</span><br>
+        といったとき、<br>
+            <span class="padl-10">・既存の顧客情報から売上に関係している要因を抽出して売上を予測する</span><br>
+            <span class="padl-10">・天気に関係している気温と降水量から電力を予測する</span><br>
+            といったことです。<br>
+      </div>
 
     ・なるためには？<br>
 
@@ -60,20 +84,35 @@
       必要とされています。CAEでは、多くの非線形問題（関数$f(x)$が$x$に関する1次関数以外の方程式）
       に対してニュートン法が用いられています。
     </div>
-                   
+
     <div class="caption">ニュートン法とは？</div>
-    
+
+
     <font size="4">&emsp;・$f(x)=0$となる解$x$の近似値を求めるための効率の良い方法。<br></font>
+    <font size="4">&emsp;・特徴<br></font>
+    <font size="4">&emsp;&emsp;①解の収束速度が早い<br></font>
+    <font size="4">&emsp;&emsp;②曲線にも利用できる<br></font>
+    <font size="4">&emsp;&emsp;③解に収束しない危険性がある<br></font>
+    <font size="4">&emsp;&emsp;④メモリ使用量が大<br></font>
     <font size="4">&emsp;・$f(x)=0$の解を求める↔︎$y=f(x)$のグラフと$x$軸の交点の座標を求める。<br></font>
     <!--<iframe id="iframepdf" src="files/ECS1_report02.pdf"></iframe><br>-->
     <!--<iframe src="./web/viewer.html?file=./ECS1_report02.pdf"></iframe>-->
-    <font size="4">&emsp;・原理<br></font>
-    <font size="4">&emsp;&emsp;①&ensp;解αの付近で初期値$x_0$をとる<br></font>
-    <font size="4">&emsp;&emsp;②&ensp;点$(x_0,f(x_0))$での接線を引く<br></font>
-    <font size="4">&emsp;&emsp;③&ensp;②の接線と$x$軸の交点を$x1$とする<br></font>
-    <font size="4">&emsp;&emsp;④&ensp;点$(x_1,f(x_1))$での接線を引く<br></font>
-    <font size="4">&emsp;&emsp;⑤&ensp;④の接線と$x$軸の交点を$x_2$とする<br></font>
-    <font size="4">&emsp;&emsp;…以降この作業を繰り返す<br></font>
+
+    <div class="text">
+      ・$f(x)=0$となる解$x$の近似値を求めるための効率の良い方法。<br>
+      ・$f(x)=0$の解を求める↔︎$y=f(x)$のグラフと$x$軸の交点の座標を求める。<br>
+      <!--<iframe id="iframepdf" src="files/ECS1_report02.pdf"></iframe><br>-->
+      <!--<iframe src="./web/viewer.html?file=./ECS1_report02.pdf"></iframe>-->
+      ・原理<br>
+      ①解αの付近で初期値$x_0$をとる<br>
+      ②点$(x_0,f(x_0))$での接線を引く<br>
+      ③②の接線と$x$軸の交点を$x1$とする<br>
+      ④点$(x_1,f(x_1))$での接線を引く<br>
+      ⑤④の接線と$x$軸の交点を$x_2$とする<br>
+      …以降この作業を繰り返す<br>
+    </div>
+
+
     <iframe
       src="https://docs.google.com/presentation/d/e/2PACX-1vSy8jQbI4dpevzSp69y5sxbnsJsSnapI9xTwhAT9VutVpvLYsESpkN6PfOD3gzA_KQ1OySjgZS4anTe/embed?start=false&loop=true&delayms=3000"
       frameborder="0"
@@ -83,67 +122,52 @@
       mozallowfullscreen="true"
       webkitallowfullscreen="true">
     </iframe>
-          
+
     <div class="caption">実際にやってみよう</div>
-    
-    <font size="5">&emsp;・問題1:</font>
-    <font size="4">$f(x)=x^2-3=0$の解$(\sqrt{3})$を実際にニュートン法で求めてみる。<br></font>
-    <font size="4">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;・初期値を$x_0=$</font>とする。<br>
-    <font size="4">
-      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;・$x_0=2,f(x_0)=1$より$(2,1)$での接線を求める。<br>
-      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;$f' (x)=①\underline{&emsp;&emsp;}$より$f' (x_0)=4$<br>
-      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;よって、接線は$y=4(x-②\underline{&emsp;})+③\underline{&emsp;}$<br>
-      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Ans,$y=④\underline{&emsp;&emsp;}$<br>
-    </font>
-    <font size="4">
-      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;・この接線と$x$軸との交点$x_1$を求める。<br>
-      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;$x$軸との交点なので$y=0$<br>
-      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;したがって,$0=④\underline{&emsp;&emsp;}$を解いて$x=⑤\underline{&emsp;&emsp;}$<br>
-      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;よって、$x_1=⑤\underline{&emsp;&emsp;}$<br>
-    </font>
-    <font size="4">
-      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;・$x_1=⑤\underline{&emsp;&emsp;},f(x_1)=0.0625$より$(1.75,0.0625)$での接線を求める。<br>
-      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;$f' (x)=①\underline{&emsp;&emsp;}$より、$f' (x_1)=3.5$<br>
-      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;よって、接線は$y=3.5(x-1.75)+0.0625$<br>
-      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Ans,$y=3.5x-6.0625$<br>
-    </font>
-    <font size="4">
-      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;・この接線と$x$軸との交点$x_2$を求める。<br>
-      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;$x$軸との交点なので$y=0$<br>
-      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;したがって、$0=3.5x_2-6.0625$を解いて<br>
-      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;$x_2=1.732142857142857$<br>
-      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;よって、$x_2=⑥\underline{&emsp;&emsp;}142857142857$<br>
-    </font>
-    <font size="4">
-      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;・真の値$\sqrt{3}=⑥\underline{&emsp;&emsp;}050807568877...$と比べて見ても<br>
-      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;$4$桁ほど一致する。<br>
-    </font>       
+
+    <div class="caption2">・問題1:</div>
+    <div class="text">
+      $f(x)=x^2-3=0$の解$(\sqrt{3})$を実際にニュートン法で求めてみる。<br>
+      ・初期値を$x_0=$とする。<br>
+      ・$x_0=2,f(x_0)=1$より$(2,1)$での接線を求める。<br>
+      $f' (x)=①\underline{}$より$f' (x_0)=4$<br>
+      よって、接線は$y=4(x-②\underline{})+③\underline{}$<br>
+      Ans,$y=④\underline{}$<br>
+      ・この接線と$x$軸との交点$x_1$を求める。<br>
+      $x$軸との交点なので$y=0$<br>
+      したがって,$0=④\underline{}$を解いて$x=⑤\underline{}$<br>
+      よって、$x_1=⑤\underline{}$<br>
+      ・$x_1=⑤\underline{},f(x_1)=0.0625$より$(1.75,0.0625)$での接線を求める。<br>
+      $f' (x)=①\underline{}$より、$f' (x_1)=3.5$<br>
+      よって、接線は$y=3.5(x-1.75)+0.0625$<br>
+      Ans,$y=3.5x-6.0625$<br>
+      ・この接線と$x$軸との交点$x_2$を求める。<br>
+      $x$軸との交点なので$y=0$<br>
+      したがって、$0=3.5x_2-6.0625$を解いて<br>
+      $x_2=1.732142857142857$<br>
+      よって、$x_2=⑥\underline{}142857142857$<br>
+      ・真の値$\sqrt{3}=⑥\underline{}050807568877...$と比べて見ても<br>
+      $4$桁ほど一致する。<br>
+    </div>
   </div>
 
   <div class="sub">
     <div style="display:inline-block; background:#fcfcff; padding:15px; border:1px solid #3b5998; border-radius:10px; word-break:break-all;">
-      <font size="2"><br><br>
+      <div class="text">
         <a href="https://tech-camp.in/note/pickup/27559/">詳しくはこちら</a><br>
-      </font>
-      <font size="2"><br><br><br>
-        <br<br>
+      </div>
+      <div class="text">
         <a href="https://www.liber.co.jp/knowhow/careerlab/ds">詳しくはこちら</a><br>
-      </font>
-      <br><br><br>
-      <br<br><br><br><br><br><br>
-      <br<br><br><br><br><br><br>
-      <br<br><br><br>
-      <br><br><br>
-      <br<br><br><br><br><br><br>
-      <br<br><br><br><br><br><br>
-      <br<br><br><br>
-      <font size="2">CAEとは製品開発の初期段階から、<br>コンピュータを用いた仮想試作・仮想試験を十分に行い、できるだけ少ない試作回数で、 素性のよい、高品質な製品開発を<br>行うためのコンピュータを活用した設計技術です。</font>
-      <br><br><br><br><br>
-      <font size="2">
+      </div>
+      <div class="text">
+        CAEとは製品開発の初期段階から、コンピュータを用いた仮想試作・仮想試験を十分に行い、
+        できるだけ少ない試作回数で、 素性のよい、高品質な製品開発を
+        行うためのコンピュータを活用した設計技術です。
+      </div>
+      <div class="text">
         <a href="http://www.math.u-ryukyu.ac.jp/~suga/ssh4/node3.html">詳しくはこちら</a><br>
-      </font>
-      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-      <font size="4">①</font>
+      </div>
+      <div class="text">①</div>
       <div style="display:inline-block; background:#fcfcff; padding:15px; border:1px solid #3b5998; border-radius:10px; word-break:break-all;">
         <input id="Radio1" name="RadioGroup1" type="radio" onchange="onRadioButtonChange1();">
         <label for="Radio1">$2x$</label>&emsp;
@@ -154,7 +178,7 @@
       </div>
 
       <div id="output1"></div><br>
-      <font size="4">②</font>
+      <div class="text">②</div>
       <div style="display:inline-block; background:#fcfcff; padding:15px; border:1px solid #3b5998; border-radius:10px; word-break:break-all;">
         <input id="Radio4" name="RadioGroup2" type="radio" onchange="onRadioButtonChange2();">
         <label for="Radio4">$2$</label>&emsp;
@@ -165,7 +189,7 @@
       </div>
 
       <div id="output2"></div><br>
-      <font size="4">③</font>
+      <div class="text">③</div>
       <div style="display:inline-block; background:#fcfcff; padding:15px; border:1px solid #3b5998; border-radius:10px; word-break:break-all;">
         <input id="Radio7" name="RadioGroup3" type="radio" onchange="onRadioButtonChange3();">
         <label for="Radio7">$1$</label>&emsp;
@@ -176,7 +200,7 @@
       </div>
 
       <div id="output3"></div><br>
-      <font size="4">④</font>
+      <div class="text">④</div>
       <div style="display:inline-block; background:#fcfcff; padding:15px; border:1px solid #3b5998; border-radius:10px; word-break:break-all;">
         <input id="Radio10" name="RadioGroup4" type="radio" onchange="onRadioButtonChange4();">
         <label for="Radio10">$4x-7$</label>&emsp;
@@ -185,9 +209,9 @@
         <input id="Radio12" name="RadioGroup4" type="radio" onchange="onRadioButtonChange4();">
         <label for="Radio12">$x$</label>
       </div>
-            
+
       <div id="output4"></div><br>
-      <font size="4">⑤</font>
+      <div class="text">⑤</div>
       <div style="display:inline-block; background:#fcfcff; padding:15px; border:1px solid #3b5998; border-radius:10px; word-break:break-all;">
         <input id="Radio13" name="RadioGroup5" type="radio" onchange="onRadioButtonChange5();">
         <label for="Radio13">$1.75$</label>&emsp;
@@ -198,7 +222,7 @@
       </div>
 
       <div id="output5"></div><br>
-      <font size="4">⑥</font>
+      <div class="text">⑥</div>
       <div style="display:inline-block; background:#fcfcff; padding:12px; border:1px solid #3b5998; border-radius:8px; word-break:break-all;">
         <input id="Radio16" name="RadioGroup6" type="radio" onchange="onRadioButtonChange6();">
         <label for="Radio16">$1.732$</label>&emsp;
@@ -207,9 +231,9 @@
         <input id="Radio18" name="RadioGroup6" type="radio" onchange="onRadioButtonChange6();">
         <label for="Radio18">$x$</label>
       </div>
-            
+
       <div id="output6"></div><br>
-    </div>      
+    </div>
   </div>
 </div>
 </body>
