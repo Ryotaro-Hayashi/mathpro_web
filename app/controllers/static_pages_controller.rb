@@ -11,6 +11,6 @@ class StaticPagesController < ApplicationController
   def frie
   end
 
-  def newton
+  def least_squares
   end
 end
