@@ -125,6 +125,58 @@ a img:hover {
   background-position: center top;
   background-attachment: fixed;
   background-size: 100% auto;
-  font-family: "游ゴシック", "Yu Gothic", "游ゴシック体", YuGothic, sans-serif;
+  font-family: "游ゴシック", "Yu Gothic", "游ゴシック体", "YuGothic", sans-serif;
   bottom: 0
+}
+
+.all{
+  background-color: rgb(245, 245, 245);
+  margin-top: -35px;
+  margin-bottom: -35px;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.title{
+  text-align: center;
+  font-family: "游明朝", "Yu Mincho", "游明朝体", "YuMincho", sans-serif;
+  font-size: 75px;
+  font-weight: 400;
+  padding-top: 10px;
+}
+.padl-20{
+padding-left: 20px;
+}
+
+.caption{
+  font-family: "游明朝", "Yu Mincho", "游明朝体", "YuMincho", sans-serif;
+  font-size: 30px;
+}
+
+// .caption:before {
+//   position: absolute;
+//   content: '';
+//   bottom: 6px;
+//   left: 0;
+//   width: 0;
+//   height: 0;
+//   border: none;
+//   border-left: solid 15px transparent;
+//   border-bottom: solid 15px rgb(119, 195, 223);
+// }
+// .caption:after {
+//   position: absolute;
+//   content: '';
+//   bottom: 6px;
+//   left: 10px;
+//   width: 100%;
+//   border-bottom: solid 3px rgb(119, 195, 223);
+// }
+
+.caption2{
+  font-size: 25px;
+}
+
+.text{
+  font-size: 18px;
 }
