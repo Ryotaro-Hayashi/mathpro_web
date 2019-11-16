@@ -46,17 +46,16 @@
   <body id="FUN">
     <!-- class="sticky-top" を追加して固定 -->
     <header>
-      <nav class="navbar  navbar-expand-lg">
-        <ul class="global-nav navbar-nav">
-          <%= link_to image_tag("マスプロロゴ.png", alt: "マスプロログ", width: "100px"), root_path %>
+      <nav class="navbar">
+        <ul class="global-nav navbar-nav navbar-expand-lg">
+          <%= link_to image_tag("マスプロロゴ.png", alt: "マスプロログ", width: "100px"), home_path %>
           <div style="margin-left: 25px; margin-top: 25px;">
             <li class="nav-item nav-link"><%= link_to "最小二乗法", least_squares_path %></li>
           </div>
         </ul>
         <ul class="global-nav navbar-nav">
-          <div style="margin-left: 150px; margin-top: 25px;">
-            <li class="navbar-item nav-link"><%= link_to "コンセプト", concept_path %></li>
-            <li class="navbar-item nav-link" style="margin-right:10px"><%= link_to "使い方", usage_path %></li>
+          <div style="margin-right: 160px; margin-top: 25px;">
+            <li class="navbar-item nav-link"><%= link_to "使い方", usage_path %></li>
           </div>
         </ul>
       </nav>
