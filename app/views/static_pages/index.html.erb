@@ -1,0 +1,45 @@
+<!-- 各ページで共通の部分を記述するためのファイル -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+    <!-- 各ページで入力されたタイトルにしたがって動的にタイトルを出力 -->
+    <title>Concept | Math Pro</title>
+    <!-- Web攻撃手法の１つであるクロスサイトリクエストフォージェリーを防ぐためのコード -->
+    <%= csrf_meta_tags %>
+
+    <!-- CSSとJavaScriptをページ内で展開するためのコード -->
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body id="index">
+    <!-- class="sticky-top" を追加して固定 -->
+    <header>
+      <nav class="navbar  navbar-expand-lg">
+        <ul class="global-nav navbar-nav">
+          <%= link_to image_tag("マスプロロゴ.png", alt: "マスプロログ", width: "100px"), usage_path %>
+        </ul>
+      </nav>
+    </header>
+    <div id="wrap">
+      <div class="content">
+        <h1>コンセプト</h1>
+        <p>
+        １年次の必修科目の中には数学科目があります。しかし、なぜ1年次に必修で数学科目があるのかわからない、<br>
+        そもそも数学を学ぶ意味がわからない、 今後どのようなものに繋がっていくのかわからない。<br><br>
+        このような理由から、数学が必修科目にあるから仕方なく勉強している人もいるかと思います。<br><br>
+        そんな人にこのサイトを使ってもらう事で数学の楽しさや重要性を伝え、数学に興味を持ち、<br>
+        今後の勉強へのモチベーションアップに繋げて欲しいという願いを込めて作りました。<br><br>
+        </p>
+        <p class="btn"><a href="usage">コンテンツへ</a></p>
+      </div>
+    </div>
+    <footer>
+      <small>(C)2019 Math Pro.</small>
+    </footer>
+  </body>
+</html>

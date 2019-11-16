@@ -53,7 +53,7 @@ a:hover {
 }
 
 header {
-  width: 960px;
+  width: 100%;
   height: 200px;
   margin: 0 auto
 }
@@ -65,12 +65,13 @@ header {
 }
 
 .global-nav {
-  float: right;
   margin-top: 60px;
+  padding-left: 115px;
+  padding-right: 100px;
 }
 
 .global-nav li {
-  float: left;
+
   margin: 0 20px;
   font-size: 20px;
   list-style: none;
@@ -120,12 +121,52 @@ a img:hover {
   opacity: 0.8;
 }
 
-#FUN {
-  background-image: image-url("FUN.jpg");
+#index h1 {
+  font-size: 100px;
+  line-height: 1;
+  color: #ffffff;
+  font-family: "Bitter", serif;
+  margin-bottom: 50px;
+  border: none;
+}
+
+#index .content {
+  margin-top: 150px;
+}
+
+#index p {
+  font-size: 16px;
+  color: #ffffff;
+}
+
+#index footer {
+  width: 960px;
+  text-align: left;
+  margin: 150px auto 0 auto;
+  background-color: transparent;
+}
+
+#index #wrap {
+  background-color: transparent;
+  margin-top: 0;
+  padding: 0;
+}
+
+#index {
+  background-image: image-url("FUN_index.jpg");
   background-repeat: no-repeat;
-  background-position: center top;
+  background-position: center center;
   background-attachment: fixed;
-  background-size: 100% auto;
+  background-size: cover;
+  font-family: "游ゴシック", "Yu Gothic", "游ゴシック体", "YuGothic", sans-serif;
+}
+
+#FUN {
+  background-image: image-url("FUN_index.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
   font-family: "游ゴシック", "Yu Gothic", "游ゴシック体", "YuGothic", sans-serif;
   bottom: 0
 }
@@ -163,4 +204,24 @@ padding-left: 20px;
 .text{
   font-size: 18px;
   font-weight: 450;
+}
+
+.btn a {
+  background-color: #009cd3;
+  color: #ffffff;
+  font-size: 20px;
+  font-family: "Bitter", sefif;
+  width: 185px;
+  display: block;
+  text-align: center;
+  line-height: 50px;
+  margin-top: 20px;
+  border-radius: 5px;
+  border: 3px solid #009cd3;
+}
+
+.btn a:hover {
+  text-decoration: none;
+  background-color: #ffffff;
+  color: #009cd3
 }
