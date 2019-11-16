@@ -10,35 +10,29 @@
   <div class="column">
     <div class="main">
 
-      <!--<div class="caption">活用例・職業</div>-->
       <div class="caption">はじめに</div>
 
-      <!--<div class="caption2"><データサイエンティスト></div>-->
-
-
-      <!--<div class="text">
-        ・データサイエンティストとは、ビッグデータを分析し、実務の場で分析結果から導かれた手法を活用することで企業に貢献する職業。<br>
-        ・どんな仕事か？<br>
-        <span class="padl-10">1.データを分析して課題を発見する</span><br>
-        <span class="padl-10">2.分析したデータに意味を与える</span><br>
-        <span class="padl-10">3.そのデータから事業戦略を導き出す</span><br>
-      </div>-->
       <div class="text">
         突然ですがみなさん
-        1年生の必修科目として大学で数学を学んでいるけど、将来本当に必要なの？<!--ここと-->
-        とか、<br>
+        <div class="keyParenthesis">1年生の必修科目として大学で数学を学んでいるけど、将来本当に必要なの？<!--ここと-->
+        <%# とか、 %>
 
-        数学を学ぶ意味がわからない!<br><!--ここを太字とかにしてみてはどうだろうか？-->
+        数学を学ぶ意味がわからない!<!--ここを太字とかにしてみてはどうだろうか？-->
+        </div>
         などなど、今ままで数学を学んできてそんな事を疑問に思ったことはありませんか？<br>
         そこで、ここでは実際に世の中で使われている数学の1つとして「最小二乗法」というものを紹介します。
 
         最小二乗法を用いると、<br>
-        ・売上を予測する<br>
-        ・来店者数を予測する<br>
-        ・株価を予測する<br>
-        といったようなことが出来ます。<br><br>
+        ・既存の顧客情報　から　売上の予測<br>
+        ・天気や気温情報　から　来店者数の予測<br>
+        ・過去の株価情報　から　株価の予測<br>
+        ・身長の情報　　　から　体重の予測<br>
+        ・喫煙の年数　　　から　肺がんの有無<br>
+        といった「変動予測」に役立ちます。<br>
 
-        最小二乗法とは、次の表データから以下の図のような「データの関係を表すための線」を求める方法です。
+
+
+        最小二乗法とは、次の表データ（6人の身長と体重のデータ）から以下の図のような「データの関係を表すための線」を求める方法です。
         <table border width="240" height="240">
         <tr>
         <td>身長</td>
@@ -70,18 +64,25 @@
         </tr>
         </table>
         <br><br>図<br><br>
-        この直線を求めることが出来て、身長もしくは体重のどちらかが分かれば、もう1つの値を予測することが出来ます。
-        例えば身長が138cmの人の体重をこの直線を用いて予測してみましょう。
+        このデータの関係を表すための関数(身長と体重の関係を表す関数)を求めることが出来れば、身長から体重を予測することが出来ます。
+        例えば、身長が138cmの人の体重をこの直線を用いて予測してみましょう。
         <br><br>スライド<br><br>
         スライドから、身長が138cmの人は、体重がおおよそ33kgであることが予測できます。
 
 
           <div class="caption2">最小二乗法とは</div>
 
-          （最小二乗法とは、ざっくり言うと未来を予測することができます。<br>
-          最小二乗法とは、以下の図のようなデータの関係を表すための線を引く方法です。<br>
-          <br><%= link_to image_tag("newton1.png", alt: "newton1") %><br><br>
-          最小二乗法を利用すると未来に起こることを予測することができます。<br>
+          <!--（最小二乗法とは、ざっくり言うと未来を予測することができます。<br>
+          最小二乗法とは、以下の図のようなデータの関係を表すための線を引く方法です。<br>-->
+          ここではより詳しく最小二乗法について説明します。
+          最小二乗法とは、「誤差の二乗和が最小となる関数$f(x)$(データの関係を表すための関数)」を求める方法です。
+          データ(p,q)の誤差は、qから関数f(p)を引いたものである。
+          例えば、下の図でいうとデータ$(x_4,y_4)$の誤差は$y_4-f(x_4)$である。
+          <br><br><!--<%= link_to image_tag("newton1.png", alt: "newton1") %>-->違う図<br><br>
+          ※青い点は実際のデータ、赤い線は関数f(x)、↔は誤差<br>
+          最小二乗法では「データの関係を表す<b>曲線</b>」を求めることも出来ますが、前述した通り複雑で分かりにくいので、
+          今回は「データの関係を表す<b>直線</b>」を求める方法に限定して簡単に説明します。
+
           例えば、<br>
               <span class="padl-10">・顧客の売上を予測したい</span><br>
               <span class="padl-10">・天気から使用される電力を予測したい</span><br>
@@ -94,19 +95,114 @@
             実際のデータの値と計算して算出した値の差（以降、誤差と呼ぶ）を小さくすることです。<br><br>
             ここでは最小二乗法、つまり誤差を小さくする方法の一つとしてニュートン法を紹介します。<br><br><br>
             青い点は実際の値、赤い線は計算で算出した値の集まり、↔は誤差を表します。<br>
-            <br><%= link_to image_tag("newton2.png", alt: "newton2") %><br><br>
-            上の図のようにデータから予測される直線を引くためにはどのようにすればよいでしょう。係数a,bの値を動かしてみましょう。<br>
-            <br><iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRuju4N5HK3oPwgN2yal8j_cMmwZaiMpJTOhybRBDqKv1GcJO-3q7JkGBqwsXvAVwhnPW0MQ7GtBz-c/embed?start=true&loop=true&delayms=3000"
+            --->
+
+            直線$(f(x)=ax+b)$なので、誤差が最小となるような傾き$a$と切片$b$を求めます。<br>
+            <br><br>図<br><br>
+
+            上の図のように誤差が最小となる直線を引くためにはどのようにすればよいでしょう。
+            実際に係数$a,b$の値を変えて確認してみましょう。
+            <br><br><iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRuju4N5HK3oPwgN2yal8j_cMmwZaiMpJTOhybRBDqKv1GcJO-3q7JkGBqwsXvAVwhnPW0MQ7GtBz-c/embed?start=true&loop=true&delayms=3000"
             frameborder="0"
             width="480" height="300"
             allowfullscreen="true"
             mozallowfullscreen="true"
             webkitallowfullscreen="true">
-          </iframe><br><br><br>
-            初めはa20/3 b=10　　　次はa=10. b=0　　　　最後はa=10 b=-15でした。<br>
-            つまり、適切な係数a,bを求めることによって誤差を小さくする事ができると考えられます。<br>
-            これらをふまえて誤差を小さくするためにどのような計算を行っているのか簡単に説明します。<br><br>
-            <div class="caption2">誤差を小さくするために…</div>
+          </iframe><br><br>
+            ①は$a=0.2, b=16$　　　②は$a=0.6, b=16$　　　　③は$a=0.6,b=-50$でした。<br>
+            スライドを見ると、$a,b$を変えることによって誤差も変わることが分かります。
+            $a,b$を変えることで誤差を最小に出来ると考えられます。
+            誤差を小さくするということは、各データの誤差の和を小さくするということです。
+            しかし、誤差(↔)をそのまま足すと、正負が混合している場合、誤差の和が0になることがあります。
+            下の図のように誤差の和が0で最小なのにも関わらず、この直線は「データの関係を表す」直線ではないことが見てわかります。
+            <br><br>図<br><br>
+            そこで、負の数をなくすために誤差を二乗して、正の数にします。
+            データの数を$n$個として、誤差の二乗和を$E(a,b)$とすると次のように表せます。<br>
+            $E(a,b)$ = (1番目のデータの誤差)$^2$+(2番目のデータの誤差)$^2$+…+($n$番目のデータの誤差)$^2$
+            となります。例えば、4番目のデータの誤差に注目すると
+            <br><br>図<br><br>
+            誤差の式は$y_4-(ax_4+b)$となります。
+            なので、$x$が$i$番目のときに注目すると誤差の式は$y_i-(ax_i+b)$となります。
+            つまり、誤差の二乗和$E(a,b)$は
+            $E(a,b)= \{y_1-(ax_1+b)\}^2+\{y_2-(ax_2+b)\}^2+…+\{y_n-(ax_n+b)\}^2$
+            $E(a,b)=\sum_{i=1}^{n} \{y_i-(ax_i+b)\}^2$&emsp;(nはデータ数)
+            となります。関数$E$を展開すると、
+            <div class="hidden_box2">
+    <label for="label2"><b>展開の途中式</b></label>
+    <input type="checkbox" id="label2"/>
+    <div class="hidden_show2">
+      <!--非表示ここから-->
+      	<div class="text"><p>$E(a,b)=\sum_{i=1}^{n} \{y_i-(ax_i+b)\}^2$<br>
+        $E(a,b)=\sum_{i=1}^{n} \{y_i^2-2(ax_i+b)y_i+(ax_i+b)^2\}$</p></div>
+      <!--ここまで-->
+    </div>
+</div>
+            $E(a,b)=\sum_{i=1}^{n} (y_i^2-2ax_iy_i-2by_i+a^2x_i^2+2abx_i+b^2)$
+            となります。
+            この関数$E(a,b)$を図に表すと$E(a,b)$は二変数の関数であるため、下の図のようになります。
+            <br><br>図<br><br>
+            この関数の最小値を考えるために上の図のグラフを$a$軸方向と$b$軸方向から見てみましょう。
+            <br><br>図<br><br>
+            関数$E(a,b)$を$a$軸方向から見ると、上の図のように平面のグラフとして扱えます。
+            一変数で下に凸の二次関数は傾きが０の時に極小となります。つまり$a$で微分して０となる時に最小となることがわかります。
+            <br><br>図<br><br>
+            関数$E(a,b)$を$ｂ$軸方向から見ても、上の図のように平面のグラフとして扱えます。
+            $a$軸方向から見た時と同様に、$b$で微分して0となるときに最小となることがわかります。
+            上の図のように$a$軸方向から見ても$b$軸方向から見ても最小の時に、関数$E(a,b)$全体としても最小となります。
+            なので、関数$E(a,b)$を$a$で微分したものと関数$E(a,b)$を$b$で微分したものがともに0となる$（a,b）$を見つけます。
+            ここで、二変数の関数を微分する方法を紹介します。二変数の関数の微分の方法といっても一変数の時とあまり違いはありません。
+            例えば、関数$E(a,b)$を$a$で微分したいときは$b$を定数だと考えて一変数の時と同じように微分をすることが出来ます。
+            実際に関数$E(a,b)$を$a$で微分したものと関数$E(a,b)$を$b$で微分したものを計算して最小値をとる$(a,b)$を求めてみましょう。
+            関数$E(a,b)$を$a$で微分すると
+            <div class="hidden_box2">
+            <label for="label3"><b>$E(a,b)$ってなんだった？</b></label>
+            <input type="checkbox" id="label3"/>
+            <div class="hidden_show2">
+            <!--非表示ここから-->
+            <div class="text"><p>$E(a,b)=\sum_{i=1}^{n} (y_i^2-2ax_iy_i-2by_i+a^2x_i^2+2abx_i+b^2)$</p></div>
+            <!--ここまで-->
+            </div>
+            </div>
+            $\frac{\partial E(a,b)}{\partial a}=\sum_{i=1}^{n} (-2x_iy_i+2ax_i^2+2bx_i)$<br>
+            関数$E(a,b)$を$b$で微分すると
+            <div class="hidden_box2">
+            <label for="label3"><b>$E(a,b)$ってなんだった？</b></label>
+            <input type="checkbox" id="label3"/>
+            <div class="hidden_show2">
+            <!--非表示ここから-->
+            <div class="text"><p>$E(a,b)=\sum_{i=1}^{n} (y_i^2-2ax_iy_i-2by_i+a^2x_i^2+2abx_i+b^2)$</p></div>
+            <!--ここまで-->
+            </div>
+            </div>
+            $\frac{\partial E(a,b)}{\partial b}=\sum_{i=1}^{n} (-2y_i+2ax_i+2b)$<br>
+            となります。
+
+$\begin{eqnarray}
+  \begin{cases}
+  \frac{\partial E(a,b)}{\partial a}=\sum_{i=1}^{n} (-2x_iy_i+2ax_i^2+2bx_i)=0 & \\
+    \frac{\partial E(a,b)}{\partial b}=\sum_{i=1}^{n} (-2y_i+2ax_i+2b)=0  &
+  \end{cases}
+\end{eqnarray}$
+
+            <!--図から誤差の最小値は、この関数Eの極小値であることがわかります。偏微分は、多変数の関数を一変数の関数だと思って計算することが出来ます。
+            例えば、$E(a,b)$を$a$で偏微分するときは、$b$を定数だと思って$a$で微分します。
+            $E(a,b)$を$a$で偏微分した$\frac{\partial E(a,b)}{\partial a}$と$b$で偏微分した$\frac{\partial E(a,b)}{\partial b}$が
+            ともに0となるような$(a,b)$を見つけます。このとき図から、$(a,b)$で極小値$E(a,b)$をとります。
+            実際に$\frac{\partial E(a,b)}{\partial a}$、$\frac{\partial E(a,b)}{\partial b}$を計算して極小値をとる$(a,b)$を計算してみます。
+            $E=\sum_{i=1}^{n} (y_i^2-2ax_iy_i-2by_i+a^2x_i^2+2abx_i+b^2)$を$a$で偏微分すると、
+            $\frac{\partial E(a,b)}{\partial a}=\sum_{i=1}^{n} (-2x_iy_i+2ax_i^2+2bx_i)$
+            $E=\sum_{i=1}^{n} (y_i^2-2ax_iy_i-2by_i+a^2x_i^2+2abx_i+b^2)$を$b$で偏微分すると,
+            $\frac{\partial E(a,b)}{\partial b}=\sum_{i=1}^{n} (-2y_i+2ax_i+2b)$
+            となります。
+            $\frac{\partial E(a,b)}{\partial a}=\sum_{i=1}^{n} (-2x_iy_i+2ax_i^2+2bx_i)=0$<br>
+            $\frac{\partial E(a,b)}{\partial b}=\sum_{i=1}^{n} (-2y_i+2ax_i+2b)=0$<br>-->
+            上の2式に対して連立方程式を解くと、
+            極小値となる$a$と$b$が求めることができます。
+            誤差の二乗和が最小となる傾き$a$,切片$b$が求められたので、「データの関係を表すための直線」の式$(f(x)=ax+b)$が得られます。<br>
+
+
+
+          <!--  <div class="caption2">誤差を小さくするために…</div>
             誤差を小さくするということは誤差の和を小さくするということです。<br>
             しかし、実際の値から計算で算出した値を引いた値をそのまま足すと<br>
             下の図のように誤差の和としては0で最小となりますが、<br>
@@ -118,7 +214,7 @@
             ここでは、ニュートン法を用いて関数Eが小さくなるようなaとbを求めていきます。<br>
             関数Eを展開すると<br>
             $E=\sum_{i=1}^{n} $(展開の式間違っている気がするので一旦この先省略)<!--\{x_i^2\times b^2+2x_i(a-y_i)b+(a-y_i)^2\}$--><br>
-            となります。この関数は最大次数が2なので下図のような2次関数であることがわかります。<br>
+          <!--  となります。この関数は最大次数が2なので下図のような2次関数であることがわかります。<br>
 
             <br><%= link_to image_tag("newton4.2.png", alt: "newton4.2") %><br><br>
             (↑どちらかを使う)<br>
@@ -137,52 +233,8 @@
             ここまでは直線について話してきましたが、実際は誤差を小さくしようとすると<br>
             上の図のように曲線のほうが適していることが多いのです。<br>
             このような曲線では連立方程式を立てても解が一つに確定しないので、<br>
-            上記で説明したようなイメージでニュートン法を応用したものなどを用いて近似解を求めます。<br>
+            上記で説明したようなイメージでニュートン法を応用したものなどを用いて近似解を求めます。<br>-->
           </div>
-
-    <!--  ・なるためには？<br>
-
-      <div style="display:inline-block; background:#fcfcff; padding:15px; border:1px solid #3b5998; border-radius:10px; word-break:break-all;">
-      ビジネススキル<br>
-        ・ビジネスに関わる深い理解<br>
-        ・ロジカルシンキング<br>
-        ・ドキュメンテーション/プレゼンテーション<br>
-        ITスキル・IT知識<br>
-        ・大規模データ処理に関する知識<br>
-        ・データベース<br>
-        ・プログラミング<br>
-        統計解析スキル・数学<br>
-        ・データ分析手法の理解<br>
-        ・データ分析ソフトウェアのスキル<br>
-      </div><br><br>
-      (数学)<br>
-      ・データ分析の共通語は数学<br>
-      →専門書の理解のためには、確率、統計、微分積分、行列等、<br>
-      大学初級程度の解析学、線形代数学を習得しているとよい。<br>
-      (データ分析手法の理解)<br>
-      ・データの統計処理や数理モデルを作成することで分析<br>
-      →統計処理手法やデータマイニング手法について理解しておく必要がある。<br>
-      →自らが必要とする結論をだすためにどのような分析手法を用いれば良いか<br>
-      知っておくことも重要。<br>
-      <br>
-      ※分析し、’数値’結果を導く数値解析も必要分析手法の１つである。<br>
-      数値解を導く１つの手法として’ニュートン法’がある。<br>
-      <br>
-
-      <div class="caption2">CAE技術者とは</div>
-      <div class="text">
-        CAE技術者とは、これから設計しようとする製品をコンピュータ上に
-        仮想的に構築し、その中で変形や振動、熱伝導、流体などの様々な力学挙動を
-        精密に評価することにより、製品開発の効率化を図り、同時に性能向上や
-        品質向上を目指す人をいいます。自動車開発、精密部品、建築構造物など、
-        様々な分野で より高品質で安全性の高い製品を世に出すために、CAE技術者が
-        必要とされています。CAEでは、多くの非線形問題（関数$f(x)$が$x$に関する1次関数以外の方程式）
-        に対してニュートン法が用いられています。
-      </div>
-      -->
-
-      <div class="caption">ニュートン法とは？</div>
-
 
       <font size="4">&emsp;・$f(x)=0$となる解$x$の近似値を求めるための効率の良い方法。<br></font>
       <font size="4">&emsp;・特徴<br></font>
@@ -194,12 +246,12 @@
       <!--<iframe id="iframepdf" src="files/ECS1_report02.pdf"></iframe><br>-->
       <!--<iframe src="./web/viewer.html?file=./ECS1_report02.pdf"></iframe>-->
 
-      <div class="text">
+    <!--  <div class="text">
         ・$f(x)=0$となる解$x$の近似値を求めるための効率の良い方法。<br>
         ・$f(x)=0$の解を求める↔︎$y=f(x)$のグラフと$x$軸の交点の座標を求める。<br>
         <!--<iframe id="iframepdf" src="files/ECS1_report02.pdf"></iframe><br>-->
         <!--<iframe src="./web/viewer.html?file=./ECS1_report02.pdf"></iframe>-->
-        ・原理<br>
+        <!--・原理<br>
         ①解αの付近で初期値$x_0$をとる<br>
         ②点$(x_0,f(x_0))$での接線を引く<br>
         ③②の接線と$x$軸の交点を$x1$とする<br>
@@ -217,7 +269,7 @@
         allowfullscreen="true"
         mozallowfullscreen="true"
         webkitallowfullscreen="true">
-      </iframe>
+      </iframe>-->
 
       <div class="caption">実際にやってみよう</div>
 
@@ -249,7 +301,28 @@
 
     <div class="sub">
       <%# <div style="display:inline-block; background:#fcfcff; padding:15px; border:1px solid #3b5998; border-radius:10px; word-break:break-all;"> %>
-        <div class="text">
+        <div class="hidden_box">
+    <label for="label1">なぜ曲線ではなく直線？</label>
+    <input type="checkbox" id="label1"/>
+    <div class="hidden_show">
+      <!--非表示ここから-->
+      	<div class="text"><p>なぜ曲線ではなくて直線？
+          ここで直線より曲線の方が、よりデータとの関係を表すための関数を求めることができると思った方もいるかもしれません。
+          たしかに、曲線の方が、よりデータとの関係を表すための関数を求めることができるかもしれません。
+          しかし、最小二乗法を用いて曲線を求めようとすると、直線を求める時よりも関数が複雑になるので計算が難しくなります。
+          なので、このサイトでは計算が簡単な直線を求める方法について考えることとします。</p></div>
+      <!--ここまで-->
+    </div>
+</div>
+
+  <br><br>$f(a,b)=a^2+ab$<br>
+  $a$で偏微分すると
+  $\frac{\partial f(a,b)}{\partial a}=2a+b$
+  $b$で偏微分すると
+  $\frac{\partial f(a,b)}{\partial b}=a$
+
+
+      <!--<div class="text">
           <a href="https://tech-camp.in/note/pickup/27559/">詳しくはこちら</a><br>
         </div>
         <div class="text">
@@ -262,7 +335,7 @@
         </div>
         <div class="text">
           <a href="http://www.math.u-ryukyu.ac.jp/~suga/ssh4/node3.html">詳しくはこちら</a><br>
-        </div>
+        </div>-->
         <div class="text">①</div>
         <div style="display:inline-block; background:#fcfcff; padding:15px; border:1px solid #3b5998; border-radius:10px; word-break:break-all;">
           <input id="Radio1" name="RadioGroup1" type="radio" onchange="onRadioButtonChange1();">
