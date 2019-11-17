@@ -322,3 +322,21 @@ padding-left: 20px;
   bottom:0;
   right: 0;
 }
+
+.pagetop
+    {
+    position: fixed;
+    bottom: 16px;
+    right: 16px;
+    }
+
+.pagetop a
+    {
+    display: block;
+    text-decoration: none;
+    }
+
+.pagetop:hover
+{
+    opacity: 0.85 ;
+}
