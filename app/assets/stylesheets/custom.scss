@@ -177,6 +177,7 @@ a img:hover {
   margin-bottom: -35px;
   padding-left: 50px;
   padding-right: 50px;
+  font-weight: 450;
 }
 
 .title{
@@ -186,8 +187,9 @@ a img:hover {
   font-weight: 400;
   padding-top: 10px;
 }
-.padl-20{
-padding-left: 20px;
+.padlr-15{
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .caption{
@@ -195,7 +197,7 @@ padding-left: 20px;
   height: 65px;
   font-size: 40px;
   text-decoration: none;
-  border-bottom: 2px solid rgb(30, 120, 240);
+  border-bottom: 2px solid rgb(0, 80, 185);
 }
 .caption2{
   font-size: 25px;
@@ -203,6 +205,10 @@ padding-left: 20px;
 
 .text{
   font-size: 18px;
+}
+
+.topSpace{
+  padding-top: 15px;
 }
 
 /*全体*/
@@ -290,35 +296,16 @@ padding-left: 20px;
   color: #009cd3
 }
 
-.keyParenthesis{
-  position: relative;
-  line-height: 1.4;
-  padding: 10px;
-  display: inline-block;
+.box{
+  padding: 0.5em 1em;
+  margin-top: 15px;
+  margin-bottom: 20px;
+  color: #333333;
+  background: white;
+  border-top: solid 5px #ff9900;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
 }
-.keyParenthesis:before{
-  content:'';
-  width: 30px;
-  height: 45px;
-  position: absolute;
-  display: inline-block;
-}
-.keyParenthesis:after{
-  content:'';
-  width: 30px;
-  height: 45px;
-  position: absolute;
-  display: inline-block;
-}
-.keyParenthesis:before {
-  border-left: solid 3px #ff5722;
-  border-top: solid 3px #ff5722;
-  top:0;
-  left: 0;
-}
-.keyParenthesis:after {
-  border-right: solid 3px #ff5722;
-  border-bottom: solid 3px #ff5722;
-  bottom:0;
-  right: 0;
+.box p {
+  margin: 0; 
+  padding: 0;
 }
