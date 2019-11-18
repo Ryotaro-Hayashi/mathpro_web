@@ -3,9 +3,7 @@
 
 <div class="all">
 
-  <div class="title">
-    最小二乗法
-  </div>
+  <div class="title">最小二乗法</div>
 
   <div class="column">
     <div class="main">
@@ -13,26 +11,31 @@
       <div class="caption">はじめに</div>
 
       <div class="text">
-        <div class="padlr-15">
-          <div class="topSpace"></div>
-          突然ですがみなさん
-          <div class="box">
-            <p>1年生の必修科目として数学を学んでいるけど、将来本当に必要なの？</p>
-            <p>数学を学ぶ意味がわからない!</p>
-          </div>
-          などなど、今ままで数学を学んできてそんな事を疑問に思ったことはありませんか？
-          そこで、ここでは実際に1年生が数学の授業で学んでいる解析学が世の中で応用されている一例として「最小二乗法」というものを紹介します。<br>
 
-          最小二乗法を用いると、<br>
+        <div class="topSpace"></div>
+        突然ですがみなさん
+        <div class="box">
+          <p>1年生の必修科目として大学で数学を学んでいるけど、将来本当に必要なの？</p>
+          <p>数学を学ぶ意味がわからない!</p>
+        </div>
+        などなど、今ままで数学を学んできてそんな事を疑問に思ったことはありませんか？
+        そこで、ここでは実際に世の中で使われている数学の1つとして「最小二乗法」というものを紹介します。<br>
+        
+        最小二乗法を用いると、<br>
+        <div class="padl-10">
+
           ・既存の顧客情報　から　売上の予測<br>
           ・天気や気温情報　から　来店者数の予測<br>
           ・過去の株価情報　から　株価の予測<br>
           ・喫煙の年数　　　から　肺がんの有無<br>
           ・身長の情報　　　から　体重の予測<br>
           といった「変動予測」に役立ちます。<br>
-        </div>
 
+        </div>
+        といった<span style="font-size: 30px;">「変動予測」</span>に役立ちます。<br>
+        
         最小二乗法とは、次の表データ（6人の身長と体重のデータ）から以下の図のような「データの関係を表すための線」を求める方法です。
+        <div class="topSpace"></div>
         <table border width="240" height="240">
           <tr>
           <td></td>
@@ -78,11 +81,13 @@
         例えば、身長が138cmの人の体重をこの直線を用いて予測してみましょう。
         <br><br><iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRlte2h-hp65_isfpo82ggSkUZhvXuv-8UM2yN4jTXAfeCFMBla6g-qedeLaSaq0pjGjEj6tRlebMD7/embed?start=true&loop=true&delayms=1000"
         frameborder="0" width="480" height="300" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe><br><br>
+
         スライドから、身長が138cmの人は、体重がおおよそ33kgであることが予測できます。
+      </div>
 
-
-        <div class="caption">最小二乗法とは</div>
-
+      <div class="caption">最小二乗法とは</div>
+      <div class="topSpace"></div>
+      <div class="text">
         <!--（最小二乗法とは、ざっくり言うと未来を予測することができます。<br>
         最小二乗法とは、以下の図のようなデータの関係を表すための線を引く方法です。<br>-->
         ここではより詳しく最小二乗法について説明します。
@@ -98,6 +103,7 @@
 
 
         <br><br><%= link_to image_tag("pic3.png") %><br><br>
+
 
         上の図のように誤差が最小となる直線を引くためにはどのようにすればよいでしょう。
         実際に傾き$a$と切片$b$の値を変えて確認してみましょう。<br><br>
@@ -250,14 +256,18 @@
           mozallowfullscreen="true"
           webkitallowfullscreen="true">
         </iframe>-->
+      </div>
 
-        <div class="caption">実際にやってみよう</div>
-
-        <div class="caption2">・問題1:</div>
-
+      <div class="caption">実際にやってみよう</div>
+      <div class="text">
+        <div class="caption2">問題1:</div>
+        
         $f(x)=x^2-3=0$の解$(\sqrt{3})$を実際にニュートン法で求めてみる。<br>
-        ・初期値を$x_0=$とする。<br>
-        ・$x_0=2,f(x_0)=1$より$(2,1)$での接線を求める。<br>
+        
+        <div class="padl-10">
+          ・初期値を$x_0=$とする。<br>
+          ・$x_0=2,f(x_0)=1$より$(2,1)$での接線を求める。<br>
+        </div>
         $f' (x)=①\underline{}$より$f' (x_0)=4$<br>
         よって、接線は$y=4(x-②\underline{})+③\underline{}$<br>
         Ans,$y=④\underline{}$<br>
@@ -277,31 +287,38 @@
         ・真の値$\sqrt{3}=⑥\underline{}050807568877...$と比べて見ても<br>
         $4$桁ほど一致する。<br>
       </div>
+      <div class="padt-10"></div>
     </div>
 
     <div class="sub">
       <%# <div style="display:inline-block; background:#fcfcff; padding:15px; border:1px solid #3b5998; border-radius:10px; word-break:break-all;"> %>
-      <div class="hidden_box">
-        <label for="label1">なぜ曲線ではなく直線？</label>
-        <input type="checkbox" id="label1"/>
-        <div class="hidden_show">
-          <!--非表示ここから-->
-          <div class="text">
-            <p>なぜ曲線ではなくて直線？
-            直線より曲線の方が、よりデータとの関係を表すための関数を求めることができると思った方もいるかもしれません。
-            たしかに、曲線の方が、よりデータとの関係を表すための関数を求めることができるかもしれません。
-            しかし、最小二乗法を用いて曲線を求めようとすると、直線を求める時よりも関数が複雑になるので計算が難しくなります。
-            なので、このサイトでは計算が簡単な直線を求める方法について考えることとします。</p>
+
+      <div class="text-sub">
+        <div class="hidden_box">
+          <label for="label1">なぜ曲線ではなく直線？</label>
+          <input type="checkbox" id="label1"/>
+          <div class="hidden_show">
+            <!--非表示ここから-->
+            <div class="text">
+              <p>なぜ曲線ではなくて直線？
+              ここで直線より曲線の方が、よりデータとの関係を表すための関数を求めることができると思った方もいるかもしれません。
+              たしかに、曲線の方が、よりデータとの関係を表すための関数を求めることができるかもしれません。
+              しかし、最小二乗法を用いて曲線を求めようとすると、直線を求める時よりも関数が複雑になるので計算が難しくなります。
+              なので、このサイトでは計算が簡単な直線を求める方法について考えることとします。</p>
+            </div>
+            <!--ここまで-->
           </div>
-          <!--ここまで-->
         </div>
       </div>
 
-      <br><br>$f(a,b)=a^2+ab$<br>
-      $f(a,b)$を$a$で微分すると<br>
-      $(f(a,b)$を$a$で微分$)=2a+b$<br>
-      $f(a,b)$を$b$で微分すると<br>
-    $(f(a,b)$を$b$で微分$)=a$<br>
+
+      <div class="text-sub">
+        <br><br>$f(a,b)=a^2+ab$<br>
+        $a$で偏微分すると
+        $\frac{\partial f(a,b)}{\partial a}=2a+b$
+        $b$で偏微分すると
+        $\frac{\partial f(a,b)}{\partial b}=a$
+      </div>
 
       <!--<div class="text">
       <a href="https://tech-camp.in/note/pickup/27559/">詳しくはこちら</a><br>
@@ -318,77 +335,83 @@
       <a href="http://www.math.u-ryukyu.ac.jp/~suga/ssh4/node3.html">詳しくはこちら</a><br>
       </div>-->
 
-      <div class="text">①</div>
-      <div style="display:inline-block; background:#fcfcff; padding:15px; border:1px solid #3b5998; border-radius:10px; word-break:break-all;">
-        <input id="Radio1" name="RadioGroup1" type="radio" onchange="onRadioButtonChange1();" value="おめでとう、正解です">
-        <label for="Radio1">$2x$</label>&emsp;
-        <input id="Radio2" name="RadioGroup1" type="radio" onchange="onRadioButtonChange1();" value="残念、不正解です">
-        <label for="Radio2">$2x-3$</label>&emsp;
-        <input id="Radio3" name="RadioGroup1" type="radio" onchange="onRadioButtonChange1();" value="残念、不正解です">
-        <label for="Radio3">$x$</label>
-        <br><span id="span1"></span>
+
+      <div clas="text-sub">
+        <div class="box26">
+          <span class="box-title">①</span>
+          <p>
+            <input id="Radio1" name="RadioGroup1" type="radio" onchange="onRadioButtonChange1();">
+            <label for="Radio1">$2x$</label>&emsp;
+            <input id="Radio2" name="RadioGroup1" type="radio" onchange="onRadioButtonChange1();">
+            <label for="Radio2">$2x-3$</label>&emsp;
+            <input id="Radio3" name="RadioGroup1" type="radio" onchange="onRadioButtonChange1();">
+            <label for="Radio3">$x$</label>
+          </p>
+          <div id="output1">結果：</div>
+        </div>
+
+        
+        <div class="text">②</div>
+        <div style="display:inline-block; background:#fcfcff; padding:15px; border:1px solid #3b5998; border-radius:10px; word-break:break-all;">
+          <input id="Radio4" name="RadioGroup2" type="radio" onchange="onRadioButtonChange2();">
+          <label for="Radio4">$2$</label>&emsp;
+          <input id="Radio5" name="RadioGroup2" type="radio" onchange="onRadioButtonChange2();">
+          <label for="Radio5">$2x-3$</label>&emsp;
+          <input id="Radio6" name="RadioGroup2" type="radio" onchange="onRadioButtonChange2();">
+          <label for="Radio6">$x$</label>
+        </div>
+
+        <div id="output2"></div><br>
+        <div class="text">③</div>
+        <div style="display:inline-block; background:#fcfcff; padding:15px; border:1px solid #3b5998; border-radius:10px; word-break:break-all;">
+          <input id="Radio7" name="RadioGroup3" type="radio" onchange="onRadioButtonChange3();">
+          <label for="Radio7">$1$</label>&emsp;
+          <input id="Radio8" name="RadioGroup3" type="radio" onchange="onRadioButtonChange3();">
+          <label for="Radio8">$2x-3$</label>&emsp;
+          <input id="Radio9" name="RadioGroup3" type="radio" onchange="onRadioButtonChange3();">
+          <label for="Radio9">$x$</label>
+        </div>
+
+        <div id="output3"></div><br>
+        <div class="text">④</div>
+        <div style="display:inline-block; background:#fcfcff; padding:15px; border:1px solid #3b5998; border-radius:10px; word-break:break-all;">
+          <input id="Radio10" name="RadioGroup4" type="radio" onchange="onRadioButtonChange4();">
+          <label for="Radio10">$4x-7$</label>&emsp;
+          <input id="Radio11" name="RadioGroup4" type="radio" onchange="onRadioButtonChange4();">
+          <label for="Radio11">$2x-3$</label>&emsp;
+          <input id="Radio12" name="RadioGroup4" type="radio" onchange="onRadioButtonChange4();">
+          <label for="Radio12">$x$</label>
+        </div>
+
+        <div id="output4"></div><br>
+        <div class="text">⑤</div>
+        <div style="display:inline-block; background:#fcfcff; padding:15px; border:1px solid #3b5998; border-radius:10px; word-break:break-all;">
+          <input id="Radio13" name="RadioGroup5" type="radio" onchange="onRadioButtonChange5();">
+          <label for="Radio13">$1.75$</label>&emsp;
+          <input id="Radio14" name="RadioGroup5" type="radio" onchange="onRadioButtonChange5();">
+          <label for="Radio14">$2x-3$</label>&emsp;
+          <input id="Radio15" name="RadioGroup5" type="radio" onchange="onRadioButtonChange5();">
+          <label for="Radio15">$x$</label>
+        </div>
+
+        <div id="output5"></div><br>
+        <div class="text">⑥</div>
+        <div style="display:inline-block; background:#fcfcff; padding:12px; border:1px solid #3b5998; border-radius:8px; word-break:break-all;">
+          <input id="Radio16" name="RadioGroup6" type="radio" onchange="onRadioButtonChange6();">
+          <label for="Radio16">$1.732$</label>&emsp;
+          <input id="Radio17" name="RadioGroup6" type="radio" onchange="onRadioButtonChange6();">
+          <label for="Radio17">$2x-3$</label>&emsp;
+          <input id="Radio18" name="RadioGroup6" type="radio" onchange="onRadioButtonChange6();">
+          <label for="Radio18">$x$</label>
+        </div>
+
+        <div id="output6"></div><br>
       </div>
 
-    <!--  <div id="output1"></div><br>-->
-      <div class="text">②</div>
-      <div style="display:inline-block; background:#fcfcff; padding:15px; border:1px solid #3b5998; border-radius:10px; word-break:break-all;">
-        <input id="Radio4" name="RadioGroup2" type="radio" onchange="onRadioButtonChange2();" value="おめでとう、正解です">
-        <label for="Radio4">$2$</label>&emsp;
-        <input id="Radio5" name="RadioGroup2" type="radio" onchange="onRadioButtonChange2();" value="残念、不正解です">
-        <label for="Radio5">$2x-3$</label>&emsp;
-        <input id="Radio6" name="RadioGroup2" type="radio" onchange="onRadioButtonChange2();" value="残念、不正解です">
-        <label for="Radio6">$x$</label>
-        <br><span id="span2"></span>
-      </div>
 
-
-      <div class="text">③</div>
-      <div style="display:inline-block; background:#fcfcff; padding:15px; border:1px solid #3b5998; border-radius:10px; word-break:break-all;">
-        <input id="Radio7" name="RadioGroup3" type="radio" onchange="onRadioButtonChange3();" value="おめでとう、正解です">
-        <label for="Radio7">$1$</label>&emsp;
-        <input id="Radio8" name="RadioGroup3" type="radio" onchange="onRadioButtonChange3();" value="残念、不正解です">
-        <label for="Radio8">$2x-3$</label>&emsp;
-        <input id="Radio9" name="RadioGroup3" type="radio" onchange="onRadioButtonChange3();" value="残念、不正解です">
-        <label for="Radio9">$x$</label>
-        <br><span id="span3"></span>
-      </div>
-
-      <div class="text">④</div>
-      <div style="display:inline-block; background:#fcfcff; padding:15px; border:1px solid #3b5998; border-radius:10px; word-break:break-all;">
-        <input id="Radio10" name="RadioGroup4" type="radio" onchange="onRadioButtonChange4();" value="おめでとう、正解です">
-        <label for="Radio10">$4x-7$</label>&emsp;
-        <input id="Radio11" name="RadioGroup4" type="radio" onchange="onRadioButtonChange4();" value="残念、不正解です">
-        <label for="Radio11">$2x-3$</label>&emsp;
-        <input id="Radio12" name="RadioGroup4" type="radio" onchange="onRadioButtonChange4();" value="残念、不正解です">
-        <label for="Radio12">$x$</label>
-        <br><span id="span4"></span>
-      </div>
-
-      <div class="text">⑤</div>
-      <div style="display:inline-block; background:#fcfcff; padding:15px; border:1px solid #3b5998; border-radius:10px; word-break:break-all;">
-        <input id="Radio13" name="RadioGroup5" type="radio" onchange="onRadioButtonChange5();" value="おめでとう、正解です">
-        <label for="Radio13">$1.75$</label>&emsp;
-        <input id="Radio14" name="RadioGroup5" type="radio" onchange="onRadioButtonChange5();" value="残念、不正解です">
-        <label for="Radio14">$2x-3$</label>&emsp;
-        <input id="Radio15" name="RadioGroup5" type="radio" onchange="onRadioButtonChange5();" value="残念、不正解です">
-        <label for="Radio15">$x$</label>
-        <br><span id="span5"></span>
-      </div>
-
-      <div class="text">⑥</div>
-      <div style="display:inline-block; background:#fcfcff; padding:12px; border:1px solid #3b5998; border-radius:8px; word-break:break-all;">
-        <input id="Radio16" name="RadioGroup6" type="radio" onchange="onRadioButtonChange6();" value="おめでとう、正解です">
-        <label for="Radio16">$1.732$</label>&emsp;
-        <input id="Radio17" name="RadioGroup6" type="radio" onchange="onRadioButtonChange6();" value="残念、不正解です">
-        <label for="Radio17">$2x-3$</label>&emsp;
-        <input id="Radio18" name="RadioGroup6" type="radio" onchange="onRadioButtonChange6();" value="残念、不正解です">
-        <label for="Radio18">$x$</label>
-        <br><span id="span6"></span>
-      </div>
-
-
-      <%# </div> %>
+  
       <input type="button" value="解答チェック" onclick="clickBtn1()"/>
+
     </div>
   </div>
 </div>
@@ -403,6 +426,81 @@
 </script>
 
   <script type="text/javascript" language="javascript">
+
+    function onRadioButtonChange1() {
+      radiobtn1 = document.getElementById("Radio1");
+      radiobtn2 = document.getElementById("Radio2");
+      radiobtn3 = document.getElementById("Radio3");
+
+      target = document.getElementById("output1");
+
+      if (radiobtn1.checked == true) {
+        target.innerHTML = "結果：おめでとう、正解です";
+      } else if (radiobtn2.checked == true) {
+        target.innerHTML = "結果：残念、不正解です";
+      } else if (radiobtn3.checked == true) {
+        target.innerHTML = "結果：残念、不正解です";
+      }
+    }
+    function onRadioButtonChange2() {
+      radiobtn4 = document.getElementById("Radio4");
+      radiobtn5 = document.getElementById("Radio5");
+      radiobtn6 = document.getElementById("Radio6");
+
+      target = document.getElementById("output2");
+
+      if (radiobtn4.checked == true) {
+        target.innerHTML = "おめでとう、正解です";
+      } else if (radiobtn5.checked == true) {
+        target.innerHTML = "残念、不正解です";
+      } else if (radiobtn6.checked == true) {
+        target.innerHTML = "残念、不正解です";
+      }
+    }
+    function onRadioButtonChange3() {
+      radiobtn7 = document.getElementById("Radio7");
+      radiobtn8 = document.getElementById("Radio8");
+      radiobtn9 = document.getElementById("Radio9");
+
+      target = document.getElementById("output3");
+
+      if (radiobtn7.checked == true) {
+        target.innerHTML = "おめでとう、正解です";
+      } else if (radiobtn8.checked == true) {
+        target.innerHTML = "残念、不正解です";
+      } else if (radiobtn9.checked == true) {
+        target.innerHTML = "残念、不正解です";
+      }
+    }
+    function onRadioButtonChange4() {
+      radiobtn10 = document.getElementById("Radio10");
+      radiobtn11 = document.getElementById("Radio11");
+      radiobtn12 = document.getElementById("Radio12");
+
+      target = document.getElementById("output4");
+
+      if (radiobtn10.checked == true) {
+        target.innerHTML = "おめでとう、正解です";
+      } else if (radiobtn11.checked == true) {
+        target.innerHTML = "残念、不正解です";
+      } else if (radiobtn12.checked == true) {
+        target.innerHTML = "残念、不正解です";
+      }
+    }
+    function onRadioButtonChange5() {
+      radiobtn13 = document.getElementById("Radio13");
+      radiobtn14 = document.getElementById("Radio14");
+      radiobtn15 = document.getElementById("Radio15");
+
+      target = document.getElementById("output5");
+
+      if (radiobtn13.checked == true) {
+        target.innerHTML = "おめでとう、正解です";
+      } else if (radiobtn14.checked == true) {
+        target.innerHTML = "残念、不正解です";
+      } else if (radiobtn15.checked == true) {
+        target.innerHTML = "残念、不正解です";
+
 
     function clickBtn1(){
 let str1 = "";
@@ -424,6 +522,7 @@ let str6 = "";
       } else if (RadioGroup1[2].checked == true) {
         str1 = RadioGroup1[2].value;
         break;
+
       }
 
 
