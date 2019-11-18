@@ -151,10 +151,10 @@
         ここで、二変数の関数を微分する方法を紹介します。二変数の関数の微分の方法といっても一変数の時とあまり違いはありません。<br>
         例えば、関数$E(a,b)$を$a$で微分したいときは$b$を定数だと考えて一変数の時と同じように微分をすることが出来ます。
         実際に関数$E(a,b)$を$a$で微分したものと関数$E(a,b)$を$b$で微分したものを計算して最小値をとる$(a,b)$を求めてみましょう。<br><br>
-        関数
+        関数$E(a,b)$を$a$で微分すると$(E(a,b)$の式を忘れた人は
         <span class="hidden_box2">
-          <label for="label3">$E(a,b)$</label>
-          を$a$で微分すると
+          <label for="label3">ここを</label>
+          クリック！)
           <input type="checkbox" id="label3"/>
           <div class="hidden_show2">
             <!--非表示ここから-->
@@ -320,71 +320,75 @@
 
       <div class="text">①</div>
       <div style="display:inline-block; background:#fcfcff; padding:15px; border:1px solid #3b5998; border-radius:10px; word-break:break-all;">
-        <input id="Radio1" name="RadioGroup1" type="radio" onchange="onRadioButtonChange1();">
+        <input id="Radio1" name="RadioGroup1" type="radio" onchange="onRadioButtonChange1();" value="おめでとう、正解です">
         <label for="Radio1">$2x$</label>&emsp;
-        <input id="Radio2" name="RadioGroup1" type="radio" onchange="onRadioButtonChange1();">
+        <input id="Radio2" name="RadioGroup1" type="radio" onchange="onRadioButtonChange1();" value="残念、不正解です">
         <label for="Radio2">$2x-3$</label>&emsp;
-        <input id="Radio3" name="RadioGroup1" type="radio" onchange="onRadioButtonChange1();">
+        <input id="Radio3" name="RadioGroup1" type="radio" onchange="onRadioButtonChange1();" value="残念、不正解です">
         <label for="Radio3">$x$</label>
+        <br><span id="span1"></span>
       </div>
 
-      <div id="output1"></div><br>
+    <!--  <div id="output1"></div><br>-->
       <div class="text">②</div>
       <div style="display:inline-block; background:#fcfcff; padding:15px; border:1px solid #3b5998; border-radius:10px; word-break:break-all;">
-        <input id="Radio4" name="RadioGroup2" type="radio" onchange="onRadioButtonChange2();">
+        <input id="Radio4" name="RadioGroup2" type="radio" onchange="onRadioButtonChange2();" value="おめでとう、正解です">
         <label for="Radio4">$2$</label>&emsp;
-        <input id="Radio5" name="RadioGroup2" type="radio" onchange="onRadioButtonChange2();">
+        <input id="Radio5" name="RadioGroup2" type="radio" onchange="onRadioButtonChange2();" value="残念、不正解です">
         <label for="Radio5">$2x-3$</label>&emsp;
-        <input id="Radio6" name="RadioGroup2" type="radio" onchange="onRadioButtonChange2();">
+        <input id="Radio6" name="RadioGroup2" type="radio" onchange="onRadioButtonChange2();" value="残念、不正解です">
         <label for="Radio6">$x$</label>
+        <br><span id="span2"></span>
       </div>
 
-      <div id="output2"></div><br>
+
       <div class="text">③</div>
       <div style="display:inline-block; background:#fcfcff; padding:15px; border:1px solid #3b5998; border-radius:10px; word-break:break-all;">
-        <input id="Radio7" name="RadioGroup3" type="radio" onchange="onRadioButtonChange3();">
+        <input id="Radio7" name="RadioGroup3" type="radio" onchange="onRadioButtonChange3();" value="おめでとう、正解です">
         <label for="Radio7">$1$</label>&emsp;
-        <input id="Radio8" name="RadioGroup3" type="radio" onchange="onRadioButtonChange3();">
+        <input id="Radio8" name="RadioGroup3" type="radio" onchange="onRadioButtonChange3();" value="残念、不正解です">
         <label for="Radio8">$2x-3$</label>&emsp;
-        <input id="Radio9" name="RadioGroup3" type="radio" onchange="onRadioButtonChange3();">
+        <input id="Radio9" name="RadioGroup3" type="radio" onchange="onRadioButtonChange3();" value="残念、不正解です">
         <label for="Radio9">$x$</label>
+        <br><span id="span3"></span>
       </div>
 
-      <div id="output3"></div><br>
       <div class="text">④</div>
       <div style="display:inline-block; background:#fcfcff; padding:15px; border:1px solid #3b5998; border-radius:10px; word-break:break-all;">
-        <input id="Radio10" name="RadioGroup4" type="radio" onchange="onRadioButtonChange4();">
+        <input id="Radio10" name="RadioGroup4" type="radio" onchange="onRadioButtonChange4();" value="おめでとう、正解です">
         <label for="Radio10">$4x-7$</label>&emsp;
-        <input id="Radio11" name="RadioGroup4" type="radio" onchange="onRadioButtonChange4();">
+        <input id="Radio11" name="RadioGroup4" type="radio" onchange="onRadioButtonChange4();" value="残念、不正解です">
         <label for="Radio11">$2x-3$</label>&emsp;
-        <input id="Radio12" name="RadioGroup4" type="radio" onchange="onRadioButtonChange4();">
+        <input id="Radio12" name="RadioGroup4" type="radio" onchange="onRadioButtonChange4();" value="残念、不正解です">
         <label for="Radio12">$x$</label>
+        <br><span id="span4"></span>
       </div>
 
-      <div id="output4"></div><br>
       <div class="text">⑤</div>
       <div style="display:inline-block; background:#fcfcff; padding:15px; border:1px solid #3b5998; border-radius:10px; word-break:break-all;">
-        <input id="Radio13" name="RadioGroup5" type="radio" onchange="onRadioButtonChange5();">
+        <input id="Radio13" name="RadioGroup5" type="radio" onchange="onRadioButtonChange5();" value="おめでとう、正解です">
         <label for="Radio13">$1.75$</label>&emsp;
-        <input id="Radio14" name="RadioGroup5" type="radio" onchange="onRadioButtonChange5();">
+        <input id="Radio14" name="RadioGroup5" type="radio" onchange="onRadioButtonChange5();" value="残念、不正解です">
         <label for="Radio14">$2x-3$</label>&emsp;
-        <input id="Radio15" name="RadioGroup5" type="radio" onchange="onRadioButtonChange5();">
+        <input id="Radio15" name="RadioGroup5" type="radio" onchange="onRadioButtonChange5();" value="残念、不正解です">
         <label for="Radio15">$x$</label>
+        <br><span id="span5"></span>
       </div>
 
-      <div id="output5"></div><br>
       <div class="text">⑥</div>
       <div style="display:inline-block; background:#fcfcff; padding:12px; border:1px solid #3b5998; border-radius:8px; word-break:break-all;">
-        <input id="Radio16" name="RadioGroup6" type="radio" onchange="onRadioButtonChange6();">
+        <input id="Radio16" name="RadioGroup6" type="radio" onchange="onRadioButtonChange6();" value="おめでとう、正解です">
         <label for="Radio16">$1.732$</label>&emsp;
-        <input id="Radio17" name="RadioGroup6" type="radio" onchange="onRadioButtonChange6();">
+        <input id="Radio17" name="RadioGroup6" type="radio" onchange="onRadioButtonChange6();" value="残念、不正解です">
         <label for="Radio17">$2x-3$</label>&emsp;
-        <input id="Radio18" name="RadioGroup6" type="radio" onchange="onRadioButtonChange6();">
+        <input id="Radio18" name="RadioGroup6" type="radio" onchange="onRadioButtonChange6();" value="残念、不正解です">
         <label for="Radio18">$x$</label>
+        <br><span id="span6"></span>
       </div>
 
-      <div id="output6"></div><br>
+
       <%# </div> %>
+      <input type="button" value="解答チェック" onclick="clickBtn1()"/>
     </div>
   </div>
 </div>
@@ -399,94 +403,126 @@
 </script>
 
   <script type="text/javascript" language="javascript">
-    function onRadioButtonChange1() {
-      radiobtn1 = document.getElementById("Radio1");
-      radiobtn2 = document.getElementById("Radio2");
-      radiobtn3 = document.getElementById("Radio3");
 
-      target = document.getElementById("output1");
+    function clickBtn1(){
+let str1 = "";
+let str2 = "";
+let str3 = "";
+let str4 = "";
+let str5 = "";
+let str6 = "";
+      const RadioGroup1 = document.getElementsByName("RadioGroup1");
+      for (let i = 0; i < RadioGroup1.length; i++){
 
-      if (radiobtn1.checked == true) {
-        target.innerHTML = "おめでとう、正解です";
-      } else if (radiobtn2.checked == true) {
-        target.innerHTML = "残念、不正解です";
-      } else if (radiobtn3.checked == true) {
-        target.innerHTML = "残念、不正解です";
+      if (RadioGroup1[0].checked === true) {
+        str1 = RadioGroup1[0].value;
+        break;
+        //target.innerHTML = "おめでとう、正解です";
+      } else if (RadioGroup1[1].checked == true) {
+        str1 = RadioGroup1[1].value;
+        break;
+      } else if (RadioGroup1[2].checked == true) {
+        str1 = RadioGroup1[2].value;
+        break;
       }
+
+
     }
-    function onRadioButtonChange2() {
-      radiobtn4 = document.getElementById("Radio4");
-      radiobtn5 = document.getElementById("Radio5");
-      radiobtn6 = document.getElementById("Radio6");
 
-      target = document.getElementById("output2");
+    const RadioGroup2 = document.getElementsByName("RadioGroup2");
+    for (let i = 0; i < RadioGroup2.length; i++){
 
-      if (radiobtn4.checked == true) {
-        target.innerHTML = "おめでとう、正解です";
-      } else if (radiobtn5.checked == true) {
-        target.innerHTML = "残念、不正解です";
-      } else if (radiobtn6.checked == true) {
-        target.innerHTML = "残念、不正解です";
-      }
+    if (RadioGroup2[0].checked === true) {
+      str2 = RadioGroup2[0].value;
+      break;
+      //target.innerHTML = "おめでとう、正解です";
+    } else if (RadioGroup2[1].checked == true) {
+      str2 = RadioGroup2[1].value;
+      break;
+    } else if (RadioGroup2[2].checked == true) {
+      str2 = RadioGroup2[2].value;
+      break;
     }
-    function onRadioButtonChange3() {
-      radiobtn7 = document.getElementById("Radio7");
-      radiobtn8 = document.getElementById("Radio8");
-      radiobtn9 = document.getElementById("Radio9");
 
-      target = document.getElementById("output3");
 
-      if (radiobtn7.checked == true) {
-        target.innerHTML = "おめでとう、正解です";
-      } else if (radiobtn8.checked == true) {
-        target.innerHTML = "残念、不正解です";
-      } else if (radiobtn9.checked == true) {
-        target.innerHTML = "残念、不正解です";
-      }
-    }
-    function onRadioButtonChange4() {
-      radiobtn10 = document.getElementById("Radio10");
-      radiobtn11 = document.getElementById("Radio11");
-      radiobtn12 = document.getElementById("Radio12");
+  }
 
-      target = document.getElementById("output4");
+  const RadioGroup3 = document.getElementsByName("RadioGroup3");
+  for (let i = 0; i < RadioGroup3.length; i++){
 
-      if (radiobtn10.checked == true) {
-        target.innerHTML = "おめでとう、正解です";
-      } else if (radiobtn11.checked == true) {
-        target.innerHTML = "残念、不正解です";
-      } else if (radiobtn12.checked == true) {
-        target.innerHTML = "残念、不正解です";
-      }
-    }
-    function onRadioButtonChange5() {
-      radiobtn13 = document.getElementById("Radio13");
-      radiobtn14 = document.getElementById("Radio14");
-      radiobtn15 = document.getElementById("Radio15");
+  if (RadioGroup3[0].checked === true) {
+    str3 = RadioGroup3[0].value;
+    break;
+    //target.innerHTML = "おめでとう、正解です";
+  } else if (RadioGroup3[1].checked == true) {
+    str3 = RadioGroup3[1].value;
+    break;
+  } else if (RadioGroup3[2].checked == true) {
+    str3 = RadioGroup3[2].value;
+    break;
+  }
 
-      target = document.getElementById("output5");
 
-      if (radiobtn13.checked == true) {
-        target.innerHTML = "おめでとう、正解です";
-      } else if (radiobtn14.checked == true) {
-        target.innerHTML = "残念、不正解です";
-      } else if (radiobtn15.checked == true) {
-        target.innerHTML = "残念、不正解です";
-      }
-    }
-    function onRadioButtonChange6() {
-      radiobtn16 = document.getElementById("Radio16");
-      radiobtn17 = document.getElementById("Radio17");
-      radiobtn18 = document.getElementById("Radio18");
+}
 
-      target = document.getElementById("output6");
+const RadioGroup4 = document.getElementsByName("RadioGroup4");
+for (let i = 0; i < RadioGroup4.length; i++){
 
-      if (radiobtn16.checked == true) {
-        target.innerHTML = "おめでとう、正解です";
-      } else if (radiobtn17.checked == true) {
-        target.innerHTML = "残念、不正解です";
-      } else if (radiobtn18.checked == true) {
-        target.innerHTML = "残念、不正解です";
-      }
-    }
+if (RadioGroup4[0].checked === true) {
+  str4 = RadioGroup4[0].value;
+  break;
+  //target.innerHTML = "おめでとう、正解です";
+} else if (RadioGroup4[1].checked == true) {
+  str4 = RadioGroup4[1].value;
+  break;
+} else if (RadioGroup4[2].checked == true) {
+  str4 = RadioGroup4[2].value;
+  break;
+}
+
+
+}
+
+const RadioGroup5 = document.getElementsByName("RadioGroup5");
+for (let i = 0; i < RadioGroup5.length; i++){
+
+if (RadioGroup5[0].checked === true) {
+  str5 = RadioGroup5[0].value;
+  break;
+  //target.innerHTML = "おめでとう、正解です";
+} else if (RadioGroup5[1].checked == true) {
+  str5 = RadioGroup5[1].value;
+  break;
+} else if (RadioGroup5[2].checked == true) {
+  str5 = RadioGroup5[2].value;
+  break;
+}
+
+
+}
+
+const RadioGroup6 = document.getElementsByName("RadioGroup6");
+for (let i = 0; i < RadioGroup6.length; i++){
+
+if (RadioGroup6[0].checked === true) {
+  str6 = RadioGroup6[0].value;
+  break;
+  //target.innerHTML = "おめでとう、正解です";
+} else if (RadioGroup6[1].checked == true) {
+  str6 = RadioGroup6[1].value;
+  break;
+} else if (RadioGroup6[2].checked == true) {
+  str6 = RadioGroup6[2].value;
+  break;
+}
+
+
+}
+    document.getElementById("span1").textContent = str1;
+    document.getElementById("span2").textContent = str2;
+    document.getElementById("span3").textContent = str3;
+    document.getElementById("span4").textContent = str4;
+    document.getElementById("span5").textContent = str5;
+    document.getElementById("span6").textContent = str6;
+}
   </script>
