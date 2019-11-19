@@ -125,7 +125,7 @@
           スライドを見ると、$a,b$を変えることによって誤差も変わることが分かります。 $a,b$を変えることで誤差を最小にできると考えられます。
           誤差を小さくするということは、各データの誤差の和を小さくするということです。<br>
           しかし、誤差(下図の↔)をそのまま足すと、正負が混合している場合、誤差の和が0になることがあります。 下の図のように誤差の和が0で最小なのにも関わらず、この直線は「データの関係を表す」直線ではないことが見てわかります。<br><br>
-          
+
           <center><%= link_to image_tag("pic4.png") %></center><br>
 
           そこで、負の数をなくすために誤差を二乗して、正の数にします。<br>
@@ -163,7 +163,7 @@
           <center><%= link_to image_tag("pic6.png") %></center><br>
 
           この関数の最小点を考えるために、関数$E(a,b)$の最小点を$(a^*,b^*)$として、$a=a^*$、または$b=b^*$で切ったときの断面図をそれぞれ見てみましょう。<br><br>
-          
+
           <center><%= link_to image_tag("pic7.png") %></center><br>
 
           まず、$b=b^*$で切ったときの断面図(上図)から考えてみましょう。
@@ -175,11 +175,11 @@
           次に、$a=a*$で切った時の断面図(上図)を考えてみましょう。<br>
           一変数で下に凸の二次関数は傾きが0のときに最小値となります。<br>
           同じように、この断面図$(a=a^*)$でも「傾きが0になるとき」に最小値となることが分かります。<br><br>
-          
+
           <center><%= link_to image_tag("pic9.png") %></center><br>
 
           以上より、最小点$(a^*,b^*)$を考えると…<br>
-	        <div class="padl-10">  
+	        <div class="padl-10">
             $a^*…b=b^*$で切った時の断面図において、傾きが0になる$a$の値<br>
 	          $b^*…a=a^*$で切った時の断面図において、傾きが0になる$b$の値<br>
           </div>
@@ -208,7 +208,7 @@
           $($関数$E(a,b)$を$b$で微分$)=\sum_{i=1}^{n} (-2y_i+2ax_i+2b)$<br>
           となります。<br><br>
 
-          上の2式に対して連立方程式をたてると 
+          上の2式に対して連立方程式をたてると
           $\begin{eqnarray} \begin{cases} \sum_{i=1}^{n} (-2x_iy_i+2ax_i^2+2bx_i)=0 & \\ \sum_{i=1}^{n} (-2y_i+2ax_i+2b)=0 & \end{cases} \end{eqnarray}$
           となり、この連立方程式を解くと、誤差の二乗和がとなる$a$と$b$が求めることができます。<br><br>
 
@@ -248,8 +248,6 @@
       </div>
 
       <div class="sub">
-        <%# <div style="display:inline-block; background:#fcfcff; padding:15px; border:1px solid #3b5998; border-radius:10px; word-break:break-all;"> %>
-
           <div class="text-sub">
 
              ※当サイトでは、データの関係を表すための関数が存在すると仮定します<br>
@@ -395,9 +393,9 @@
     <!-- ページ読み込み後にリロードしてTEXを表示 -->
     <script language="JavaScript">
 
-      if (window.name != "newton") {
+      if (window.name != "least_squares") {
         location.reload();
-        window.name = "newton";
+        window.name = "least_squares";
       }
     </script>
 
