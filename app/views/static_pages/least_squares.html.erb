@@ -31,7 +31,7 @@
             といった「変動予測」に役立ちます。<br>
 
           </div>
-          といった<span style="font-size: 30px;">「変動予測」</span>に役立ちます。<br>
+          といった<span style="font-size: 30px;">「ある事柄からそれに関係する事柄の予測」</span>に役立ちます。<br>
 
           最小二乗法とは、次の表データ（6人の身長と体重のデータ）から以下の図のような「データの関係を表すための線」を求める方法です。
           <div class="topSpace"></div>
@@ -93,7 +93,8 @@
         <div class="caption">最小二乗法とは</div>
         <div class="topSpace"></div>
         <div class="text">
-          ここではより詳しく最小二乗法について説明します。 最小二乗法とは、「誤差の二乗和が最小となる関数$f(x)$(データの関係を表すための関数)」を求める方法です。 データ$(p,q)$をグラフ上に表した点$(p,q)$の誤差は、$q$から関数$f(p)$を引いたものです。 例えば、下の図でいうとデータ$(x_4,y_4)$の誤差は$y_4-f(x_4)$です。
+          ここではより詳しく最小二乗法について説明します。 最小二乗法とは、「誤差の二乗和が最小となる関数$f(x)$(データの関係を表すための関数)」を求める方法です。
+          データ$(xi,yi)$をグラフ上に表した点$(xi,yi)$の誤差は、$yi$から関数$f(xi)$を引いたものです。 例えば、下の図でいうとデータ$(x_4,y_4)$の誤差は$y_4-f(x_4)$です。
           <br><br><%= link_to image_tag("pic2.png") %><br><br>
           ※青い点は実際のデータ、赤い線は関数f(x)、↔は誤差<br>
           最小二乗法では「データの関係を表す<b>曲線</b>」を求めることも出来ますが、前述した通り複雑で分かりにくいので、 今回は「データの関係を表す<b>直線</b>」を求める方法に限定して簡単に説明します。直線(f(x)=ax+b)は傾きaと切片bを求めることで1つに決まるので、 誤差が最小となるようなa,bを求めることを目標にします。
@@ -109,8 +110,9 @@
             allowfullscreen="true"
             mozallowfullscreen="true"
             webkitallowfullscreen="true"></iframe><br><br>
-          ①は$a=0.2, b=16$ ②は$a=0.6, b=16$ ③は$a=0.6,b=-50$でした。<br>
-          スライドを見ると、$a,b$を変えることによって誤差も変わることが分かります。 $a,b$を変えることで誤差を最小に出来ると考えられます。 誤差を小さくするということは、各データの誤差の和を小さくするということです。 しかし、誤差(↔)をそのまま足すと、正負が混合している場合、誤差の和が0になることがあります。 下の図のように誤差の和が0で最小なのにも関わらず、この直線は「データの関係を表す」直線ではないことが見てわかります。
+          ①は$a=0.2, b=16$ ②は$a=0.6, b=16$ ③は$a=0.6,b=-50$です。<br>
+          スライドを見ると、$a,b$を変えることによって誤差も変わることが分かります。 $a,b$を変えることで誤差を最小に出来ると考えられます。
+          誤差を小さくするということは、各データの誤差の和を小さくするということです。 しかし、誤差(下図の↕︎)をそのまま足すと、正負が混合している場合、誤差の和が0になることがあります。 下の図のように誤差の和が0で最小なのにも関わらず、この直線は「データの関係を表す」直線ではないことが見てわかります。
           <br><br><%= link_to image_tag("pic4.png") %><br><br>
           そこで、負の数をなくすために誤差を二乗して、正の数にします。 データの数を$n$個として、誤差の二乗和を$E(a,b)$とすると次のように表せます。<br>
           $E(a,b)$ = (1番目のデータの誤差)$^2$+(2番目のデータの誤差)$^2$+…+($n$番目のデータの誤差)$^2$ となります。例えば、4番目のデータの誤差に注目すると
@@ -132,16 +134,21 @@
           </div>
           $E(a,b)=\sum_{i=1}^{n} (y_i^2-2ax_iy_i-2by_i+a^2x_i^2+2abx_i+b^2)$ となります。 この関数$E(a,b)$を図に表すと$E(a,b)$は二変数の関数であるため、$Z=E(a,b)$とすると下の図のようになります。
           <br><br><%= link_to image_tag("pic6.png") %><br><br>
-          この関数の最小値を考えるために上の図のグラフを$a、b$を定数として、切ったときの断面図をそれぞれ見てみましょう。
+          この関数の最小点を考えるために、関数$E(a,b)$の最小点を$(a*,b*)$として、$a=a*$、または$b=b*$で切ったときの断面図をそれぞれ見てみましょう。
           <br><br><%= link_to image_tag("pic7.png") %><br><br>
-          $b$をある定数だとしたときの関数$E(a,b)$を考えると、ある$b$で切った時の断面図(上図)になります。 一変数で下に凸の二次関数は傾きが0の時に最小値となります。 同じようにして$E(a,b)$を考えると、「$b$をある定数だとして、傾きが0になる時」に最小値となることが分かります。
+          まず、$b=b*$で切ったときの断面図(上図)から考えてみましょう。 一変数で下に凸の二次関数は傾きが0のときに最小値となります。 同じように、この断面図$(b=b*)$でも「傾きが0になるとき」に最小値となることが分かります。
           <br><br><%= link_to image_tag("pic8.png") %><br><br>
-          関数$E(a,b)$を$ｂ$軸方向から見ても、上の図のように平面のグラフとして扱えます。 $a$軸方向から見た時と同様に、$b$で微分して0となるときに最小となることがわかります。
+          次に、$a=a*$で切った時の断面図(上図)を考えてみましょう。
+          一変数で下に凸の二次関数は傾きが0のときに最小値となります。
+          同じように、この断面図$(a=a*)$でも「傾きが0になるとき」に最小値となることが分かります。
           <br><br><%= link_to image_tag("pic9.png") %><br><br>
-          上の図のように$a$軸方向から見ても$b$軸方向から見ても最小の時に、関数$E(a,b)$全体としても最小となります。<br>
-          なので、関数$E(a,b)$を$a$で微分したものと関数$E(a,b)$を$b$で微分したものがともに0となる$（a,b）$を見つけます。<br><br>
-          ここで、二変数の関数を微分する方法を紹介します。二変数の関数の微分の方法といっても一変数の時とあまり違いはありません。<br>
-          例えば、関数$E(a,b)$を$a$で微分したいときは$b$を定数だと考えて一変数の時と同じように微分をすることが出来ます。 実際に関数$E(a,b)$を$a$で微分したものと関数$E(a,b)$を$b$で微分したものを計算して最小値をとる$(a,b)$を求めてみましょう。<br><br>
+          以上より、最小点$(a*,b*)$を考えると…<br>
+	         &emsp;&emsp;$a*…b=b*$で切った時の断面図において、傾きが0になる$a$の値<br>
+	          &emsp;&emsp;$b*…a=a*$で切った時の断面図において、傾きが0になる$b$の値<br>
+            したがって、「$b$を定数として固定して関数$E(a,b)$を$a$で微分したもの」と「$a$を定数として固定して関数$E(a,b)$を$b$で微分したもの」がともに0となる点$(a*,b*)$を見つけます。<br>
+          ここで、二変数の関数を微分する方法を紹介します。二変数の関数の微分の方法といっても一変数のときとあまり違いはありません。<br>
+          例えば、関数$E(a,b)$を$a$で微分したいときは$b$を定数だと考えて一変数のときと同じように微分をすることが出来ます。
+          実際に$b$を定数として固定して関数$E(a,b)$を$a$で微分したものと、$a$を定数として固定して関数$E(a,b)$を$b$で微分したものを計算して最小点$(a*,b*)$を求めてみましょう。<br><br>
           関数$E(a,b)$を$a$で微分すると$(E(a,b)$の式を忘れた人は
           <span class="hidden_box2">
             <label for="label3">ここを</label>
@@ -158,7 +165,8 @@
 
           $($関数$E(a,b)$を$b$で微分$)=\sum_{i=1}^{n} (-2y_i+2ax_i+2b)$<br>
           となります。<br><br>
-          上の2式に対して連立方程式をたてると $\begin{eqnarray} \begin{cases} \sum_{i=1}^{n} (-2x_iy_i+2ax_i^2+2bx_i)=0 & \\ \sum_{i=1}^{n} (-2y_i+2ax_i+2b)=0 & \end{cases} \end{eqnarray}$ となり、この連立方程式を解くと、 極小値となる$a$と$b$が求めることができます。<br><br>
+          上の2式に対して連立方程式をたてると $\begin{eqnarray} \begin{cases} \sum_{i=1}^{n} (-2x_iy_i+2ax_i^2+2bx_i)=0 & \\ \sum_{i=1}^{n} (-2y_i+2ax_i+2b)=0 & \end{cases} \end{eqnarray}$ となり、この連立方程式を解くと、
+          誤差の二乗和がとなる$a$と$b$が求めることができます。<br><br>
           誤差の二乗和が最小となる傾き$a$,切片$b$が求められたので、「データの関係を表すための直線」の式$(f(x)=ax+b)$が得られます。<br>
         </div>
 
@@ -204,7 +212,8 @@
               <div class="hidden_show">
                 <!--非表示ここから-->
                 <div class="text">
-                  <p>なぜ曲線ではなくて直線？ ここで直線より曲線の方が、よりデータとの関係を表すための関数を求めることができると思った方もいるかもしれません。 たしかに、曲線の方が、よりデータとの関係を表すための関数を求めることができるかもしれません。 しかし、最小二乗法を用いて曲線を求めようとすると、直線を求める時よりも関数が複雑になるので計算が難しくなります。 なので、このサイトでは計算が簡単な直線を求める方法について考えることとします。</p>
+                  <p>直線より曲線の方が、よりデータとの関係を表すための関数を求めることができると思った方もいるかもしれません。たしかに、曲線の方が、よりデータとの関係を表すための関数を求めることができる場合もあります。
+                    しかし、最小二乗法を用いて曲線を求めようとすると、直線を求めるときよりも関数が複雑になるので計算が難しくなります。したがって、このサイトでは計算が簡単な直線を求める方法について考えることとします。</p>
                 </div>
                 <!--ここまで-->
               </div>
@@ -220,68 +229,73 @@
             <div class="box26">
               <span class="box-title">①</span>
               <p>
-                <input id="Radio1" name="RadioGroup1" type="radio" onchange="onRadioButtonChange1();">
+                <input id="Radio1" name="RadioGroup1" type="radio" onchange="onRadioButtonChange1();" value="結果：おめでとう、正解です">
                 <label for="Radio1">$2x$</label>&emsp;
-                <input id="Radio2" name="RadioGroup1" type="radio" onchange="onRadioButtonChange1();">
+                <input id="Radio2" name="RadioGroup1" type="radio" onchange="onRadioButtonChange1();" value="結果：残念、不正解です">
                 <label for="Radio2">$2x-3$</label>&emsp;
-                <input id="Radio3" name="RadioGroup1" type="radio" onchange="onRadioButtonChange1();">
+                <input id="Radio3" name="RadioGroup1" type="radio" onchange="onRadioButtonChange1();" value="結果：残念、不正解です">
                 <label for="Radio3">$x$</label>
               </p>
-              <div id="output1">結果：</div>
+              <br><span id="span1">結果：</span>
             </div>
 
             <div class="text">②</div>
             <div style="display:inline-block; background:#fcfcff; padding:15px; border:1px solid #3b5998; border-radius:10px; word-break:break-all;">
-              <input id="Radio4" name="RadioGroup2" type="radio" onchange="onRadioButtonChange2();">
+              <input id="Radio4" name="RadioGroup2" type="radio" onchange="onRadioButtonChange2();" value="結果：おめでとう、正解です">
               <label for="Radio4">$2$</label>&emsp;
-              <input id="Radio5" name="RadioGroup2" type="radio" onchange="onRadioButtonChange2();">
+              <input id="Radio5" name="RadioGroup2" type="radio" onchange="onRadioButtonChange2();" value="結果：残念、不正解です">
               <label for="Radio5">$2x-3$</label>&emsp;
-              <input id="Radio6" name="RadioGroup2" type="radio" onchange="onRadioButtonChange2();">
+              <input id="Radio6" name="RadioGroup2" type="radio" onchange="onRadioButtonChange2();" value="結果：残念、不正解です">
               <label for="Radio6">$x$</label>
+              <br><span id="span2">結果：</span>
             </div>
 
             <div id="output2"></div><br>
             <div class="text">③</div>
             <div style="display:inline-block; background:#fcfcff; padding:15px; border:1px solid #3b5998; border-radius:10px; word-break:break-all;">
-              <input id="Radio7" name="RadioGroup3" type="radio" onchange="onRadioButtonChange3();">
+              <input id="Radio7" name="RadioGroup3" type="radio" onchange="onRadioButtonChange3();" value="結果：おめでとう、正解です">
               <label for="Radio7">$1$</label>&emsp;
-              <input id="Radio8" name="RadioGroup3" type="radio" onchange="onRadioButtonChange3();">
+              <input id="Radio8" name="RadioGroup3" type="radio" onchange="onRadioButtonChange3();" value="結果：残念、不正解です">
               <label for="Radio8">$2x-3$</label>&emsp;
-              <input id="Radio9" name="RadioGroup3" type="radio" onchange="onRadioButtonChange3();">
+              <input id="Radio9" name="RadioGroup3" type="radio" onchange="onRadioButtonChange3();" value="結果：残念、不正解です">
               <label for="Radio9">$x$</label>
+              <br><span id="span3">結果：</span>
             </div>
 
             <div id="output3"></div><br>
             <div class="text">④</div>
             <div style="display:inline-block; background:#fcfcff; padding:15px; border:1px solid #3b5998; border-radius:10px; word-break:break-all;">
-              <input id="Radio10" name="RadioGroup4" type="radio" onchange="onRadioButtonChange4();">
+              <input id="Radio10" name="RadioGroup4" type="radio" onchange="onRadioButtonChange4();" value="結果：おめでとう、正解です">
               <label for="Radio10">$4x-7$</label>&emsp;
-              <input id="Radio11" name="RadioGroup4" type="radio" onchange="onRadioButtonChange4();">
+              <input id="Radio11" name="RadioGroup4" type="radio" onchange="onRadioButtonChange4();" value="結果：残念、不正解です">
               <label for="Radio11">$2x-3$</label>&emsp;
-              <input id="Radio12" name="RadioGroup4" type="radio" onchange="onRadioButtonChange4();">
+              <input id="Radio12" name="RadioGroup4" type="radio" onchange="onRadioButtonChange4();" value="結果：残念、不正解です">
               <label for="Radio12">$x$</label>
+              <br><span id="span4">結果：</span>
             </div>
 
             <div id="output4"></div><br>
             <div class="text">⑤</div>
             <div style="display:inline-block; background:#fcfcff; padding:15px; border:1px solid #3b5998; border-radius:10px; word-break:break-all;">
-              <input id="Radio13" name="RadioGroup5" type="radio" onchange="onRadioButtonChange5();">
+              <input id="Radio13" name="RadioGroup5" type="radio" onchange="onRadioButtonChange5();" value="結果：おめでとう、正解です">
               <label for="Radio13">$1.75$</label>&emsp;
-              <input id="Radio14" name="RadioGroup5" type="radio" onchange="onRadioButtonChange5();">
+              <input id="Radio14" name="RadioGroup5" type="radio" onchange="onRadioButtonChange5();" value="結果：残念、不正解です">
               <label for="Radio14">$2x-3$</label>&emsp;
-              <input id="Radio15" name="RadioGroup5" type="radio" onchange="onRadioButtonChange5();">
+              <input id="Radio15" name="RadioGroup5" type="radio" onchange="onRadioButtonChange5();" value="結果：残念、不正解です">
               <label for="Radio15">$x$</label>
+              <br><span id="span5">結果：</span>
             </div>
 
             <div id="output5"></div><br>
             <div class="text">⑥</div>
             <div style="display:inline-block; background:#fcfcff; padding:12px; border:1px solid #3b5998; border-radius:8px; word-break:break-all;">
-              <input id="Radio16" name="RadioGroup6" type="radio" onchange="onRadioButtonChange6();">
+              <input id="Radio16" name="RadioGroup6" type="radio" onchange="onRadioButtonChange6();" value="結果：おめでとう、正解です">
               <label for="Radio16">$1.732$</label>&emsp;
-              <input id="Radio17" name="RadioGroup6" type="radio" onchange="onRadioButtonChange6();">
+              <input id="Radio17" name="RadioGroup6" type="radio" onchange="onRadioButtonChange6();" value="結果：残念、不正解です">
               <label for="Radio17">$2x-3$</label>&emsp;
-              <input id="Radio18" name="RadioGroup6" type="radio" onchange="onRadioButtonChange6();">
+              <input id="Radio18" name="RadioGroup6" type="radio" onchange="onRadioButtonChange6();" value="結果：残念、不正解です">
               <label for="Radio18">$x$</label>
+              <br><span id="span6">結果：</span>
             </div>
 
             <div id="output6"></div><br>
@@ -303,82 +317,6 @@
     </script>
 
     <script type="text/javascript" language="javascript">
-
-      function onRadioButtonChange1() {
-        radiobtn1 = document.getElementById("Radio1");
-        radiobtn2 = document.getElementById("Radio2");
-        radiobtn3 = document.getElementById("Radio3");
-
-        target = document.getElementById("output1");
-
-        if (radiobtn1.checked == true) {
-          target.innerHTML = "結果：おめでとう、正解です";
-        } else if (radiobtn2.checked == true) {
-          target.innerHTML = "結果：残念、不正解です";
-        } else if (radiobtn3.checked == true) {
-          target.innerHTML = "結果：残念、不正解です";
-        }
-      }
-      function onRadioButtonChange2() {
-        radiobtn4 = document.getElementById("Radio4");
-        radiobtn5 = document.getElementById("Radio5");
-        radiobtn6 = document.getElementById("Radio6");
-
-        target = document.getElementById("output2");
-
-        if (radiobtn4.checked == true) {
-          target.innerHTML = "おめでとう、正解です";
-        } else if (radiobtn5.checked == true) {
-          target.innerHTML = "残念、不正解です";
-        } else if (radiobtn6.checked == true) {
-          target.innerHTML = "残念、不正解です";
-        }
-      }
-      function onRadioButtonChange3() {
-        radiobtn7 = document.getElementById("Radio7");
-        radiobtn8 = document.getElementById("Radio8");
-        radiobtn9 = document.getElementById("Radio9");
-
-        target = document.getElementById("output3");
-
-        if (radiobtn7.checked == true) {
-          target.innerHTML = "おめでとう、正解です";
-        } else if (radiobtn8.checked == true) {
-          target.innerHTML = "残念、不正解です";
-        } else if (radiobtn9.checked == true) {
-          target.innerHTML = "残念、不正解です";
-        }
-      }
-      function onRadioButtonChange4() {
-        radiobtn10 = document.getElementById("Radio10");
-        radiobtn11 = document.getElementById("Radio11");
-        radiobtn12 = document.getElementById("Radio12");
-
-        target = document.getElementById("output4");
-
-        if (radiobtn10.checked == true) {
-          target.innerHTML = "おめでとう、正解です";
-        } else if (radiobtn11.checked == true) {
-          target.innerHTML = "残念、不正解です";
-        } else if (radiobtn12.checked == true) {
-          target.innerHTML = "残念、不正解です";
-        }
-      }
-      function onRadioButtonChange5() {
-        radiobtn13 = document.getElementById("Radio13");
-        radiobtn14 = document.getElementById("Radio14");
-        radiobtn15 = document.getElementById("Radio15");
-
-        target = document.getElementById("output5");
-
-        if (radiobtn13.checked == true) {
-          target.innerHTML = "おめでとう、正解です";
-        } else if (radiobtn14.checked == true) {
-          target.innerHTML = "残念、不正解です";
-        } else if (radiobtn15.checked == true) {
-          target.innerHTML = "残念、不正解です";
-        }
-      }
 
       function clickBtn1() {
         let str1 = "";
