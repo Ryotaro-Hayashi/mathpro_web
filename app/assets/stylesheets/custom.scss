@@ -116,28 +116,30 @@ a img:hover {
   opacity: 0.8;
 }
 
-#index .cButton{
-  padding-top: 280px;
-  margin-right:50px;
-}
-
 #index h1 {
-  font-size: 100px;
+  font-size: 75px;
+  font-weight: 400px;
   line-height: 1;
   color: #ffffff;
   font-family: "游明朝", "Yu Mincho", "游明朝体", "YuMincho", sans-serif;
   border: none;
-  margin-left: -10px;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 
 #index p {
-  font-size: 18px;
+  font-size: 22px;
+  font-weight: 450;
   color: #ffffff;
+}
+
+#index .cButton{
+  margin-top: -30px;
+  margin-bottom: 20px;
 }
 
 #index footer {
   text-align: center;
-  margin-top: -30px;
   background-color: transparent;
 }
 
@@ -146,12 +148,12 @@ a img:hover {
   padding: 0;
   margin-top: -30px;
   margin-left: 90px;
-  display: flex;
-  justify-content: space-around;
+  margin-right: 90px;
+  text-align: center;
 }
 
 #index {
-  background-image: image-url("FUN_outside.jpg");
+  background-image: image-url("FUN_outsideb.jpg");
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;
@@ -161,7 +163,7 @@ a img:hover {
 }
 
 #FUN {
-  background-image: image-url("FUN_index.jpg");
+  background-image: image-url("FUN_inside.jpg");
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;
