@@ -13,70 +13,66 @@
         <div class="text">
 
           <div class="topSpace"></div>
-          <br>みなさん!
+          みなさん!
           <div class="box">
             <p>1年生の必修科目として大学で数学を学んでいるけど、将来本当に必要なの？</p>
             <p>数学を学ぶ意味がわからない!</p>
           </div>
           など、今ままで数学を学んできてそんな事を疑問に思ったことはありませんか？<br>
-          そこで、ここでは実際に世の中で使われている数学の1つとして「最小二乗法」というものを紹介します。<br>
+          そこで、ここでは実際に1年生が数学の授業で学んでいる解析学が世の中で応用されている一例として「最小二乗法」というものを紹介します。<br>
 
           <br>最小二乗法を用いると、<br>
           <div class="padl-10">
-
             ・既存の顧客情報 から 売上の予測<br>
             ・天気や気温情報 から 来店者数の予測<br>
-            ・過去の株価情報 から 株価の予測<br>
             ・喫煙の年数 から 肺がんの有無<br>
             ・身長の情報 から 体重の予測<br>
-            といった「ある事柄からそれに関係する事柄の予測」に役立ちます。<br>
           </div>
+          といった「ある事柄からそれに関係する事柄の予測」に役立ちます。<br>
 
           <br>最小二乗法とは、次の表データ（6人の身長と体重のデータ）から、以下の図のような「データの関係を表すための線」を求める方法です。
-          <div class="topSpace"></div>
           <center>
-          <table border="border" width="240" height="240"><br>
-            <tr>
-              <td>　　</td>
-              <td>身長</td>
-              <td>体重</td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>116.5($=x_1$)</td>
-              <td>21.3($=y_1$)</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>125.5($=x_2$)</td>
-              <td>22.0($=y_2$)</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>128.1($=x_3$)</td>
-              <td>26.9($=y_3$)</td>
-            </tr>
-            <tr>
-              <td>4</td>
-              <td>132.0($=x_4$)</td>
-              <td>32.3($=y_4$)</td>
-            </tr>
-            <tr>
-              <td>5</td>
-              <td>141.0($=x_5$)</td>
-              <td>33.1($=y_5$)</td>
-            </tr>
-            <tr>
-              <td>6</td>
-              <td>145.2($=x_6$)</td>
-              <td>38.2($=y_6$)</td>
-            </tr>
-          </table>
+            <table border="border" width="240" height="240"><br>
+              <tr>
+                <td>　　</td>
+                <td>身長</td>
+                <td>体重</td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>116.5($=x_1$)</td>
+                <td>21.3($=y_1$)</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>125.5($=x_2$)</td>
+                <td>22.0($=y_2$)</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>128.1($=x_3$)</td>
+                <td>26.9($=y_3$)</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>132.0($=x_4$)</td>
+                <td>32.3($=y_4$)</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>141.0($=x_5$)</td>
+                <td>33.1($=y_5$)</td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td>145.2($=x_6$)</td>
+                <td>38.2($=y_6$)</td>
+              </tr>
+            </table>
           </center>
+          <br>この表データをグラフに表示すると以下のようになります。<br><br>
 
-          <br>この表データをグラフに表示すると以下のようになります。<br>
-
-          <center><br><br><%= link_to image_tag("pic1.1.png") %><%= link_to image_tag("pic1.2.png") %><br><br></center>
+          <center><%= link_to image_tag("pic1.1.png") %><%= link_to image_tag("pic1.2.png") %></center><br>
           このデータの関係を表すための関数(身長と体重の関係を表す関数)を求めることができれば、身長から体重を予測することができます。
           <br>例えば、身長が138cmの人の体重をこの直線を用いて予測してみましょう。
           <br><br>
@@ -89,47 +85,61 @@
             mozallowfullscreen="true"
             webkitallowfullscreen="true"></iframe>
           </center>
-          <br><br>
+          <br>
 
-          スライドから、身長が138cmの人は、体重がおおよそ33kgであることが予測できます。
+          スライドから、身長が138cmの人は、体重がおおよそ33kgであることが予測できます。<br><br>
         </div>
 
         <div class="caption">最小二乗法とは</div>
         <div class="topSpace"></div>
         <div class="text">
-          <br>ここではより詳しく最小二乗法について説明します。
-          <br>最小二乗法とは、「誤差の二乗和が最小となる関数$f(x)$(データの関係を表すための関数)」を求める方法です。
-          データ$(xi,yi)$をグラフ上に表した点$(xi,yi)$の誤差は、$yi$から関数$f(xi)$を引いたものです。
-          <br>例えば、下の図でいうとデータ$(x_4,y_4)$の誤差は$y_4-f(x_4)$です。
-          <center><br><br><%= link_to image_tag("pic2.png") %><br></center>
-          　　　※青い点は実際のデータ、赤い線は関数$f(x)$、↔は誤差
-          <br><br>最小二乗法では「データの関係を表す<b>曲線</b>」を求めることもできますが、前述した通り複雑で分かりにくいので、 今回は「データの関係を表す<b>直線</b>」を求める方法に限定して簡単に説明します。
-          <br>直線($f(x)=ax+b$)は傾き$a$と切片$b$を求めることで1つに決まるので、 誤差が最小となるような$a,b$を求めることを目標にします。
+          ここではより詳しく最小二乗法について説明します。<br>
+          最小二乗法とは、「誤差の二乗和が最小となる関数$f(x)$(データの関係を表すための関数)」を求める方法です。
+          データ$(xi,yi)$をグラフ上に表した点$(xi,yi)$の誤差は、$yi$から関数$f(xi)$を引いたものです。<br>
+          例えば、下の図でいうとデータ$(x_4,y_4)$の誤差は$y_4-f(x_4)$です。<br><br>
 
-          <center><br><br><%= link_to image_tag("pic3.png") %><br><br></center>
+          <center><%= link_to image_tag("pic2.png") %></center>
+          <center>※青い点は実際のデータ、赤い線は関数$f(x)$、↔は誤差</center><br>
+
+          最小二乗法では「データの関係を表す<b>曲線</b>」を求めることもできますが、前述した通り複雑で分かりにくいので、 今回は「データの関係を表す<b>直線</b>」を求める方法に限定して簡単に説明します。<br>
+          直線($f(x)=ax+b$)は傾き$a$と切片$b$を求めることで1つに決まるので、 誤差が最小となるような$a,b$を求めることを目標にします。<br><br>
+
+          <center><%= link_to image_tag("pic3.png") %></center><br>
 
           上の図のように誤差が最小となる直線を引くためにはどのようにすればよいでしょう。 実際に傾き$a$と切片$b$の値を変えて確認してみましょう。<br><br>
+
           <center>
-          <iframe
-            src="https://docs.google.com/presentation/d/e/2PACX-1vTIWv7RoUWfQzAwm3iBGpavqe973BkN0_qmoj8UfRcIscYtU2UL6gK6V5fQf9keZjrx86ZOrp64rPrA/embed?start=true&loop=true&delayms=1000"
-            frameborder="0"
-            width="480"
-            height="300"
-            allowfullscreen="true"
-            mozallowfullscreen="true"
-            webkitallowfullscreen="true"></iframe>
-            </center><br><br>
-          ①は$a=0.2, b=16$ ②は$a=0.6, b=16$ ③は$a=0.6,b=-50$です。<br><br>
+            <iframe
+              src="https://docs.google.com/presentation/d/e/2PACX-1vTIWv7RoUWfQzAwm3iBGpavqe973BkN0_qmoj8UfRcIscYtU2UL6gK6V5fQf9keZjrx86ZOrp64rPrA/embed?start=true&loop=true&delayms=1000"
+              frameborder="0"
+              width="480"
+              height="300"
+              allowfullscreen="true"
+              mozallowfullscreen="true"
+              webkitallowfullscreen="true"></iframe>
+          </center><br>
+
+          ①は$a=0.2, b=16$　②は$a=0.6, b=16$　③は$a=0.6,b=-50$　です。<br><br>
+
           スライドを見ると、$a,b$を変えることによって誤差も変わることが分かります。 $a,b$を変えることで誤差を最小にできると考えられます。
           誤差を小さくするということは、各データの誤差の和を小さくするということです。<br>
-          しかし、誤差(下図の↕︎)をそのまま足すと、正負が混合している場合、誤差の和が0になることがあります。 下の図のように誤差の和が0で最小なのにも関わらず、この直線は「データの関係を表す」直線ではないことが見てわかります。
-          <center><br><br><%= link_to image_tag("pic4.png") %><br><br></center>
+          しかし、誤差(下図の↔)をそのまま足すと、正負が混合している場合、誤差の和が0になることがあります。 下の図のように誤差の和が0で最小なのにも関わらず、この直線は「データの関係を表す」直線ではないことが見てわかります。<br><br>
+          
+          <center><%= link_to image_tag("pic4.png") %></center><br>
+
           そこで、負の数をなくすために誤差を二乗して、正の数にします。<br>
           データの数を$n$個として、誤差の二乗和を$E(a,b)$とすると次のように表せます。<br>
           $E(a,b)$ = (1番目のデータの誤差)$^2$+(2番目のデータの誤差)$^2$+…+($n$番目のデータの誤差)$^2$ となります。<br>
-          例えば、4番目のデータの誤差に注目すると
-          <center><br><br><%= link_to image_tag("pic5.png") %><br><br></center>
-          誤差の式は$y_4-(ax_4+b)$となります。 したがって、$x$が$i$番目のときに注目すると誤差の式は$y_i-(ax_i+b)$となります。 つまり、誤差の二乗和$E(a,b)$は $E(a,b)= \{y_1-(ax_1+b)\}^2+\{y_2-(ax_2+b)\}^2+…+\{y_n-(ax_n+b)\}^2$ $E(a,b)=\sum_{i=1}^{n} \{y_i-(ax_i+b)\}^2$&emsp;(nはデータ数) となります。<br>
+          例えば、4番目のデータの誤差に注目すると<br><br>
+
+          <center><%= link_to image_tag("pic5.png") %></center><br>
+
+          誤差の式は$y_4-(ax_4+b)$となります。 したがって、$x$が$i$番目のときに注目すると誤差の式は$y_i-(ax_i+b)$となります。つまり、誤差の二乗和$E(a,b)$は<br><br>
+          <div class="padl-10">
+            $E(a,b)= \{y_1-(ax_1+b)\}^2+\{y_2-(ax_2+b)\}^2+…+\{y_n-(ax_n+b)\}^2$
+            $E(a,b)=\sum_{i=1}^{n} \{y_i-(ax_i+b)\}^2$&emsp;($n$はデータ数) となります。
+          </div><br>
+
           関数$E$を展開すると、
           <div class="hidden_box2">
             <label for="label2">
@@ -146,26 +156,38 @@
             </div>
           </div>
           $E(a,b)=\sum_{i=1}^{n} (y_i^2-2ax_iy_i-2by_i+a^2x_i^2+2abx_i+b^2)$ となります。<br>
-          この関数$E(a,b)$を図に表すと、$E(a,b)$は二変数の関数であるため、$Z=E(a,b)$とすると下の図のようになります。
-          <center><br><br><%= link_to image_tag("pic6.png") %><br><br></center>
-          この関数の最小点を考えるために、関数$E(a,b)$の最小点を$(a^*,b^*)$として、$a=a^*$、または$b=b^*$で切ったときの断面図をそれぞれ見てみましょう。
-          <center><br><br><%= link_to image_tag("pic7.png") %><br><br></center>
-          まず、$b=b^*$で切ったときの断面図(上図)から考えてみましょう。<br>
+          この関数$E(a,b)$を図に表すと、$E(a,b)$は二変数の関数であるため、$Z=E(a,b)$とすると下の図のようになります。<br><br>
+
+          <center><%= link_to image_tag("pic6.png") %></center><br>
+
+          この関数の最小点を考えるために、関数$E(a,b)$の最小点を$(a^*,b^*)$として、$a=a^*$、または$b=b^*$で切ったときの断面図をそれぞれ見てみましょう。<br><br>
+          
+          <center><%= link_to image_tag("pic7.png") %></center><br>
+
+          まず、$b=b^*$で切ったときの断面図(上図)から考えてみましょう。
           一変数で下に凸の二次関数は傾きが0のときに最小値となります。<br>
-          同じように、この断面図$(b=b^*)$でも「傾きが0になるとき」に最小値となることが分かります。
-          <center><br><br><%= link_to image_tag("pic8.png") %><br><br></center>
+          同じように、この断面図$(b=b^*)$でも「傾きが0になるとき」に最小値となることが分かります。<br><br>
+
+          <center><%= link_to image_tag("pic8.png") %></center><br>
+
           次に、$a=a*$で切った時の断面図(上図)を考えてみましょう。<br>
           一変数で下に凸の二次関数は傾きが0のときに最小値となります。<br>
-          同じように、この断面図$(a=a^*)$でも「傾きが0になるとき」に最小値となることが分かります。
-          <center><br><br><%= link_to image_tag("pic9.png") %><br><br></center>
+          同じように、この断面図$(a=a^*)$でも「傾きが0になるとき」に最小値となることが分かります。<br><br>
+          
+          <center><%= link_to image_tag("pic9.png") %></center><br>
+
           以上より、最小点$(a^*,b^*)$を考えると…<br>
-	         &emsp;&emsp;$a^*…b=b^*$で切った時の断面図において、傾きが0になる$a$の値<br>
-	          &emsp;&emsp;$b^*…a=a^*$で切った時の断面図において、傾きが0になる$b$の値<br>
-            したがって、「$b$を定数として固定して関数$E(a,b)$を$a$で微分したもの」と「$a$を定数として固定して関数$E(a,b)$を$b$で微分したもの」がともに0となる点$(a^*,b^*)$を見つけます。<br><br>
+	        <div class="padl-10">  
+            $a^*…b=b^*$で切った時の断面図において、傾きが0になる$a$の値<br>
+	          $b^*…a=a^*$で切った時の断面図において、傾きが0になる$b$の値<br>
+          </div>
+
+          したがって、「$b$を定数として固定して関数$E(a,b)$を$a$で微分したもの」と「$a$を定数として固定して関数$E(a,b)$を$b$で微分したもの」がともに0となる点$(a^*,b^*)$を見つけます。<br><br>
           ここで、二変数の関数を微分する方法を紹介します。<br>
           二変数の関数の微分の方法といっても一変数のときとあまり違いはありません。<br>
           例えば、関数$E(a,b)$を$a$で微分したいときは$b$を定数だと考えて一変数のときと同じように微分をすることができます。
           実際に$b$を定数として固定して関数$E(a,b)$を$a$で微分したものと、$a$を定数として固定して関数$E(a,b)$を$b$で微分したものを計算して最小点$(a^*,b^*)$を求めてみましょう。<br><br>
+          
           関数$E(a,b)$を$a$で微分すると<br>$(E(a,b)$の式を忘れた人は
           <span class="hidden_box2">
             <label for="label3">ここを</label>
@@ -178,12 +200,14 @@
             </div>
           </span>
           $($関数$E(a,b)$を$a$で微分$)=\sum_{i=1}^{n} (-2x_iy_i+2ax_i^2+2bx_i)$<br><br>
-          関数$E(a,b)$を$b$で微分すると<br>
 
+          関数$E(a,b)$を$b$で微分すると<br>
           $($関数$E(a,b)$を$b$で微分$)=\sum_{i=1}^{n} (-2y_i+2ax_i+2b)$<br>
           となります。<br><br>
-          上の2式に対して連立方程式をたてると $\begin{eqnarray} \begin{cases} \sum_{i=1}^{n} (-2x_iy_i+2ax_i^2+2bx_i)=0 & \\ \sum_{i=1}^{n} (-2y_i+2ax_i+2b)=0 & \end{cases} \end{eqnarray}$ となり、この連立方程式を解くと、
-          誤差の二乗和がとなる$a$と$b$が求めることができます。<br><br>
+
+          上の2式に対して連立方程式をたてると 
+          $\begin{eqnarray} \begin{cases} \sum_{i=1}^{n} (-2x_iy_i+2ax_i^2+2bx_i)=0 & \\ \sum_{i=1}^{n} (-2y_i+2ax_i+2b)=0 & \end{cases} \end{eqnarray}$
+          となり、この連立方程式を解くと、誤差の二乗和がとなる$a$と$b$が求めることができます。<br><br>
           誤差の二乗和が最小となる傾き$a$,切片$b$が求められたので、「データの関係を表すための直線」の式$(f(x)=ax+b)$が得られます。<br>
         </div>
 
@@ -223,6 +247,7 @@
         <%# <div style="display:inline-block; background:#fcfcff; padding:15px; border:1px solid #3b5998; border-radius:10px; word-break:break-all;"> %>
 
           <div class="text-sub">
+            <div class="pad1"></div>
             <div class="hidden_box">
               <label for="label1">なぜ曲線ではなく直線？</label>
               <input type="checkbox" id="label1"/>
@@ -238,11 +263,13 @@
           </div>
 
           <div class="text-sub">
+            <div class="pad2"></div>
             <br><br>$f(a,b)=a^2+ab$<br>
             $a$で偏微分すると $\frac{\partial f(a,b)}{\partial a}=2a+b$ $b$で偏微分すると $\frac{\partial f(a,b)}{\partial b}=a$
           </div>
 
           <div clas="text-sub">
+            <div class="pad3"></div>
             <div class="box26">
               <span class="box-title">①</span>
               <p>
@@ -253,69 +280,83 @@
                 <input id="Radio3" name="RadioGroup1" type="radio" onchange="onRadioButtonChange1();" value="結果：残念、不正解です">
                 <label for="Radio3">$x$</label>
               </p>
-              <br><span id="span1">結果：</span>
+              <span id="span1">結果：</span>
             </div>
 
-            <div class="text">②</div>
-            <div style="display:inline-block; background:#fcfcff; padding:15px; border:1px solid #3b5998; border-radius:10px; word-break:break-all;">
-              <input id="Radio4" name="RadioGroup2" type="radio" onchange="onRadioButtonChange2();" value="結果：おめでとう、正解です">
-              <label for="Radio4">$2$</label>&emsp;
-              <input id="Radio5" name="RadioGroup2" type="radio" onchange="onRadioButtonChange2();" value="結果：残念、不正解です">
-              <label for="Radio5">$2x-3$</label>&emsp;
-              <input id="Radio6" name="RadioGroup2" type="radio" onchange="onRadioButtonChange2();" value="結果：残念、不正解です">
-              <label for="Radio6">$x$</label>
-              <br><span id="span2">結果：</span>
+            <div class="box26">
+              <div class="box-title">②</div>
+              <p>
+                <input id="Radio4" name="RadioGroup2" type="radio" onchange="onRadioButtonChange2();" value="結果：おめでとう、正解です">
+                <label for="Radio4">$2$</label>&emsp;
+                <input id="Radio5" name="RadioGroup2" type="radio" onchange="onRadioButtonChange2();" value="結果：残念、不正解です">
+                <label for="Radio5">$2x-3$</label>&emsp;
+                <input id="Radio6" name="RadioGroup2" type="radio" onchange="onRadioButtonChange2();" value="結果：残念、不正解です">
+                <label for="Radio6">$x$</label>
+              </p>
+              <span id="span2">結果：</span>
             </div>
 
-            <div id="output2"></div><br>
-            <div class="text">③</div>
-            <div style="display:inline-block; background:#fcfcff; padding:15px; border:1px solid #3b5998; border-radius:10px; word-break:break-all;">
-              <input id="Radio7" name="RadioGroup3" type="radio" onchange="onRadioButtonChange3();" value="結果：おめでとう、正解です">
-              <label for="Radio7">$1$</label>&emsp;
-              <input id="Radio8" name="RadioGroup3" type="radio" onchange="onRadioButtonChange3();" value="結果：残念、不正解です">
-              <label for="Radio8">$2x-3$</label>&emsp;
-              <input id="Radio9" name="RadioGroup3" type="radio" onchange="onRadioButtonChange3();" value="結果：残念、不正解です">
-              <label for="Radio9">$x$</label>
-              <br><span id="span3">結果：</span>
+            <div id="output2"></div>
+
+            <div class="box26">
+              <div class="box-title">③</div>
+              <p>
+                <input id="Radio7" name="RadioGroup3" type="radio" onchange="onRadioButtonChange3();" value="結果：おめでとう、正解です">
+                <label for="Radio7">$1$</label>&emsp;
+                <input id="Radio8" name="RadioGroup3" type="radio" onchange="onRadioButtonChange3();" value="結果：残念、不正解です">
+                <label for="Radio8">$2x-3$</label>&emsp;
+                <input id="Radio9" name="RadioGroup3" type="radio" onchange="onRadioButtonChange3();" value="結果：残念、不正解です">
+                <label for="Radio9">$x$</label>
+              </p>
+              <span id="span3">結果：</span>
             </div>
 
-            <div id="output3"></div><br>
-            <div class="text">④</div>
-            <div style="display:inline-block; background:#fcfcff; padding:15px; border:1px solid #3b5998; border-radius:10px; word-break:break-all;">
-              <input id="Radio10" name="RadioGroup4" type="radio" onchange="onRadioButtonChange4();" value="結果：おめでとう、正解です">
-              <label for="Radio10">$4x-7$</label>&emsp;
-              <input id="Radio11" name="RadioGroup4" type="radio" onchange="onRadioButtonChange4();" value="結果：残念、不正解です">
-              <label for="Radio11">$2x-3$</label>&emsp;
-              <input id="Radio12" name="RadioGroup4" type="radio" onchange="onRadioButtonChange4();" value="結果：残念、不正解です">
-              <label for="Radio12">$x$</label>
-              <br><span id="span4">結果：</span>
+            <div id="output3"></div>
+
+            <div class="box26">
+              <div class="box-title">④</div>
+              <p>
+                <input id="Radio10" name="RadioGroup4" type="radio" onchange="onRadioButtonChange4();" value="結果：おめでとう、正解です">
+                <label for="Radio10">$4x-7$</label>&emsp;
+                <input id="Radio11" name="RadioGroup4" type="radio" onchange="onRadioButtonChange4();" value="結果：残念、不正解です">
+                <label for="Radio11">$2x-3$</label>&emsp;
+                <input id="Radio12" name="RadioGroup4" type="radio" onchange="onRadioButtonChange4();" value="結果：残念、不正解です">
+                <label for="Radio12">$x$</label>
+              </p>
+              <span id="span4">結果：</span>
             </div>
 
-            <div id="output4"></div><br>
-            <div class="text">⑤</div>
-            <div style="display:inline-block; background:#fcfcff; padding:15px; border:1px solid #3b5998; border-radius:10px; word-break:break-all;">
-              <input id="Radio13" name="RadioGroup5" type="radio" onchange="onRadioButtonChange5();" value="結果：おめでとう、正解です">
-              <label for="Radio13">$1.75$</label>&emsp;
-              <input id="Radio14" name="RadioGroup5" type="radio" onchange="onRadioButtonChange5();" value="結果：残念、不正解です">
-              <label for="Radio14">$2x-3$</label>&emsp;
-              <input id="Radio15" name="RadioGroup5" type="radio" onchange="onRadioButtonChange5();" value="結果：残念、不正解です">
-              <label for="Radio15">$x$</label>
-              <br><span id="span5">結果：</span>
+            <div id="output4"></div>
+
+            <div class="box26">
+              <div class="box-title">⑤</div>
+              <p>
+                <input id="Radio13" name="RadioGroup5" type="radio" onchange="onRadioButtonChange5();" value="結果：おめでとう、正解です">
+                <label for="Radio13">$1.75$</label>&emsp;
+                <input id="Radio14" name="RadioGroup5" type="radio" onchange="onRadioButtonChange5();" value="結果：残念、不正解です">
+                <label for="Radio14">$2x-3$</label>&emsp;
+                <input id="Radio15" name="RadioGroup5" type="radio" onchange="onRadioButtonChange5();" value="結果：残念、不正解です">
+                <label for="Radio15">$x$</label>
+              </p>
+              <span id="span5">結果：</span>
             </div>
 
-            <div id="output5"></div><br>
-            <div class="text">⑥</div>
-            <div style="display:inline-block; background:#fcfcff; padding:12px; border:1px solid #3b5998; border-radius:8px; word-break:break-all;">
-              <input id="Radio16" name="RadioGroup6" type="radio" onchange="onRadioButtonChange6();" value="結果：おめでとう、正解です">
-              <label for="Radio16">$1.732$</label>&emsp;
-              <input id="Radio17" name="RadioGroup6" type="radio" onchange="onRadioButtonChange6();" value="結果：残念、不正解です">
-              <label for="Radio17">$2x-3$</label>&emsp;
-              <input id="Radio18" name="RadioGroup6" type="radio" onchange="onRadioButtonChange6();" value="結果：残念、不正解です">
-              <label for="Radio18">$x$</label>
-              <br><span id="span6">結果：</span>
+            <div id="output5"></div>
+
+            <div class="box26">
+              <div class="box-title">⑥</div>
+              <p>
+                <input id="Radio16" name="RadioGroup6" type="radio" onchange="onRadioButtonChange6();" value="結果：おめでとう、正解です">
+                <label for="Radio16">$1.732$</label>&emsp;
+                <input id="Radio17" name="RadioGroup6" type="radio" onchange="onRadioButtonChange6();" value="結果：残念、不正解です">
+                <label for="Radio17">$2x-3$</label>&emsp;
+                <input id="Radio18" name="RadioGroup6" type="radio" onchange="onRadioButtonChange6();" value="結果：残念、不正解です">
+                <label for="Radio18">$x$</label>
+              <p>
+              <span id="span6">結果：</span>
             </div>
 
-            <div id="output6"></div><br>
+            <div id="output6"></div>
           </div>
 
           <input type="button" value="解答チェック" onclick="clickBtn1()"/>
