@@ -16,7 +16,7 @@
         3章（実際にやってみよう）では、問題を解くことで1章や2章で説明したことを実感してもらうことを意図しています。<br><br>
       </div>
 
-      <div class="caption">グラフについて</div>
+      <div class="caption">スライドについて</div>
       <div class="topSpace"></div>
       <div class="text">
         以下のようなスライドは自動でページが動きます。<br>
@@ -40,6 +40,7 @@
         3章（実際にやってみよう）では、以下のような解答欄があります。<br>
         各解答欄から選択肢を1つ選んで、解答チェックボタンをクリックすると、選択肢が正解か不正解かが表示されます。<br><br>
 
+        <center>
         <div class="box26">
           <span class="box-title">①</span>
           <p>
@@ -50,24 +51,24 @@
             <input id="Radio3" name="RadioGroup1" type="radio" onchange="onRadioButtonChange1();" value="結果：残念、不正解です">
             <label for="Radio3">$x$</label>
           </p>
-          <br>
           <span id="span1">結果：</span>
         </div>
 
         <div class="box26">
-          <span class="box-title">①</span>
+          <div class="box-title">②</div>
           <p>
-            <input id="Radio1" name="RadioGroup1" type="radio" onchange="onRadioButtonChange1();" value="結果：おめでとう、正解です">
-            <label for="Radio1">$2x$</label>&emsp;
-            <input id="Radio2" name="RadioGroup1" type="radio" onchange="onRadioButtonChange1();" value="結果：残念、不正解です">
-            <label for="Radio2">$2x-3$</label>&emsp;
-            <input id="Radio3" name="RadioGroup1" type="radio" onchange="onRadioButtonChange1();" value="結果：残念、不正解です">
-            <label for="Radio3">$x$</label>
+            <input id="Radio4" name="RadioGroup2" type="radio" onchange="onRadioButtonChange2();" value="結果：おめでとう、正解です">
+            <label for="Radio4">$2$</label>&emsp;
+            <input id="Radio5" name="RadioGroup2" type="radio" onchange="onRadioButtonChange2();" value="結果：残念、不正解です">
+            <label for="Radio5">$2x-3$</label>&emsp;
+            <input id="Radio6" name="RadioGroup2" type="radio" onchange="onRadioButtonChange2();" value="結果：残念、不正解です">
+            <label for="Radio6">$x$</label>
           </p>
-          <br>
-          <span id="span1">結果：</span>
+          <span id="span2">結果：</span>
         </div>
         <input type="button" value="解答チェック" onclick="clickBtn1()"/>
+        <br><br><br><br>
+        <center>
       </div>
     </div>
 
@@ -78,22 +79,7 @@
       }
     </script>
 
-    <script language="JavaScript">
-      function onRadioButtonChange1() {
-        radiobtn1 = document.getElementById("Radio1");
-        radiobtn2 = document.getElementById("Radio2");
-        radiobtn3 = document.getElementById("Radio3");
-
-        target = document.getElementById("output1");
-
-        if (radiobtn1.checked == true) {
-          target.innerHTML = "結果：おめでとう、正解です";
-        } else if (radiobtn2.checked == true) {
-          target.innerHTML = "結果：残念、不正解です";
-        } else if (radiobtn3.checked == true) {
-          target.innerHTML = "結果：残念、不正解です";
-        }
-      }
+    <script type="text/javascript" language="javascript">
 
       function clickBtn1() {
         let str1 = "";
@@ -119,5 +105,24 @@
           }
 
         }
+
+        const RadioGroup2 = document.getElementsByName("RadioGroup2");
+        for (let i = 0; i < RadioGroup2.length; i++) {
+
+          if (RadioGroup2[0].checked === true) {
+            str2 = RadioGroup2[0].value;
+            break;
+            //target.innerHTML = "おめでとう、正解です";
+          } else if (RadioGroup2[1].checked == true) {
+            str2 = RadioGroup2[1].value;
+            break;
+          } else if (RadioGroup2[2].checked == true) {
+            str2 = RadioGroup2[2].value;
+            break;
+          }
+
+        }
         document.getElementById("span1").textContent = str1;
+        document.getElementById("span2").textContent = str2;
+      }
     </script>
