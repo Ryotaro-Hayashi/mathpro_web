@@ -212,7 +212,7 @@ a img:hover {
   border-bottom: 2px solid rgb(0, 80, 185);
 }
 .caption2{
-  font-size: 25px;
+  font-size: 20px;
 }
 
 .text{
@@ -220,6 +220,13 @@ a img:hover {
   padding-left: 15px;
   padding-right: 15px;
 }
+
+.text1{
+  font-size: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
 .text-sub{
   font-size: 15px;
 }
@@ -296,6 +303,32 @@ a img:hover {
     height: auto;
     opacity: 1;
 }
+
+.hidden_box3 label:hover {
+    background: #efefef;
+}
+
+/*チェックは見えなくする*/
+.hidden_box3 input {
+    display: none;
+}
+
+/*中身を非表示にしておく*/
+.hidden_box3 .hidden_show3 {
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: 0.8s;
+}
+
+/*クリックで中身表示*/
+.hidden_box3 input:checked ~ .hidden_show3 {
+    padding: 2px 0;
+    height: auto;
+    opacity: 1;
+}
+
 
 
 .btn a {
@@ -417,7 +450,7 @@ td{
 }
 
 .pad3{
-  padding-top: 720px;
+  padding-top: 1470px;
 }
 
 .usage-button{
