@@ -73,7 +73,7 @@
           <br>この表データをグラフに表示すると以下のようになります。<br><br>
 
           <center><%= link_to image_tag("pic1.1.png") %><%= link_to image_tag("pic1.2.png") %></center><br>
-          このデータの関係を表すための関数(身長と体重の関係を表す関数)を求めることができれば、身長から体重を予測することができます。
+          このデータの関係を表すための$^*$関数(身長と体重の関係を表す関数)を求めることができれば、身長から体重を予測することができます。
           <br>例えば、身長が138cmの人の体重をこの直線を用いて予測してみましょう。
           <br><br>
           <center><iframe
@@ -94,8 +94,8 @@
         <div class="topSpace"></div>
         <div class="text">
           ここではより詳しく最小二乗法について説明します。<br>
-          最小二乗法とは、「誤差の二乗和が最小となる関数$f(x)$(データの関係を表すための関数)」を求める方法です。
-          データ$(xi,yi)$をグラフ上に表した点$(xi,yi)$の誤差は、$yi$から関数$f(xi)$を引いたものです。<br>
+          最小二乗法とは、「$^*$誤差の二乗和が最小となる関数$f(x)$(データの関係を表すための関数)」を求める方法です。
+          データ$(x_i,y_i)$をグラフ上に表した点$(x_i,y_i)$の誤差は、$y_i$から関数$f(x_i)$を引いたものです。<br>
           例えば、下の図でいうとデータ$(x_4,y_4)$の誤差は$y_4-f(x_4)$です。<br><br>
 
           <center><%= link_to image_tag("pic2.png") %></center>
@@ -127,7 +127,7 @@
 
           <center><%= link_to image_tag("pic4.png") %></center><br>
 
-          そこで、負の数をなくすために誤差を二乗して、正の数にします。<br>
+          そこで、負の数をなくすために誤差を$^*$二乗して、正の数にします。<br>
           データの数を$n$個として、誤差の二乗和を$E(a,b)$とすると次のように表せます。<br>
           $E(a,b)$ = (1番目のデータの誤差)$^2$+(2番目のデータの誤差)$^2$+…+($n$番目のデータの誤差)$^2$ となります。<br>
           例えば、4番目のデータの誤差に注目すると<br><br>
@@ -137,7 +137,7 @@
           誤差の式は$y_4-(ax_4+b)$となります。 したがって、$x$が$i$番目のときに注目すると誤差の式は$y_i-(ax_i+b)$となります。つまり、誤差の二乗和$E(a,b)$は<br><br>
           <div class="padl-10">
             $E(a,b)= \{y_1-(ax_1+b)\}^2+\{y_2-(ax_2+b)\}^2+…+\{y_n-(ax_n+b)\}^2$
-            $E(a,b)=\sum_{i=1}^{n} \{y_i-(ax_i+b)\}^2$&emsp;($n$はデータ数) となります。
+            $E(a,b)=\displaystyle\sum_{i=1}^{n} \{y_i-(ax_i+b)\}^2$&emsp;($n$はデータ数) となります。
           </div><br>
 
           関数$E$を展開すると、
@@ -149,13 +149,13 @@
             <div class="hidden_show2">
               <!--非表示ここから-->
               <div class="text">
-                <p>$E(a,b)=\sum_{i=1}^{n} \{y_i-(ax_i+b)\}^2$</p>
-                <p>$E(a,b)=\sum_{i=1}^{n} \{y_i^2-2(ax_i+b)y_i+(ax_i+b)^2\}$</p>
+                <p>$E(a,b)=\displaystyle\sum_{i=1}^{n} \{y_i-(ax_i+b)\}^2$</p>
+                <p>$E(a,b)=\displaystyle\sum_{i=1}^{n} \{y_i^2-2(ax_i+b)y_i+(ax_i+b)^2\}$</p>
               </div>
               <!--ここまで-->
             </div>
           </div>
-          $E(a,b)=\sum_{i=1}^{n} (y_i^2-2ax_iy_i-2by_i+a^2x_i^2+2abx_i+b^2)$ となります。<br>
+          $E(a,b)=\displaystyle\sum_{i=1}^{n} (y_i^2-2ax_iy_i-2by_i+a^2x_i^2+2abx_i+b^2)$ となります。<br>
           この関数$E(a,b)$を図に表すと、$E(a,b)$は二変数の関数であるため、$Z=E(a,b)$とすると下の図のようになります。<br><br>
 
           <center><%= link_to image_tag("pic6.png") %></center><br>
@@ -188,25 +188,25 @@
           例えば、関数$E(a,b)$を$a$で微分したいときは$b$を定数だと考えて一変数のときと同じように微分をすることができます。
           実際に$b$を定数として固定して関数$E(a,b)$を$a$で微分したものと、$a$を定数として固定して関数$E(a,b)$を$b$で微分したものを計算して最小点$(a^*,b^*)$を求めてみましょう。<br><br>
 
-          関数$E(a,b)$を$a$で微分すると<br>$(E(a,b)$の式を忘れた人は
+          関数$E(a,b)$を$a$で$^*$微分すると<br>$(E(a,b)$の式を忘れた人は
           <span class="hidden_box2">
             <label for="label3">ここを</label>
             クリック！)
             <input type="checkbox" id="label3"/>
             <div class="hidden_show2">
               <!--非表示ここから-->
-              <span class="text">$E(a,b)=\sum_{i=1}^{n} (y_i^2-2ax_iy_i-2by_i+a^2x_i^2+2abx_i+b^2)$</span>
+              <span class="text">$E(a,b)=\displaystyle\sum_{i=1}^{n} (y_i^2-2ax_iy_i-2by_i+a^2x_i^2+2abx_i+b^2)$</span>
               <!--ここまで-->
             </div>
           </span>
-          $($関数$E(a,b)$を$a$で微分$)=\sum_{i=1}^{n} (-2x_iy_i+2ax_i^2+2bx_i)$<br><br>
+          $($関数$E(a,b)$を$a$で微分$)=\displaystyle\sum_{i=1}^{n} (-2x_iy_i+2ax_i^2+2bx_i)$<br><br>
 
           関数$E(a,b)$を$b$で微分すると<br>
-          $($関数$E(a,b)$を$b$で微分$)=\sum_{i=1}^{n} (-2y_i+2ax_i+2b)$<br>
+          $($関数$E(a,b)$を$b$で微分$)=\displaystyle\sum_{i=1}^{n} (-2y_i+2ax_i+2b)$<br>
           となります。<br><br>
 
           上の2式に対して連立方程式をたてると
-          $\begin{eqnarray} \begin{cases} \sum_{i=1}^{n} (-2x_iy_i+2ax_i^2+2bx_i)=0 & \\ \sum_{i=1}^{n} (-2y_i+2ax_i+2b)=0 & \end{cases} \end{eqnarray}$
+          $\begin{eqnarray} \begin{cases} \displaystyle\sum_{i=1}^{n} (-2x_iy_i+2ax_i^2+2bx_i)=0 & \\ \displaystyle\sum_{i=1}^{n} (-2y_i+2ax_i+2b)=0 & \end{cases} \end{eqnarray}$
           となり、この連立方程式を解くと、誤差の二乗和がとなる$a$と$b$が求めることができます。<br><br>
           誤差の二乗和が最小となる傾き$a$,切片$b$が求められたので、「データの関係を表すための直線」の式$(f(x)=ax+b)$が得られます。<br>
         </div>
@@ -244,6 +244,12 @@
       </div>
 
       <div class="sub">
+
+        <div class="text-sub">
+          <div class="pad0"></div>
+           ※当サイトでは、データの関係を表すための関数が存在すると仮定します
+        </div>
+
           <div class="text-sub">
             <div class="pad1"></div>
             <div class="hidden_box">
@@ -261,10 +267,33 @@
           </div>
 
           <div class="text-sub">
+            <div class="pad4"></div>
+             ※誤差の二乗和とは、「すべてのデータの誤差を二乗して足し合わせたもの」のことです
+</div>
+
+<div class="text-sub">
+  <div class="pad5"></div>
+                ※二乗のほか、四乗や偶数乗、そして絶対値が考えられます。四乗や偶数乗をすると負の値は消えます。
+                しかし、値が大きくなり計算が複雑になります。また、絶対値にすると、微分をしたときに対数を考えなければいけなくなり、
+                この場合も計算が複雑になります。よって最も計算が簡単な二乗を用います。
+                </div>
+
+          <div class="text-sub">
             <div class="pad2"></div>
             <br><br>$f(a,b)=a^2+ab$<br>
-            $a$で偏微分すると $\frac{\partial f(a,b)}{\partial a}=2a+b$ $b$で偏微分すると $\frac{\partial f(a,b)}{\partial b}=a$
+
+            $f(a,b)$を$a$で微分<br>
+            $(f(a,b)$を$a$で微分$)=2a+b$<br>
+
+            $f(a,b)$を$b$で微分<br>
+            $(f(a,b)$を$b$で微分$)=a$<br>
           </div>
+
+          <div class="text-sub">
+            <div class="pad6"></div>
+             ※ここの微分は，厳密には偏微分を意味する<br>
+             </div>
+
 
           <div clas="text-sub">
             <div class="pad3"></div>
