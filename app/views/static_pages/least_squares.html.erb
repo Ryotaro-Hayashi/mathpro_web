@@ -223,7 +223,7 @@
           \displaystyle\sum_{i=1}^{n} (-2y_i+2ax_i+2b)=0
           \end{cases}
           \]
-          となり、この連立方程式を解くと、誤差の二乗和がとなる$a$と$b$が求めることができます。<br><br>
+          となり、この連立方程式を解くと、誤差の二乗和が最小となる$a$と$b$が求めることができます。<br><br>
           誤差の二乗和が最小となる傾き$a$,切片$b$が求められたので、「データの関係を表すための直線」の式$(f(x)=ax+b)$が得られます。<br><br>
         </div>
 
@@ -644,7 +644,16 @@
           4.4
           3.9-->
 
-          <input type="button" value="解答チェック" onclick="clickBtn1()"/>
+          <input type="button" value="解答チェック" onclick="clickBtn1()"/><br>
+          <span id="span1_1">(1)結果：</span><br>
+          <span id="span2_1">(2)結果：</span><br>
+          <span id="span3_1">(3)結果：</span><br>
+          <span id="span4_1">(4)結果：</span><br>
+          <span id="span5_1">(5)結果：</span><br>
+          <span id="span6_1">(6)結果：</span><br>
+          <span id="span7_1">(7)結果：</span><br>
+          <span id="span8_1">(8)結果：</span><br>
+          <span id="span9_1">(9)結果：</span><br>
 
         </div>
       </div>
@@ -662,27 +671,30 @@
     <script type="text/javascript" language="javascript">
 
       function clickBtn1() {
-        let str1 = "";
-        let str2 = "";
-        let str3 = "";
-        let str4 = "";
-        let str5 = "";
-        let str6 = "";
-        let str7 = "";
-        let str8 = "";
-        let str9 = "";
+        let str1 = "", str1_1 = "";
+        let str2 = "", str2_1 = "";
+        let str3 = "", str3_1 = "";
+        let str4 = "", str4_1 = "";
+        let str5 = "", str5_1 = "";
+        let str6 = "", str6_1 = "";
+        let str7 = "", str7_1 = "";
+        let str8 = "", str8_1 = "";
+        let str9 = "", str9_1 = "";
         const RadioGroup1 = document.getElementsByName("RadioGroup1");
         for (let i = 0; i < RadioGroup1.length; i++) {
 
           if (RadioGroup1[0].checked === true) {
             str1 = RadioGroup1[0].value;
+            str1_1 = "(1) 結果：○";
             break;
             //target.innerHTML = "おめでとう、正解です";
           } else if (RadioGroup1[1].checked == true) {
             str1 = RadioGroup1[1].value;
+            str1_1 = "(1) 結果：×";
             break;
           } else if (RadioGroup1[2].checked == true) {
             str1 = RadioGroup1[2].value;
+            str1_1 = "(1) 結果：×";
             break;
 
           }
@@ -694,13 +706,16 @@
 
           if (RadioGroup2[0].checked === true) {
             str2 = RadioGroup2[0].value;
+            str2_1 = "(1) 結果：○";
             break;
             //target.innerHTML = "おめでとう、正解です";
           } else if (RadioGroup2[1].checked == true) {
             str2 = RadioGroup2[1].value;
+            str2_1 = "(1) 結果：×";
             break;
           } else if (RadioGroup2[2].checked == true) {
             str2 = RadioGroup2[2].value;
+            str2_1 = "(1) 結果：×";
             break;
           }
 
@@ -711,13 +726,16 @@
 
           if (RadioGroup3[0].checked === true) {
             str3 = RadioGroup3[0].value;
+            str3_1 = "(1) 結果：○";
             break;
             //target.innerHTML = "おめでとう、正解です";
           } else if (RadioGroup3[1].checked == true) {
             str3 = RadioGroup3[1].value;
+            str3_1 = "(1) 結果：×";
             break;
           } else if (RadioGroup3[2].checked == true) {
             str3 = RadioGroup3[2].value;
+            str3_1 = "(1) 結果：×";
             break;
           }
 
@@ -728,13 +746,16 @@
 
           if (RadioGroup4[0].checked === true) {
             str4 = RadioGroup4[0].value;
+            str4_1 = "(1) 結果：○";
             break;
             //target.innerHTML = "おめでとう、正解です";
           } else if (RadioGroup4[1].checked == true) {
             str4 = RadioGroup4[1].value;
+            str4_1 = "(1) 結果：×";
             break;
           } else if (RadioGroup4[2].checked == true) {
             str4 = RadioGroup4[2].value;
+            str4_1 = "(1) 結果：×";
             break;
           }
 
@@ -745,13 +766,16 @@
 
           if (RadioGroup5[0].checked === true) {
             str5 = RadioGroup5[0].value;
+            str5_1 = "(1) 結果：○";
             break;
             //target.innerHTML = "おめでとう、正解です";
           } else if (RadioGroup5[1].checked == true) {
             str5 = RadioGroup5[1].value;
+            str5_1 = "(1) 結果：×";
             break;
           } else if (RadioGroup5[2].checked == true) {
             str5 = RadioGroup5[2].value;
+            str5_1 = "(1) 結果：×";
             break;
           }
 
@@ -762,13 +786,16 @@
 
           if (RadioGroup6[0].checked === true) {
             str6 = RadioGroup6[0].value;
+            str6_1 = "(1) 結果：○";
             break;
             //target.innerHTML = "おめでとう、正解です";
           } else if (RadioGroup6[1].checked == true) {
             str6 = RadioGroup6[1].value;
+            str6_1 = "(1) 結果：×";
             break;
           } else if (RadioGroup6[2].checked == true) {
             str6 = RadioGroup6[2].value;
+            str6_1 = "(1) 結果：×";
             break;
           }
         }
@@ -778,13 +805,16 @@
 
           if (RadioGroup7[0].checked === true) {
             str7 = RadioGroup7[0].value;
+            str7_1 = "(1) 結果：○";
             break;
             //target.innerHTML = "おめでとう、正解です";
           } else if (RadioGroup7[1].checked == true) {
             str7 = RadioGroup7[1].value;
+            str7_1 = "(1) 結果：×";
             break;
           } else if (RadioGroup7[2].checked == true) {
             str7 = RadioGroup7[2].value;
+            str7_1 = "(1) 結果：×";
             break;
 
           }
@@ -796,13 +826,16 @@
 
           if (RadioGroup8[0].checked === true) {
             str8 = RadioGroup8[0].value;
+            str8_1 = "(1) 結果：○";
             break;
             //target.innerHTML = "おめでとう、正解です";
           } else if (RadioGroup8[1].checked == true) {
             str8 = RadioGroup8[1].value;
+            str8_1 = "(1) 結果：×";
             break;
           } else if (RadioGroup8[2].checked == true) {
             str8 = RadioGroup8[2].value;
+            str8_1 = "(1) 結果：×";
             break;
 
           }
@@ -814,26 +847,38 @@
 
           if (RadioGroup9[0].checked === true) {
             str9 = RadioGroup9[0].value;
+            str9_1 = "(1) 結果：○";
             break;
             //target.innerHTML = "おめでとう、正解です";
           } else if (RadioGroup9[1].checked == true) {
             str9 = RadioGroup9[1].value;
+            str9_1 = "(1) 結果：×";
             break;
           } else if (RadioGroup9[2].checked == true) {
             str9 = RadioGroup9[2].value;
+            str9_1 = "(1) 結果：×";
             break;
 
           }
 
         }
         document.getElementById("span1").textContent = str1;
+        document.getElementById("span1_1").textContent = str1_1;
         document.getElementById("span2").textContent = str2;
+        document.getElementById("span2_1").textContent = str2_1;
         document.getElementById("span3").textContent = str3;
+        document.getElementById("span3_1").textContent = str3_1;
         document.getElementById("span4").textContent = str4;
+        document.getElementById("span4_1").textContent = str4_1;
         document.getElementById("span5").textContent = str5;
+        document.getElementById("span5_1").textContent = str5_1;
         document.getElementById("span6").textContent = str6;
+        document.getElementById("span6_1").textContent = str6_1;
         document.getElementById("span7").textContent = str7;
+        document.getElementById("span7_1").textContent = str7_1;
         document.getElementById("span8").textContent = str8;
+        document.getElementById("span8_1").textContent = str8_1;
         document.getElementById("span9").textContent = str9;
+        document.getElementById("span9_1").textContent = str9_1;
       }
     </script>
