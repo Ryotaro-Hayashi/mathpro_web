@@ -116,39 +116,15 @@ a img:hover {
   opacity: 0.8;
 }
 
-#index h1 {
-  font-size: 50px;
-  font-weight: 400px;
-  line-height: 1;
-  color: #ffffff;
-  font-family: "游明朝", "Yu Mincho", "游明朝体", "YuMincho", sans-serif;
-  border: none;
-  padding-top: 15px;
-  padding-bottom: 15px;
-}
-
-#index p {
-  font-size: 22px;
-  font-weight: 450;
-  color: #ffffff;
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-
-#index .strongt{
-  font-size: 35px;
-  color: #ffffff;
-  margin-top: -15px;
-  line-height: 1.5em;
-}
-
-#index .cButton{
-  margin-top: -30px;
-}
-
-#index footer {
-  text-align: center;
-  background-color: transparent;
+//index関連
+#index {
+  background-image: image-url("FUN_outsideb.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+  font-family: "游ゴシック", "Yu Gothic", "游ゴシック体", "YuGothic", sans-serif;
+  height: 100%;
 }
 
 #index #wrap {
@@ -160,14 +136,42 @@ a img:hover {
   text-align: center;
 }
 
-#index {
-  background-image: image-url("FUN_outsideb.jpg");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-attachment: fixed;
-  background-size: cover;
-  font-family: "游ゴシック", "Yu Gothic", "游ゴシック体", "YuGothic", sans-serif;
-  height: 100%;
+//indexの見出し
+#index h1 {
+  font-size: 50px;
+  font-weight: 400px;
+  line-height: 1;
+  color: #ffffff;
+  font-family: "游明朝", "Yu Mincho", "游明朝体", "YuMincho", sans-serif;
+  border: none;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+//indexの強調文
+#index .strongt{
+  font-size: 35px;
+  color: #ffffff;
+  margin-top: -15px;
+  line-height: 1.5em;
+}
+
+#index p {
+  font-size: 22px;
+  font-weight: 450;
+  color: #ffffff;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+//indexのbox
+#index .cButton{
+  margin-top: -30px;
+}
+
+#index footer {
+  text-align: center;
+  background-color: transparent;
 }
 
 #FUN {
@@ -180,6 +184,7 @@ a img:hover {
   bottom: 0
 }
 
+//スタンダードなページ全体
 .all{
   background-color: rgb(248, 248, 248);
   margin-top: -35px;
@@ -197,13 +202,45 @@ a img:hover {
   padding-top: 10px;
 }
 
-.padl-10{
+//左に余白20px
+.padl-20{
   padding-left: 20px;
 }
-.padt-10{
+//上に余白40px
+.padt-40{
   padding-top: 40px;
 }
+//見出し下の余白
+.topSpace{
+  padding-top: 15px;
+}
+//サイドバーの余白
+.pad0{
+  padding-top: 1460px;
+}
+.pad1{
+  padding-top: 0px;
+}
+.pad7{
+  padding-top: 550px;
+}
+.pad4{
+  padding-top: 20px;
+}
+.pad5{
+  padding-top: 2200px;
+}
+.pad2{
+  padding-top: 2930px;
+}
+.pad6{
+  padding-top: 70px;
+}
+.pad3{
+  padding-top: 2000px;
+}
 
+//見出し
 .caption{
   font-family: "游明朝", "Yu Mincho", "游明朝体", "YuMincho", sans-serif;
   height: 65px;
@@ -211,10 +248,12 @@ a img:hover {
   text-decoration: none;
   border-bottom: 2px solid rgb(0, 80, 185);
 }
+//小見出し
 .caption2{
   font-size: 20px;
 }
 
+//本文
 .text{
   font-size: 18px;
   padding-left: 15px;
@@ -227,17 +266,16 @@ a img:hover {
   padding-right: 15px;
 }
 
+//サイドバーの本文
 .text-sub{
   font-size: 15px;
 }
+
+//homeの本文
 .homeText{
   text-align: center;
   font-size: 22px;
   font-weight: 450;
-}
-
-.topSpace{
-  padding-top: 15px;
 }
 
 /*全体*/
@@ -245,7 +283,6 @@ a img:hover {
     margin: 2em 0;/*前後の余白*/
     padding: 0;
 }
-
 
 /*ボタンホバー時*/
 .hidden_box label:hover {
@@ -330,7 +367,6 @@ a img:hover {
 }
 
 
-
 .btn a {
   background-color: #009cd3;
   color: #ffffff;
@@ -397,64 +433,28 @@ a img:hover {
   margin-right: 25px;
 }
 
-.pagetop
-    {
-    position: fixed;
-    bottom: 16px;
-    right: 16px;
-    }
+.pagetop{
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+}
 
-.pagetop a
-    {
-    display: block;
-    text-decoration: none;
-    }
+.pagetop a{
+  display: block;
+  text-decoration: none;
+}
 
-.pagetop:hover
-{
-    opacity: 0.85 ;
+.pagetop:hover{
+  opacity: 0.85 ;
 }
 
 td{
   text-align: center;
 }
 
+//マーカー
 .underl{
   background: linear-gradient(transparent 80%, #73dbe9 70%);
-}
-
-.pad0{
-  padding-top: 1460px;
-}
-
-
-.pad1{
-  padding-top: 0px;
-}
-
-.pad7{
-  padding-top: 550px;
-}
-
-.pad4{
-  padding-top: 20px;
-}
-
-.pad5{
-  padding-top: 2200px;
-}
-
-
-.pad2{
-  padding-top: 2930px;
-}
-
-.pad6{
-  padding-top: 70px;
-}
-
-.pad3{
-  padding-top: 2000px;
 }
 
 .usage-button{
