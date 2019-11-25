@@ -13,7 +13,7 @@
           <!-- justify-content-centerでページネーションを中央寄せ -->
           <ul class="pagination justify-content-center">
             <li class="page-item disabled">
-              <a class="page-link href="least_squares1">Prev</a>
+              <a class="page-link href=" least_squares1"=" least_squares1""="least_squares1" "">Prev</a>
             </li>
             <li class="page-item">
               <a class="page-link" href="least_squares1">1</a>
@@ -152,7 +152,7 @@
           <!-- justify-content-centerでページネーションを中央寄せ -->
           <ul class="pagination justify-content-center">
             <li class="page-item disabled">
-              <a class="page-link href="least_squares1">Prev</a>
+              <a class="page-link href=" least_squares1"=" least_squares1""="least_squares1" "">Prev</a>
             </li>
             <li class="page-item">
               <a class="page-link" href="least_squares1">1</a>
@@ -170,7 +170,53 @@
             </li>
           </ul>
         </nav>
-        
+
+      </div>
+
+      <div class="sub">
+        <div class="text-sub">
+          <div class="pad7"></div>
+          以下の2,3年次の講義で扱われています<br>
+          ・応用数学$II$<br>
+          ・数値解析<br>
+          ・物理と情報処理$I$<br>
+          ・複雑系科学実験<br>
+        </div>
+
+        <div class="text-sub">
+          <div class="pad4"></div>
+          ※誤差の二乗和とは、「すべてのデータの誤差を二乗して足し合わせたもの」のことです
+        </div>
+
+        <div class="text-sub">
+          <div class="pad5"></div>
+          ※二乗のほか、四乗や偶数乗、そして絶対値が考えられます。四乗や偶数乗をすると負の値は消えます。 しかし、値が大きくなり計算が複雑になります。また、絶対値にすると、微分をしたときに対数を考えなければいけなくなり、 この場合も計算が複雑になります。よって最も計算が簡単な二乗を用います。
+        </div>
+
+        <div class="text-sub">
+          <div class="pad2"></div>
+          <br><br>$f(a,b)=a^2+ab$<br>
+
+          $f(a,b)$を$a$で微分<br>
+          $(f(a,b)$を$a$で微分$)=2a+b$<br>
+
+          $f(a,b)$を$b$で微分<br>
+          $(f(a,b)$を$b$で微分$)=a$<br>
+        </div>
+
+        <div class="text-sub">
+          <div class="pad6"></div>
+          ※ここの微分は，厳密には偏微分を意味する<br>
+        </div>
       </div>
     </div>
   </div>
+
+  <!-- ページ読み込み後にリロードしてTEXを表示 -->
+  <script language="JavaScript">
+
+    if (window.name != "least_squares2") {
+      location.reload();
+      window.name = "least_squares2";
+    }
+  </script>
