@@ -8,6 +8,30 @@
     <div class="column">
       <div class="main">
 
+        <!-- ページネーション機能（Bootstrap） -->
+        <nav aria-label="Page navigation">
+          <!-- justify-content-centerでページネーションを中央寄せ -->
+          <ul class="pagination justify-content-center">
+            <li class="page-item disabled">
+              <a class="page-link href="least_squares1">Prev</a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="least_squares1">1</a>
+            </li>
+            <li class="page-item active">
+              <span class="page-link">
+                2<span class="sr-only">(current)</span>
+              </span>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="least_squares3">3</a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="least_squares3">Next</a>
+            </li>
+          </ul>
+        </nav>
+
         <div class="caption">最小二乗法とは</div>
         <div class="topSpace"></div>
         <div class="text">
@@ -122,6 +146,31 @@
           上の2式に対して連立方程式をたてると \[ \begin{cases} \displaystyle\sum_{i=1}^{n} (-2x_iy_i+2ax_i^2+2bx_i)=0 \\ \displaystyle\sum_{i=1}^{n} (-2y_i+2ax_i+2b)=0 \end{cases} \] となり、この連立方程式を解くと、誤差の二乗和が最小となる$a$と$b$が求めることができます。<br><br>
           誤差の二乗和が最小となる傾き$a$,切片$b$が求められたので、「データの関係を表すための直線」の式$(f(x)=ax+b)$が得られます。<br><br>
         </div>
+
+        <!-- ページネーション機能（Bootstrap） -->
+        <nav aria-label="Page navigation">
+          <!-- justify-content-centerでページネーションを中央寄せ -->
+          <ul class="pagination justify-content-center">
+            <li class="page-item disabled">
+              <a class="page-link href="least_squares1">Prev</a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="least_squares1">1</a>
+            </li>
+            <li class="page-item active">
+              <span class="page-link">
+                2<span class="sr-only">(current)</span>
+              </span>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="least_squares3">3</a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="least_squares3">Next</a>
+            </li>
+          </ul>
+        </nav>
+        
       </div>
     </div>
   </div>
