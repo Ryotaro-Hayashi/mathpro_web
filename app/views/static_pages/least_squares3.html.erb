@@ -1,0 +1,234 @@
+<!-- タイトルを動的に出力するためにタイトル(Home)を入力 -->
+<% provide(:title, "最小二乗法") %>
+
+  <div class="all">
+
+    <div class="title">最小二乗法</div>
+
+    <div class="column">
+      <div class="main">
+
+        <div class="caption">実際にやってみよう</div>
+        <div class="topSpace"></div>
+        <div class="text1">
+          <div class="caption2">
+            例題: 英語と数学の点数のデータに対して、「データの関係を表すための関数」が直線であると仮定する。 このときの「データの関係を表すための直線」を最小二乗法を用いて求めよ。また、英語の点数が4点の人の数学の点数を求めた直線に基づいて予測せよ。<br>
+          </div>
+
+          <center>
+            <table border="border" width="360" height="240"><br>
+              <tr>
+                <td>人名/点数</td>
+                <td>数学(点)</td>
+                <td>英語(点)</td>
+              </tr>
+              <tr>
+                <td>Aさん</td>
+                <td>5 $(=x_1)$</td>
+                <td>4 $(=y_1)$</td>
+              </tr>
+              <tr>
+                <td>Bさん</td>
+                <td>6 $(=x_2)$</td>
+                <td>7 $(=y_2)$</td>
+              </tr>
+              <tr>
+                <td>Cさん</td>
+                <td>7 $(=x_3)$</td>
+                <td>9 $(=y_3)$</td>
+              </tr>
+              <tr>
+                <td>Dさん</td>
+                <td>8 $(=x_4)$</td>
+                <td>6 $(=y_4)$</td>
+              </tr>
+              <tr>
+                <td>Eさん</td>
+                <td>9 $(=x_5)$</td>
+                <td>10 $(=y_5)$</td>
+              </tr>
+            </table>
+          </center>
+
+          <br><br>
+          <center><%= link_to image_tag("pro1.png") %></center><br><br>
+
+          求めたい直線を$f(x)=ax+b$とおくと誤差の二乗和$E(a,b)$は<br><br>
+          $E(a,b)=\displaystyle\sum_{i=1}^{5}\{y_i-(ax_i+b)\}^2$<br>
+          <div class="mgr-55">
+            $=\{y_1-(ax_1+b)\}^2 + \{y_2-(ax_2+b)\}^2 + \{y_3-(ax_3+b)\}^2 + \{y_4-(ax_4+b)\}^2 + \{y_5-(ax_5+b)\}^2$
+          </div>
+
+          <br>ここで各データ$(x_i,y_i)(i=1$~$5)$を代入すると<br><br>
+          $E(a,b)=\{y_1-(ax_1+b)\}^2 + \{y_2-(ax_2+b)\}^2 + \{y_3-(ax_3+b)\}^2 + \{y_4-(ax_4+b)\}^2 + \{y_5-(ax_5+b)\}^2 $
+          <div class="mgr-55">$=(1)\underline{\{&emsp;&emsp;\}}^2+ \{7-(6a+b)\}^2 + \{9-(7a+b)\}^2 + \{6-(8a+b)\}^2 + \{10-(9a+b)\}^2$</div><br>
+          $i=1$のときの$(1)\underline{\{&emsp;&emsp;\}}^2$を計算すると、$=(2)\underline{(&emsp;&emsp;)}+b^2$<br>
+          $(1)\underline{\{&emsp;&emsp;\}}^2$
+          <span class="hidden_box3">
+            <label for="label4">途中式</label>
+
+            <input type="checkbox" id="label4"/>
+            <div class="hidden_show3">
+              <!--非表示ここから-->
+              <span class="text">
+                $=4^2-2\times4\times(5a+b)+(5a+b)^2$ $=16-2\times4\times5a-2\times4\times b+(5a)^2+2\times5ab+b^2$
+              </span>
+              <!--ここまで-->
+            </div>
+            <br>
+          </span>
+
+          同様に$i=2$~$5$についても計算すると<br><br>
+          $\{7-(6a+b)\}^2$
+          <span class="hidden_box3">
+            <label for="label5">途中式</label>
+
+            <input type="checkbox" id="label5"/>
+            <div class="hidden_show3">
+              <!--非表示ここから-->
+              <span class="text">
+                $=7^2-2\times7\times(6a+b)+(6a+b)^2$ $=49-2\times7\times6a-2\times7\times b+(6a)^2+2\times6ab+b^2$
+              </span>
+              <!--ここまで-->
+            </div>
+          </span>
+          $=49-84a-14b+36a^2+12ab+b^2$
+          <br><br>
+          $\{9-(7a+b)\}^2$
+          <span class="hidden_box3">
+            <label for="label6">途中式</label>
+
+            <input type="checkbox" id="label6"/>
+            <div class="hidden_show3">
+              <!--非表示ここから-->
+              <span class="text">
+                $=9^2-2\times9\times(7a+b)+(7a+b)^2$ $=81-2\times9\times7a-2\times9\timesb+(7a)^2+2\times7ab+b^2$
+              </span>
+              <!--ここまで-->
+            </div>
+          </span>
+          $=81-126a-18b+49a^2+14ab+b^2$
+          <br><br>$\{6-(8a+b)\}^2$
+          <span class="hidden_box3">
+            <label for="label7">途中式</label>
+
+            <input type="checkbox" id="label7"/>
+            <div class="hidden_show3">
+              <!--非表示ここから-->
+              <span class="text">
+                $=6^2-2\times6\times(8a+b)+(8a+b)^2$ $=36-2\times6\times8a-2\times6\times b+(8a)^2+2\times8ab+b^2</span>
+              <!--ここまで-->
+            </div>
+          </span>
+          $=36-96a-12b+64a^2+16ab+b^2$
+          <br><br>$\{10-(9a+b)\}^2$
+          <span class="hidden_box3">
+            <label for="label8">途中式</label>
+
+            <input type="checkbox" id="label8"/>
+            <div class="hidden_show3">
+              <!--非表示ここから-->
+              <span class="text">
+                $=10^2-2\times10\times(9a+b)+(9a+b)^2$ $=100-2\times10\times9a-2\times10\times b+(9a)^2+2\times9ab+b^2$
+              </span>
+              <!--ここまで-->
+            </div>
+          </span>
+          $=100-180a-20b+81a^2+18ab+b^2$<br><br>
+          よって<br>
+          $E(a,b)=(1)\underline{\{&emsp;&emsp;\}}^2 + \{7-(6a+b)\}^2 + \{9-(7a+b)\}^2 + \{6-(8a+b)\}^2 + \{10-(9a+b)\}^2$<br>
+          <span class="hidden_box3">
+            <label for="label9">途中式</label>
+
+            <input type="checkbox" id="label9"/>
+            <div class="hidden_show3">
+              <!--非表示ここから-->
+              <span class="text">
+                $=(16-40a-8b+25a^2+10ab+b^2)$ $=((2)\underline{(&emsp;&emsp;)}+b^2)$ $+(81-126a-18b+49a^2+14ab+b^2)$ $+(36-96a-12b+64a^2+16ab+b^2)$ $+(100-180a-20b+81a^2+18ab+b^2)$ $=(16+49+81+36+100)$ $+(-40-84-126-96-180)a$ $+(-8-14-18-12-20)b$
+                $+(25+36+49+64+81)a^2$ $+(10+12+14+16+18)ab$ $+5b^2$
+              </span>
+              <!--ここまで-->
+            </div>
+          </span>
+          $=282-526a-72b+255a^2+70ab+5b^2$となる。<br><br>
+          $E(a,b)$の式を$a$について整理すると、<br>
+          $E(a,b)$
+          <span class="hidden_box3">
+            <label for="label9">途中式</label>
+
+            <input type="checkbox" id="label9"/>
+            <div class="hidden_show3">
+              <!--非表示ここから-->
+              <span class="text">
+                $=282-526a-72b+255a^2+70ab+5b^2$ $=255a^2+70ab-526a+5b^2-72b+282$
+              </span>
+              <!--ここまで-->
+            </div>
+          </span>
+          $=255a^2+(70b-526)a+5b^2-72b+282$となる。これを$b$を定数として固定して、$a$で$^*$微分すると<br><br>
+          $(E(a,b)$を$a$で微分$)=(3)\underline{&emsp;&emsp;}$となる。<br><br>
+          また、$E(a,b)$の式を$b$について整理すると、<br>
+          $E(a,b)$
+          <span class="hidden_box3">
+            <label for="label9">途中式</label>
+
+            <input type="checkbox" id="label9"/>
+            <div class="hidden_show3">
+              <!--非表示ここから-->
+              <span class="text">
+                $=282-526a-72b+255a^2+70ab+5b^2$ $=5b^2+70ab-72b+255a^2-526a+282$
+              </span>
+              <!--ここまで-->
+            </div>
+          </span>
+          $=5b^2+(70a-72)b+255a^2-526a+282$となる。これを$a$を定数として固定して、$b$で微分すると<br><br>
+          $(E(a,b)$を$b$で微分$)=(4)\underline{&emsp;&emsp;}$となる。<br><br>
+          誤差の二乗和が最小となる$a,b$は、関数$E(a,b)$を$a$で微分したものと<br>
+          関数$E(a,b)$を$b$で微分したものがともに0となるときなので<br>
+          \[ \begin{cases} (E(a,b)をaで微分)=(3)\underline{&emsp;&emsp;}&emsp;&emsp;-(1)\\ (E(a,b)をbで微分)=(4)\underline{&emsp;&emsp;}&emsp;&emsp;-(2) \end{cases} \] の2式に対して連立方程式を解く。<br>
+          $②$を7倍すると<br><br>
+          $(②×7)=70b+490a-504=0$&emsp;&emsp;$-(2)'$<br><br>
+          $(1)-(2)’$を計算すると<br>
+          &ensp;&ensp;&ensp;&ensp;510a+70b-526=0<br>
+          -) 490a+70b-504=0<br>
+          -----------------------------<br>
+          &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;20a-22=0<br>
+          &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;20a=22<br><br>
+
+          よって、$a=(5)\underline{&emsp;&emsp;}$となる。<br>
+          また、$(2)$に$a=(5)\underline{&emsp;&emsp;}$を代入すると、
+          <!-- $10b+70a-72 = 0$<br> $a$の値を代入)$10b+70×(5)\underline{&emsp;&emsp;}-72 = 0$<br> 整数をまとめて式を簡単に)$10b+5 = 0$<br> よって、 -->
+          $b=(6)\underline{&emsp;&emsp;}$となる。<br><br>
+          したがって、$a=(5)\underline{&emsp;&emsp;}$,$b=(6)\underline{&emsp;&emsp;}$となる。<br><br>
+          よって、「データの関係を表すための直線」は$f(x)=(5)\underline{&emsp;&emsp;}x+((6)\underline{&emsp;&emsp;})$となる。<br><br>
+          次の選択肢から、この$(7)\underline{「データの関係を表すための直線」を選んでください。}$<br><br>
+          <br>
+          <center><%= link_to image_tag("pro2.1.png") %></center><br><br>
+          <!--大きさ次第では２個づつ並べて表示しても良いのでは？-->
+          <br>
+          <center><%= link_to image_tag("pro2.2.png") %></center><br><br>
+          <br>
+          <center><%= link_to image_tag("pro2.3.png") %></center><br><br>
+          <br>
+          <center><%= link_to image_tag("pro2.4.png") %></center><br><br>
+          次に、求めた「データの関係を表すための直線$(f(x)=1.1x-0.5)$」に基づいて、<br>
+          英語の点数が4点の人の数学の点数を予測する。<br><br>
+          $f(x)$に英語の点数4点を$x$に代入した値が数学の点数と予測できるので<br>
+          $f(4)=1.1×(7)\underline{&emsp;&emsp;}-0.5 =(8)\underline{&emsp;&emsp;}-0.5 =(9)\underline{&emsp;&emsp;}$<br><br>
+          よって、英語の点数が4点の人の数学の点数は$(9)\underline{&emsp;&emsp;}$点だと予測できる。<br>
+          グラフで確認してみよう。<br><br>
+          <center>
+            <iframe
+              src="https://docs.google.com/presentation/d/e/2PACX-1vSupSCSHw42dIORKdxf5CAJ1iqolbmMJjrjVmOqB3q4xm-jjWNwRURO-TXBrOsB4HGR47D1JFA96mLb/embed?start=true&loop=true&delayms=1000"
+              frameborder="0"
+              width="480"
+              height="300"
+              allowfullscreen="true"
+              mozallowfullscreen="true"
+              webkitallowfullscreen="true"></iframe>
+          </center><br>
+        </div>
+        <div class="padt-10"></div>
+      </div>
+    </div>
+  </div>

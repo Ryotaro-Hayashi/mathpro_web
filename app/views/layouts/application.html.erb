@@ -15,7 +15,7 @@
     <!-- CSSとJavaScriptをページ内で展開するためのコード -->
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    
+
     <!-- ファビコンの読み込み -->
     <%= favicon_link_tag('favicon.ico') %>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML"></script>
@@ -57,7 +57,7 @@
         <ul class="global-nav navbar-nav navbar-expand-lg">
           <%= link_to image_tag("マスプロロゴ.png", alt: "マスプロログ", width: "100px"), home_path %>
           <div style="margin-left: 100px; margin-top: 25px;">
-            <li class="nav-item nav-link"><%= link_to "最小二乗法", least_squares_path %></li>
+            <li class="nav-item nav-link"><%= link_to "最小二乗法", least_squares1_path %></li>
           </div>
         </ul>
         <ul class="global-nav navbar-nav">

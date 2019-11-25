@@ -14,6 +14,12 @@ class StaticPagesController < ApplicationController
   def frie
   end
 
-  def least_squares
+  def least_squares1
+  end
+
+  def least_squares2
+  end
+
+  def least_squares3
   end
 end
