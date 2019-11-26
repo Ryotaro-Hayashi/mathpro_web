@@ -121,7 +121,22 @@
               mozallowfullscreen="true"
               webkitallowfullscreen="true"></iframe>
           </center>
+
           <br>
+
+          <center>
+          <div class="showbox">
+            <!-- スライドショーを表示する場所 -->
+            <p>
+              <img src="/assets/slide1.1.png" id="slideshow" alt="スライドショー表示領域">
+            </p>
+
+            <!-- スライドショーの制御ボタンを表示 -->
+            <p>
+              <input type="button" value="－ 再生／一時停止 －" id="startstopbutton">
+            </p>
+          </div>
+          </center>
 
           スライドから、身長が138cmの人は、体重がおおよそ33kgであることが予測できます。<br><br>
         </div>
@@ -151,22 +166,22 @@
           </ul>
         </nav>
 
+      </div>
+
+      <div class="sub">
+
+        <div class="text-sub">
+          <div class="pad0"></div>
+          ※当サイトでは、データの関係を表すための関数が存在すると仮定します
         </div>
 
-        <div class="sub">
-
-          <div class="text-sub">
-            <div class="pad0"></div>
-            ※当サイトでは、データの関係を表すための関数が存在すると仮定します
+        <div class="text-sub">
+          <div class="pad1"></div>
+          <div class="hidden_box">
+            <label for="label1">
+              <span class="underl">なぜ曲線ではなく直線？</span></label>
           </div>
-
-          <div class="text-sub">
-            <div class="pad1"></div>
-            <div class="hidden_box">
-              <label for="label1">
-                <span class="underl">なぜ曲線ではなく直線？</span></label>
-            </div>
-          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -178,4 +193,40 @@
       location.reload();
       window.name = "least_squares1";
     }
+  </script>
+
+  <script>
+  // スライドショーで見せたい画像ファイル群
+  var imgset = [
+    "/assets/slide1.2.png", "/assets/slide1.3.png", "/assets/slide1.4.png", "/assets/slide1.5.png", "/assets/slide1.1.png"/* 最後にカンマは不要 */
+  ];
+
+  // 指定画像を順に表示させる
+  var counter = 0;
+  function slideimage() {
+    if (counter >= imgset.length) {
+      // カウンタが画像数よりも大きくなったら0番に戻す
+      counter = 0;
+    }
+    // 対象要素の画像URLを次の画像のURLに切り替える
+    document.getElementById('slideshow').src = imgset[counter];
+    // カウンタを1増やす
+    counter++;
+  }
+
+  // スライドショーを制御
+  var slideid = 0;
+  function startstopshow() {
+    if (slideid == 0) {
+      // 始まっていなければ始める
+      slideid = setInterval(slideimage, 1000); // 1000は切替秒数(ミリ秒)
+    } else {
+      // IDがあれば止める
+      clearInterval(slideid);
+      slideid = 0;
+    }
+  }
+
+  // ボタンクリックに関数を割り当てる
+  document.getElementById('startstopbutton').onclick = startstopshow;
   </script>
