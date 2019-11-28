@@ -32,12 +32,12 @@
           </ul>
         </nav>
 
-        <div class="caption">実際にやってみよう</div>
+        <div class="caption">3.&ensp;実際にやってみよう</div>
         <div class="topSpace"></div>
         <div class="text1">
           <div class="caption2">
             例題: 英語と数学の点数のデータに対して、「データの関係を表すための関数」が直線であると仮定する。 このときの「データの関係を表すための直線」を最小二乗法を用いて求めよ。また、英語の点数が4点の人の数学の点数を求めた直線に基づいて予測せよ。<br>
-          </div>
+
 
           <center>
             <table border="border" width="360" height="240"><br>
@@ -77,19 +77,24 @@
           <br><br>
           <center><%= link_to image_tag("pro1.png") %></center><br><br>
 
+          <!--<div class="text1">-->
           求めたい直線を$f(x)=ax+b$とおくと誤差の二乗和$E(a,b)$は<br><br>
           $E(a,b)=\displaystyle\sum_{i=1}^{5}\{y_i-(ax_i+b)\}^2$<br>
           <div class="mgr-55">
-            $=\{y_1-(ax_1+b)\}^2 + \{y_2-(ax_2+b)\}^2 + \{y_3-(ax_3+b)\}^2 + \{y_4-(ax_4+b)\}^2 + \{y_5-(ax_5+b)\}^2$
+            $=\{y_1-(ax_1+b)\}^2 + \{y_2-(ax_2+b)\}^2 + \{y_3-(ax_3+b)\}^2 $
+            $+ \{y_4-(ax_4+b)\}^2 + \{y_5-(ax_5+b)\}^2$
           </div>
 
           <br>ここで各データ$(x_i,y_i)(i=1$~$5)$を代入すると<br><br>
-          $E(a,b)=\{y_1-(ax_1+b)\}^2 + \{y_2-(ax_2+b)\}^2 + \{y_3-(ax_3+b)\}^2 + \{y_4-(ax_4+b)\}^2 + \{y_5-(ax_5+b)\}^2 $
-          <div class="mgr-55">$=(1)\underline{\{&emsp;&emsp;\}}^2+ \{7-(6a+b)\}^2 + \{9-(7a+b)\}^2 + \{6-(8a+b)\}^2 + \{10-(9a+b)\}^2$</div><br>
+          $E(a,b)=\{y_1-(ax_1+b)\}^2 + \{y_2-(ax_2+b)\}^2 + \{y_3-(ax_3+b)\}^2 $
+          $+ \{y_4-(ax_4+b)\}^2 + \{y_5-(ax_5+b)\}^2 $
+          <div class="mgr-55">$=(1)\underline{\{&emsp;&emsp;\}}^2+ \{7-(6a+b)\}^2 + \{9-(7a+b)\}^2 $
+            $+ \{6-(8a+b)\}^2 + \{10-(9a+b)\}^2$</div><br>
           $i=1$のときの$(1)\underline{\{&emsp;&emsp;\}}^2$を計算すると、$=(2)\underline{(&emsp;&emsp;)}+b^2$<br>
           $(1)\underline{\{&emsp;&emsp;\}}^2$
+          <!--</div>-->
           <span class="hidden_box3">
-            <label for="label4">途中式</label>
+            <label for="label4"><span class="underl">途中式</span></label>
 
             <input type="checkbox" id="label4"/>
             <div class="hidden_show3">
@@ -105,7 +110,7 @@
           同様に$i=2$~$5$についても計算すると<br><br>
           $\{7-(6a+b)\}^2$
           <span class="hidden_box3">
-            <label for="label5">途中式</label>
+            <label for="label5"><span class="underl">途中式</span></label>
 
             <input type="checkbox" id="label5"/>
             <div class="hidden_show3">
@@ -120,13 +125,14 @@
           <br><br>
           $\{9-(7a+b)\}^2$
           <span class="hidden_box3">
-            <label for="label6">途中式</label>
+            <label for="label6"><span class="underl">途中式</span></label>
 
             <input type="checkbox" id="label6"/>
             <div class="hidden_show3">
               <!--非表示ここから-->
               <span class="text">
-                $=9^2-2\times9\times(7a+b)+(7a+b)^2$ $=81-2\times9\times7a-2\times9\timesb+(7a)^2+2\times7ab+b^2$
+                $=9^2-2\times9\times(7a+b)+(7a+b)^2$
+                $=81-2\times9\times7a-2\times9\times b+(7a)^2+2\times7ab+b^2$
               </span>
               <!--ここまで-->
             </div>
@@ -134,20 +140,21 @@
           $=81-126a-18b+49a^2+14ab+b^2$
           <br><br>$\{6-(8a+b)\}^2$
           <span class="hidden_box3">
-            <label for="label7">途中式</label>
+            <label for="label7"><span class="underl">途中式</span></label>
 
             <input type="checkbox" id="label7"/>
             <div class="hidden_show3">
               <!--非表示ここから-->
               <span class="text">
-                $=6^2-2\times6\times(8a+b)+(8a+b)^2$ $=36-2\times6\times8a-2\times6\times b+(8a)^2+2\times8ab+b^2</span>
+                $=6^2-2 \times 6 \times (8a+b)+(8a+b)^2$
+                $=36-2 \times 6 \times 8a-2 \times 6 \times b+(8a)^2+2 \times 8ab+b^2$</span>
               <!--ここまで-->
             </div>
           </span>
           $=36-96a-12b+64a^2+16ab+b^2$
           <br><br>$\{10-(9a+b)\}^2$
           <span class="hidden_box3">
-            <label for="label8">途中式</label>
+            <label for="label8"><span class="underl">途中式</span></label>
 
             <input type="checkbox" id="label8"/>
             <div class="hidden_show3">
@@ -160,15 +167,19 @@
           </span>
           $=100-180a-20b+81a^2+18ab+b^2$<br><br>
           よって<br>
-          $E(a,b)=(1)\underline{\{&emsp;&emsp;\}}^2 + \{7-(6a+b)\}^2 + \{9-(7a+b)\}^2 + \{6-(8a+b)\}^2 + \{10-(9a+b)\}^2$<br>
+          $E(a,b)=(1)\underline{\{&emsp;&emsp;\}}^2 + \{7-(6a+b)\}^2 + \{9-(7a+b)\}^2 $
+          $+ \{6-(8a+b)\}^2 + \{10-(9a+b)\}^2$<br>
           <span class="hidden_box3">
-            <label for="label9">途中式</label>
+            <label for="label9"><span class="underl">途中式</span></label>
 
             <input type="checkbox" id="label9"/>
             <div class="hidden_show3">
               <!--非表示ここから-->
               <span class="text">
-                $=(16-40a-8b+25a^2+10ab+b^2)$ $=((2)\underline{(&emsp;&emsp;)}+b^2)$ $+(81-126a-18b+49a^2+14ab+b^2)$ $+(36-96a-12b+64a^2+16ab+b^2)$ $+(100-180a-20b+81a^2+18ab+b^2)$ $=(16+49+81+36+100)$ $+(-40-84-126-96-180)a$ $+(-8-14-18-12-20)b$
+                $=(16-40a-8b+25a^2+10ab+b^2)$ $=((2)\underline{(&emsp;&emsp;)}+b^2)$
+                $+(81-126a-18b+49a^2+14ab+b^2)$ $+(36-96a-12b+64a^2+16ab+b^2)$
+                $+(100-180a-20b+81a^2+18ab+b^2)$ $=(16+49+81+36+100)$
+                $+(-40-84-126-96-180)a$ $+(-8-14-18-12-20)b$
                 $+(25+36+49+64+81)a^2$ $+(10+12+14+16+18)ab$ $+5b^2$
               </span>
               <!--ここまで-->
@@ -178,9 +189,9 @@
           $E(a,b)$の式を$a$について整理すると、<br>
           $E(a,b)$
           <span class="hidden_box3">
-            <label for="label9">途中式</label>
+            <label for="label10"><span class="underl">途中式</span></label>
 
-            <input type="checkbox" id="label9"/>
+            <input type="checkbox" id="label10"/>
             <div class="hidden_show3">
               <!--非表示ここから-->
               <span class="text">
@@ -194,9 +205,9 @@
           また、$E(a,b)$の式を$b$について整理すると、<br>
           $E(a,b)$
           <span class="hidden_box3">
-            <label for="label9">途中式</label>
+            <label for="label11"><span class="underl">途中式</span></label>
 
-            <input type="checkbox" id="label9"/>
+            <input type="checkbox" id="label11"/>
             <div class="hidden_show3">
               <!--非表示ここから-->
               <span class="text">
@@ -205,19 +216,16 @@
               <!--ここまで-->
             </div>
           </span>
-          $=5b^2+(70a-72)b+255a^2-526a+282$となる。これを$a$を定数として固定して、$b$で微分すると<br><br>
+          $=5b^2+(70a-72)b+255a^2-526a+282$となる。これを$a$を定数として<br>固定して、$b$で微分すると<br><br>
           $(E(a,b)$を$b$で微分$)=(4)\underline{&emsp;&emsp;}$となる。<br><br>
           誤差の二乗和が最小となる$a,b$は、関数$E(a,b)$を$a$で微分したものと<br>
           関数$E(a,b)$を$b$で微分したものがともに0となるときなので<br>
-          \[ \begin{cases} (E(a,b)をaで微分)=(3)\underline{&emsp;&emsp;}&emsp;&emsp;-(1)\\ (E(a,b)をbで微分)=(4)\underline{&emsp;&emsp;}&emsp;&emsp;-(2) \end{cases} \] の2式に対して連立方程式を解く。<br>
-          $②$を7倍すると<br><br>
-          $(②×7)=70b+490a-504=0$&emsp;&emsp;$-(2)'$<br><br>
-          $(1)-(2)’$を計算すると<br>
-          &ensp;&ensp;&ensp;&ensp;510a+70b-526=0<br>
-          -) 490a+70b-504=0<br>
-          -----------------------------<br>
-          &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;20a-22=0<br>
-          &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;20a=22<br><br>
+          \[ \begin{cases} (E(a,b)をaで微分)=(3)\underline{&emsp;&emsp;}&emsp;&emsp;-[1]\\ (E(a,b)をbで微分)=(4)\underline{&emsp;&emsp;}&emsp;&emsp;-[2] \end{cases} \] の2式に対して連立方程式を解く。<br>
+          $[2]$を7倍すると<br><br>
+          $([2]×7)=70b+490a-504=0$&emsp;&emsp;$-[2]'$<br><br>
+          $[1]-[2]’$を計算すると<br>
+          $20a-22=0$<br>
+          $20a=22$<br><br>
 
           よって、$a=(5)\underline{&emsp;&emsp;}$となる。<br>
           また、$(2)$に$a=(5)\underline{&emsp;&emsp;}$を代入すると、
@@ -241,6 +249,7 @@
           $f(4)=1.1×(7)\underline{&emsp;&emsp;}-0.5 =(8)\underline{&emsp;&emsp;}-0.5 =(9)\underline{&emsp;&emsp;}$<br><br>
           よって、英語の点数が4点の人の数学の点数は$(9)\underline{&emsp;&emsp;}$点だと予測できる。<br>
           グラフで確認してみよう。<br><br>
+
           <center>
             <iframe
               src="https://docs.google.com/presentation/d/e/2PACX-1vSupSCSHw42dIORKdxf5CAJ1iqolbmMJjrjVmOqB3q4xm-jjWNwRURO-TXBrOsB4HGR47D1JFA96mLb/embed?start=true&loop=true&delayms=1000"
@@ -251,6 +260,7 @@
               mozallowfullscreen="true"
               webkitallowfullscreen="true"></iframe>
           </center><br>
+        </div>
         </div>
         <div class="padt-10"></div>
 
@@ -287,12 +297,14 @@
           <div class="box26">
             <span class="box-title">①</span>
             <p>
-              <input id="Radio1" name="RadioGroup1" type="radio" onchange="onRadioButtonChange1();" value="結果：おめでとう、正解です">
+              <input id="Radio1" name="RadioGroup1" type="radio" onchange="onRadioButtonChange1();" value="結果：おめでとう、正解です"/>
               <label for="Radio1">$4-(5a+b)$</label>&emsp;
-              <input id="Radio2" name="RadioGroup1" type="radio" onchange="onRadioButtonChange1();" value="結果：残念、不正解です">
+              <input id="Radio2" name="RadioGroup1" type="radio" onchange="onRadioButtonChange1();" value="結果：残念、不正解です"/>
               <label for="Radio2">$7-(6a+b)$</label><br>
-              <input id="Radio3" name="RadioGroup1" type="radio" onchange="onRadioButtonChange1();" value="結果：残念、不正解です">
+              <input id="Radio3" name="RadioGroup1" type="radio" onchange="onRadioButtonChange1();" value="結果：残念、不正解です"/>
               <label for="Radio3">$5-(4a+b)$</label>
+              <input id="Radio4" name="RadioGroup1" type="radio" value="結果：わからない"/>
+              <label for="Radio4">わからない</label>
             </p>
             <span id="span1">結果：</span>
           </div>
@@ -300,12 +312,14 @@
           <div class="box26">
             <div class="box-title">②</div>
             <p>
-              <input id="Radio4" name="RadioGroup2" type="radio" onchange="onRadioButtonChange2();" value="結果：おめでとう、正解です">
+              <input id="Radio4" name="RadioGroup2" type="radio" onchange="onRadioButtonChange2();" value="結果：おめでとう、正解です"/>
               <label for="Radio4">$16-40a-8b+25a^2+10ab$</label><br>
-              <input id="Radio5" name="RadioGroup2" type="radio" onchange="onRadioButtonChange2();" value="結果：残念、不正解です">
+              <input id="Radio5" name="RadioGroup2" type="radio" onchange="onRadioButtonChange2();" value="結果：残念、不正解です"/>
               <label for="Radio5">$16-20a-8b+16a^2+10ab$</label><br>
-              <input id="Radio6" name="RadioGroup2" type="radio" onchange="onRadioButtonChange2();" value="結果：残念、不正解です">
+              <input id="Radio6" name="RadioGroup2" type="radio" onchange="onRadioButtonChange2();" value="結果：残念、不正解です"/>
               <label for="Radio6">$25-40a-10b+16a^2+8ab$</label>
+              <input id="Radio4" name="RadioGroup2" type="radio" value="結果：わからない"/>
+              <label for="Radio4">わからない</label>
             </p>
             <span id="span2">結果：</span>
           </div>
@@ -315,12 +329,14 @@
           <div class="box26">
             <div class="box-title">③</div>
             <p>
-              <input id="Radio7" name="RadioGroup3" type="radio" onchange="onRadioButtonChange3();" value="結果：おめでとう、正解です">
+              <input id="Radio7" name="RadioGroup3" type="radio" onchange="onRadioButtonChange3();" value="結果：おめでとう、正解です"/>
               <label for="Radio7">$510a+70b-526$</label><br>
-              <input id="Radio8" name="RadioGroup3" type="radio" onchange="onRadioButtonChange3();" value="結果：残念、不正解です">
+              <input id="Radio8" name="RadioGroup3" type="radio" onchange="onRadioButtonChange3();" value="結果：残念、不正解です"/>
               <label for="Radio8">$510a+10b-526$</label><br>
-              <input id="Radio9" name="RadioGroup3" type="radio" onchange="onRadioButtonChange3();" value="結果：残念、不正解です">
-              <label for="Radio9">$510a+10b-72$</label>
+              <input id="Radio9" name="RadioGroup3" type="radio" onchange="onRadioButtonChange3();" value="結果：残念、不正解です"/>
+              <label for="Radio9">$510a+10b-72$</label><br>
+              <input id="Radio4" name="RadioGroup3" type="radio" value="結果：わからない"/>
+              <label for="Radio4">わからない</label>
             </p>
             <span id="span3">結果：</span>
           </div>
@@ -330,12 +346,14 @@
           <div class="box26">
             <div class="box-title">④</div>
             <p>
-              <input id="Radio10" name="RadioGroup4" type="radio" onchange="onRadioButtonChange4();" value="結果：おめでとう、正解です">
+              <input id="Radio10" name="RadioGroup4" type="radio" onchange="onRadioButtonChange4();" value="結果：おめでとう、正解です"/>
               <label for="Radio10">$10b+70a-72$</label><br>
-              <input id="Radio11" name="RadioGroup4" type="radio" onchange="onRadioButtonChange4();" value="結果：残念、不正解です">
+              <input id="Radio11" name="RadioGroup4" type="radio" onchange="onRadioButtonChange4();" value="結果：残念、不正解です"/>
               <label for="Radio11">$510a+70b-526$</label><br>
-              <input id="Radio12" name="RadioGroup4" type="radio" onchange="onRadioButtonChange4();" value="結果：残念、不正解です">
-              <label for="Radio12">$10b+70b-282$</label>
+              <input id="Radio12" name="RadioGroup4" type="radio" onchange="onRadioButtonChange4();" value="結果：残念、不正解です"/>
+              <label for="Radio12">$10b+70b-282$</label><br>
+              <input id="Radio4" name="RadioGroup4" type="radio" value="結果：わからない"/>
+              <label for="Radio4">わからない</label>
             </p>
             <span id="span4">結果：</span>
           </div>
@@ -345,12 +363,14 @@
           <div class="box26">
             <div class="box-title">⑤</div>
             <p>
-              <input id="Radio13" name="RadioGroup5" type="radio" onchange="onRadioButtonChange5();" value="結果：おめでとう、正解です">
+              <input id="Radio13" name="RadioGroup5" type="radio" onchange="onRadioButtonChange5();" value="結果：おめでとう、正解です"/>
               <label for="Radio13">$1.1$</label>&emsp;
-              <input id="Radio14" name="RadioGroup5" type="radio" onchange="onRadioButtonChange5();" value="結果：残念、不正解です">
+              <input id="Radio14" name="RadioGroup5" type="radio" onchange="onRadioButtonChange5();" value="結果：残念、不正解です"/>
               <label for="Radio14">$11$</label>&emsp;
-              <input id="Radio15" name="RadioGroup5" type="radio" onchange="onRadioButtonChange5();" value="結果：残念、不正解です">
-              <label for="Radio15">$0.11$</label>
+              <input id="Radio15" name="RadioGroup5" type="radio" onchange="onRadioButtonChange5();" value="結果：残念、不正解です"/>
+              <label for="Radio15">$0.11$</label><br>
+              <input id="Radio4" name="RadioGroup5" type="radio" value="結果：わからない"/>
+              <label for="Radio4">わからない</label>
             </p>
             <span id="span5">結果：</span>
           </div>
@@ -360,12 +380,14 @@
           <div class="box26">
             <div class="box-title">⑥</div>
             <p>
-              <input id="Radio16" name="RadioGroup6" type="radio" onchange="onRadioButtonChange6();" value="結果：おめでとう、正解です">
+              <input id="Radio16" name="RadioGroup6" type="radio" onchange="onRadioButtonChange6();" value="結果：おめでとう、正解です"/>
               <label for="Radio16">$-0.5$</label>&emsp;
-              <input id="Radio17" name="RadioGroup6" type="radio" onchange="onRadioButtonChange6();" value="結果：残念、不正解です">
+              <input id="Radio17" name="RadioGroup6" type="radio" onchange="onRadioButtonChange6();" value="結果：残念、不正解です"/>
               <label for="Radio17">$-0.2$</label>&emsp;
-              <input id="Radio18" name="RadioGroup6" type="radio" onchange="onRadioButtonChange6();" value="結果：残念、不正解です">
-              <label for="Radio18">$0.5$</label>
+              <input id="Radio18" name="RadioGroup6" type="radio" onchange="onRadioButtonChange6();" value="結果：残念、不正解です"/>
+              <label for="Radio18">$0.5$</label><br>
+              <input id="Radio4" name="RadioGroup6" type="radio" value="結果：わからない"/>
+              <label for="Radio4">わからない</label>
             </p>
             <span id="span6">結果：</span>
           </div>
@@ -375,12 +397,14 @@
           <div class="box26">
             <div class="box-title">⑦</div>
             <p>
-              <input id="Radio16" name="RadioGroup7" type="radio" onchange="onRadioButtonChange6();" value="結果：おめでとう、正解です">
+              <input id="Radio16" name="RadioGroup7" type="radio" onchange="onRadioButtonChange6();" value="結果：おめでとう、正解です"/>
               <label for="Radio16">$4$</label>&emsp;
-              <input id="Radio17" name="RadioGroup7" type="radio" onchange="onRadioButtonChange6();" value="結果：残念、不正解です">
+              <input id="Radio17" name="RadioGroup7" type="radio" onchange="onRadioButtonChange6();" value="結果：残念、不正解です"/>
               <label for="Radio17">$5$</label>&emsp;
-              <input id="Radio18" name="RadioGroup7" type="radio" onchange="onRadioButtonChange6();" value="結果：残念、不正解です">
+              <input id="Radio18" name="RadioGroup7" type="radio" onchange="onRadioButtonChange6();" value="結果：残念、不正解です"/>
               <label for="Radio18">$9$</label>
+              <input id="Radio4" name="RadioGroup7" type="radio" value="結果：わからない"/>
+              <label for="Radio4">わからない</label>
             </p>
             <span id="span7">結果：</span>
           </div>
@@ -390,12 +414,14 @@
           <div class="box26">
             <div class="box-title">⑧</div>
             <p>
-              <input id="Radio16" name="RadioGroup8" type="radio" onchange="onRadioButtonChange6();" value="結果：おめでとう、正解です">
+              <input id="Radio16" name="RadioGroup8" type="radio" onchange="onRadioButtonChange6();" value="結果：おめでとう、正解です"/>
               <label for="Radio16">$4.4$</label>&emsp;
-              <input id="Radio17" name="RadioGroup8" type="radio" onchange="onRadioButtonChange6();" value="結果：残念、不正解です">
+              <input id="Radio17" name="RadioGroup8" type="radio" onchange="onRadioButtonChange6();" value="結果：残念、不正解です"/>
               <label for="Radio17">$5.5$</label>&emsp;
-              <input id="Radio18" name="RadioGroup8" type="radio" onchange="onRadioButtonChange6();" value="結果：残念、不正解です">
-              <label for="Radio18">$9.9$</label>
+              <input id="Radio18" name="RadioGroup8" type="radio" onchange="onRadioButtonChange6();" value="結果：残念、不正解です"/>
+              <label for="Radio18">$9.9$</label><br>
+              <input id="Radio4" name="RadioGroup8" type="radio" value="結果：わからない"/>
+              <label for="Radio4">わからない</label>
             </p>
             <span id="span8">結果：</span>
           </div>
@@ -405,12 +431,14 @@
           <div class="box26">
             <div class="box-title">⑨</div>
             <p>
-              <input id="Radio16" name="RadioGroup9" type="radio" onchange="onRadioButtonChange6();" value="結果：おめでとう、正解です">
+              <input id="Radio16" name="RadioGroup9" type="radio" onchange="onRadioButtonChange6();" value="結果：おめでとう、正解です"/>
               <label for="Radio16">$3.9$</label>&emsp;
-              <input id="Radio17" name="RadioGroup9" type="radio" onchange="onRadioButtonChange6();" value="結果：残念、不正解です">
+              <input id="Radio17" name="RadioGroup9" type="radio" onchange="onRadioButtonChange6();" value="結果：残念、不正解です"/>
               <label for="Radio17">$4.9$</label>&emsp;
-              <input id="Radio18" name="RadioGroup9" type="radio" onchange="onRadioButtonChange6();" value="結果：残念、不正解です">
-              <label for="Radio18">$9.4$</label>
+              <input id="Radio18" name="RadioGroup9" type="radio" onchange="onRadioButtonChange6();" value="結果：残念、不正解です"/>
+              <label for="Radio18">$9.4$</label><br>
+              <input id="Radio4" name="RadioGroup9" type="radio" value="結果：わからない"/>
+              <label for="Radio4">わからない</label>
             </p>
             <span id="span9">結果：</span>
           </div>
@@ -468,7 +496,7 @@
       const RadioGroup1 = document.getElementsByName("RadioGroup1");
       for (let i = 0; i < RadioGroup1.length; i++) {
 
-        if (RadioGroup1[0].checked === true) {
+        if (RadioGroup1[0].checked == true) {
           str1 = RadioGroup1[0].value;
           str1_1 = "(1) 結果：○";
           break;
@@ -482,27 +510,36 @@
           str1_1 = "(1) 結果：×";
           break;
 
-        }
+        } else  if (RadioGroup1[3].checked == true){
+          str1 = RadioGroup1[3].value;
+          str1_1 = "(1) 結果：わからない";
+          break;
 
       }
+    }
 
       const RadioGroup2 = document.getElementsByName("RadioGroup2");
       for (let i = 0; i < RadioGroup2.length; i++) {
 
         if (RadioGroup2[0].checked === true) {
           str2 = RadioGroup2[0].value;
-          str2_1 = "(1) 結果：○";
+          str2_1 = "(2) 結果：○";
           break;
           //target.innerHTML = "おめでとう、正解です";
         } else if (RadioGroup2[1].checked == true) {
           str2 = RadioGroup2[1].value;
-          str2_1 = "(1) 結果：×";
+          str2_1 = "(2) 結果：×";
           break;
         } else if (RadioGroup2[2].checked == true) {
           str2 = RadioGroup2[2].value;
-          str2_1 = "(1) 結果：×";
+          str2_1 = "(2) 結果：×";
           break;
-        }
+        }else  if (RadioGroup2[3].checked == true){
+          str2 = RadioGroup2[3].value;
+          str2_1 = "(2) 結果：わからない";
+          break;
+
+      }
 
       }
 
@@ -511,16 +548,20 @@
 
         if (RadioGroup3[0].checked === true) {
           str3 = RadioGroup3[0].value;
-          str3_1 = "(1) 結果：○";
+          str3_1 = "(3) 結果：○";
           break;
           //target.innerHTML = "おめでとう、正解です";
         } else if (RadioGroup3[1].checked == true) {
           str3 = RadioGroup3[1].value;
-          str3_1 = "(1) 結果：×";
+          str3_1 = "(3) 結果：×";
           break;
         } else if (RadioGroup3[2].checked == true) {
           str3 = RadioGroup3[2].value;
-          str3_1 = "(1) 結果：×";
+          str3_1 = "(3) 結果：×";
+          break;
+        }else if (RadioGroup3[3].checked == true) {
+          str3 = RadioGroup3[3].value;
+          str3_1 = "(3) 結果：わからない";
           break;
         }
 
@@ -531,16 +572,20 @@
 
         if (RadioGroup4[0].checked === true) {
           str4 = RadioGroup4[0].value;
-          str4_1 = "(1) 結果：○";
+          str4_1 = "(4) 結果：○";
           break;
           //target.innerHTML = "おめでとう、正解です";
         } else if (RadioGroup4[1].checked == true) {
           str4 = RadioGroup4[1].value;
-          str4_1 = "(1) 結果：×";
+          str4_1 = "(4) 結果：×";
           break;
         } else if (RadioGroup4[2].checked == true) {
           str4 = RadioGroup4[2].value;
-          str4_1 = "(1) 結果：×";
+          str4_1 = "(4) 結果：×";
+          break;
+        }else if (RadioGroup4[3].checked == true) {
+          str4 = RadioGroup4[3].value;
+          str4_1 = "(4) 結果：わからない";
           break;
         }
 
@@ -551,16 +596,20 @@
 
         if (RadioGroup5[0].checked === true) {
           str5 = RadioGroup5[0].value;
-          str5_1 = "(1) 結果：○";
+          str5_1 = "(5) 結果：○";
           break;
           //target.innerHTML = "おめでとう、正解です";
         } else if (RadioGroup5[1].checked == true) {
           str5 = RadioGroup5[1].value;
-          str5_1 = "(1) 結果：×";
+          str5_1 = "(5) 結果：×";
           break;
         } else if (RadioGroup5[2].checked == true) {
           str5 = RadioGroup5[2].value;
-          str5_1 = "(1) 結果：×";
+          str5_1 = "(5) 結果：×";
+          break;
+        }else if (RadioGroup5[3].checked == true) {
+          str5 = RadioGroup5[3].value;
+          str5_1 = "(5) 結果：わからない";
           break;
         }
 
@@ -571,16 +620,20 @@
 
         if (RadioGroup6[0].checked === true) {
           str6 = RadioGroup6[0].value;
-          str6_1 = "(1) 結果：○";
+          str6_1 = "(6) 結果：○";
           break;
           //target.innerHTML = "おめでとう、正解です";
         } else if (RadioGroup6[1].checked == true) {
           str6 = RadioGroup6[1].value;
-          str6_1 = "(1) 結果：×";
+          str6_1 = "(6) 結果：×";
           break;
         } else if (RadioGroup6[2].checked == true) {
           str6 = RadioGroup6[2].value;
-          str6_1 = "(1) 結果：×";
+          str6_1 = "(6) 結果：×";
+          break;
+        }else if (RadioGroup6[3].checked == true) {
+          str6 = RadioGroup6[3].value;
+          str6_1 = "(6) 結果：わからない";
           break;
         }
       }
@@ -590,16 +643,21 @@
 
         if (RadioGroup7[0].checked === true) {
           str7 = RadioGroup7[0].value;
-          str7_1 = "(1) 結果：○";
+          str7_1 = "(7) 結果：○";
           break;
           //target.innerHTML = "おめでとう、正解です";
         } else if (RadioGroup7[1].checked == true) {
           str7 = RadioGroup7[1].value;
-          str7_1 = "(1) 結果：×";
+          str7_1 = "(7) 結果：×";
           break;
         } else if (RadioGroup7[2].checked == true) {
           str7 = RadioGroup7[2].value;
-          str7_1 = "(1) 結果：×";
+          str7_1 = "(7) 結果：×";
+          break;
+
+        }else if (RadioGroup7[3].checked == true) {
+          str7 = RadioGroup7[3].value;
+          str7_1 = "(7) 結果：わからない";
           break;
 
         }
@@ -611,16 +669,21 @@
 
         if (RadioGroup8[0].checked === true) {
           str8 = RadioGroup8[0].value;
-          str8_1 = "(1) 結果：○";
+          str8_1 = "(8) 結果：○";
           break;
           //target.innerHTML = "おめでとう、正解です";
         } else if (RadioGroup8[1].checked == true) {
           str8 = RadioGroup8[1].value;
-          str8_1 = "(1) 結果：×";
+          str8_1 = "(8) 結果：×";
           break;
         } else if (RadioGroup8[2].checked == true) {
           str8 = RadioGroup8[2].value;
-          str8_1 = "(1) 結果：×";
+          str8_1 = "(8) 結果：×";
+          break;
+
+        }else if (RadioGroup8[3].checked == true) {
+          str8 = RadioGroup8[3].value;
+          str8_1 = "(8) 結果：わからない";
           break;
 
         }
@@ -632,16 +695,21 @@
 
         if (RadioGroup9[0].checked === true) {
           str9 = RadioGroup9[0].value;
-          str9_1 = "(1) 結果：○";
+          str9_1 = "(9) 結果：○";
           break;
           //target.innerHTML = "おめでとう、正解です";
         } else if (RadioGroup9[1].checked == true) {
           str9 = RadioGroup9[1].value;
-          str9_1 = "(1) 結果：×";
+          str9_1 = "(9) 結果：×";
           break;
         } else if (RadioGroup9[2].checked == true) {
           str9 = RadioGroup9[2].value;
-          str9_1 = "(1) 結果：×";
+          str9_1 = "(9) 結果：×";
+          break;
+
+        }else if (RadioGroup9[3].checked == true) {
+          str9 = RadioGroup9[3].value;
+          str9_1 = "(9) 結果：わからない";
           break;
 
         }
