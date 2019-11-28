@@ -476,3 +476,14 @@ td{
 .showbox img {
    border: 2px solid skyblue;
 }
+
+//解答チェック
+.allcheck {
+  padding: 0.5em 1em;
+  margin: 2em 0;
+  border: double 5px rgb(0, 80, 185);
+}
+.allcheck p {
+  margin: 0; 
+  padding: 0;
+}
