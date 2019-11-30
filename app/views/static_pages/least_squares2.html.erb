@@ -61,6 +61,7 @@
           </center><br>
 
           <canvas id="canvas1" width="400" height="400"></canvas>
+          <div id="func">$y=ax+b$</div>
 
           <!-- フォームを作成 -->
           <form name="form1" id="id_form1" action="">
@@ -68,7 +69,9 @@
             <!-- クリックされると、onButtonClick()が実行される -->
             <input type="button" value="Exec" onclick="onButtonClick();" />
           </form>
-          <div id="output"></div>
+          <div>
+            $y=$<span id="output2">a</span>$x+$<span id="output">30</span>
+          </div>
 
 
           ①は$a=0.2, b=16$ ②は$a=0.6, b=16$ ③は$a=0.6,b=-50$ です。<br><br>
@@ -240,6 +243,8 @@
   <script type="text/javascript">
     // canvas要素のDOMオブジェクトを取得
     var canvas = document.getElementById("canvas1");
+    target = document.getElementById("output");
+    target2 = document.getElementById("output2");
 
     // canvasの位置指定（左上基準）
     canvas.style.position = "relative";
@@ -255,20 +260,16 @@
     var mouseY = 0;
 
     // canvas内での軸の位置指定
-    var st_X = 50;
+    var st_X = 60;
     var st_Y = 50;
 
     // 切片
-    var b = 400;
-
-    // 軸基準の円の中心
-    var circle_x = 200;
-    // 軸基準の座標を入力
-    var circle_y = 200;
+    var b = 200;
 
     function onButtonClick() {
       // DOMを取得
       b = document.forms.id_form1.id_textBox1.value;
+      target.innerText = document.forms.id_form1.id_textBox1.value;
     }
 
     // マウスの位置を取得
@@ -279,59 +280,115 @@
     }
     window.onmousemove = movehandler;
 
-    function draw() {
-      // 軸基準のマウスの位置
-      mouseX = mousex - st_X;
-      mouseY = canvas.height - mousey -  st_Y - b;
+    // マウスの位置を取得
 
-      // 直線の傾き
-      inclination = mouseY / mouseX;
 
+    function en(circle_x, circle_y) {
       // 円と同じx座標と直線の交点のy座標
-      c_X = inclination * circle_x + parseInt(b);
+      let c_X = inclination * circle_x + parseInt(b);
+
       // 描画する位置を返還
-      circle_X = circle_x + st_X;
-      circle_Y = canvas.height - circle_y - st_Y;
+      let circle_X = circle_x + st_X;
+      let circle_Y = canvas.height - circle_y - st_Y;
 
-      // 白でcanvasを塗る
-      context.fillStyle = "rgb(255,255,255)";
-      context.fillRect(0, 0, canvas.width, canvas.height);
-
-      // 色を黒に変更
-      context.fillStyle = "rgb(0, 0, 0)";
-
-      // context.fillText("c_X:" + c_X, 300, 300);
-
-      context.fillText("O" + c_X, 300, 300);
-
-      context.arc(circle_X, circle_Y, 10, 0, 2 * Math.PI);
-      context.fill(); // 軌跡の範囲を塗りつぶす
-
-      // beginPathメソッドを呼び出すことで、描画コンテキストへのパスの記録が開始され、図形を書くことができる。
       context.beginPath();
-      // moveToメソッドによって、指定した点まで移動する。
-      // 現在の点から指定した点までの線分を定義する。
+      context.fillStyle = "rgb(0, 0, 255)";
 
-      // 直線の軌跡
-      context.moveTo(st_X, canvas.height - st_Y - b);
-      context.lineTo(mousex, mousey);
+      context.moveTo(circle_X, circle_Y);
+      context.arc(circle_X, circle_Y, 5, 0, 2 * Math.PI);
+      context.moveTo(circle_X, circle_Y);
+      context.fill();
 
-      if (mousex > circle_X){
+      context.beginPath();
+      context.strokeStyle = "rgb(0, 0, 0)";
+
+      if ((circle_X < mousex && mousex < canvas.width) && (0 < mousey && mousey < canvas.height)) {
         // 誤差の軌跡
+        context.setLineDash([2, 2]);
         context.moveTo(circle_X, circle_Y);
         context.lineTo(circle_X, circle_Y + circle_y - c_X);
       }
 
-
       // strokeメソッドで描画コンテキストに記録されたパスをCanvasに描画
       context.stroke();
+    }
+
+    var tategaki = function(context, text, x, y) {
+      var textList = text.split('\n');
+      var lineHeight = context.measureText("あ").width;
+      textList.forEach(function(elm, i) {
+        Array.prototype.forEach.call(elm, function(ch, j) {
+          context.fillText(ch, x - lineHeight * i, y + lineHeight * j);
+        });
+      });
+    };
+
+    function roundFloat(number, n) {
+      var _pow = Math.pow(10, n);
+      return Math.round(number * _pow) / _pow;
+    }
+
+    function set() {
+      // 白でcanvasを塗る
+      context.fillStyle = "rgb(255, 255, 255)";
+      context.fillRect(0, 0, canvas.width, canvas.height);
+
+      // 軸基準のマウスの位置
+      mouseX = mousex - st_X;
+      mouseY = canvas.height - mousey - st_Y - b;
+
+      // 直線の傾き
+      inclination = mouseY / mouseX;
+
+      // beginPathメソッドを呼び出すことで、描画コンテキストへのパスの記録が開始され、図形を書くことができる。
+      context.beginPath();
+      context.strokeStyle = "rgb(0, 0, 0)";
+      // moveToメソッドによって、指定した点まで移動する。
+      // 現在の点から指定した点までの線分を定義する。
+
+      if ((0 < mouseX && mousex < canvas.width) && (0 < mousey && mousey < canvas.height)) {
+        // 直線の軌跡
+        context.setLineDash([0]);
+        context.moveTo(st_X, canvas.height - st_Y - b);
+        context.lineTo(mousex, mousey);
+
+        context.stroke();
+      }
+
+      en(100, 100);
+      en(120, 150);
+      en(150, 190);
+      en(200, 170);
+      en(70, 60);
+      en(160, 160);
+
+      context.beginPath();
+      context.fillStyle = "rgb(0, 0, 0)";
+      context.font = "bold 14px 'ＭＳ 明朝'";
+      context.fillText("身長(cm)", canvas.width / 2 - 40, canvas.height - st_Y + 40);
+      var text = "体重";
+      tategaki(context, text, st_X - 40, canvas.height / 2);
+      context.fillText("(kg)", st_X - 40 - 10, canvas.height / 2 + 30);
+
+      if (roundFloat(inclination, 2) == 0) {
+        context.fillText("y=" + b, parseInt(mousex) + 10, mousey);
+      } else if (roundFloat(inclination, 2) == 1) {
+        context.fillText("y=x" + b, parseInt(mousex) + 10, mousey);
+      } else {
+        context.fillText("y=" + roundFloat(inclination, 2) + "x+" + b, parseInt(mousex) + 10, mousey);
+      }
+
+      // context.fillText("y=" + orgRound(inclination, 3) + "x+" + b, parseInt(mouseX) + 10, mousey);
 
       // 矢印の軌跡
       context.arrow(st_X, canvas.height - st_Y, canvas.width - st_X, canvas.height - st_Y, [0, 1, -15, 1, -15, 5]);
       context.arrow(st_X, canvas.height - st_Y, st_X, st_Y, [0, 1, -15, 1, -15, 5]);
+      context.fill();
+
+      target2.innerText = roundFloat(inclination, 2);
     }
 
     onload = function() {
-      setInterval(draw, 30);
+      setInterval(set, 30);
     }
   </script>

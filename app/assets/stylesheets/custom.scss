@@ -484,6 +484,14 @@ td{
   border: double 5px rgb(0, 80, 185);
 }
 .allcheck p {
-  margin: 0; 
+  margin: 0;
   padding: 0;
+}
+
+#output {
+  font-weight: bold;
+}
+
+#canvas1 {
+   border: 2px solid black;
 }
