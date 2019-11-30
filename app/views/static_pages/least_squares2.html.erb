@@ -60,6 +60,17 @@
               webkitallowfullscreen="true"></iframe>
           </center><br>
 
+          <canvas id="canvas1" width="400" height="400"></canvas>
+
+          <!-- フォームを作成 -->
+          <form name="form1" id="id_form1" action="">
+            <input name="textBox1" id="id_textBox1" type="text" value="" />
+            <!-- クリックされると、onButtonClick()が実行される -->
+            <input type="button" value="Exec" onclick="onButtonClick();" />
+          </form>
+          <div id="output"></div>
+
+
           ①は$a=0.2, b=16$ ②は$a=0.6, b=16$ ③は$a=0.6,b=-50$ です。<br><br>
 
           スライドを見ると、$a,b$を変えることによって誤差も変わることが分かります。 $a,b$を変えることで誤差を最小にできると考えられます。 誤差を小さくするということは、各データの誤差の和を小さくするということです。<br>
@@ -221,5 +232,106 @@
     if (window.name != "least_squares2") {
       location.reload();
       window.name = "least_squares2";
+    }
+  </script>
+
+  <script src="https://frogcat.github.io/canvas-arrow/canvas-arrow.js"></script>
+
+  <script type="text/javascript">
+    // canvas要素のDOMオブジェクトを取得
+    var canvas = document.getElementById("canvas1");
+
+    // canvasの位置指定（左上基準）
+    canvas.style.position = "relative";
+    canvas.style.left = "100px";
+    // canvas.style.top = "100px";
+
+    // 描画コンテキストを取得する
+    var context = canvas.getContext("2d");
+
+    var mousex = 0;
+    var mouseX = 0;
+    var mousey = 0;
+    var mouseY = 0;
+
+    // canvas内での軸の位置指定
+    var st_X = 50;
+    var st_Y = 50;
+
+    // 切片
+    var b = 400;
+
+    // 軸基準の円の中心
+    var circle_x = 200;
+    // 軸基準の座標を入力
+    var circle_y = 200;
+
+    function onButtonClick() {
+      // DOMを取得
+      b = document.forms.id_form1.id_textBox1.value;
+    }
+
+    // マウスの位置を取得
+    function movehandler(event) {
+      // canvas基準のマウスの位置
+      mousex = event.offsetX;
+      mousey = event.offsetY;
+    }
+    window.onmousemove = movehandler;
+
+    function draw() {
+      // 軸基準のマウスの位置
+      mouseX = mousex - st_X;
+      mouseY = canvas.height - mousey -  st_Y - b;
+
+      // 直線の傾き
+      inclination = mouseY / mouseX;
+
+      // 円と同じx座標と直線の交点のy座標
+      c_X = inclination * circle_x + parseInt(b);
+      // 描画する位置を返還
+      circle_X = circle_x + st_X;
+      circle_Y = canvas.height - circle_y - st_Y;
+
+      // 白でcanvasを塗る
+      context.fillStyle = "rgb(255,255,255)";
+      context.fillRect(0, 0, canvas.width, canvas.height);
+
+      // 色を黒に変更
+      context.fillStyle = "rgb(0, 0, 0)";
+
+      // context.fillText("c_X:" + c_X, 300, 300);
+
+      context.fillText("O" + c_X, 300, 300);
+
+      context.arc(circle_X, circle_Y, 10, 0, 2 * Math.PI);
+      context.fill(); // 軌跡の範囲を塗りつぶす
+
+      // beginPathメソッドを呼び出すことで、描画コンテキストへのパスの記録が開始され、図形を書くことができる。
+      context.beginPath();
+      // moveToメソッドによって、指定した点まで移動する。
+      // 現在の点から指定した点までの線分を定義する。
+
+      // 直線の軌跡
+      context.moveTo(st_X, canvas.height - st_Y - b);
+      context.lineTo(mousex, mousey);
+
+      if (mousex > circle_X){
+        // 誤差の軌跡
+        context.moveTo(circle_X, circle_Y);
+        context.lineTo(circle_X, circle_Y + circle_y - c_X);
+      }
+
+
+      // strokeメソッドで描画コンテキストに記録されたパスをCanvasに描画
+      context.stroke();
+
+      // 矢印の軌跡
+      context.arrow(st_X, canvas.height - st_Y, canvas.width - st_X, canvas.height - st_Y, [0, 1, -15, 1, -15, 5]);
+      context.arrow(st_X, canvas.height - st_Y, st_X, st_Y, [0, 1, -15, 1, -15, 5]);
+    }
+
+    onload = function() {
+      setInterval(draw, 30);
     }
   </script>
