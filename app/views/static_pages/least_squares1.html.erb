@@ -97,45 +97,59 @@
           </center>
           <br>この表データをグラフに表示すると以下のようになります。<br><br>
 
-          <center><%= link_to image_tag("pic1.1.png") %><%= link_to image_tag("pic1.2.png") %></center><br>
-          このデータの関係を表すための$^*$関数(身長と体重の関係を表す関数)を求めることができれば、身長から体重を予測することができます。
-          <br>例えば、身長が138cmの人の体重をこの直線を用いて予測してみましょう。
+          <center>
+            <canvas id="canvas1" width="700" height="400"></canvas>
+          </center><br>
+          この
+          <span class="pad1"></span>
+          <span class="hidden_box">
+            <label for="label1">
+              <span class="underl">データの関係を表すための関数</span></label>
+          </span>
+          (身長と体重の関係を表す関数)を求めることができれば、身長から体重を予測することができます。
           <div class="hidden_box">
             <input type="checkbox" id="label1"/>
             <div class="hidden_show">
               <!--非表示ここから-->
               <div class="text">
-                <p>直線より曲線の方が、よりデータとの関係を表すための関数を求めることができると思った方もいるかもしれません。たしかに、曲線の方が、よりデータとの関係を表すための関数を求めることができる場合もあります。 しかし、最小二乗法を用いて曲線を求めようとすると、直線を求めるときよりも関数が複雑になるので計算が難しくなります。したがって、このサイトでは計算が簡単な直線を求める方法について考えることとします。</p>
+                <p>当サイトでは、データの関係を表すための関数が存在すると仮定します。</p>
               </div>
               <!--ここまで-->
             </div>
           </div>
-          <br><br>
-          <center>
-            <iframe
-              src="https://docs.google.com/presentation/d/e/2PACX-1vRlte2h-hp65_isfpo82ggSkUZhvXuv-8UM2yN4jTXAfeCFMBla6g-qedeLaSaq0pjGjEj6tRlebMD7/embed?start=true&loop=true&delayms=1000"
-              frameborder="0"
-              width="480"
-              height="300"
-              allowfullscreen="true"
-              mozallowfullscreen="true"
-              webkitallowfullscreen="true"></iframe>
-          </center>
-
+          例えば、身長が138cmの人の体重をこの
+          <span class="pad1"></span>
+          <span class="hidden_box1">
+            <label for="label">
+              <span class="underl">直線</span></label>
+          </span>
+          を用いて予測してみましょう。
+          <div class="hidden_box1">
+            <input type="checkbox" id="label"/>
+            <div class="hidden_show1">
+              <!--非表示ここから-->
+              <div class="text">
+                <p>直線より曲線の方が、よりデータとの関係を表すための関数を求めることができると思った方もいるかもしれません。たしかに、曲線の方が、よりデータとの関係を表すための関数を求めることができる場合もあります。<br>
+                  しかし、最小二乗法を用いて曲線を求めようとすると、直線を求めるときよりも関数が複雑になるので計算が難しくなります。<br>
+                  したがって、このサイトでは計算が簡単な直線を求める方法について考えることとします。</p>
+              </div>
+              <!--ここまで-->
+            </div>
+          </div>
           <br>
 
           <center>
-          <div class="showbox">
-            <!-- スライドショーを表示する場所 -->
-            <p>
-              <img src="/assets/slide1.1.png" id="slideshow" alt="スライドショー表示領域">
-            </p>
+            <div class="showbox">
+              <!-- スライドショーを表示する場所 -->
+              <p>
+                <img src="/assets/slide1.1.png" id="slideshow" alt="スライドショー表示領域">
+              </p>
 
-            <!-- スライドショーの制御ボタンを表示 -->
-            <p>
-              <input type="button" value="－ 再生／一時停止 －" id="startstopbutton">
-            </p>
-          </div>
+              <!-- スライドショーの制御ボタンを表示 -->
+              <p>
+                <input type="button" value="－ 再生／一時停止 －" id="startstopbutton">
+              </p>
+            </div>
           </center>
 
           スライドから、身長が138cmの人は、体重がおおよそ33kgであることが予測できます。<br><br>
@@ -167,22 +181,6 @@
         </nav>
 
       </div>
-
-      <div class="sub">
-
-        <div class="text-sub">
-          <div class="pad0"></div>
-          ※当サイトでは、データの関係を表すための関数が存在すると仮定します
-        </div>
-
-        <div class="text-sub">
-          <div class="pad1"></div>
-          <div class="hidden_box">
-            <label for="label1">
-              <span class="underl">なぜ曲線ではなく直線？</span></label>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 
@@ -196,37 +194,161 @@
   </script>
 
   <script>
-  // スライドショーで見せたい画像ファイル群
-  var imgset = [
-    "/assets/slide1.2.png", "/assets/slide1.3.png", "/assets/slide1.4.png", "/assets/slide1.5.png", "/assets/slide1.1.png"/* 最後にカンマは不要 */
-  ];
+    // スライドショーで見せたい画像ファイル群
+    var imgset = [
+      "/assets/slide1.2.png", "/assets/slide1.3.png", "/assets/slide1.4.png", "/assets/slide1.5.png", "/assets/slide1.1.png"/* 最後にカンマは不要 */
+    ];
 
-  // 指定画像を順に表示させる
-  var counter = 0;
-  function slideimage() {
-    if (counter >= imgset.length) {
-      // カウンタが画像数よりも大きくなったら0番に戻す
-      counter = 0;
+    // 指定画像を順に表示させる
+    var counter = 0;
+    function slideimage() {
+      if (counter >= imgset.length) {
+        // カウンタが画像数よりも大きくなったら0番に戻す
+        counter = 0;
+      }
+      // 対象要素の画像URLを次の画像のURLに切り替える
+      document.getElementById('slideshow').src = imgset[counter];
+      // カウンタを1増やす
+      counter++;
     }
-    // 対象要素の画像URLを次の画像のURLに切り替える
-    document.getElementById('slideshow').src = imgset[counter];
-    // カウンタを1増やす
-    counter++;
-  }
 
-  // スライドショーを制御
-  var slideid = 0;
-  function startstopshow() {
-    if (slideid == 0) {
-      // 始まっていなければ始める
-      slideid = setInterval(slideimage, 1000); // 1000は切替秒数(ミリ秒)
-    } else {
-      // IDがあれば止める
-      clearInterval(slideid);
-      slideid = 0;
+    // スライドショーを制御
+    var slideid = 0;
+    function startstopshow() {
+      if (slideid == 0) {
+        // 始まっていなければ始める
+        slideid = setInterval(slideimage, 1000); // 1000は切替秒数(ミリ秒)
+      } else {
+        // IDがあれば止める
+        clearInterval(slideid);
+        slideid = 0;
+      }
     }
-  }
 
-  // ボタンクリックに関数を割り当てる
-  document.getElementById('startstopbutton').onclick = startstopshow;
+    // ボタンクリックに関数を割り当てる
+    document.getElementById('startstopbutton').onclick = startstopshow;
+  </script>
+
+  <script src="https://frogcat.github.io/canvas-arrow/canvas-arrow.js"></script>
+
+  <script type="text/javascript">
+    // canvas要素のDOMオブジェクトを取得
+    var canvas = document.getElementById("canvas1");
+
+    // canvasの位置指定（左上基準）
+    canvas.style.position = "relative";
+    // canvas.style.left = "100px"; canvas.style.top = "100px"; 描画コンテキストを取得する
+    var context = canvas.getContext("2d");
+
+    // canvas内での軸の位置指定
+    var st_X = 90;
+    var st_Y = 50;
+
+    // 切片
+    var b = 15 * 3;
+
+    function en(circle_x, circle_y) {
+
+
+      // 描画する位置を返還
+      let circle_X = circle_x * 3 + st_X;
+      let circle_Y = canvas.height - circle_y * 3 - st_Y;
+
+      context.beginPath();
+      context.fillStyle = "rgb(0, 0, 255)";
+
+      context.moveTo(circle_X, circle_Y);
+      context.arc(circle_X, circle_Y, 5, 0, 2 * Math.PI);
+      context.moveTo(circle_X, circle_Y);
+      context.fill();
+    }
+
+    var tategaki = function (context, text, x, y) {
+      var textList = text.split('\n');
+      var lineHeight = context.measureText("あ").width;
+      textList.forEach(function (elm, i) {
+        Array.prototype.forEach.call(elm, function (ch, j) {
+          context.fillText(ch, x - lineHeight * i, y + lineHeight * j);
+        });
+      });
+    };
+
+    function roundFloat(number, n) {
+      var _pow = Math.pow(10, n);
+      return Math.round(number * _pow) / _pow;
+    }
+
+    function set() {
+      // 白でcanvasを塗る
+      context.fillStyle = "rgb(255, 255, 255)";
+      context.fillRect(0, 0, canvas.width, canvas.height);
+
+      c = b / 3;
+
+      // beginPathメソッドを呼び出すことで、描画コンテキストへのパスの記録が開始され、図形を書くことができる。
+      context.beginPath();
+      context.strokeStyle = "rgb(0, 0, 0)";
+      // moveToメソッドによって、指定した点まで移動する。 現在の点から指定した点までの線分を定義する。 直線の軌跡
+      context.setLineDash([0]);
+
+      // 直線の軌跡
+      context.moveTo(st_X, canvas.height - st_Y - b);
+      context.lineTo(600, 170);
+
+      context.stroke();
+
+      en(30, 10);
+      en(60, 25);
+      en(90, 45);
+      en(120, 30);
+      en(150, 60);
+      en(135, 70);
+
+      context.beginPath();
+      context.fillStyle = "rgb(0, 0, 0)";
+
+      context.fillText("30", st_X + 30 * 3 - 7, canvas.height - st_Y + 20);
+      context.fillText("60", st_X + 60 * 3 - 7, canvas.height - st_Y + 20);
+      context.fillText("90", st_X + 90 * 3 - 7, canvas.height - st_Y + 20);
+      context.fillText("120", st_X + 120 * 3 - 11, canvas.height - st_Y + 20);
+      context.fillText("150", st_X + 150 * 3 - 11, canvas.height - st_Y + 20);
+      context.fillText("180", st_X + 180 * 3 - 11, canvas.height - st_Y + 20);
+
+      context.fillText("30", st_X - 20, canvas.height - st_Y - 30 * 3 + 5);
+      context.fillText("60", st_X - 20, canvas.height - st_Y - 60 * 3 + 5);
+      context.fillText("90", st_X - 20, canvas.height - st_Y - 90 * 3 + 5);
+
+      context.fillText("O", st_X - 15, canvas.height - st_Y + 15);
+
+      // context.fillText("xの座標: " + mouseX, 400, 100); context.fillText("yの座標: " + mouseY, 400, 200);
+
+      context.font = "bold 14px 'ＭＳ 明朝'";
+      context.fillText("身長(cm)", canvas.width / 2 - 40, canvas.height - st_Y + 40);
+      var text = "体重";
+      tategaki(context, text, st_X - 60, canvas.height / 2);
+      context.fillText("(kg)", st_X - 60 - 10, canvas.height / 2 + 30);
+
+      // 矢印の軌跡
+      context.arrow(st_X, canvas.height - st_Y, canvas.width - st_X / 2, canvas.height - st_Y, [
+        0,
+        1,
+        -15,
+        1,
+        -15,
+        5
+      ]);
+      context.arrow(st_X, canvas.height - st_Y, st_X, st_Y, [
+        0,
+        1,
+        -15,
+        1,
+        -15,
+        5
+      ]);
+      context.fill();
+    }
+
+    onload = function () {
+      setInterval(set, 30);
+    }
   </script>
