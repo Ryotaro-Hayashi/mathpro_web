@@ -1,7 +1,6 @@
 @import "bootstrap";
-@charset "utf-8";
+@charset "utf-8"; /*全体*/
 
-/*全体*/
 body {
   margin: 0;
   padding: 0;
@@ -10,12 +9,12 @@ body {
   font-size: 15px;
   line-height: 2;
 }
-
 //header関連
+
 header {
   width: 100%;
   height: 200px;
-  margin: 0 auto
+  margin: 0 auto;
 }
 
 #logo {
@@ -31,7 +30,6 @@ header {
 }
 
 .global-nav li {
-
   margin: 0 20px;
   font-size: 20px;
   list-style: none;
@@ -47,16 +45,18 @@ header {
   padding-bottom: 3px;
   text-decoration: none;
 }
-
 // フッターの背景や文字色、中央寄せ
+
 footer {
   width: 100%;
   text-align: center;
   color: #ffffff;
   padding: 20px 0;
   background-color: #3f3f3f;
-  bottom: 0; /*下に固定*/
+  bottom: 0;
+  /*下に固定*/
 }
+
 footer small {
   text-align: center;
   font-size: 12px;
@@ -100,12 +100,10 @@ a:hover {
   margin-top: 220px;
   padding: 35px 0;
 }
-
 // .content {
 //   width: 960px;
 //   margin: 0 auto;
 // }
-
 // .main {
 //   width: 700px;
 //   margin: 0 10px;
@@ -115,8 +113,8 @@ a:hover {
 a img:hover {
   opacity: 0.8;
 }
-
 //index関連
+
 #index {
   background-image: image-url("FUN_outsideb.jpg");
   background-repeat: no-repeat;
@@ -135,8 +133,8 @@ a img:hover {
   margin-right: 90px;
   text-align: center;
 }
-
 //indexの見出し
+
 #index h1 {
   font-size: 50px;
   font-weight: 400px;
@@ -147,9 +145,9 @@ a img:hover {
   padding-top: 15px;
   padding-bottom: 15px;
 }
-
 //indexの強調文
-#index .strongt{
+
+#index .strongt {
   font-size: 35px;
   color: #ffffff;
   margin-top: -15px;
@@ -163,9 +161,9 @@ a img:hover {
   padding-top: 20px;
   padding-bottom: 20px;
 }
-
 //indexのbox
-#index .cButton{
+
+#index .cButton {
   margin-top: -30px;
 }
 
@@ -181,11 +179,11 @@ a img:hover {
   background-attachment: fixed;
   background-size: cover;
   font-family: "游ゴシック", "Yu Gothic", "游ゴシック体", "YuGothic", sans-serif;
-  bottom: 0
+  bottom: 0;
 }
-
 //スタンダードなページ全体
-.all{
+
+.all {
   background-color: rgb(248, 248, 248);
   margin-top: -35px;
   margin-bottom: -35px;
@@ -194,69 +192,84 @@ a img:hover {
   font-weight: 450;
 }
 
-.title{
+.title {
   text-align: center;
   font-family: "游明朝", "Yu Mincho", "游明朝体", "YuMincho", sans-serif;
   font-size: 75px;
   font-weight: 400;
   padding-top: 10px;
 }
-
 //左に余白20px
-.padl-20{
+
+.padl-20 {
   padding-left: 20px;
 }
 //上に余白40px
-.padt-40{
+
+.padt-40 {
   padding-top: 40px;
 }
 //見出し下の余白
-.topSpace{
+
+.topSpace {
   padding-top: 15px;
 }
 //サイドバーの余白
-.pad0{
+
+.pad0 {
   padding-top: 1460px;
 }
-.pad1{
-  padding-top: 0px;
-}
-.pad7{
-  padding-top: 550px;
-}
-.pad4{
-  padding-top: 20px;
-}
-.pad5{
-  padding-top: 2200px;
-}
-.pad2{
-  padding-top: 2930px;
-}
-.pad6{
-  padding-top: 70px;
-}
-.pad3{
-  padding-top: 1450px;
-}
-.pad8{
-  padding-top: 930px;
-}
-.pad9{
-  padding-top: 50px;
-}
-.pad10{
-  padding-top: 370px;
-}
-.pad11{
-  padding-top: 70px;
-}
-.pad12{
-  padding-top: 1830px;
+
+.pad1 {
+  padding-top: 0;
 }
 
+.pad7 {
+  padding-top: 550px;
+}
+
+.pad4 {
+  padding-top: 20px;
+}
+
+.pad5 {
+  padding-top: 2200px;
+}
+
+.pad2 {
+  padding-top: 2930px;
+}
+
+.pad6 {
+  padding-top: 70px;
+}
+
+.pad3 {
+  padding-top: 1450px;
+}
+
+.pad8 {
+  padding-top: 930px;
+}
+
+.pad9 {
+  padding-top: 50px;
+}
+
+.pad10 {
+  padding-top: 370px;
+}
+
+.pad11 {
+  padding-top: 70px;
+}
+
+.pad12 {
+  padding-top: 1830px;
+}
 //見出し
-.caption{
+
+.caption {
   font-family: "游明朝", "Yu Mincho", "游明朝体", "YuMincho", sans-serif;
   height: 65px;
   font-size: 40px;
@@ -264,148 +277,147 @@ a img:hover {
   border-bottom: 2px solid rgb(0, 80, 185);
 }
 //小見出し
-.caption2{
+
+.caption2 {
   font-size: 20px;
 }
-
 //本文
-.text{
+
+.text {
   font-size: 18px;
   padding-left: 15px;
   padding-right: 15px;
 }
 
-.text1{
+.text1 {
   font-size: 15px;
   padding-left: 15px;
   padding-right: 15px;
 }
-
 //サイドバーの本文
-.text-sub{
+
+.text-sub {
   font-size: 15px;
 }
-
 //homeの本文
-.homeText{
+
+.homeText {
   text-align: center;
   font-size: 22px;
   font-weight: 450;
 }
-
 /*全体*/
+
 .hidden_box {
-    margin: 2em 0;/*前後の余白*/
-    padding: 0;
+  margin: 2em 0;
+  /*前後の余白*/
+  padding: 0;
 }
-
 /*ボタンホバー時*/
+
 .hidden_box label:hover {
-    background: #efefef;
+  background: #efefef;
 }
-
 /*チェックは見えなくする*/
+
 .hidden_box input {
-    display: none;
+  display: none;
 }
-
 /*中身を非表示にしておく*/
-.hidden_box .hidden_show {
-    height: 0;
-    padding: 0;
-    overflow: hidden;
-    opacity: 0;
-    transition: 0.8s;
-}
 
+.hidden_box .hidden_show {
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: 0.8s;
+}
 /*クリックで中身表示*/
+
 .hidden_box input:checked ~ .hidden_show {
-    padding: 10px 0;
-    height: auto;
-    opacity: 1;
+  padding: 10px 0;
+  height: auto;
+  opacity: 1;
 }
 
 .hidden_box1 label:hover {
-    background: #efefef;
+  background: #efefef;
 }
-
 /*チェックは見えなくする*/
+
 .hidden_box1 input {
-    display: none;
+  display: none;
 }
-
 /*中身を非表示にしておく*/
+
 .hidden_box1 .hidden_show1 {
-    height: 0;
-    padding: 0;
-    overflow: hidden;
-    opacity: 0;
-    transition: 0.8s;
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: 0.8s;
 }
-
 /*クリックで中身表示*/
-.hidden_box1 input:checked ~ .hidden_show1 {
-    padding: 10px 0;
-    height: auto;
-    opacity: 1;
-}
 
+.hidden_box1 input:checked ~ .hidden_show1 {
+  padding: 10px 0;
+  height: auto;
+  opacity: 1;
+}
 /*全体*/
 /*.hidden_box2 {
     margin: 2em 0;前後の余白
     padding: 0;
 }*/
-
 .hidden_box2 label:hover {
-    background: #efefef;
+  background: #efefef;
 }
-
 /*チェックは見えなくする*/
+
 .hidden_box2 input {
-    display: none;
+  display: none;
 }
-
 /*中身を非表示にしておく*/
-.hidden_box2 .hidden_show2 {
-    height: 0;
-    padding: 0;
-    overflow: hidden;
-    opacity: 0;
-    transition: 0.8s;
-}
 
+.hidden_box2 .hidden_show2 {
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: 0.8s;
+}
 /*クリックで中身表示*/
+
 .hidden_box2 input:checked ~ .hidden_show2 {
-    padding: 10px 0;
-    height: auto;
-    opacity: 1;
+  padding: 10px 0;
+  height: auto;
+  opacity: 1;
 }
 
 .hidden_box3 label:hover {
-    background: #efefef;
+  background: #efefef;
 }
-
 /*チェックは見えなくする*/
+
 .hidden_box3 input {
-    display: none;
+  display: none;
 }
-
 /*中身を非表示にしておく*/
+
 .hidden_box3 .hidden_show3 {
-    height: 0;
-    padding: 0;
-    overflow: hidden;
-    opacity: 0;
-    transition: 0.8s;
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: 0.8s;
 }
-
 /*クリックで中身表示*/
-.hidden_box3 input:checked ~ .hidden_show3 {
-    padding: 2px 0;
-    height: auto;
-    opacity: 1;
-}
 
+.hidden_box3 input:checked ~ .hidden_show3 {
+  padding: 2px 0;
+  height: auto;
+  opacity: 1;
+}
 
 .btn a {
   background-color: #009cd3;
@@ -424,11 +436,11 @@ a img:hover {
 .btn a:hover {
   text-decoration: none;
   background-color: #ffffff;
-  color: #009cd3
+  color: #009cd3;
 }
-
 /*強調のbox*/
-.box{
+
+.box {
   padding: 0.5em 1em;
   margin-top: 15px;
   margin-bottom: 20px;
@@ -437,12 +449,13 @@ a img:hover {
   border-top: solid 5px #73dbe9;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
 }
+
 .box p {
   margin: 0;
   padding: 0;
 }
-
 /*回答欄のbox*/
+
 .box26 {
   position: relative;
   margin: 2em 0;
@@ -451,6 +464,7 @@ a img:hover {
   border-radius: 8px;
   width: 280px;
 }
+
 .box26 .box-title {
   position: absolute;
   display: inline-block;
@@ -463,66 +477,70 @@ a img:hover {
   color: #333333;
   font-weight: 450px;
 }
+
 .box26 p {
   margin: 0;
   padding: 0;
 }
 
-.usage-main{
+.usage-main {
   margin-left: 25px;
   margin-right: 25px;
 }
 
-.pagetop{
+.pagetop {
   position: fixed;
   bottom: 16px;
   right: 16px;
 }
 
-.pagetop a{
+.pagetop a {
   display: block;
   text-decoration: none;
 }
 
-.pagetop:hover{
-  opacity: 0.85 ;
+.pagetop:hover {
+  opacity: 0.85;
 }
 
-td{
+td {
   text-align: center;
 }
-
 //マーカー
-.underl{
+
+.underl {
   background: linear-gradient(transparent 80%, #73dbe9 70%);
 }
 
-.usage-button{
+.usage-button {
   bottom: 16px;
   margin-left: 800px;
 }
 
-.mgr-55{
-  margin-left : 55px;
+.mgr-55 {
+  margin-left: 55px;
 }
-
 // スライド
+
 .showbox {
-   display: inline-block;
-}
-.showbox p {
-   text-align: center;
-}
-.showbox img {
-   border: 2px solid skyblue;
+  display: inline-block;
 }
 
+.showbox p {
+  text-align: center;
+}
+
+.showbox img {
+  border: 2px solid skyblue;
+}
 //解答チェック
+
 .allcheck {
   padding: 0.5em 1em;
   margin: 2em 0;
   border: double 5px rgb(0, 80, 185);
 }
+
 .allcheck p {
   margin: 0;
   padding: 0;
@@ -533,5 +551,32 @@ td{
 }
 
 #canvas1 {
-   border: 2px solid black;
+  border: 1px solid black;
+}
+
+.img {
+  border: 1px solid black;
+}
+// 画像の横並び
+
+
+.img-yokolist {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+}
+
+.img-yokolist p {
+  padding-right: 5px;
+  width: 100%;
+}
+
+.left {
+  margin-left: 30px;
+}
+
+.top {
+  margin-top: 30px;
 }
