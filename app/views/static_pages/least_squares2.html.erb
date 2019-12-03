@@ -47,37 +47,26 @@
 
           <center><%= link_to image_tag("pic3.png") %></center><br>
 
-          上の図のように誤差が最小となる直線を引くためにはどのようにすればよいでしょう。 実際に傾き$a$と切片$b$の値を変えて確認してみましょう。<br><br>
+          上の図のように誤差が最小となる直線を引くためにはどのようにすればよいでしょう。<br>実際に傾き$a$と切片$b$の値を変えて確認してみましょう。<br><br>
+          傾き$a$の値はマウスカーソルの位置、切片$b$の値は下のフォームに数値を入れて変更することができます。<br>
 
           <center>
-            <iframe
-              src="https://docs.google.com/presentation/d/e/2PACX-1vTIWv7RoUWfQzAwm3iBGpavqe973BkN0_qmoj8UfRcIscYtU2UL6gK6V5fQf9keZjrx86ZOrp64rPrA/embed?start=true&loop=true&delayms=1000"
-              frameborder="0"
-              width="480"
-              height="300"
-              allowfullscreen="true"
-              mozallowfullscreen="true"
-              webkitallowfullscreen="true"></iframe>
-          </center><br>
-
-          <canvas id="canvas1" width="400" height="400"></canvas>
-          <div id="func">$y=ax+b$</div>
-
           <!-- フォームを作成 -->
           <form name="form1" id="id_form1" action="">
             <input name="textBox1" id="id_textBox1" type="text" value="" />
             <!-- クリックされると、onButtonClick()が実行される -->
-            <input type="button" value="Exec" onclick="onButtonClick();" />
+            <input type="button" value="切片 b の値を決定" onclick="onButtonClick();" />
           </form>
-          <div>
-            $y=$<span id="output2">a</span>$x+$<span id="output">30</span>
-          </div>
+          </center><br>
 
+          <center>
+            <canvas id="canvas1" width="700" height="400"></canvas>
+          </center><br>
 
-          ①は$a=0.2, b=16$ ②は$a=0.6, b=16$ ③は$a=0.6,b=-50$ です。<br><br>
-
-          スライドを見ると、$a,b$を変えることによって誤差も変わることが分かります。 $a,b$を変えることで誤差を最小にできると考えられます。 誤差を小さくするということは、各データの誤差の和を小さくするということです。<br>
-          しかし、誤差(下図の↔)をそのまま足すと、正負が混合している場合、誤差の和が0になることがあります。 下の図のように誤差の和が0で最小なのにも関わらず、この直線は「データの関係を表す」直線ではないことが見てわかります。<br><br>
+          $a,b$を変えることによって誤差も変わることが分かります。<br
+          >このことから$a,b$を変えることで誤差を最小にできると考えられます。 <br>
+          誤差を小さくするということは、各データの誤差の和を小さくするということです。<br>
+          しかし、誤差(下図の↔)をそのまま足すと、正負が混合している場合、誤差の和が0になることがあります。下の図のように誤差の和が0で最小なのにも関わらず、この直線は「データの関係を表す」直線ではないことが見てわかります。<br><br>
 
           <center><%= link_to image_tag("pic4.png") %></center><br>
 
@@ -248,7 +237,7 @@
 
     // canvasの位置指定（左上基準）
     canvas.style.position = "relative";
-    canvas.style.left = "100px";
+    // canvas.style.left = "100px";
     // canvas.style.top = "100px";
 
     // 描画コンテキストを取得する
@@ -260,16 +249,15 @@
     var mouseY = 0;
 
     // canvas内での軸の位置指定
-    var st_X = 60;
+    var st_X = 90;
     var st_Y = 50;
 
     // 切片
-    var b = 200;
+    var b = 60 * 3;
 
     function onButtonClick() {
       // DOMを取得
-      b = document.forms.id_form1.id_textBox1.value;
-      target.innerText = document.forms.id_form1.id_textBox1.value;
+      b = parseFloat(document.forms.id_form1.id_textBox1.value) * 3;
     }
 
     // マウスの位置を取得
@@ -285,11 +273,11 @@
 
     function en(circle_x, circle_y) {
       // 円と同じx座標と直線の交点のy座標
-      let c_X = inclination * circle_x + parseInt(b);
+      let c_X = inclination * circle_x * 3 + parseInt(b);
 
       // 描画する位置を返還
-      let circle_X = circle_x + st_X;
-      let circle_Y = canvas.height - circle_y - st_Y;
+      let circle_X = circle_x * 3 + st_X;
+      let circle_Y = canvas.height - circle_y * 3 - st_Y;
 
       context.beginPath();
       context.fillStyle = "rgb(0, 0, 255)";
@@ -306,7 +294,7 @@
         // 誤差の軌跡
         context.setLineDash([2, 2]);
         context.moveTo(circle_X, circle_Y);
-        context.lineTo(circle_X, circle_Y + circle_y - c_X);
+        context.lineTo(circle_X, circle_Y + circle_y * 3 - c_X);
       }
 
       // strokeメソッドで描画コンテキストに記録されたパスをCanvasに描画
@@ -340,6 +328,8 @@
       // 直線の傾き
       inclination = mouseY / mouseX;
 
+      c = b / 3;
+
       // beginPathメソッドを呼び出すことで、描画コンテキストへのパスの記録が開始され、図形を書くことができる。
       context.beginPath();
       context.strokeStyle = "rgb(0, 0, 0)";
@@ -355,37 +345,56 @@
         context.stroke();
       }
 
-      en(100, 100);
-      en(120, 150);
-      en(150, 190);
-      en(200, 170);
-      en(70, 60);
-      en(160, 160);
+      en(30, 10);
+      en(60, 25);
+      en(90, 45);
+      en(120, 30);
+      en(150, 60);
+      en(135, 70);
 
       context.beginPath();
       context.fillStyle = "rgb(0, 0, 0)";
+
+      context.fillText("30", st_X + 30 * 3 - 7, canvas.height - st_Y + 20);
+      context.fillText("60", st_X + 60 * 3 - 7, canvas.height - st_Y + 20);
+      context.fillText("90", st_X + 90 * 3 - 7, canvas.height - st_Y + 20);
+      context.fillText("120", st_X + 120 * 3 - 11, canvas.height - st_Y + 20);
+      context.fillText("150", st_X + 150 * 3 - 11, canvas.height - st_Y + 20);
+      context.fillText("180", st_X + 180 * 3 - 11, canvas.height - st_Y + 20);
+
+      context.fillText("30", st_X - 20, canvas.height - st_Y - 30 * 3 + 5);
+      context.fillText("60", st_X - 20, canvas.height - st_Y - 60 * 3 + 5);
+      context.fillText("90", st_X - 20, canvas.height - st_Y - 90 * 3 + 5);
+
+      context.fillText("O", st_X - 15, canvas.height - st_Y + 15);
+
+      // context.fillText("xの座標: " + mouseX, 400, 100);
+      // context.fillText("yの座標: " + mouseY, 400, 200);
+
       context.font = "bold 14px 'ＭＳ 明朝'";
       context.fillText("身長(cm)", canvas.width / 2 - 40, canvas.height - st_Y + 40);
       var text = "体重";
-      tategaki(context, text, st_X - 40, canvas.height / 2);
-      context.fillText("(kg)", st_X - 40 - 10, canvas.height / 2 + 30);
+      tategaki(context, text, st_X - 60, canvas.height / 2);
+      context.fillText("(kg)", st_X - 60 - 10, canvas.height / 2 + 30);
 
-      if (roundFloat(inclination, 2) == 0) {
-        context.fillText("y=" + b, parseInt(mousex) + 10, mousey);
-      } else if (roundFloat(inclination, 2) == 1) {
-        context.fillText("y=x" + b, parseInt(mousex) + 10, mousey);
-      } else {
-        context.fillText("y=" + roundFloat(inclination, 2) + "x+" + b, parseInt(mousex) + 10, mousey);
+      if ((0 < mouseX && mousex < canvas.width - 130) && (0 < mousey && mousey < canvas.height)) {
+        if (roundFloat(inclination, 2) == 0) {
+          context.fillText("y = " + c, parseInt(mousex) + 10, mousey);
+        } else if (roundFloat(inclination, 2) == 1) {
+          context.fillText("y = x + " + c, parseInt(mousex) + 10, mousey);
+        } else if (roundFloat(inclination, 2) == -1) {
+          context.fillText("y = -x + " + c, parseInt(mousex) + 10, mousey);
+        } else if (b == 0) {
+          context.fillText("y = " + roundFloat(inclination, 2) + "x", parseInt(mousex) + 10, mousey);
+        } else {
+          context.fillText("y = " + roundFloat(inclination, 2) + "x + " + c, parseInt(mousex) + 10, mousey);
+        }
       }
 
-      // context.fillText("y=" + orgRound(inclination, 3) + "x+" + b, parseInt(mouseX) + 10, mousey);
-
       // 矢印の軌跡
-      context.arrow(st_X, canvas.height - st_Y, canvas.width - st_X, canvas.height - st_Y, [0, 1, -15, 1, -15, 5]);
+      context.arrow(st_X, canvas.height - st_Y, canvas.width - st_X / 2, canvas.height - st_Y, [0, 1, -15, 1, -15, 5]);
       context.arrow(st_X, canvas.height - st_Y, st_X, st_Y, [0, 1, -15, 1, -15, 5]);
       context.fill();
-
-      target2.innerText = roundFloat(inclination, 2);
     }
 
     onload = function() {
