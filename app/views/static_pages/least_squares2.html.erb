@@ -38,45 +38,43 @@
           最小二乗法とは、「$^*$誤差の二乗和が最小となる関数$f(x)$(データの関係を表すための関数)」を求める方法です。 データ$(x_i,y_i)$をグラフ上に表した点$(x_i,y_i)$の誤差は、$y_i$から関数$f(x_i)$を引いたものです。<br>
           例えば、下の図でいうとデータ$(x_4,y_4)$の誤差は$y_4-f(x_4)$です。<br><br>
 
-          <center><%= link_to image_tag("pic2.png") %></center>
+          <center><%= link_to image_tag "pic2.png", class: 'img' %></center>
           <center>※青い点は実際のデータ、赤い線は関数$f(x)$、↔は誤差</center><br>
 
           最小二乗法では「データの関係を表す<b>曲線</b>」を求めることもできますが、前述した通り複雑で分かりにくいので、 今回は「データの関係を表す<b>直線</b>」を求める方法に限定して簡単に説明します。<br>
           直線($f(x)=ax+b$)は傾き$a$と切片$b$を求めることで1つに決まるので、 誤差が最小となるような$a,b$を求めることを目標にします。<br><br>
 
-          <center><%= link_to image_tag("pic3.png") %></center><br>
+          <center><%= link_to image_tag "pic3.png", class: 'img' %></center><br>
 
           上の図のように誤差が最小となる直線を引くためにはどのようにすればよいでしょう。<br>実際に傾き$a$と切片$b$の値を変えて確認してみましょう。<br><br>
           傾き$a$の値はマウスカーソルの位置、切片$b$の値は下のフォームに半角で数値を入れて変更することができます。<br>
 
           <center>
-          <!-- フォームを作成 -->
-          <form name="form1" id="id_form1" action="">
-            <input name="textBox1" id="id_textBox1" type="text" value="" />
-            <!-- クリックされると、onButtonClick()が実行される -->
-            <input type="button" value="切片 b の値を決定" onclick="onButtonClick();" />
-          </form>
+            <!-- フォームを作成 -->
+            <form name="form1" id="id_form1" action="">
+              <input name="textBox1" id="id_textBox1" type="text" value=""/>
+              <!-- クリックされると、onButtonClick()が実行される -->
+              <input type="button" value="切片 b の値を決定" onclick="onButtonClick();"/>
+            </form>
           </center><br>
 
           <center>
             <canvas id="canvas1" width="700" height="400"></canvas>
           </center><br>
 
-          $a,b$を変えることによって誤差も変わることが分かります。<br
-          >このことから$a,b$を変えることで誤差を最小にできると考えられます。 <br>
+          $a,b$を変えることによって誤差も変わることが分かります。<br >このことから$a,b$を変えることで誤差を最小にできると考えられます。
+          <br>
           誤差を小さくするということは、各データの誤差の和を小さくするということです。<br>
           しかし、誤差(下図の↔)をそのまま足すと、正負が混合している場合、誤差の和が0になることがあります。下の図のように誤差の和が0で最小なのにも関わらず、この直線は「データの関係を表す」直線ではないことが見てわかります。<br><br>
 
-          <center>
-            <canvas id="canvas02" width="700" height="400"></canvas>
-          </center><br>
+          <center><%= link_to image_tag "pic4.png", class: 'img' %></center><br><br>
 
           そこで、負の数をなくすために誤差を$^*$二乗して、正の数にします。<br>
           データの数を$n$個として、誤差の二乗和を$E(a,b)$とすると次のように表せます。<br>
           $E(a,b)$ = (1番目のデータの誤差)$^2$+(2番目のデータの誤差)$^2$+…+($n$番目のデータの誤差)$^2$ となります。<br>
           例えば、4番目のデータの誤差に注目すると<br><br>
 
-          <center><%= link_to image_tag("pic5.png") %></center><br>
+          <center><%= link_to image_tag "pic5.png", class: 'img' %></center><br>
 
           誤差の式は$y_4-(ax_4+b)$となります。 したがって、$x$が$i$番目のときに注目すると誤差の式は$y_i-(ax_i+b)$となります。つまり、誤差の二乗和$E(a,b)$は<br><br>
           <div class="padl-20">
@@ -101,22 +99,22 @@
           $E(a,b)=\displaystyle\sum_{i=1}^{n} (y_i^2-2ax_iy_i-2by_i+a^2x_i^2+2abx_i+b^2)$ となります。<br>
           この関数$E(a,b)$を図に表すと、$E(a,b)$は二変数の関数であるため、$Z=E(a,b)$とすると下の図のようになります。<br><br>
 
-          <center><%= link_to image_tag("pic6.png") %></center><br>
+          <center><%= link_to image_tag "pic6.png", class: 'img' %></center><br>
 
           この関数の最小点を考えるために、関数$E(a,b)$の最小点を$(a^*,b^*)$として、$a=a^*$、または$b=b^*$で切ったときの断面図をそれぞれ見てみましょう。<br><br>
 
-          <center><%= link_to image_tag("pic7.png") %></center><br>
+          <center><%= link_to image_tag "pic7.png", class: 'img' %></center><br>
 
           まず、$b=b^*$で切ったときの断面図(上図)から考えてみましょう。 一変数で下に凸の二次関数は傾きが0のときに最小値となります。<br>
           同じように、この断面図$(b=b^*)$でも「傾きが0になるとき」に最小値となることが分かります。<br><br>
 
-          <center><%= link_to image_tag("pic8.png") %></center><br>
+          <center><%= link_to image_tag "pic8.png", class: 'img' %></center><br>
 
           次に、$a=a*$で切った時の断面図(上図)を考えてみましょう。<br>
           一変数で下に凸の二次関数は傾きが0のときに最小値となります。<br>
           同じように、この断面図$(a=a^*)$でも「傾きが0になるとき」に最小値となることが分かります。<br><br>
 
-          <center><%= link_to image_tag("pic9.png") %></center><br>
+          <center><%= link_to image_tag "pic9.png", class: 'img' %></center><br>
 
           以上より、最小点$(a^*,b^*)$を考えると…<br>
           <div class="padl-40">
@@ -213,8 +211,8 @@
           <div class="pad6"></div>
           ※ここの微分は，厳密には偏微分を意味する<br>
           <div style="display:inline-block; background:#fcfcff; padding:15px; border:1px solid #3b5998; border-radius:10px; word-break:break-all;">
-             <b>偏微分の計算には微分の知識が使われている</b>
-             </div>
+            <b>偏微分の計算には微分の知識が使われている</b>
+          </div>
         </div>
       </div>
     </div>
@@ -237,10 +235,7 @@
 
     // canvasの位置指定（左上基準）
     canvas.style.position = "relative";
-    // canvas.style.left = "100px";
-    // canvas.style.top = "100px";
-
-    // 描画コンテキストを取得する
+    // canvas.style.left = "100px"; canvas.style.top = "100px"; 描画コンテキストを取得する
     var context = canvas.getContext("2d");
 
     var mousex = 0;
@@ -272,7 +267,6 @@
 
     // マウスの位置を取得
 
-
     function en(circle_x, circle_y) {
       // 円と同じx座標と直線の交点のy座標
       let c_X = inclination * circle_x * 3 + parseInt(b);
@@ -303,11 +297,11 @@
       context.stroke();
     }
 
-    var tategaki = function(context, text, x, y) {
+    var tategaki = function (context, text, x, y) {
       var textList = text.split('\n');
       var lineHeight = context.measureText("あ").width;
-      textList.forEach(function(elm, i) {
-        Array.prototype.forEach.call(elm, function(ch, j) {
+      textList.forEach(function (elm, i) {
+        Array.prototype.forEach.call(elm, function (ch, j) {
           context.fillText(ch, x - lineHeight * i, y + lineHeight * j);
         });
       });
@@ -335,8 +329,7 @@
       // beginPathメソッドを呼び出すことで、描画コンテキストへのパスの記録が開始され、図形を書くことができる。
       context.beginPath();
       context.strokeStyle = "rgb(0, 0, 0)";
-      // moveToメソッドによって、指定した点まで移動する。
-      // 現在の点から指定した点までの線分を定義する。
+      // moveToメソッドによって、指定した点まで移動する。 現在の点から指定した点までの線分を定義する。
 
       if ((0 < mouseX && mousex < canvas.width) && (0 < mousey && mousey < canvas.height)) {
         // 直線の軌跡
@@ -351,8 +344,6 @@
       en(60, 25);
       en(90, 45);
       en(120, 30);
-      en(150, 60);
-      en(135, 70);
 
       context.beginPath();
       context.fillStyle = "rgb(0, 0, 0)";
@@ -370,8 +361,7 @@
 
       context.fillText("O", st_X - 15, canvas.height - st_Y + 15);
 
-      // context.fillText("xの座標: " + mouseX, 400, 100);
-      // context.fillText("yの座標: " + mouseY, 400, 200);
+      // context.fillText("xの座標: " + mouseX, 400, 100); context.fillText("yの座標: " + mouseY, 400, 200);
 
       context.font = "bold 14px 'ＭＳ 明朝'";
       context.fillText("身長(cm)", canvas.width / 2 - 40, canvas.height - st_Y + 40);
@@ -393,144 +383,25 @@
       }
 
       // 矢印の軌跡
-      context.arrow(st_X, canvas.height - st_Y, canvas.width - st_X / 2, canvas.height - st_Y, [0, 1, -15, 1, -15, 5]);
-      context.arrow(st_X, canvas.height - st_Y, st_X, st_Y, [0, 1, -15, 1, -15, 5]);
+      context.arrow(st_X, canvas.height - st_Y, canvas.width - st_X / 2, canvas.height - st_Y, [
+        0,
+        1,
+        -15,
+        1,
+        -15,
+        5
+      ]);
+      context.arrow(st_X, canvas.height - st_Y, st_X, st_Y, [
+        0,
+        1,
+        -15,
+        1,
+        -15,
+        5
+      ]);
       context.fill();
-    }
-
-
-
-    // canvas22要素のDOMオブジェクトを取得
-    var canvas2 = document.getElementById("canvas02");
-
-    // canvas2の位置指定（左上基準）
-    canvas2.style.position = "relative";
-    // canvas2.style.left = "100px";
-    // canvas2.style.top = "100px";
-
-    // 描画コンテキストを取得する
-    var context2 = canvas2.getContext("2d");
-
-    var mousey2 = 0;
-    var mouseY2 = 0;
-
-    // 切片
-    var b2 = 60 * 3;
-
-    // canvas内での軸の位置指定
-    var st_X = 90;
-    var st_Y = 50;
-
-    function en2(circle_x2, circle_y2) {
-      // 円と同じx座標と直線の交点のy座標
-      let C_X2 = inclination2 * circle_x2 * 3 + parseInt(b2);
-
-      // 描画する位置を返還
-      let circle_X2 = circle_x2 * 3 + st_X;
-      let circle_Y2 = canvas.height - circle_y2 * 3 - st_Y;
-
-      context2.beginPath();
-      context2.fillStyle = "rgb(0, 0, 255)";
-
-      context2.moveTo(circle_X2, circle_Y2);
-      context2.arc(circle_X2, circle_Y2, 5, 0, 2 * Math.PI);
-      context2.moveTo(circle_X2, circle_Y2);
-      context2.fill();
-
-      context2.beginPath();
-      context2.strokeStyle = "rgb(0, 0, 0)";
-
-      if ((circle_X2 < mousex && mousex < canvas.width) && (0 < mousey && mousey < canvas.height)) {
-        // 誤差の軌跡
-        context2.setLineDash([2, 2]);
-        context2.moveTo(circle_X2, circle_Y2);
-        context2.lineTo(circle_X2, circle_Y2 + circle_y2 * 3 - C_X2);
-      }
-
-      // strokeメソッドで描画コンテキストに記録されたパスをCanvasに描画
-      context2.stroke();
-    }
-
-
-    function set2() {
-      // 白でcanvas2を塗る
-      context2.fillStyle = "rgb(255, 255, 255)";
-      context2.fillRect(0, 0, canvas2.width, canvas2.height);
-
-      // 軸基準のマウスの位置
-      mouseX2 = mousex - st_X;
-      mouseY2 = canvas2.height - mousey - st_Y - b2;
-
-      // 直線の傾き
-      inclination2 = mouseY2 / mouseX2;
-
-      c2 = b2 / 3;
-
-      // beginPathメソッドを呼び出すことで、描画コンテキストへのパスの記録が開始され、図形を書くことができる。
-      context2.beginPath();
-      context2.strokeStyle = "rgb(0, 0, 0)";
-      // moveToメソッドによって、指定した点まで移動する。
-      // 現在の点から指定した点までの線分を定義する。
-
-      if ((0 < mouseX2 && mousex < canvas2.width) && (0 < mousey && mousey < canvas2.height)) {
-        // 直線の軌跡
-        context2.setLineDash([0]);
-        context2.moveTo(st_X, canvas2.height - st_Y - b2);
-        context2.lineTo(mousex, mousey);
-
-        context2.stroke();
-      }
-
-      en2(30, 10);
-      en2(60, 25);
-      en2(90, 45);
-      en2(120, 30);
-      en2(150, 60);
-      en2(135, 70);
-
-      context2.beginPath();
-      context2.fillStyle = "rgb(0, 0, 0)";
-
-      context2.fillText("30", st_X + 30 * 3 - 7, canvas2.height - st_Y + 20);
-      context2.fillText("60", st_X + 60 * 3 - 7, canvas2.height - st_Y + 20);
-      context2.fillText("90", st_X + 90 * 3 - 7, canvas2.height - st_Y + 20);
-      context2.fillText("120", st_X + 120 * 3 - 11, canvas2.height - st_Y + 20);
-      context2.fillText("150", st_X + 150 * 3 - 11, canvas2.height - st_Y + 20);
-      context2.fillText("180", st_X + 180 * 3 - 11, canvas2.height - st_Y + 20);
-
-      context2.fillText("30", st_X - 20, canvas2.height - st_Y - 30 * 3 + 5);
-      context2.fillText("60", st_X - 20, canvas2.height - st_Y - 60 * 3 + 5);
-      context2.fillText("90", st_X - 20, canvas2.height - st_Y - 90 * 3 + 5);
-
-      context2.fillText("O", st_X - 15, canvas2.height - st_Y + 15);
-
-      // context2.fillText("xの座標: " + mouseX, 400, 100);
-      // context2.fillText("yの座標: " + mouseY, 400, 200);
-
-      context2.font = "bold 14px 'ＭＳ 明朝'";
-      context2.fillText("身長(cm)", canvas2.width / 2 - 40, canvas2.height - st_Y + 40);
-
-      tategaki(context2, text, st_X - 60, canvas2.height / 2);
-      context2.fillText("(kg)", st_X - 60 - 10, canvas2.height / 2 + 30);
-
-      if ((0 < mousex && mousex < canvas2.width - 130) && (0 < mousey && mousey < canvas2.height)) {
-        context2.fillText("y = " + c2, parseInt(mousex) + 10, mousey);
-      }
-
-      // 矢印の軌跡
-      context2.arrow(st_X, canvas2.height - st_Y, canvas2.width - st_X / 2, canvas2.height - st_Y, [0, 1, -15, 1, -15, 5]);
-      context2.arrow(st_X, canvas2.height - st_Y, st_X, st_Y, [0, 1, -15, 1, -15, 5]);
-      context2.fill();
     }
     onload = function () {
       setInterval(set, 30);
-      setInterval(set2, 30);
     }
-
-
-  </script>
-
-  <script type="text/javascript">
-
-
   </script>

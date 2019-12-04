@@ -531,7 +531,8 @@ td {
 }
 
 .showbox img {
-  border: 2px solid skyblue;
+  border: 1px solid black;
+  pointer-events: none;
 }
 //解答チェック
 
@@ -556,6 +557,7 @@ td {
 
 .img {
   border: 1px solid black;
+  pointer-events: none;
 }
 // 画像の横並び
 
@@ -566,6 +568,7 @@ td {
   display: -ms-flex;
   display: -o-flex;
   display: flex;
+  pointer-events: none;
 }
 
 .img-yokolist p {
