@@ -47,14 +47,14 @@
           <center><%= link_to image_tag "pic3.png", class: 'img' %></center><br>
 
           上の図のように誤差が最小となる直線を引くためにはどのようにすればよいでしょう。<br>実際に傾き$a$と切片$b$の値を変えて確認してみましょう。<br><br>
-          傾き$a$の値はマウスカーソルの位置、切片$b$の値は下のフォームに半角で数値を入れて変更することができます。<br>
+          傾き$a$の値はマウスカーソルの位置、切片$b$の値は下のフォームに半角で数値を入れてボタンをクリックすることで変更することができます。<br><br>
 
           <center>
             <!-- フォームを作成 -->
             <form name="form1" id="id_form1" action="">
-              <input name="textBox1" id="id_textBox1" type="text" value=""/>
+              <input name="textBox1" id="id_textBox1" type="text" value="">
               <!-- クリックされると、onButtonClick()が実行される -->
-              <input type="button" value="切片 b の値を決定" onclick="onButtonClick();"/>
+              <input class="btn btn-secondary" value="切片bの値を決定" onclick="onButtonClick();"/>
             </form>
           </center><br>
 
