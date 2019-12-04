@@ -4,6 +4,7 @@
   <div class="all">
 
     <div class="title">最小二乗法</div>
+    <div class="padt-10"></div>
     <!-- ページネーション機能（Bootstrap） -->
     <nav aria-label="Page navigation">
       <!-- justify-content-centerでページネーションを中央寄せ -->
@@ -27,6 +28,7 @@
         </li>
       </ul>
     </nav>
+    <div class="padb-10"></div>
 
     <div class="column">
       <div class="main">
@@ -35,7 +37,7 @@
         <div class="topSpace"></div>
         <div class="text">
           ここではより詳しく最小二乗法について説明します。<br>
-          最小二乗法とは、「$^*$誤差の二乗和が最小となる関数$f(x)$(データの関係を表すための関数)」を求める方法です。 データ$(x_i,y_i)$をグラフ上に表した点$(x_i,y_i)$の誤差は、$y_i$から関数$f(x_i)$を引いたものです。<br>
+          最小二乗法とは「$^*$誤差の二乗和が最小となる関数$f(x)$(データの関係を表すための関数)」を求める方法です。 データ$(x_i,y_i)$をグラフ上に表した点$(x_i,y_i)$の誤差は、$y_i$から関数$f(x_i)$を引いたものです。<br>
           例えば、下の図でいうとデータ$(x_4,y_4)$の誤差は$y_4-f(x_4)$です。<br><br>
 
           <center><%= link_to image_tag "pic2.png", class: 'img' %></center>
@@ -65,7 +67,8 @@
           $a,b$を変えることによって誤差も変わることが分かります。<br >このことから$a,b$を変えることで誤差を最小にできると考えられます。
           <br>
           誤差を小さくするということは、各データの誤差の和を小さくするということです。<br>
-          しかし、誤差(下図の↔)をそのまま足すと、正負が混合している場合、誤差の和が0になることがあります。下の図のように誤差の和が0で最小なのにも関わらず、この直線は「データの関係を表す」直線ではないことが見てわかります。<br><br>
+          しかし、誤差(下図の↔)をそのまま足すと、正負が混合している場合、誤差の和が0になることがあります。下の図のように誤差の和が0で最小なのにも関わらず、この直線は
+          <br>「データの関係を表す」直線ではないことが見てわかります。<br><br>
 
           <center><%= link_to image_tag "pic4.png", class: 'img' %></center><br><br>
 
@@ -146,34 +149,8 @@
           となります。<br><br>
 
           上の2式に対して連立方程式をたてると \[ \begin{cases} \displaystyle\sum_{i=1}^{n} (-2x_iy_i+2ax_i^2+2bx_i)=0 \\ \displaystyle\sum_{i=1}^{n} (-2y_i+2ax_i+2b)=0 \end{cases} \] となり、この連立方程式を解くと、誤差の二乗和が最小となる$a$と$b$が求めることができます。<br><br>
-          誤差の二乗和が最小となる傾き$a$,切片$b$が求められたので、「データの関係を表すための直線」の式$(f(x)=ax+b)$が得られます。<br><br>
+          誤差の二乗和が最小となる傾き$a$,切片$b$が求められたので、「データの関係を表すための直線」の式$(f(x)=ax+b)$が得られます。
         </div>
-
-        <!-- ページネーション機能（Bootstrap） -->
-        <nav aria-label="Page navigation">
-          <!-- justify-content-centerでページネーションを中央寄せ -->
-          <ul class="pagination justify-content-center">
-            <li class="page-item">
-              <a class="page-link" href="least_squares1">前へ</a>
-            </li>
-            <li class="page-item">
-              <a class="page-link" href="least_squares1">1</a>
-            </li>
-            <li class="page-item active">
-              <span class="page-link">
-                2<span class="sr-only">(current)</span>
-              </span>
-            </li>
-            <li class="page-item">
-              <a class="page-link" href="least_squares3">3</a>
-            </li>
-            <li class="page-item">
-              <a class="page-link" href="least_squares3">次へ</a>
-            </li>
-          </ul>
-        </nav>
-        <br>
-
       </div>
 
       <div class="sub">
@@ -216,6 +193,31 @@
         </div>
       </div>
     </div>
+        <div class="padt-40"></div>
+        <!-- ページネーション機能（Bootstrap） -->
+        <nav aria-label="Page navigation">
+          <!-- justify-content-centerでページネーションを中央寄せ -->
+          <ul class="pagination justify-content-center">
+            <li class="page-item">
+              <a class="page-link" href="least_squares1">前へ</a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="least_squares1">1</a>
+            </li>
+            <li class="page-item active">
+              <span class="page-link">
+                2<span class="sr-only">(current)</span>
+              </span>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="least_squares3">3</a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="least_squares3">次へ</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="padb-40"></div>
   </div>
 
   <!-- ページ読み込み後にリロードしてTEXを表示 -->
