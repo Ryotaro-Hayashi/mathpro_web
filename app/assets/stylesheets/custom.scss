@@ -574,7 +574,7 @@ td {
 
 .img {
   border: solid 1px rgb(150,150,150);
-  pointer-events: none;
+  click-events: none;
 }
 // 画像の横並び
 
@@ -595,6 +595,9 @@ td {
 
 .left {
   margin-left: 30px;
+}
+.left2 {
+  margin-left: 100px;
 }
 
 .top {
