@@ -4,12 +4,13 @@
   <div class="all">
 
     <div class="title">最小二乗法</div>
+    <div class="padt-10"></div>
     <!-- ページネーション機能（Bootstrap） -->
     <nav aria-label="Page navigation">
       <!-- justify-content-centerでページネーションを中央寄せ -->
       <ul class="pagination justify-content-center">
         <li class="page-item">
-          <a class="page-link" href="least_squares2">Prev</a>
+          <a class="page-link" href="least_squares2">前へ</a>
         </li>
         <li class="page-item">
           <a class="page-link" href="least_squares1">1</a>
@@ -23,18 +24,18 @@
           </span>
         </li>
         <li class="page-item disabled">
-          <a class="page-link">Next</a>
+          <a class="page-link">次へ</a>
         </li>
       </ul>
     </nav>
+    <div class="padb-10"></div>
 
     <div class="column">
       <div class="main">
 
         <div class="caption">3.&ensp;実際にやってみよう</div>
         <div class="topSpace"></div>
-        <div class="text1">
-          <div class="caption2">
+        <div class="text">
             例題: 英語と数学の点数のデータに対して、「データの関係を表すための関数」が直線であると仮定する。 このときの「データの関係を表すための直線」を最小二乗法を用いて求めよ。 また、英語の点数が4点の人の数学の点数を求めた直線に基づいて予測せよ。<br><br>
 
             <div class="img-yokolist">
@@ -279,35 +280,10 @@
 
             <center>
               <canvas id="canvas1" width="500" height="400"></canvas>
-            </center><br>
-          </div>
+            </center>
         </div>
         <div class="padt-10"></div>
 
-        <!-- ページネーション機能（Bootstrap） -->
-        <nav aria-label="Page navigation">
-          <!-- justify-content-centerでページネーションを中央寄せ -->
-          <ul class="pagination justify-content-center">
-            <li class="page-item">
-              <a class="page-link" href="least_squares2">Prev</a>
-            </li>
-            <li class="page-item">
-              <a class="page-link" href="least_squares1">1</a>
-            </li>
-            <li class="page-item">
-              <a class="page-link" href="least_squares2">2</a>
-            </li>
-            <li class="page-item active">
-              <span class="page-link">
-                3<span class="sr-only">(current)</span>
-              </span>
-            </li>
-            <li class="page-item disabled">
-              <a class="page-link">Next</a>
-            </li>
-          </ul>
-        </nav>
-        <br>
 
       </div>
 
@@ -316,7 +292,7 @@
         <div clas="text-sub">
           <div class="pad3"></div>
           <div class="box26">
-            <span class="box-title">①</span>
+            <span class="box-title">(1)</span>
             <p>
               <input id="Radio1" name="RadioGroup1" type="radio" onchange="onRadioButtonChange1();" value="結果：おめでとう、正解です"/>
               <label for="Radio1">$4-(5a+b)$</label>&emsp;
@@ -331,7 +307,7 @@
           </div>
 
           <div class="box26">
-            <div class="box-title">②</div>
+            <div class="box-title">(2)</div>
             <p>
               <input id="Radio5" name="RadioGroup2" type="radio" onchange="onRadioButtonChange2();" value="結果：残念、不正解です"/>
               <label for="Radio5">$16-20a-8b+16a^2+10ab$</label><br>
@@ -349,7 +325,7 @@
 
           <div class="pad8"></div>
           <div class="box26">
-            <div class="box-title">③</div>
+            <div class="box-title">(3)</div>
             <p>
               <input id="Radio8" name="RadioGroup3" type="radio" onchange="onRadioButtonChange3();" value="結果：残念、不正解です"/>
               <label for="Radio8">$510a+10b-526$</label><br>
@@ -367,7 +343,7 @@
 
           <div class="pad9"></div>
           <div class="box26">
-            <div class="box-title">④</div>
+            <div class="box-title">(4)</div>
             <p>
               <input id="Radio11" name="RadioGroup4" type="radio" onchange="onRadioButtonChange4();" value="結果：残念、不正解です"/>
               <label for="Radio11">$510a+70b-526$</label><br>
@@ -385,7 +361,7 @@
 
           <div class="pad10"></div>
           <div class="box26">
-            <div class="box-title">⑤</div>
+            <div class="box-title">(5)</div>
             <p>
               <input id="Radio13" name="RadioGroup5" type="radio" onchange="onRadioButtonChange5();" value="結果：おめでとう、正解です"/>
               <label for="Radio13">$1.1$</label>&emsp;
@@ -402,7 +378,7 @@
           <div id="output5"></div>
 
           <div class="box26">
-            <div class="box-title">⑥</div>
+            <div class="box-title">(6)</div>
             <p>
               <input id="Radio16" name="RadioGroup6" type="radio" onchange="onRadioButtonChange6();" value="結果：おめでとう、正解です"/>
               <label for="Radio16">$-0.5$</label>&emsp;
@@ -420,16 +396,16 @@
 
           <div class="pad11"></div>
           <div class="box26">
-            <div class="box-title">⑦</div>
+            <div class="box-title">(7)</div>
             <p>
               <input id="Radio16" name="RadioGroup7" type="radio" onchange="onRadioButtonChange6();" value="結果：おめでとう、正解です"/>
-              <label for="Radio16">$1$</label>&emsp;
+              <label for="Radio16">①</label>&emsp;
               <input id="Radio17" name="RadioGroup7" type="radio" onchange="onRadioButtonChange6();" value="結果：残念、不正解です"/>
-              <label for="Radio17">$2$</label>&emsp;
+              <label for="Radio17">②</label>&emsp;
               <input id="Radio18" name="RadioGroup7" type="radio" onchange="onRadioButtonChange6();" value="結果：残念、不正解です"/>
-              <label for="Radio18">$3$</label>&emsp;
+              <label for="Radio18">③</label>&emsp;
               <input id="Radio19" name="RadioGroup7" type="radio" onchange="onRadioButtonChange6();" value="結果：残念、不正解です"/>
-              <label for="Radio19">$4$</label><br>
+              <label for="Radio19">④</label><br>
               <input id="Radio4" name="RadioGroup7" type="radio" value="結果：わからない"/>
               <label for="Radio4">わからない</label>
             </p>
@@ -440,7 +416,7 @@
 
           <div class="pad12"></div>
           <div class="box26">
-            <div class="box-title">⑧</div>
+            <div class="box-title">(8)</div>
             <p>
               <input id="Radio18" name="RadioGroup8" type="radio" onchange="onRadioButtonChange6();" value="結果：残念、不正解です"/>
               <label for="Radio18">$9.9$</label>&emsp;
@@ -457,7 +433,7 @@
           <div id="output8"></div>
 
           <div class="box26">
-            <div class="box-title">⑨</div>
+            <div class="box-title">(9)</div>
             <p>
               <input id="Radio17" name="RadioGroup9" type="radio" onchange="onRadioButtonChange6();" value="結果：残念、不正解です"/>
               <label for="Radio17">$4.9$</label>&emsp;
@@ -493,6 +469,31 @@
         </div>
       </div>
     </div>
+    <div class="padt-40"></div>
+      <!-- ページネーション機能（Bootstrap） -->
+        <nav aria-label="Page navigation">
+          <!-- justify-content-centerでページネーションを中央寄せ -->
+          <ul class="pagination justify-content-center">
+            <li class="page-item">
+              <a class="page-link" href="least_squares2">前へ</a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="least_squares1">1</a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="least_squares2">2</a>
+            </li>
+            <li class="page-item active">
+              <span class="page-link">
+                3<span class="sr-only">(current)</span>
+              </span>
+            </li>
+            <li class="page-item disabled">
+              <a class="page-link">次へ</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="padb-40"></div>
   </div>
 
   <!-- ページ読み込み後にリロードしてTEXを表示 -->
