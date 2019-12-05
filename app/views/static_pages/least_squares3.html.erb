@@ -250,17 +250,6 @@
             グラフで確認してみよう。<br><br>
 
             <center>
-              <iframe
-                src="https://docs.google.com/presentation/d/e/2PACX-1vSupSCSHw42dIORKdxf5CAJ1iqolbmMJjrjVmOqB3q4xm-jjWNwRURO-TXBrOsB4HGR47D1JFA96mLb/embed?start=true&loop=true&delayms=1000"
-                frameborder="0"
-                width="480"
-                height="300"
-                allowfullscreen="true"
-                mozallowfullscreen="true"
-                webkitallowfullscreen="true"></iframe>
-            </center><br>
-
-            <center>
               <!-- 傾きを入力するフォームを作成 -->
               <form name="form1" id="id_form1" action="">
                 <input name="textBox1" id="id_textBox1" type="text" value=""/>
@@ -275,6 +264,15 @@
                 <input name="textBox2" id="id_textBox2" type="text" value=""/>
                 <!-- クリックされると、onButtonClick()が実行される -->
                 <input class="btn btn-secondary" type="button" value="切片 b の値を決定" onclick="onButtonClick2();"/>
+              </form>
+            </center><br>
+
+            <center>
+              <!-- 英語の点数を入力するフォームを作成 -->
+              <form name="form3" id="id_form3" action="">
+                <input name="textBox3" id="id_textBox3" type="text" value=""/>
+                <!-- クリックされると、onButtonClick()が実行される -->
+                <input class="btn btn-secondary" type="button" value="英語の点数を決定" onclick="onButtonClick3(); prediction();"/>
               </form>
             </center><br>
 
@@ -798,6 +796,8 @@
     // 傾き
     var a = 1;
 
+    var v = 0;
+
     var text = "数学";
 
     function onButtonClick1() {
@@ -808,6 +808,11 @@
     function onButtonClick2() {
       // DOMを取得
       b = parseFloat(document.forms.id_form2.id_textBox2.value) * 30;
+    }
+
+    function onButtonClick3() {
+      // DOMを取得
+      v = parseFloat(document.forms.id_form3.id_textBox3.value) * 30;
     }
 
     // マウスの位置を取得
@@ -886,6 +891,8 @@
       en(9, 10);
 
       context.beginPath();
+      context.arc(st_X + v, canvas.height -  a * v - parseInt(b) - st_Y, 5, 0, 2 * Math.PI);
+
       context.fillStyle = "rgb(0, 0, 0)";
 
       context.fillText("2", st_X + 20 * 3 - 3, canvas.height - st_Y + 20);
@@ -902,6 +909,9 @@
       context.fillText("10", st_X - 20 - 5, canvas.height - st_Y - 100 * 3 + 5);
 
       context.fillText("O", st_X - 15, canvas.height - st_Y + 15);
+
+      context.fillText("vの値" + v, 400, 100);
+      context.fillText(canvas.height -  a * v - parseInt(b) - st_Y, 400, 200);
 
       // context.fillText("xの座標: " + mouseX, 400, 100);
       // context.fillText("yの座標: " + mouseY, 400, 200);
@@ -932,6 +942,7 @@
       ]);
       context.fill();
     }
+
     onload = function () {
       setInterval(set, 30);
     }
