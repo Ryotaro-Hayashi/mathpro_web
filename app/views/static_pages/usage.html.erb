@@ -32,19 +32,21 @@
       <div class="caption">スライドについて</div>
       <div class="topSpace"></div>
       <div class="text">
-        スライドは自動で遷移します。<br>
-        スライドのアンダーバーにあるボタンから、一時停止・全画面表示などの操作ができます。
+        ボタンを押すことでスライドが再生されます。<br>
+        再度、ボタンを押すと一時停止します。
       </div>
       <br><br>
-      <iframe
-        src="https://docs.google.com/presentation/d/e/2PACX-1vTIWv7RoUWfQzAwm3iBGpavqe973BkN0_qmoj8UfRcIscYtU2UL6gK6V5fQf9keZjrx86ZOrp64rPrA/embed?start=true&loop=true&delayms=1000"
-        frameborder="0"
-        width="480"
-        height="300"
-        allowfullscreen="true"
-        mozallowfullscreen="true"
-        webkitallowfullscreen="true"
-        style="margin-left: 100px;"></iframe>
+      <div class="showbox left2">
+        <!-- スライドショーを表示する場所 -->
+        <p>
+          <img src="/assets/slide1.1.png" id="slideshow" alt="スライドショー表示領域">
+        </p>
+
+        <!-- スライドショーの制御ボタンを表示 -->
+        <p>
+          <input type="button" class="btn btn-secondary" value="－ 再生／一時停止 －" id="startstopbutton">
+        </p>
+      </div>
       <br><br>
 
       <div class="caption">解答欄について</div>
@@ -54,37 +56,40 @@
         各解答欄から選択肢を1つ選んで、解答チェックボタンをクリックすると、選択肢が正解か不正解かが表示されます。<br>
         以下の解答欄では、(1)も(2)も1つ目の選択肢が正解です。<br>
 
-        <div style="padding-right: 400px">
-          <center>
-            <div class="box26">
-              <span class="box-title">(1)</span>
-              <p>
-                <input id="Radio1" name="RadioGroup1" type="radio" onchange="onRadioButtonChange1();" value="結果：おめでとう、正解です">
-                <label for="Radio1">$2x$</label>&emsp;
-                <input id="Radio2" name="RadioGroup1" type="radio" onchange="onRadioButtonChange1();" value="結果：残念、不正解です">
-                <label for="Radio2">$2x-3$</label>&emsp;
-                <input id="Radio3" name="RadioGroup1" type="radio" onchange="onRadioButtonChange1();" value="結果：残念、不正解です">
-                <label for="Radio3">$x$</label>
-              </p>
-              <span id="span1">結果：</span>
-            </div>
+          <div class="box26 left2">
+            <span class="box-title">(1)</span>
+            <p>
+              <input id="Radio1" name="RadioGroup1" type="radio" onchange="onRadioButtonChange1();" value="結果：おめでとう、正解です">
+              <label for="Radio1">$2x$</label>&emsp;
+              <input id="Radio2" name="RadioGroup1" type="radio" onchange="onRadioButtonChange1();" value="結果：残念、不正解です">
+              <label for="Radio2">$2x-3$</label>&emsp;
+              <input id="Radio3" name="RadioGroup1" type="radio" onchange="onRadioButtonChange1();" value="結果：残念、不正解です">
+              <label for="Radio3">$x$</label>
+            </p>
+            <span id="span1">結果：</span>
+          </div>
 
-            <div class="box26">
-              <div class="box-title">(2)</div>
-              <p>
-                <input id="Radio4" name="RadioGroup2" type="radio" onchange="onRadioButtonChange2();" value="結果：おめでとう、正解です">
-                <label for="Radio4">$2$</label>&emsp;
-                <input id="Radio5" name="RadioGroup2" type="radio" onchange="onRadioButtonChange2();" value="結果：残念、不正解です">
-                <label for="Radio5">$2x-3$</label>&emsp;
-                <input id="Radio6" name="RadioGroup2" type="radio" onchange="onRadioButtonChange2();" value="結果：残念、不正解です">
-                <label for="Radio6">$x$</label>
-              </p>
-              <span id="span2">結果：</span>
-            </div>
-            <input type="button" value="解答チェック" onclick="clickBtn1()"/>
-          </center>
-          <div class="Button"><p class="btn usage-button"><a href="least_squares1">コンテンツへ</a></p></div><br>
+          <div class="box26 left2">
+            <div class="box-title">(2)</div>
+            <p>
+              <input id="Radio4" name="RadioGroup2" type="radio" onchange="onRadioButtonChange2();" value="結果：おめでとう、正解です">
+              <label for="Radio4">$2$</label>&emsp;
+              <input id="Radio5" name="RadioGroup2" type="radio" onchange="onRadioButtonChange2();" value="結果：残念、不正解です">
+              <label for="Radio5">$2x-3$</label>&emsp;
+              <input id="Radio6" name="RadioGroup2" type="radio" onchange="onRadioButtonChange2();" value="結果：残念、不正解です">
+              <label for="Radio6">$x$</label>
+            </p>
+            <span id="span2">結果：</span>
+          </div>
+          <span class="left">
+          <input type="button" value="解答チェック" onclick="clickBtn1()" class="left2"/>
+          <div class="Button">
+            <p class="btn usage-button">
+              <a href="least_squares1">コンテンツへ</a>
+            </p>
+          </div>
         </div>
+        <br>
       </div>
     </div>
   </div>
