@@ -574,10 +574,14 @@ td {
 
 .img {
   border: solid 1px rgb(150,150,150);
-  click-events: none;
+  pointer-events: none;
 }
-// 画像の横並び
 
+.img2 {
+  border: solid 1px rgb(150,150,150);
+}
+
+// 画像の横並び
 
 .img-yokolist {
   display: -webkit-flex;

@@ -41,7 +41,7 @@
           例えば、下の図でいうとデータ$(x_4,y_4)$の誤差は$y_4-f(x_4)$です。<br><br>
 
           <div class="left2">
-            <img src="/assets/pic2.png" onmouseover="this.src='/assets/pic5.png'" onmouseout="this.src='/assets/pic2.png'" onmouseout="this.src='/assets/pic5.png'" height="300px" class="img">
+            <img src="/assets/pic2.png" onmouseover="this.src='/assets/pic5.png'" onmouseout="this.src='/assets/pic2.png'" onmouseout="this.src='/assets/pic5.png'" height="300px" class="img2">
           </div>
 
           <div class="left2">
@@ -66,12 +66,11 @@
           </center><br>
 
           <center>
-            <canvas id="canvas1" width="700" height="400"></canvas>
+            <canvas id="canvas1" width="500" height="400"></canvas>
           </center><br>
 
-          $a,b$を変えることによって誤差も変わることが分かります。<br >このことから$a,b$を変えることで誤差を最小にできると考えられます。
-          <br>
-          誤差を小さくするということは、各データの誤差の和を小さくするということです。<br>
+          $a,b$を変えることによって誤差も変わることが分かります。<br >このことから$a,b$を変えることで誤差を最小にできると考えられます。<br>
+          誤差を小さくするということは、各データの誤差の和を小さくするということです。<br><br>
           しかし、誤差(下図の↔)をそのまま足すと、正負が混合している場合、誤差の和が0になることがあります。下の図のように誤差の和が0で最小なのにも関わらず、この直線は
           <br>「データの関係を表す」直線ではないことが見てわかります。<br><br>
 
@@ -83,7 +82,7 @@
           例えば、4番目のデータの誤差に注目すると<br><br>
 
           <div class="left2">
-            <img src="/assets/pic2.png" onmouseover="this.src='/assets/pic5.png'" onmouseout="this.src='/assets/pic2.png'" onmouseout="this.src='/assets/pic5.png'" height="300px" class="img">
+            <img src="/assets/pic2.png" onmouseover="this.src='/assets/pic5.png'" onmouseout="this.src='/assets/pic2.png'" onmouseout="this.src='/assets/pic5.png'" height="300px" class="img2">
           </div><br>
 
           誤差の式は$y_4-(ax_4+b)$となります。 したがって、$x$が$i$番目のときに注目すると誤差の式は$y_i-(ax_i+b)$となります。つまり、誤差の二乗和$E(a,b)$は<br><br>
@@ -349,20 +348,19 @@
         context.stroke();
       }
 
-      en(30, 10);
-      en(60, 25);
-      en(90, 45);
-      en(120, 30);
+      en(15, 30);
+      en(30, 25);
+      en(50, 50);
+      en(70, 35);
+      en(80, 85);
 
       context.beginPath();
       context.fillStyle = "rgb(0, 0, 0)";
+      context.font = "bold 14px 'ＭＳ 明朝'";
 
       context.fillText("30", st_X + 30 * 3 - 7, canvas.height - st_Y + 20);
       context.fillText("60", st_X + 60 * 3 - 7, canvas.height - st_Y + 20);
       context.fillText("90", st_X + 90 * 3 - 7, canvas.height - st_Y + 20);
-      context.fillText("120", st_X + 120 * 3 - 11, canvas.height - st_Y + 20);
-      context.fillText("150", st_X + 150 * 3 - 11, canvas.height - st_Y + 20);
-      context.fillText("180", st_X + 180 * 3 - 11, canvas.height - st_Y + 20);
 
       context.fillText("30", st_X - 20, canvas.height - st_Y - 30 * 3 + 5);
       context.fillText("60", st_X - 20, canvas.height - st_Y - 60 * 3 + 5);
@@ -370,12 +368,10 @@
 
       context.fillText("O", st_X - 15, canvas.height - st_Y + 15);
 
-      // context.fillText("xの座標: " + mouseX, 400, 100); context.fillText("yの座標: " + mouseY, 400, 200);
+      context.fillText("f(x)", st_X - 30, st_Y - 5);
+      context.fillText("x", st_X + 120 * 3 - 7, canvas.height - st_Y + 20);
 
-      context.font = "bold 14px 'ＭＳ 明朝'";
-      context.fillText("身長(cm)", canvas.width / 2 - 40, canvas.height - st_Y + 40);
-      tategaki(context, text, st_X - 60, canvas.height / 2);
-      context.fillText("(kg)", st_X - 60 - 10, canvas.height / 2 + 30);
+      // context.fillText("xの座標: " + mouseX, 400, 100); context.fillText("yの座標: " + mouseY, 400, 200);
 
       if ((0 < mouseX && mousex < canvas.width - 130) && (0 < mousey && mousey < canvas.height)) {
         if (roundFloat(inclination, 2) == 0) {
