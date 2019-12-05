@@ -791,10 +791,10 @@
     var st_Y = 50;
 
     // 切片
-    var b = 0 * 30;
+    var b = 0.2 * 30;
 
     // 傾き
-    var a = 1;
+    var a = 1.1;
 
     // 英語のテストの点数
     var v = 0;
@@ -963,12 +963,6 @@
       context.fillText("10", st_X - 20 - 5, canvas.height - st_Y - 100 * 3 + 5);
 
       context.fillText("O", st_X - 15, canvas.height - st_Y + 15);
-
-      context.fillText("vの値" + v, 400, 100);
-      context.fillText(canvas.height -  a * v - parseInt(b) - st_Y, 400, 200);
-
-      // context.fillText("xの座標: " + mouseX, 400, 100);
-      // context.fillText("yの座標: " + mouseY, 400, 200);
 
       context.fillText("英語(点)", canvas.width / 2 - 40, canvas.height - st_Y + 40);
       tategaki(context, text, st_X - 60, canvas.height / 2);
