@@ -56,32 +56,32 @@
         各解答欄から選択肢を1つ選んで、解答チェックボタンをクリックすると、選択肢が正解か不正解かが表示されます。<br>
         以下の解答欄では、(1)も(2)も1つ目の選択肢が正解です。<br>
 
-          <div class="box26 left2">
-            <span class="box-title">(1)</span>
-            <p>
-              <input id="Radio1" name="RadioGroup1" type="radio" onchange="onRadioButtonChange1();" value="結果：おめでとう、正解です">
-              <label for="Radio1">$2x$</label>&emsp;
-              <input id="Radio2" name="RadioGroup1" type="radio" onchange="onRadioButtonChange1();" value="結果：残念、不正解です">
-              <label for="Radio2">$2x-3$</label>&emsp;
-              <input id="Radio3" name="RadioGroup1" type="radio" onchange="onRadioButtonChange1();" value="結果：残念、不正解です">
-              <label for="Radio3">$x$</label>
-            </p>
-            <span id="span1">結果：</span>
-          </div>
+        <div class="box26 left2">
+          <span class="box-title">(1)</span>
+          <p>
+            <input id="Radio1" name="RadioGroup1" type="radio" onchange="onRadioButtonChange1();" value="結果：おめでとう、正解です">
+            <label for="Radio1">$2x$</label>&emsp;
+            <input id="Radio2" name="RadioGroup1" type="radio" onchange="onRadioButtonChange1();" value="結果：残念、不正解です">
+            <label for="Radio2">$2x-3$</label>&emsp;
+            <input id="Radio3" name="RadioGroup1" type="radio" onchange="onRadioButtonChange1();" value="結果：残念、不正解です">
+            <label for="Radio3">$x$</label>
+          </p>
+          <span id="span1">結果：</span>
+        </div>
 
-          <div class="box26 left2">
-            <div class="box-title">(2)</div>
-            <p>
-              <input id="Radio4" name="RadioGroup2" type="radio" onchange="onRadioButtonChange2();" value="結果：おめでとう、正解です">
-              <label for="Radio4">$2$</label>&emsp;
-              <input id="Radio5" name="RadioGroup2" type="radio" onchange="onRadioButtonChange2();" value="結果：残念、不正解です">
-              <label for="Radio5">$2x-3$</label>&emsp;
-              <input id="Radio6" name="RadioGroup2" type="radio" onchange="onRadioButtonChange2();" value="結果：残念、不正解です">
-              <label for="Radio6">$x$</label>
-            </p>
-            <span id="span2">結果：</span>
-          </div>
-          <span class="left">
+        <div class="box26 left2">
+          <div class="box-title">(2)</div>
+          <p>
+            <input id="Radio4" name="RadioGroup2" type="radio" onchange="onRadioButtonChange2();" value="結果：おめでとう、正解です">
+            <label for="Radio4">$2$</label>&emsp;
+            <input id="Radio5" name="RadioGroup2" type="radio" onchange="onRadioButtonChange2();" value="結果：残念、不正解です">
+            <label for="Radio5">$2x-3$</label>&emsp;
+            <input id="Radio6" name="RadioGroup2" type="radio" onchange="onRadioButtonChange2();" value="結果：残念、不正解です">
+            <label for="Radio6">$x$</label>
+          </p>
+          <span id="span2">結果：</span>
+        </div>
+        <span class="left">
           <input type="button" value="解答チェック" onclick="clickBtn1()" class="left2"/>
           <div class="Button">
             <p class="btn usage-button">
@@ -92,59 +92,94 @@
         <br>
       </div>
     </div>
-  </div>
 
-  <script language="JavaScript">
-    if (window.name != "usage") {
-      location.reload();
-      window.name = "usage";
-    }
-  </script>
+    <script language="JavaScript">
+      if (window.name != "usage") {
+        location.reload();
+        window.name = "usage";
+      }
+    </script>
 
-  <script type="text/javascript" language="javascript">
+    <script>
+      // スライドショーで見せたい画像ファイル群
+      var imgset = [
+        "/assets/slide1.2.png", "/assets/slide1.3.png", "/assets/slide1.4.png", "/assets/slide1.5.png", "/assets/slide1.1.png"/* 最後にカンマは不要 */
+      ];
 
-    function clickBtn1() {
-      let str1 = "";
-      let str2 = "";
-      let str3 = "";
-      let str4 = "";
-      let str5 = "";
-      let str6 = "";
-      const RadioGroup1 = document.getElementsByName("RadioGroup1");
-      for (let i = 0; i < RadioGroup1.length; i++) {
+      // 指定画像を順に表示させる
+      var counter = 0;
+      function slideimage() {
+        if (counter >= imgset.length) {
+          // カウンタが画像数よりも大きくなったら0番に戻す
+          counter = 0;
+        }
+        // 対象要素の画像URLを次の画像のURLに切り替える
+        document.getElementById('slideshow').src = imgset[counter];
+        // カウンタを1増やす
+        counter++;
+      }
 
-        if (RadioGroup1[0].checked === true) {
-          str1 = RadioGroup1[0].value;
-          break;
-          //target.innerHTML = "おめでとう、正解です";
-        } else if (RadioGroup1[1].checked == true) {
-          str1 = RadioGroup1[1].value;
-          break;
-        } else if (RadioGroup1[2].checked == true) {
-          str1 = RadioGroup1[2].value;
-          break;
+      // スライドショーを制御
+      var slideid = 0;
+      function startstopshow() {
+        if (slideid == 0) {
+          // 始まっていなければ始める
+          slideid = setInterval(slideimage, 1000); // 1000は切替秒数(ミリ秒)
+        } else {
+          // IDがあれば止める
+          clearInterval(slideid);
+          slideid = 0;
+        }
+      }
+
+      // ボタンクリックに関数を割り当てる
+      document.getElementById('startstopbutton').onclick = startstopshow;
+    </script>
+
+    <script type="text/javascript" language="javascript">
+
+      function clickBtn1() {
+        let str1 = "";
+        let str2 = "";
+        let str3 = "";
+        let str4 = "";
+        let str5 = "";
+        let str6 = "";
+        const RadioGroup1 = document.getElementsByName("RadioGroup1");
+        for (let i = 0; i < RadioGroup1.length; i++) {
+
+          if (RadioGroup1[0].checked === true) {
+            str1 = RadioGroup1[0].value;
+            break;
+            //target.innerHTML = "おめでとう、正解です";
+          } else if (RadioGroup1[1].checked == true) {
+            str1 = RadioGroup1[1].value;
+            break;
+          } else if (RadioGroup1[2].checked == true) {
+            str1 = RadioGroup1[2].value;
+            break;
+
+          }
 
         }
 
-      }
+        const RadioGroup2 = document.getElementsByName("RadioGroup2");
+        for (let i = 0; i < RadioGroup2.length; i++) {
 
-      const RadioGroup2 = document.getElementsByName("RadioGroup2");
-      for (let i = 0; i < RadioGroup2.length; i++) {
+          if (RadioGroup2[0].checked === true) {
+            str2 = RadioGroup2[0].value;
+            break;
+            //target.innerHTML = "おめでとう、正解です";
+          } else if (RadioGroup2[1].checked == true) {
+            str2 = RadioGroup2[1].value;
+            break;
+          } else if (RadioGroup2[2].checked == true) {
+            str2 = RadioGroup2[2].value;
+            break;
+          }
 
-        if (RadioGroup2[0].checked === true) {
-          str2 = RadioGroup2[0].value;
-          break;
-          //target.innerHTML = "おめでとう、正解です";
-        } else if (RadioGroup2[1].checked == true) {
-          str2 = RadioGroup2[1].value;
-          break;
-        } else if (RadioGroup2[2].checked == true) {
-          str2 = RadioGroup2[2].value;
-          break;
         }
-
+        document.getElementById("span1").textContent = str1;
+        document.getElementById("span2").textContent = str2;
       }
-      document.getElementById("span1").textContent = str1;
-      document.getElementById("span2").textContent = str2;
-    }
-  </script>
+    </script>
