@@ -471,25 +471,6 @@
 
          <div id="output10"></div>
         </div>
-        <!--①\{4-(5a+b)\}^2 ➁16-40a-8b+25a^2+10ab ③510a+70b-526 ④10b+70a-72 ⑤1.1 ⑥-0.5 ⑦4 4.4 3.9-->
-
-  <!--    <div class="text-sub">
-          <div class="allcheck">
-            <input type="button" value="解答チェック" onclick="clickBtn1()"/><br>
-            <p>
-              <span id="span1_1">(1)結果：</span><br>
-              <span id="span2_1">(2)結果：</span><br>
-              <span id="span3_1">(3)結果：</span><br>
-              <span id="span4_1">(4)結果：</span><br>
-              <span id="span5_1">(5)結果：</span><br>
-              <span id="span6_1">(6)結果：</span><br>
-              <span id="span7_1">(7)結果：</span><br>
-              <span id="span8_1">(8)結果：</span><br>
-              <span id="span9_1">(9)結果：</span><br>
-              <span id="span10_1">(10)結果：</span><br>
-            </p>
-          </div>
-        </div>!-->
       </div>
     </div>
     <div class="padt-40"></div>
@@ -889,11 +870,16 @@
     var st_X = 90;
     var st_Y = 50;
 
-    // 切片
-    var b = 0.2 * 30;
-
     // 傾き
-    var a = 1.1;
+    var a = 1;
+
+    document.getElementById( "id_textBox1" ).value = a ;
+
+    // 切片
+    var b = 2 * 30;
+    var c = b / 30;
+
+    document.getElementById( "id_textBox2" ).value = c ;
 
     // 英語のテストの点数
     var v = 0;
@@ -991,8 +977,6 @@
 
       // 直線の傾き
       inclination = mouseY / mouseX;
-
-      c = b / 3;
 
       // beginPathメソッドを呼び出すことで、描画コンテキストへのパスの記録が開始され、図形を書くことができる。
       context.beginPath();
