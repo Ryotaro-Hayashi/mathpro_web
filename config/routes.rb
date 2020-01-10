@@ -7,4 +7,7 @@ Rails.application.routes.draw do
   get  '/least_squares1',    to: 'static_pages#least_squares1'
   get  '/least_squares2',    to: 'static_pages#least_squares2'
   get  '/least_squares3',    to: 'static_pages#least_squares3'
+  get  '/frie1',    to: 'static_pages#frie1'
+  get  '/frie2',    to: 'static_pages#frie2'
+  get  '/frie3',    to: 'static_pages#frie3'
 end
