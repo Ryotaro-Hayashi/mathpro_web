@@ -1,0 +1,236 @@
+<!-- タイトルを動的に出力するためにタイトル(Home)を入力 -->
+<% provide(:title, "最小二乗法") %>
+
+  <div class="all">
+
+    <div class="title">最小二乗法</div>
+    <div class="padt-10"></div>
+    <!-- ページネーション機能（Bootstrap） -->
+    <nav aria-label="Page navigation">
+      <!-- justify-content-centerでページネーションを中央寄せ -->
+      <ul class="pagination justify-content-center">
+        <li class="page-item">
+          <a class="page-link" href="least_squares1">前へ</a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" href="least_squares1">1</a>
+        </li>
+        <li class="page-item active">
+          <span class="page-link">
+            2<span class="sr-only">(current)</span>
+          </span>
+        </li>
+        <li class="page-item">
+          <a class="page-link" href="least_squares3">3</a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" href="least_squares3">次へ</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="padb-10"></div>
+
+    <div class="column">
+      <div class="main">
+
+        <div class="caption">2.&ensp;最小二乗法とは</div>
+        <div class="topSpace"></div>
+        <div class="text">
+          ここではより詳しく最小二乗法について説明します。<br>
+          最小二乗法とは「$^*$誤差の二乗和が最小となる関数$f(x)$(データの関係を表すための関数)」を求める方法です。 データ$(x_i,y_i)$をグラフ上に表した点$(x_i,y_i)$の誤差は、$y_i$から関数$f(x_i)$を引いたものです。<br>
+          例えば、下の図でいうとデータ$(x_4,y_4)$の誤差は$y_4-f(x_4)$です。<br><br>
+
+          <div class="left2">
+            <img src="/assets/pic2.png" onmouseover="this.src='/assets/pic5.png'" onmouseout="this.src='/assets/pic2.png'" onmouseout="this.src='/assets/pic5.png'" height="300px" class="img2">
+          </div>
+
+          <div class="left2">
+          ※青い点は実際のデータ、直線は関数$f(x)$、破線は誤差
+          </div><br><br>
+
+          最小二乗法では「データの関係を表す<b>曲線</b>」を求めることもできますが、前述した通り複雑で分かりにくいので、 今回は「データの関係を表す<b>直線</b>」を求める方法に限定して簡単に説明します。<br>
+          直線($f(x)=ax+b$)は傾き$a$と切片$b$を求めることで1つに決まるので、 誤差が最小となるような$a,b$を求めることを目標にします。<br><br>
+
+          <center><%= link_to image_tag "pic3.png", class: 'img' %></center><br>
+
+          上の図のように誤差が最小となる直線を引くためにはどのようにすればよいでしょう。<br>実際に傾き$a$と切片$b$の値を変えて確認してみましょう。<br><br>
+          傾き$a$の値はマウスカーソルの位置、切片$b$の値は下のフォームに半角で数値を入れてボタンをクリックすることで変更することができます。<br><br>
+
+          <center>
+            <!-- フォームを作成 -->
+            <form name="form1" id="id_form1" action="">
+              <input name="textBox1" id="id_textBox1" type="text" value="">
+              <!-- クリックされると、onButtonClick()が実行される -->
+              <input class="btn btn-secondary" value="切片bの値を決定" onclick="onButtonClick();"/>
+            </form>
+          </center><br>
+
+          <center>
+            <canvas id="canvas1" width="500" height="400"></canvas>
+          </center><br>
+
+          $a,b$を変えることによって誤差も変わることが分かります。<br >このことから$a,b$を変えることで誤差を最小にできると考えられます。<br>
+          誤差を小さくするということは、各データの誤差の和を小さくするということです。<br><br>
+          しかし、誤差(下図の破線)をそのまま足すと、正負が混合している場合、誤差の和が0になることがあります。下の図のように誤差の和が0で最小なのにも関わらず、この直線は
+          「データの関係を表す」直線ではないことが見てわかります。<br><br>
+
+          <center><%= link_to image_tag "pic4.png", class: 'img' %></center><br><br>
+
+          そこで、負の数をなくすために誤差を$^*$二乗して、正の数にします。<br>
+          データの数を$n$個として、誤差の二乗和を$E(a,b)$とすると次のように表せます。<br>
+          $E(a,b)$ = (1番目のデータの誤差)$^2$+(2番目のデータの誤差)$^2$+…+($n$番目のデータの誤差)$^2$ となります。<br>
+          例えば、4番目のデータの誤差に注目すると<br><br>
+
+          <div class="left2">
+            <img src="/assets/pic2.png" onmouseover="this.src='/assets/pic5.png'" onmouseout="this.src='/assets/pic2.png'" onmouseout="this.src='/assets/pic5.png'" height="300px" class="img2">
+          </div><br>
+
+          誤差の式は$y_4-(ax_4+b)$となります。 したがって、$x$が$i$番目のときに注目すると誤差の式は$y_i-(ax_i+b)$となります。つまり、誤差の二乗和$E(a,b)$は<br><br>
+          <div class="padl-20">
+            $E(a,b)= \{y_1-(ax_1+b)\}^2+\{y_2-(ax_2+b)\}^2+…+\{y_n-(ax_n+b)\}^2$ $E(a,b)=\displaystyle\sum_{i=1}^{n} \{y_i-(ax_i+b)\}^2$&emsp;($n$はデータ数) となります。
+          </div><br>
+
+          関数$E$を展開すると、
+          <div class="hidden_box2">
+            <label for="label2">
+              <span class="underl">展開の途中式</span>
+            </label>
+            <input type="checkbox" id="label2"/>
+            <div class="hidden_show2">
+              <!--非表示ここから-->
+              <div class="text">
+                <p>$E(a,b)=\displaystyle\sum_{i=1}^{n} \{y_i-(ax_i+b)\}^2$</p>
+                <p>$E(a,b)=\displaystyle\sum_{i=1}^{n} \{y_i^2-2(ax_i+b)y_i+(ax_i+b)^2\}$</p>
+              </div>
+              <!--ここまで-->
+            </div>
+          </div>
+          $E(a,b)=\displaystyle\sum_{i=1}^{n} (y_i^2-2ax_iy_i-2by_i+a^2x_i^2+2abx_i+b^2)$ となります。<br>
+          この関数$E(a,b)$を図に表すと、$E(a,b)$は二変数の関数であるため、$Z=E(a,b)$とすると下の図のようになります。<br><br>
+
+          <center><%= link_to image_tag "pic6.png", class: 'img' %></center><br>
+
+          この関数の最小点を考えるために、関数$E(a,b)$の最小点を$(a^*,b^*)$として、$a=a^*$、または$b=b^*$で切ったときの断面図をそれぞれ見てみましょう。<br><br>
+
+          <center><%= link_to image_tag "pic7.png", class: 'img' %></center><br>
+
+          まず、$b=b^*$で切ったときの断面図(上図)から考えてみましょう。 一変数で下に凸の二次関数は傾きが0のときに最小値となります。<br>
+          同じように、この断面図$(b=b^*)$でも「傾きが0になるとき」に最小値となることが分かります。<br><br>
+
+          <center><%= link_to image_tag "pic8.png", class: 'img' %></center><br>
+
+          次に、$a=a*$で切った時の断面図(上図)を考えてみましょう。<br>
+          一変数で下に凸の二次関数は傾きが0のときに最小値となります。<br>
+          同じように、この断面図$(a=a^*)$でも「傾きが0になるとき」に最小値となることが分かります。<br><br>
+
+          <center><%= link_to image_tag "pic9.png", class: 'img' %></center><br>
+
+          以上より、最小点$(a^*,b^*)$を考えると…<br>
+          <div class="padl-40">
+            $a^*…b=b^*$で切った時の断面図において、傾きが0になる$a$の値<br>
+            $b^*…a=a^*$で切った時の断面図において、傾きが0になる$b$の値<br>
+          </div>
+
+          したがって、「$b$を定数として固定して関数$E(a,b)$を$a$で微分したもの」と「$a$を定数として固定して関数$E(a,b)$を$b$で微分したもの」がともに0となる点$(a^*,b^*)$を見つけます。<br><br>
+          ここで、二変数の関数を微分する方法を紹介します。<br>
+          二変数の関数の微分の方法といっても一変数のときとあまり違いはありません。<br>
+          例えば、関数$E(a,b)$を$a$で微分したいときは$b$を定数だと考えて一変数のときと同じように微分をすることができます。 実際に$b$を定数として固定して関数$E(a,b)$を$a$で微分したものと、$a$を定数として固定して関数$E(a,b)$を$b$で微分したものを計算して最小点$(a^*,b^*)$を求めてみましょう。<br><br>
+
+          関数$E(a,b)$を$a$で$^*$微分すると<br>
+          <span class="hidden_box2">
+            <label for="label3">
+              <span class="underl">$(E(a,b)$の式を忘れた人はここをクリック！$)$</span></label>
+
+            <input type="checkbox" id="label3"/>
+            <div class="hidden_show2">
+              <!--非表示ここから-->
+              <span class="text">$E(a,b)=\displaystyle\sum_{i=1}^{n} (y_i^2-2ax_iy_i-2by_i+a^2x_i^2+2abx_i+b^2)$</span>
+              <!--ここまで-->
+            </div>
+          </span>
+          $($関数$E(a,b)$を$a$で微分$)=\displaystyle\sum_{i=1}^{n} (-2x_iy_i+2ax_i^2+2bx_i)$<br><br>
+
+          関数$E(a,b)$を$b$で微分すると<br>
+          $($関数$E(a,b)$を$b$で微分$)=\displaystyle\sum_{i=1}^{n} (-2y_i+2ax_i+2b)$<br>
+          となります。<br><br>
+
+          上の2式に対して連立方程式をたてると \[ \begin{cases} \displaystyle\sum_{i=1}^{n} (-2x_iy_i+2ax_i^2+2bx_i)=0 \\ \displaystyle\sum_{i=1}^{n} (-2y_i+2ax_i+2b)=0 \end{cases} \] となり、この連立方程式を解くと、誤差の二乗和が最小となる$a$と$b$が求めることができます。<br><br>
+          誤差の二乗和が最小となる傾き$a$,切片$b$が求められたので、「データの関係を表すための直線」の式$(f(x)=ax+b)$が得られます。
+        </div>
+      </div>
+
+      <div class="sub">
+        <div class="text-sub">
+          <!--<div class="pad7"></div>-->
+          以下の2,3年次の講義で扱われています<br>
+          ・応用数学$II$<br>
+          ・数値解析<br>
+          ・物理と情報処理$I$<br>
+          ・複雑系科学実験<br>
+        </div>
+
+        <div class="text-sub">
+          <div class="pad4"></div>
+          ※誤差の二乗和とは、「すべてのデータの誤差を二乗して足し合わせたもの」のことです
+        </div>
+
+        <div class="text-sub">
+          <div class="pad5"></div>
+          ※二乗のほか、四乗や偶数乗、そして絶対値が考えられます。四乗や偶数乗をすると負の値は消えます。 しかし、値が大きくなり計算が複雑になります。また、絶対値にすると、微分をしたときに対数を考えなければいけなくなり、 この場合も計算が複雑になります。よって最も計算が簡単な二乗を用います。
+        </div>
+
+        <div class="text-sub">
+          <div class="pad2"></div>
+          <br><br>$f(a,b)=a^2+ab$<br>
+
+          $f(a,b)$を$a$で微分<br>
+          $(f(a,b)$を$a$で微分$)=2a+b$<br>
+
+          $f(a,b)$を$b$で微分<br>
+          $(f(a,b)$を$b$で微分$)=a$<br>
+        </div>
+
+        <div class="text-sub">
+          <div class="pad6"></div>
+          ※ここの微分は，厳密には偏微分を意味する<br>
+          <div style="display:inline-block; background:#fcfcff; padding:15px; border:1px solid #3b5998; border-radius:10px; word-break:break-all;">
+            <b>偏微分の計算には微分の知識が使われている</b>
+          </div>
+        </div>
+      </div>
+    </div>
+        <div class="padt-40"></div>
+        <!-- ページネーション機能（Bootstrap） -->
+        <nav aria-label="Page navigation">
+          <!-- justify-content-centerでページネーションを中央寄せ -->
+          <ul class="pagination justify-content-center">
+            <li class="page-item">
+              <a class="page-link" href="least_squares1">前へ</a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="least_squares1">1</a>
+            </li>
+            <li class="page-item active">
+              <span class="page-link">
+                2<span class="sr-only">(current)</span>
+              </span>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="least_squares3">3</a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="least_squares3">次へ</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="padb-40"></div>
+  </div>
+
+  <!-- ページ読み込み後にリロードしてTEXを表示 -->
+  <script language="JavaScript">
+
+    if (window.name != "frie2") {
+      location.reload();
+      window.name = "frie2";
+    }
+  </script>
