@@ -257,6 +257,9 @@
 
     // 切片
     var b = 60 * 3;
+    var c = b / 3;
+
+    document.getElementById( "id_textBox1" ).value = c ;
 
     var text = "体重";
 
@@ -332,8 +335,6 @@
       // 直線の傾き
       inclination = mouseY / mouseX;
 
-      c = b / 3;
-
       // beginPathメソッドを呼び出すことで、描画コンテキストへのパスの記録が開始され、図形を書くことができる。
       context.beginPath();
       context.strokeStyle = "rgb(0, 0, 0)";
@@ -386,6 +387,7 @@
           context.fillText("f(x) = " + roundFloat(inclination, 2) + "x + " + c, parseInt(mousex) + 10, mousey);
         }
       }
+
 
       // 矢印の軌跡
       context.arrow(st_X, canvas.height - st_Y, canvas.width - st_X / 2, canvas.height - st_Y, [
