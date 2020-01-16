@@ -89,14 +89,14 @@
           $a_0 = \displaystyle\frac{1}{\pi}\int_{-\pi}^{\pi} f(x) dx$<br>
           $a_n$を求める<br>
           両辺に$\cos mx$($m$は任意の自然数)を掛け、$[-π,π]$上で積分する<br>
-          $\int_{-\pi}^{\pi} \cos mx dx = \int_{-\pi}^{\pi} \{\displaystyle\frac{a_0}{2} \cos mx +
+          $\int_{-\pi}^{\pi} f(x) \cos mx dx = \int_{-\pi}^{\pi} \{\displaystyle\frac{a_0}{2} \cos mx +
           \displaystyle\sum_{n=1}^{\infty}(a_n\cos nx \cos mx + b_n\sin nx \cos mx)\} dx$<br>
-          (右辺)$=\displaystyle\frac{a_0}{2} \int_{-\pi}^{\pi} \cos mx dx +
+          $(右辺)=\displaystyle\frac{a_0}{2} \int_{-\pi}^{\pi} \cos mx dx +
           \displaystyle\sum_{n=1}^{\infty}(a_n\int_{-\pi}^{\pi} \cos nx \cos mx dx + b_n\int_{-\pi}^{\pi} \sin nx \cos mx dx)\}$<br>
           $\int_{-\pi}^{\pi} \cos nx \cos mx dx$を解くために場合分けをして考える<br>
           $n\neq m$のとき、和積の公式を利用して<br>
-          $\int_{-\pi}^{\pi} \cos nx \cos mx dx = \int_{-\pi}^{\pi} \{\frac{1}{2}\cos (n+m)x + \cos (n-m)x\}dx$
-          $=\frac{1}{2}[\frac{1}{n+m}\sin (n+m)x+\frac{1}{n-m}\sin(n-m)x]_{-\pi}^{\pi}$
+          $\int_{-\pi}^{\pi} \cos nx \cos mx dx = \int_{-\pi}^{\pi} \{\frac{1}{2}\cos (n+m)x + \cos (n-m)x\}dx$<br>
+          $=\frac{1}{2}[\frac{1}{n+m}\sin (n+m)x+\frac{1}{n-m}\sin(n-m)x]_{-\pi}^{\pi}$<br>
           <div class="hidden_box2">
             <label for="label3">
               <span class="underl">展開の途中式</span>
@@ -112,8 +112,102 @@
               </div>
             $=0$<br>
             $n=m$のとき、半角の公式を利用して<br>
-            $\int_{-\pi}^{\pi} \cos nx \cos mx dx = \int_{-\pi}^{\pi} \cos^2 mx dx$
-
+            $\int_{-\pi}^{\pi} \cos nx \cos mx dx = \int_{-\pi}^{\pi} \cos^2 mx dx$<br>
+            $=\int_{-\pi}^{\pi} \frac{1}{2}(1+\cos 2mx) dx$<br>
+            $=[\frac{1}{2}\{x+\frac{1}{2m}\sin 2mx\}]_{-\pi}^{\pi}$<br>
+            <div class="hidden_box2">
+              <label for="label4">
+                <span class="underl">展開の途中式</span>
+              </label>
+              <input type="checkbox" id="label4"/>
+              <div class="hidden_show2">
+                <!--非表示ここから-->
+                <div class="text">
+                  <p>$=\frac{1}{2}\{\pi-\frac{1}{2m}\sin 2m\pi\}-\frac{1}{2}\{(-\pi)+\frac{1}{2m}\sin (-2m\pi)\}$</p>
+                  <p>$=\frac{1}{2}\pi-\frac{1}{2}(-\pi)$<br></p>
+                </div>
+                </div>
+                </div>
+              $=\pi$<br>
+              $\int_{-\pi}^{\pi} \sin nx \cos mx dx$は$\sin nx \cos mx$が奇関数であることより<br>
+              <div class="hidden_box2">
+                <label for="label5">
+                  <span class="underl">(なんで奇関数なら0になるの？？)</span>
+                </label>
+                <input type="checkbox" id="label5"/>
+                <div class="hidden_show2">
+                  <!--非表示ここから-->
+                  <div class="text">
+                    <p>奇関数とは$f(x)=-f(-x)$を満たす関数なので</p>
+                    <p>$\int_{-a}^{a} f(x) dx = \int_{0}^{a} f(x) dx + \int_{-a}^{0} f(x) dx$<br></p>
+                    <p>$\int_{-a}^{0} f(x) dx$を$y=-x$で置換積分する</p>
+                    <p>$dy=-dx$となるので</p>
+                    <p>$\int_{-a}^{0} f(x) dx = \int_{-a}^{0} f(-y)(-1) dy$</p>
+                    <p>$=\int_{0}^{a} f(-y) dy$</p>
+                    <p>$f(x)$が奇関数なので$f(-y)=-f(y)$より</p>
+                    <p>$=\int_{0}^{a} -f(y) dy$</p>
+                    <p>$=\int_{0}^{a} -f(-x)(-1) dx$</p>
+                    <p>$\int_{-a}^{0} f(x) dx = \int_{0}^{a} f(-x) dx$</p>
+                    <p>となるので</p>
+                    <p>$\int_{-a}^{a} f(x) dx = \int_{0}^{a} f(x) dx + \int_{-a}^{0} f(x) dx$</p>
+                    <p>$= \int_{0}^{a} f(x) dx + \int_{0}^{a} f(-x) dx$</p>
+                    <p>$f(x)$は奇関数なので$f(-x)=-f(x)$より</p>
+                    <p>$= \int_{0}^{a} f(x) dx - \int_{0}^{a} f(x) dx$</p>
+                    <p>$=0$</p>
+                  </div>
+                  </div>
+                  </div>
+                $\int_{-\pi}^{\pi} \sin nx \cos mx dx = 0$<br><br>
+                $(右辺)=a_n π$したがって<br>
+                $a_n = \frac{1}{\pi} \int_{-\pi}^{\pi} f(x) \cos mx dx$<br>
+                $b_n$をもとめる<br>
+                両辺に$\sin mx$($m$は任意の自然数)を掛け、$[-π,π]$上で積分する<br>
+                $\int_{-\pi}^{\pi} f(x) \sin mx dx = \int_{-\pi}^{\pi} \{\displaystyle\frac{a_0}{2} \sin mx +
+                \displaystyle\sum_{n=1}^{\infty}(a_n\cos nx \sin mx + b_n\sin nx \sin mx)\} dx$<br>
+                $(右辺)=\displaystyle\frac{a_0}{2} \int_{-\pi}^{\pi} \sin mx dx +
+                \displaystyle\sum_{n=1}^{\infty}(a_n\int_{-\pi}^{\pi} \cos nx \sin mx dx + b_n\int_{-\pi}^{\pi} \sin nx \sin mx dx)\}$<br>
+                $\int_{-\pi}^{\pi} \cos nx \sin mx dx$は$\cos nx \sin mx$が奇関数であることより<br>
+                $\int_{-\pi}^{\pi} \cos nx \sin mx dx = 0$<br>
+                $\int_{-\pi}^{\pi} \sin nx \sin mx dx$を解くために場合分けをして考える<br>
+                $n\neq m$のとき、和積の公式を利用して<br>
+                $\int_{-\pi}^{\pi}\sin nx \sin mx dx = \int_{-\pi}^{\pi} [-\frac{1}{2}\{\cos (n+m)x + \cos (n-m)x\}]dx$<br>
+                $=\frac{1}{2}[\frac{1}{n+m}\sin (n+m)x+\frac{1}{n-m}\sin(n-m)x]_{-\pi}^{\pi}$<br>
+                <div class="hidden_box2">
+                  <label for="label6">
+                    <span class="underl">展開の途中式</span>
+                  </label>
+                  <input type="checkbox" id="label6"/>
+                  <div class="hidden_show2">
+                    <!--非表示ここから-->
+                    <div class="text">
+                      <p>$=-\frac{1}{2}\{\frac{1}{n+m}\sin (n+m)\pi+\frac{1}{n-m}\sin(n-m)\pi\}$</p>
+                      <p>$+\frac{1}{2}[\frac{1}{n+m}\sin (n+m)(-\pi)+\frac{1}{n-m}\sin(n-m)(-\pi)$<br></p>
+                    </div>
+                    </div>
+                    </div>
+                $=0$<br>
+                $n=m$のとき、半角の公式を利用して<br>
+                $\int_{-\pi}^{\pi} \sin nx \sin mx dx = \int_{-\pi}^{\pi} \sin^2 mx dx$<br>
+                $=\int_{-\pi}^{\pi} \frac{1}{2}(1-\cos 2mx) dx$<br>
+                $=[\frac{1}{2}\{x-\frac{1}{2m}\sin 2mx\}]_{-\pi}^{\pi}$<br>
+                <div class="hidden_box2">
+                  <label for="label7">
+                    <span class="underl">展開の途中式</span>
+                  </label>
+                  <input type="checkbox" id="label7"/>
+                  <div class="hidden_show2">
+                    <!--非表示ここから-->
+                    <div class="text">
+                      <p>$=\frac{1}{2}\(\pi-\frac{1}{2m}\sin 2m\pi\)-\frac{1}{2}\{(-\pi)-\frac{1}{2m}\sin (-2m\pi)\}$</p>
+                      <p>$=\frac{1}{2}\pi-\frac{1}{2}(-\pi)$<br></p>
+                    </div>
+                    </div>
+                    </div>
+                $=\pi$<br>
+                $(右辺)=b_n π$したがって<br>
+                $b_n = \frac{1}{\pi} \int_{-\pi}^{\pi} f(x) \sin mx dx$<br>
+                ・求めた係数をもつ三角級数をフーリエ級数といい、次のように表す。<br>
+                $f(x) = \frac{1}{2}a_0 + \displaystyle\sum_{n=1}^{\infty}(a_n\cos nx + b_n\sin nx)$<br>
         </div>
       </div>
 
@@ -138,6 +232,9 @@
           $cos^2x=\frac{1+cos2x}{2}$<br>
           $tan^2x=\frac{1-cos2x}{1+cos2x}$<br>
           <a href="https://mathtrain.jp/trig_basic">詳しくはこちら</a>
+<br>
+          奇関数とは任意の実数$x$に対して$f(x)=-f(-x)$満たす関数を言う
+          <a href="https://mathtrain.jp/evenoddfunction">詳しくはこちら</a>
         </div>
 
         <div class="text-sub">
