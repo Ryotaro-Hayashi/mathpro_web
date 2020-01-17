@@ -1,0 +1,284 @@
+<!-- タイトルを動的に出力するためにタイトル(Home)を入力 -->
+<% provide(:title, "フーリエ変換") %>
+
+  <div class="all">
+
+    <div class="title">フーリエ変換</div>
+    <div class="padt-10"></div>
+    <!-- ページネーション機能（Bootstrap） -->
+    <nav aria-label="Page navigation">
+      <!-- justify-content-centerでページネーションを中央寄せ -->
+      <ul class="pagination justify-content-center">
+        <li class="page-item">
+          <a class="page-link" href="least_squares1">前へ</a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" href="least_squares1">1</a>
+        </li>
+        <li class="page-item active">
+          <span class="page-link">
+            2<span class="sr-only">(current)</span>
+          </span>
+        </li>
+        <li class="page-item">
+          <a class="page-link" href="least_squares3">3</a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" href="least_squares3">次へ</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="padb-10"></div>
+
+    <div class="column">
+      <div class="main">
+
+        <div class="caption">2.&ensp;フーリエ変換とは</div>
+        <div class="topSpace"></div>
+
+        <div class="text">
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          ・フーリエ変換を理解するためにまずフーリエ級数を理解する必要があります。<br>
+	        ・この章ではフーリエ級数についてのみ、説明します。<br>
+  	      ・フーリエ級数、フーリエ変換といった概念は「周期2πのすべての関数f(x)は<br>三角級数で表すことが出来る」というフーリエの主張から生まれたものです。<br>
+	        ・フーリエ級数の成り立ちを知るために、主張の意味について考えてみましょう。<br>
+	        ・そもそも、三角級数とは<br>
+          $\frac{1}{2}, \cos x, \cos 2x, \cos 3x, ..., \cos nx, ...$<br>
+          $\sin x, \sin 2x, \sin 3x, ..., \sin nx, ...$<br>
+          に定数<br>
+          $a_0, a_1, a_2, a_3, ..., a_n, ...$<br>
+          を掛けて加えた級数$S$のことです。<br>
+          $S=\frac{1}{2}\times a_0 + a_1\times \cos 1x + b_1\times \sin 1x + a_2\times \cos 2x + b_2\times \sin 2x + ...$<br>
+          $=\frac{1}{2}a_0 + \displaystyle\sum_{n=1}^{\infty}(a_n\cos nx + b_n\sin nx)$<br><br>
+          ・任意の実数$x$に対して収束する三角級数は周期$2π$の定義域が実数全体である関数を表します。<br>
+          三角級数の収束の定義を使って説明ができる<br>
+          注：$a_0,a_n,b_n$といった定数の取り方で三角級数に違いを出せば表す関数も変わるが、<br>&emsp;”すべての”周期$2π$の関数を表せるとは言えない<br>
+          ・次に実数全体で定義された周期$2π$の関数$f(x)$を三角級数で表すことを考えてみましょう<br>
+          ・$f(x)$を三角級数で表すには、三角級数の係数$(a_0,a_n,b_n)$を求める必要がある。<br>
+	        ・まず三角級数の係数を求めてみましょう。<br>
+          $a_0$をもとめる<br>
+          両辺を$[-π,π]$上で積分する<br>
+          $\int_{-\pi}^{\pi} f(x) dx = \int_{-\pi}^{\pi} \{\displaystyle\frac{a_0}{2} +
+          \displaystyle\sum_{n=1}^{\infty}(a_n\cos nx + b_n\sin nx)\} dx$<br>
+          $=\displaystyle\frac{a_0}{2} \int_{-\pi}^{\pi} dx + \displaystyle\sum_{n=1}^{\infty}(a_n\int_{-\pi}^{\pi}\cos nx dx
+          + b_n\int_{-\pi}^{\pi}\sin nx dx)$<br>
+          ここで、$\int_{-\pi}^{\pi}\cos nx dx=0, \int_{-\pi}^{\pi}\sin nx dx=0$であるから<br>
+          $\int_{-\pi}^{\pi} f(x) dx = \displaystyle\frac{a_0}{2} \int_{-\pi}^{\pi} dx + \displaystyle\sum_{n=1}^{\infty}(a_n\times 0
+          + b_n\times 0)$<br>
+          $=\displaystyle\frac{a_0}{2}[x]_{-\pi}^{\pi}$<br>
+          <div class="hidden_box2">
+            <label for="label2">
+              <span class="underl">展開の途中式</span>
+            </label>
+            <input type="checkbox" id="label2"/>
+            <div class="hidden_show2">
+              <!--非表示ここから-->
+              <div class="text">
+                <p>$=\displaystyle\frac{a_0}{2}(\pi-(-\pi))$<br></p>
+                <p>$=\displaystyle\frac{a_0}{2}\times 2\pi$<br></p>
+              </div>
+              <!--ここまで-->
+            </div>
+          </div>
+          $=a_0\pi$<br>
+          したがって
+          $a_0 = \displaystyle\frac{1}{\pi}\int_{-\pi}^{\pi} f(x) dx$<br>
+          $a_n$を求める<br>
+          両辺に$\cos mx$($m$は任意の自然数)を掛け、$[-π,π]$上で積分する<br>
+          $\int_{-\pi}^{\pi} f(x) \cos mx dx = \int_{-\pi}^{\pi} \{\displaystyle\frac{a_0}{2} \cos mx +
+          \displaystyle\sum_{n=1}^{\infty}(a_n\cos nx \cos mx + b_n\sin nx \cos mx)\} dx$<br>
+          $(右辺)=\displaystyle\frac{a_0}{2} \int_{-\pi}^{\pi} \cos mx dx +
+          \displaystyle\sum_{n=1}^{\infty}(a_n\int_{-\pi}^{\pi} \cos nx \cos mx dx + b_n\int_{-\pi}^{\pi} \sin nx \cos mx dx)\}$<br>
+          $\int_{-\pi}^{\pi} \cos nx \cos mx dx$を解くために場合分けをして考える<br>
+          $n\neq m$のとき、和積の公式を利用して<br>
+          $\int_{-\pi}^{\pi} \cos nx \cos mx dx = \int_{-\pi}^{\pi} \{\frac{1}{2}\cos (n+m)x + \cos (n-m)x\}dx$<br>
+          $=\frac{1}{2}[\frac{1}{n+m}\sin (n+m)x+\frac{1}{n-m}\sin(n-m)x]_{-\pi}^{\pi}$<br>
+          <div class="hidden_box2">
+            <label for="label3">
+              <span class="underl">展開の途中式</span>
+            </label>
+            <input type="checkbox" id="label3"/>
+            <div class="hidden_show2">
+              <!--非表示ここから-->
+              <div class="text">
+                <p>$=\frac{1}{2}\{\frac{1}{n+m}\sin (n+m)\pi+\frac{1}{n-m}\sin(n-m)\pi\}$</p>
+                <p>$-\frac{1}{2}[\frac{1}{n+m}\sin (n+m)(-\pi)+\frac{1}{n-m}\sin(n-m)(-\pi)$<br></p>
+              </div>
+              </div>
+              </div>
+            $=0$<br>
+            $n=m$のとき、半角の公式を利用して<br>
+            $\int_{-\pi}^{\pi} \cos nx \cos mx dx = \int_{-\pi}^{\pi} \cos^2 mx dx$<br>
+            $=\int_{-\pi}^{\pi} \frac{1}{2}(1+\cos 2mx) dx$<br>
+            $=[\frac{1}{2}\{x+\frac{1}{2m}\sin 2mx\}]_{-\pi}^{\pi}$<br>
+            <div class="hidden_box2">
+              <label for="label4">
+                <span class="underl">展開の途中式</span>
+              </label>
+              <input type="checkbox" id="label4"/>
+              <div class="hidden_show2">
+                <!--非表示ここから-->
+                <div class="text">
+                  <p>$=\frac{1}{2}\{\pi-\frac{1}{2m}\sin 2m\pi\}-\frac{1}{2}\{(-\pi)+\frac{1}{2m}\sin (-2m\pi)\}$</p>
+                  <p>$=\frac{1}{2}\pi-\frac{1}{2}(-\pi)$<br></p>
+                </div>
+                </div>
+                </div>
+              $=\pi$<br>
+              $\int_{-\pi}^{\pi} \sin nx \cos mx dx$は$\sin nx \cos mx$が奇関数であることより<br>
+              <div class="hidden_box2">
+                <label for="label5">
+                  <span class="underl">(なんで奇関数なら0になるの？？)</span>
+                </label>
+                <input type="checkbox" id="label5"/>
+                <div class="hidden_show2">
+                  <!--非表示ここから-->
+                  <div class="text">
+                    <p>奇関数とは$f(x)=-f(-x)$を満たす関数なので</p>
+                    <p>$\int_{-a}^{a} f(x) dx = \int_{0}^{a} f(x) dx + \int_{-a}^{0} f(x) dx$<br></p>
+                    <p>$\int_{-a}^{0} f(x) dx$を$y=-x$で置換積分する</p>
+                    <p>$dy=-dx$となるので</p>
+                    <p>$\int_{-a}^{0} f(x) dx = \int_{-a}^{0} f(-y)(-1) dy$</p>
+                    <p>$=\int_{0}^{a} f(-y) dy$</p>
+                    <p>$f(x)$が奇関数なので$f(-y)=-f(y)$より</p>
+                    <p>$=\int_{0}^{a} -f(y) dy$</p>
+                    <p>$=\int_{0}^{a} -f(-x)(-1) dx$</p>
+                    <p>$\int_{-a}^{0} f(x) dx = \int_{0}^{a} f(-x) dx$</p>
+                    <p>となるので</p>
+                    <p>$\int_{-a}^{a} f(x) dx = \int_{0}^{a} f(x) dx + \int_{-a}^{0} f(x) dx$</p>
+                    <p>$= \int_{0}^{a} f(x) dx + \int_{0}^{a} f(-x) dx$</p>
+                    <p>$f(x)$は奇関数なので$f(-x)=-f(x)$より</p>
+                    <p>$= \int_{0}^{a} f(x) dx - \int_{0}^{a} f(x) dx$</p>
+                    <p>$=0$</p>
+                  </div>
+                  </div>
+                  </div>
+                $\int_{-\pi}^{\pi} \sin nx \cos mx dx = 0$<br><br>
+                $(右辺)=a_n π$したがって<br>
+                $a_n = \frac{1}{\pi} \int_{-\pi}^{\pi} f(x) \cos mx dx$<br>
+                $b_n$をもとめる<br>
+                両辺に$\sin mx$($m$は任意の自然数)を掛け、$[-π,π]$上で積分する<br>
+                $\int_{-\pi}^{\pi} f(x) \sin mx dx = \int_{-\pi}^{\pi} \{\displaystyle\frac{a_0}{2} \sin mx +
+                \displaystyle\sum_{n=1}^{\infty}(a_n\cos nx \sin mx + b_n\sin nx \sin mx)\} dx$<br>
+                $(右辺)=\displaystyle\frac{a_0}{2} \int_{-\pi}^{\pi} \sin mx dx +
+                \displaystyle\sum_{n=1}^{\infty}(a_n\int_{-\pi}^{\pi} \cos nx \sin mx dx + b_n\int_{-\pi}^{\pi} \sin nx \sin mx dx)\}$<br>
+                $\int_{-\pi}^{\pi} \cos nx \sin mx dx$は$\cos nx \sin mx$が奇関数であることより<br>
+                $\int_{-\pi}^{\pi} \cos nx \sin mx dx = 0$<br>
+                $\int_{-\pi}^{\pi} \sin nx \sin mx dx$を解くために場合分けをして考える<br>
+                $n\neq m$のとき、和積の公式を利用して<br>
+                $\int_{-\pi}^{\pi}\sin nx \sin mx dx = \int_{-\pi}^{\pi} [-\frac{1}{2}\{\cos (n+m)x + \cos (n-m)x\}]dx$<br>
+                $=\frac{1}{2}[\frac{1}{n+m}\sin (n+m)x+\frac{1}{n-m}\sin(n-m)x]_{-\pi}^{\pi}$<br>
+                <div class="hidden_box2">
+                  <label for="label6">
+                    <span class="underl">展開の途中式</span>
+                  </label>
+                  <input type="checkbox" id="label6"/>
+                  <div class="hidden_show2">
+                    <!--非表示ここから-->
+                    <div class="text">
+                      <p>$=-\frac{1}{2}\{\frac{1}{n+m}\sin (n+m)\pi+\frac{1}{n-m}\sin(n-m)\pi\}$</p>
+                      <p>$+\frac{1}{2}[\frac{1}{n+m}\sin (n+m)(-\pi)+\frac{1}{n-m}\sin(n-m)(-\pi)$<br></p>
+                    </div>
+                    </div>
+                    </div>
+                $=0$<br>
+                $n=m$のとき、半角の公式を利用して<br>
+                $\int_{-\pi}^{\pi} \sin nx \sin mx dx = \int_{-\pi}^{\pi} \sin^2 mx dx$<br>
+                $=\int_{-\pi}^{\pi} \frac{1}{2}(1-\cos 2mx) dx$<br>
+                $=[\frac{1}{2}\{x-\frac{1}{2m}\sin 2mx\}]_{-\pi}^{\pi}$<br>
+                <div class="hidden_box2">
+                  <label for="label7">
+                    <span class="underl">展開の途中式</span>
+                  </label>
+                  <input type="checkbox" id="label7"/>
+                  <div class="hidden_show2">
+                    <!--非表示ここから-->
+                    <div class="text">
+                      <p>$=\frac{1}{2}\(\pi-\frac{1}{2m}\sin 2m\pi\)-\frac{1}{2}\{(-\pi)-\frac{1}{2m}\sin (-2m\pi)\}$</p>
+                      <p>$=\frac{1}{2}\pi-\frac{1}{2}(-\pi)$<br></p>
+                    </div>
+                    </div>
+                    </div>
+                $=\pi$<br>
+                $(右辺)=b_n π$したがって<br>
+                $b_n = \frac{1}{\pi} \int_{-\pi}^{\pi} f(x) \sin mx dx$<br>
+                ・求めた係数をもつ三角級数をフーリエ級数といい、次のように表す。<br>
+                $f(x) = \frac{1}{2}a_0 + \displaystyle\sum_{n=1}^{\infty}(a_n\cos nx + b_n\sin nx)$<br>
+        </div>
+      </div>
+
+      <div class="sub">
+        <div class="text-sub">
+          ※現代においては厳密性に欠けるものである
+        </div>
+
+        <div class="text-sub">
+          <div class="pad4"></div>
+          和積の公式
+          $sinAcosB=\frac{1}{2}{sin(A+B)+sin(A-B)}$<br>
+          $sinAsinB=\frac{1}{2}{-cos(A+B)+cos(A-B)}$<br>
+          $cosAcosB=\frac{1}{2}{cos(A+B)+cos(A-B)}$<br>
+          <a href="https://mathtrain.jp/sekiwa">詳しくはこちら</a><br>
+      <!--  </div>
+
+        <div class="text-sub">
+          <div class="pad5"></div>-->
+          半角の公式
+          $sin^2x=\frac{1-cos2x}{2}$<br>
+          $cos^2x=\frac{1+cos2x}{2}$<br>
+          $tan^2x=\frac{1-cos2x}{1+cos2x}$<br>
+          <a href="https://mathtrain.jp/trig_basic">詳しくはこちら</a>
+<br>
+          奇関数とは任意の実数$x$に対して$f(x)=-f(-x)$満たす関数を言う
+          <a href="https://mathtrain.jp/evenoddfunction">詳しくはこちら</a>
+        </div>
+
+        <div class="text-sub">
+          <div class="pad2"></div>
+        </div>
+
+        <div class="text-sub">
+          <div class="pad6"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+        <div class="padt-40"></div>
+        <!-- ページネーション機能（Bootstrap） -->
+        <nav aria-label="Page navigation">
+          <!-- justify-content-centerでページネーションを中央寄せ -->
+          <ul class="pagination justify-content-center">
+            <li class="page-item">
+              <a class="page-link" href="least_squares1">前へ</a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="least_squares1">1</a>
+            </li>
+            <li class="page-item active">
+              <span class="page-link">
+                2<span class="sr-only">(current)</span>
+              </span>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="least_squares3">3</a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="least_squares3">次へ</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="padb-40"></div>
+  </div>
+
+  <!-- ページ読み込み後にリロードしてTEXを表示 -->
+  <script language="JavaScript">
+
+    if (window.name != "frie2") {
+      location.reload();
+      window.name = "frie2";
+    }
+  </script>
