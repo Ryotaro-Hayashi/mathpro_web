@@ -250,7 +250,7 @@
             <center>
               <!-- 傾きを入力するフォームを作成 -->
               <form name="form1" id="id_form1" action="">
-                <input name="textBox1" id="id_textBox1" type="text" value=""/>
+                <input name="textBox1" id="id_textBox1" type="text" value="" onkeypress="enter1();">
                 <!-- クリックされると、onButtonClick()が実行される -->
                 <input class="btn btn-secondary" type="button" value="傾き a の値を決定" onclick="onButtonClick1();"/>
               </form>
@@ -259,7 +259,7 @@
             <center>
               <!-- 切片を入力するフォームを作成 -->
               <form name="form2" id="id_form2" action="">
-                <input name="textBox2" id="id_textBox2" type="text" value=""/>
+                <input name="textBox2" id="id_textBox2" type="text" value="" onkeypress="enter2();">
                 <!-- クリックされると、onButtonClick()が実行される -->
                 <input class="btn btn-secondary" type="button" value="切片 b の値を決定" onclick="onButtonClick2();"/>
               </form>
@@ -268,7 +268,7 @@
             <center>
               <!-- 英語の点数を入力するフォームを作成 -->
               <form name="form3" id="id_form3" action="">
-                <input name="textBox3" id="id_textBox3" type="text" value=""/>
+                <input name="textBox3" id="id_textBox3" type="text" value="" onkeypress="enter3();">
                 <!-- クリックされると、onButtonClick()が実行される -->
                 <input class="btn btn-secondary" type="button" value="英語の点数を決定" onclick="onButtonClick3(); prediction();"/>
               </form>
@@ -1076,4 +1076,28 @@
     onload = function () {
       setInterval(set, 30);
     }
+  </script>
+
+  <script>
+  function enter1(){
+    if( window.event.keyCode == 13 ){
+      document.form1.submit();
+    }
+  }
+  </script>
+
+  <script>
+  function enter2(){
+    if( window.event.keyCode == 13 ){
+      document.form2.submit();
+    }
+  }
+  </script>
+
+  <script>
+    function enter3(){
+      if( window.event.keyCode == 13 ){
+        document.form3.submit();
+      }
+    }
   </script>
