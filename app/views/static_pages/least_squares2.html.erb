@@ -59,7 +59,7 @@
           <center>
             <!-- フォームを作成 -->
             <form name="form1" id="id_form1" action="">
-              <input name="textBox1" id="id_textBox1" type="text" value=""  onkeypress="enter();">
+              <input name="textBox1" id="id_textBox1" type="text" value="">
               <!-- クリックされると、onButtonClick()が実行される -->
               <input class="btn btn-secondary" value="切片bの値を決定" onclick="onButtonClick();"/>
             </form>
@@ -412,11 +412,3 @@
       setInterval(set, 30);
     }
   </script>
-
-  <script>
-  function enter(){
-    if( window.event.keyCode == 13 ){
-      document.form1.submit();
-    }
-  }
-</script>
