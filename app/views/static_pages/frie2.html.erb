@@ -10,10 +10,10 @@
       <!-- justify-content-centerでページネーションを中央寄せ -->
       <ul class="pagination justify-content-center">
         <li class="page-item">
-          <a class="page-link" href="least_squares1">前へ</a>
+          <a class="page-link" href="frie1">前へ</a>
         </li>
         <li class="page-item">
-          <a class="page-link" href="least_squares1">1</a>
+          <a class="page-link" href="frie1">1</a>
         </li>
         <li class="page-item active">
           <span class="page-link">
@@ -21,10 +21,10 @@
           </span>
         </li>
         <li class="page-item">
-          <a class="page-link" href="least_squares3">3</a>
+          <a class="page-link" href="frie3">3</a>
         </li>
         <li class="page-item">
-          <a class="page-link" href="least_squares3">次へ</a>
+          <a class="page-link" href="frie3">次へ</a>
         </li>
       </ul>
     </nav>
@@ -38,32 +38,32 @@
         <div class="text">
           ・フーリエ変換を理解するためにまずフーリエ級数を理解する必要があります。<br>
 	        ・この章ではフーリエ級数についてのみ、説明します。<br>
-  	      ・フーリエ級数、フーリエ変換といった概念は「周期2πのすべての関数f(x)は<br>三角級数で表すことが出来る」というフーリエの主張から生まれたものです。<br>
+  	      ・フーリエ級数、フーリエ変換といった概念は「周期$\displaystyle 2π$のすべての関数$\displaystyle f(x)$は<br>三角級数で表すことが出来る」というフーリエの主張から生まれたものです。<br>
 	        ・フーリエ級数の成り立ちを知るために、主張の意味について考えてみましょう。<br>
 	        ・そもそも、三角級数とは<br>
-          $\frac{1}{2}, \cos x, \cos 2x, \cos 3x, ..., \cos nx, ...$<br>
-          $\sin x, \sin 2x, \sin 3x, ..., \sin nx, ...$<br>
+          $\displaystyle\frac{1}{2}, \cos x, \cos 2x, \cos 3x, ..., \cos nx, ...$<br>
+          $\displaystyle\sin x, \sin 2x, \sin 3x, ..., \sin nx, ...$<br>
           に定数<br>
-          $a_0, a_1, a_2, a_3, ..., a_n, ...$<br>
-          を掛けて加えた級数$S$のことです。<br>
-          $S=\frac{1}{2}\times a_0 + a_1\times \cos 1x + b_1\times \sin 1x + a_2\times \cos 2x + b_2\times \sin 2x + ...$<br>
-          $=\frac{1}{2}a_0 + \displaystyle\sum_{n=1}^{\infty}(a_n\cos nx + b_n\sin nx)$<br><br>
-          ・任意の実数$x$に対して収束する三角級数は周期$2π$の定義域が実数全体である関数を表します。<br>
+          $\displaystyle a_0, a_1, a_2, a_3, ..., a_n, ...$<br>
+          を掛けて加えた級数$\displaystyle S$のことです。<br>
+          $\displaystyle S=\frac{1}{2}\times a_0 + a_1\times \cos 1x + b_1\times \sin 1x + a_2\times \cos 2x + b_2\times \sin 2x + ...$<br>
+          $\displaystyle=\frac{1}{2}a_0 + \displaystyle\sum_{n=1}^{\infty}(a_n\cos nx + b_n\sin nx)$<br><br>
+          ・任意の実数$\displaystyle x$に対して収束する三角級数は周期$\displaystyle 2π$の定義域が実数全体である関数を表します。<br>
           三角級数の収束の定義を使って説明ができる<br>
-          注：$a_0,a_n,b_n$といった定数の取り方で三角級数に違いを出せば表す関数も変わるが、<br>&emsp;”すべての”周期$2π$の関数を表せるとは言えない<br>
-          ・次に実数全体で定義された周期$2π$の関数$f(x)$を三角級数で表すことを考えてみましょう<br>
-          ・$f(x)$を三角級数で表すには、三角級数の係数$(a_0,a_n,b_n)$を求める必要がある。<br>
+          注：$\displaystyle a_0,a_n,b_n$といった定数の取り方で三角級数に違いを出せば表す関数も変わるが、<br>&emsp;”すべての”周期$\displaystyle2π$の関数を表せるとは言えない<br>
+          ・次に実数全体で定義された周期$\displaystyle2π$の関数$\displaystyle f(x)$を三角級数で表すことを考えてみましょう<br>
+          ・$\displaystyle f(x)$を三角級数で表すには、三角級数の係数$\displaystyle(a_0,a_n,b_n)$を求める必要がある。<br>
 	        ・まず三角級数の係数を求めてみましょう。<br>
-          $a_0$をもとめる<br>
-          両辺を$[-π,π]$上で積分する<br>
-          $\int_{-\pi}^{\pi} f(x) dx = \int_{-\pi}^{\pi} \{\displaystyle\frac{a_0}{2} +
+          $\displaystyle a_0$をもとめる<br>
+          両辺を$\displaystyle [-π,π]$上で積分する<br>
+          $\displaystyle\int_{-\pi}^{\pi} f(x) dx = \int_{-\pi}^{\pi} \{\displaystyle\frac{a_0}{2} +
           \displaystyle\sum_{n=1}^{\infty}(a_n\cos nx + b_n\sin nx)\} dx$<br>
-          $=\displaystyle\frac{a_0}{2} \int_{-\pi}^{\pi} dx + \displaystyle\sum_{n=1}^{\infty}(a_n\int_{-\pi}^{\pi}\cos nx dx
+          $\displaystyle=\displaystyle\frac{a_0}{2} \int_{-\pi}^{\pi} dx + \displaystyle\sum_{n=1}^{\infty}(a_n\int_{-\pi}^{\pi}\cos nx dx
           + b_n\int_{-\pi}^{\pi}\sin nx dx)$<br>
           ここで、$\int_{-\pi}^{\pi}\cos nx dx=0, \int_{-\pi}^{\pi}\sin nx dx=0$であるから<br>
-          $\int_{-\pi}^{\pi} f(x) dx = \displaystyle\frac{a_0}{2} \int_{-\pi}^{\pi} dx + \displaystyle\sum_{n=1}^{\infty}(a_n\times 0
+          $\displaystyle\int_{-\pi}^{\pi} f(x) dx = \displaystyle\frac{a_0}{2} \int_{-\pi}^{\pi} dx + \displaystyle\sum_{n=1}^{\infty}(a_n\times 0
           + b_n\times 0)$<br>
-          $=\displaystyle\frac{a_0}{2}[x]_{-\pi}^{\pi}$<br>
+          $\displaystyle=\displaystyle\frac{a_0}{2}\left[x\right]^\pi_{-\pi}$<br>
           <div class="hidden_box2">
             <label for="label2">
               <span class="underl">展開の途中式</span>
@@ -78,19 +78,19 @@
               <!--ここまで-->
             </div>
           </div>
-          $=a_0\pi$<br>
+          $\displaystyle=a_0\pi$<br>
           したがって
-          $a_0 = \displaystyle\frac{1}{\pi}\int_{-\pi}^{\pi} f(x) dx$<br>
-          $a_n$を求める<br>
-          両辺に$\cos mx$($m$は任意の自然数)を掛け、$[-π,π]$上で積分する<br>
-          $\int_{-\pi}^{\pi} f(x) \cos mx dx = \int_{-\pi}^{\pi} \{\displaystyle\frac{a_0}{2} \cos mx +
+          $\displaystyle a_0 = \displaystyle\frac{1}{\pi}\int_{-\pi}^{\pi} f(x) dx$<br>
+          $\displaystyle a_n$を求める<br>
+          両辺に$\displaystyle\cos mx$($m$は任意の自然数)を掛け、$\displaystyle[-π,π]$上で積分する<br>
+          $\displaystyle\int_{-\pi}^{\pi} f(x) \cos mx dx = \int_{-\pi}^{\pi} \{\displaystyle\frac{a_0}{2} \cos mx +
           \displaystyle\sum_{n=1}^{\infty}(a_n\cos nx \cos mx + b_n\sin nx \cos mx)\} dx$<br>
-          $(右辺)=\displaystyle\frac{a_0}{2} \int_{-\pi}^{\pi} \cos mx dx +
+          $\displaystyle(右辺)=\displaystyle\frac{a_0}{2} \int_{-\pi}^{\pi} \cos mx dx +
           \displaystyle\sum_{n=1}^{\infty}(a_n\int_{-\pi}^{\pi} \cos nx \cos mx dx + b_n\int_{-\pi}^{\pi} \sin nx \cos mx dx)\}$<br>
-          $\int_{-\pi}^{\pi} \cos nx \cos mx dx$を解くために場合分けをして考える<br>
-          $n\neq m$のとき、和積の公式を利用して<br>
-          $\int_{-\pi}^{\pi} \cos nx \cos mx dx = \int_{-\pi}^{\pi} \{\frac{1}{2}\cos (n+m)x + \cos (n-m)x\}dx$<br>
-          $=\frac{1}{2}[\frac{1}{n+m}\sin (n+m)x+\frac{1}{n-m}\sin(n-m)x]_{-\pi}^{\pi}$<br>
+          $\displaystyle\int_{-\pi}^{\pi} \cos nx \cos mx dx$を解くために場合分けをして考える<br>
+          $\displaystyle n\neq m$のとき、和積の公式を利用して<br>
+          $\displaystyle\int_{-\pi}^{\pi} \cos nx \cos mx dx = \int_{-\pi}^{\pi} \{\frac{1}{2}\cos (n+m)x + \cos (n-m)x\}dx$<br>
+          $\displaystyle=\frac{1}{2}\left[\frac{1}{n+m}\sin (n+m)x+\frac{1}{n-m}\sin(n-m)x\right]^\pi_{-\pi}$<br>
           <div class="hidden_box2">
             <label for="label3">
               <span class="underl">展開の途中式</span>
@@ -99,9 +99,10 @@
             <div class="hidden_show2">
               <!--非表示ここから-->
               <div class="text">
-                <p>$=\frac{1}{2}\{\frac{1}{n+m}\sin (n+m)\pi+\frac{1}{n-m}\sin(n-m)\pi\}$</p>
-                <p>$-\frac{1}{2}[\frac{1}{n+m}\sin (n+m)(-\pi)+\frac{1}{n-m}\sin(n-m)(-\pi)$<br></p>
+                <p>$\displaystyle=\frac{1}{2}\{\frac{1}{n+m}\sin (n+m)\pi+\frac{1}{n-m}\sin(n-m)\pi\}$</p>
+                <p>$\displaystyle-\frac{1}{2}[\frac{1}{n+m}\sin (n+m)(-\pi)+\frac{1}{n-m}\sin(n-m)(-\pi)$<br></p>
               </div>
+<!-- <<<<<<< feature/home -->
             </div>
           </div>
             $=0$<br>
@@ -109,6 +110,15 @@
             $\int_{-\pi}^{\pi} \cos nx \cos mx dx = \int_{-\pi}^{\pi} \cos^2 mx dx$<br>
             $=\int_{-\pi}^{\pi} \frac{1}{2}(1+\cos 2mx) dx$<br>
             $=[\frac{1}{2}\{x+\frac{1}{2m}\sin 2mx\}]_{-\pi}^{\pi}$<br>
+<!-- ======= -->
+              </div>
+              </div>
+            $\displaystyle=0$<br>
+            $\displaystyle n=m$のとき、半角の公式を利用して<br>
+            $\displaystyle\int_{-\pi}^{\pi} \cos nx \cos mx dx = \int_{-\pi}^{\pi} \cos^2 mx dx$<br>
+            $\displaystyle=\int_{-\pi}^{\pi} \frac{1}{2}(1+\cos 2mx) dx$<br>
+            $\displaystyle=\left[\frac{1}{2}\{x+\frac{1}{2m}\sin 2mx\}\right]^\pi_{-\pi}$<br>
+<!-- >>>>>>> develop -->
             <div class="hidden_box2">
               <label for="label4">
                 <span class="underl">展開の途中式</span>
@@ -117,9 +127,10 @@
               <div class="hidden_show2">
                 <!--非表示ここから-->
                 <div class="text">
-                  <p>$=\frac{1}{2}\{\pi-\frac{1}{2m}\sin 2m\pi\}-\frac{1}{2}\{(-\pi)+\frac{1}{2m}\sin (-2m\pi)\}$</p>
-                  <p>$=\frac{1}{2}\pi-\frac{1}{2}(-\pi)$<br></p>
+                  <p>$\displaystyle=\frac{1}{2}\{\pi-\frac{1}{2m}\sin 2m\pi\}-\frac{1}{2}\{(-\pi)+\frac{1}{2m}\sin (-2m\pi)\}$</p>
+                  <p>$\displaystyle=\frac{1}{2}\pi-\frac{1}{2}(-\pi)$<br></p>
                 </div>
+<!-- <<<<<<< feature/home -->
               </div>
             </div>
               $=\pi$<br>
@@ -157,9 +168,49 @@
                 $b_n$をもとめる<br>
                 両辺に$\sin mx$($m$は任意の自然数)を掛け、$[-π,π]$上で積分する<br>
                 $\int_{-\pi}^{\pi} f(x) \sin mx dx = \int_{-\pi}^{\pi} \{\displaystyle\frac{a_0}{2} \sin mx +
+<!-- ======= -->
+                </div>
+                </div>
+              $\displaystyle=\pi$<br>
+              $\displaystyle\int_{-\pi}^{\pi} \sin nx \cos mx dx$は$\sin nx \cos mx$が奇関数であることより<br>
+              <div class="hidden_box2">
+                <label for="label5">
+                  <span class="underl">(なんで奇関数なら0になるの？？)</span>
+                </label>
+                <input type="checkbox" id="label5"/>
+                <div class="hidden_show2">
+                  <!--非表示ここから-->
+                  <div class="text">
+                    <p>奇関数とは$\displaystyle f(x)=-f(-x)$を満たす関数なので</p>
+                    <p>$\displaystyle\int_{-a}^{a} f(x) dx = \int_{0}^{a} f(x) dx + \int_{-a}^{0} f(x) dx$<br></p>
+                    <p>$\displaystyle\int_{-a}^{0} f(x) dx$を$\displaystyle y=-x$で置換積分する</p>
+                    <p>$\displaystyle dy=-dx$となるので</p>
+                    <p>$\displaystyle\int_{-a}^{0} f(x) dx = \int_{-a}^{0} f(-y)(-1) dy$</p>
+                    <p>$\displaystyle=\int_{0}^{a} f(-y) dy$</p>
+                    <p>$\displaystyle f(x)$が奇関数なので$\displaystyle f(-y)=-f(y)$より</p>
+                    <p>$\displaystyle=\int_{0}^{a} -f(y) dy$</p>
+                    <p>$\displaystyle=\int_{0}^{a} -f(-x)(-1) dx$</p>
+                    <p>$\displaystyle\int_{-a}^{0} f(x) dx = \int_{0}^{a} f(-x) dx$</p>
+                    <p>となるので</p>
+                    <p>$\displaystyle\int_{-a}^{a} f(x) dx = \int_{0}^{a} f(x) dx + \int_{-a}^{0} f(x) dx$</p>
+                    <p>$\displaystyle= \int_{0}^{a} f(x) dx + \int_{0}^{a} f(-x) dx$</p>
+                    <p>$\displaystyle f(x)$は奇関数なので$\displaystyle f(-x)=-f(x)$より</p>
+                    <p>$\displaystyle= \int_{0}^{a} f(x) dx - \int_{0}^{a} f(x) dx$</p>
+                    <p>$\displaystyle=0$</p>
+                  </div>
+                  </div>
+                  </div>
+                $\displaystyle\int_{-\pi}^{\pi} \sin nx \cos mx dx = 0$<br><br>
+                $\displaystyle(右辺)=a_n π$したがって<br>
+                $\displaystyle a_n = \frac{1}{\pi} \int_{-\pi}^{\pi} f(x) \cos mx dx$<br>
+                $\displaystyle b_n$をもとめる<br>
+                両辺に$\displaystyle\sin mx$($m$は任意の自然数)を掛け、$\displaystyle[-π,π]$上で積分する<br>
+                $\displaystyle\int_{-\pi}^{\pi} f(x) \sin mx dx = \int_{-\pi}^{\pi} \{\displaystyle\frac{a_0}{2} \sin mx +
+<!-- >>>>>>> develop -->
                 \displaystyle\sum_{n=1}^{\infty}(a_n\cos nx \sin mx + b_n\sin nx \sin mx)\} dx$<br>
-                $(右辺)=\displaystyle\frac{a_0}{2} \int_{-\pi}^{\pi} \sin mx dx +
+                $\displaystyle(右辺)=\displaystyle\frac{a_0}{2} \int_{-\pi}^{\pi} \sin mx dx +
                 \displaystyle\sum_{n=1}^{\infty}(a_n\int_{-\pi}^{\pi} \cos nx \sin mx dx + b_n\int_{-\pi}^{\pi} \sin nx \sin mx dx)\}$<br>
+<!-- <<<<<<< feature/home -->
                 $\int_{-\pi}^{\pi} \cos nx \sin mx dx$は$\cos nx \sin mx$が奇関数であることより<br>
                 $\int_{-\pi}^{\pi} \cos nx \sin mx dx = 0$<br>
                 $\int_{-\pi}^{\pi} \sin nx \sin mx dx$を解くために場合分けをして考える<br>
@@ -203,6 +254,50 @@
                 ・求めた係数をもつ三角級数をフーリエ級数といい、次のように表す。<br>
                 $f(x) = \frac{1}{2}a_0 + \displaystyle\sum_{n=1}^{\infty}(a_n\cos nx + b_n\sin nx)$<br>
           </div>
+<!-- ======= -->
+                $\displaystyle\int_{-\pi}^{\pi} \cos nx \sin mx dx$は$\displaystyle\cos nx \sin mx$が奇関数であることより<br>
+                $\displaystyle\int_{-\pi}^{\pi} \cos nx \sin mx dx = 0$<br>
+                $\displaystyle\int_{-\pi}^{\pi} \sin nx \sin mx dx$を解くために場合分けをして考える<br>
+                $\displaystyle n\neq m$のとき、和積の公式を利用して<br>
+                $\displaystyle\int_{-\pi}^{\pi}\sin nx \sin mx dx = \int_{-\pi}^{\pi} [-\frac{1}{2}\{\cos (n+m)x + \cos (n-m)x\}]dx$<br>
+                $\displaystyle=\frac{1}{2}\left[\frac{1}{n+m}\sin (n+m)x+\frac{1}{n-m}\sin(n-m)x\right]^\pi_{-\pi}$<br>
+                <div class="hidden_box2">
+                  <label for="label6">
+                    <span class="underl">展開の途中式</span>
+                  </label>
+                  <input type="checkbox" id="label6"/>
+                  <div class="hidden_show2">
+                    <!--非表示ここから-->
+                    <div class="text">
+                      <p>$\displaystyle=-\frac{1}{2}\{\frac{1}{n+m}\sin (n+m)\pi+\frac{1}{n-m}\sin(n-m)\pi\}$</p>
+                      <p>$\displaystyle+\frac{1}{2}[\frac{1}{n+m}\sin (n+m)(-\pi)+\frac{1}{n-m}\sin(n-m)(-\pi)$<br></p>
+                    </div>
+                    </div>
+                    </div>
+                $\displaystyle=0$<br>
+                $\displaystyle n=m$のとき、半角の公式を利用して<br>
+                $\displaystyle\int_{-\pi}^{\pi} \sin nx \sin mx dx = \int_{-\pi}^{\pi} \sin^2 mx dx$<br>
+                $\displaystyle=\int_{-\pi}^{\pi} \frac{1}{2}(1-\cos 2mx) dx$<br>
+                $\displaystyle=\left[\frac{1}{2}\{x-\frac{1}{2m}\sin 2mx\}\right]^\pi_{-\pi}$<br>
+                <div class="hidden_box2">
+                  <label for="label7">
+                    <span class="underl">展開の途中式</span>
+                  </label>
+                  <input type="checkbox" id="label7"/>
+                  <div class="hidden_show2">
+                    <!--非表示ここから-->
+                    <div class="text">
+                      <p>$\displaystyle=\frac{1}{2}\{\pi-\frac{1}{2m}\sin 2m\pi\}-\frac{1}{2}\{(-\pi)-\frac{1}{2m}\sin (-2m\pi)\}$</p>
+                      <p>$\displaystyle=\frac{1}{2}\pi-\frac{1}{2}(-\pi)$<br></p>
+                    </div>
+                    </div>
+                    </div>
+                $\displaystyle=\pi$<br>
+                $\displaystyle(右辺)=b_n π$したがって<br>
+                $\displaystyle b_n = \frac{1}{\pi} \int_{-\pi}^{\pi} f(x) \sin mx dx$<br>
+                ・求めた係数をもつ三角級数をフーリエ級数といい、次のように表す。<br>
+                $\displaystyle f(x) = \frac{1}{2}a_0 + \displaystyle\sum_{n=1}^{\infty}(a_n\cos nx + b_n\sin nx)$<br>
+<!-- >>>>>>> develop -->
         </div>
 
       <div class="sub">
@@ -247,10 +342,10 @@
           <!-- justify-content-centerでページネーションを中央寄せ -->
           <ul class="pagination justify-content-center">
             <li class="page-item">
-              <a class="page-link" href="least_squares1">前へ</a>
+              <a class="page-link" href="frie1">前へ</a>
             </li>
             <li class="page-item">
-              <a class="page-link" href="least_squares1">1</a>
+              <a class="page-link" href="frie1">1</a>
             </li>
             <li class="page-item active">
               <span class="page-link">
@@ -258,10 +353,10 @@
               </span>
             </li>
             <li class="page-item">
-              <a class="page-link" href="least_squares3">3</a>
+              <a class="page-link" href="frie3">3</a>
             </li>
             <li class="page-item">
-              <a class="page-link" href="least_squares3">次へ</a>
+              <a class="page-link" href="frie3">次へ</a>
             </li>
           </ul>
         </nav>
