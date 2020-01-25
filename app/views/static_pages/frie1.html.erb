@@ -40,11 +40,22 @@
           画像処理とは、主にコンピュータを使用して、画像を変形したり、色合いを変えたり、<br>
           別の画像と合成したり、画像データ(画像サイズ、画像解像度など)に関わる情報を取り出す等の処理全般のことです。<br>
           ここでは画像をフーリエ変換し、画像が複数の網模様で分解出来ることを確認します。<br>
-          また分解した網模様を足し合わせていくことで、分解する前の画像に戻ることも確認します。<br>
-          <u><br>なんか画像？的なやつ<br>
-          <br>同上<br>
-          <br>ここに入る足していく様子どうしようか？<br>
-          <br>そもそもスライドなのか？<br><br></u>
+          また分解した網模様を足し合わせていくことで、分解する前の画像に戻ることも確認します。
+
+          <br><br>
+
+          <div class="showbox left2">
+            <!-- スライドショーを表示する場所 -->
+            <p>
+              <img src="/assets/frie1.1.png" id="slideshow" alt="スライドショー表示領域">
+            </p>
+
+            <!-- スライドショーの制御ボタンを表示 -->
+            <p>
+              <input type="button" class="btn btn-secondary" value="－ 再生／一時停止 －" id="startstopbutton">
+            </p>
+          </div>
+          <br><br>
           画像をフーリエ変換すると、画像を複数の網模様で分解することが出来ました。<br>
           また分解した網模様を足し合わせていくことで、分解する前の画像に戻ることも確認出来ました。<br>
           このようなフーリエ変換を利用した画像の分解、画像の足し合わせは
@@ -126,7 +137,7 @@
   <script>
     // スライドショーで見せたい画像ファイル群
     var imgset = [
-      "/assets/slide1.2.png", "/assets/slide1.3.png", "/assets/slide1.4.png", "/assets/slide1.5.png", "/assets/slide1.1.png"/* 最後にカンマは不要 */
+      "/assets/frie1.2.png", "/assets/frie_slide1.png", "/assets/frie_slide2.png", "/assets/frie_slide3.png", "/assets/frie_slide4.png", "/assets/frie_slide5.png", "/assets/frie_slide6.png", "/assets/frie_slide7.png", "/assets/frie_slide8.png", "/assets/frie_slide9.png", "/assets/frie_slide1.png"/* 最後にカンマは不要 */
     ];
 
     // 指定画像を順に表示させる
@@ -147,7 +158,7 @@
     function startstopshow() {
       if (slideid == 0) {
         // 始まっていなければ始める
-        slideid = setInterval(slideimage, 1000); // 1000は切替秒数(ミリ秒)
+        slideid = setInterval(slideimage, 2000); // 1000は切替秒数(ミリ秒)
       } else {
         // IDがあれば止める
         clearInterval(slideid);
