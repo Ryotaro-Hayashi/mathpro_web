@@ -1,0 +1,171 @@
+<!-- タイトルを動的に出力するためにタイトル(Home)を入力 -->
+<% provide(:title, "フーリエ変換") %>
+
+  <div class="all">
+
+    <div class="title">フーリエ変換</div>
+
+    <div class="padt-10"></div>
+        <!-- ページネーション機能（Bootstrap） -->
+        <nav aria-label="Page navigation">
+          <!-- justify-content-centerでページネーションを中央寄せ -->
+          <ul class="pagination justify-content-center">
+            <li class="page-item active">
+              <span class="page-link">
+                1<span class="sr-only">(current)</span>
+              </span>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="frie2">2</a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="frie3">3</a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="frie2">次へ</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="padb-10"></div>
+
+        <div class="caption">1.&ensp;はじめに</div>
+
+        <div class="text">
+
+          <div class="topSpace"></div>
+          1年生の解析学の講義で学んでいる微分、積分の内容が世の中で応用されている一例として「フーリエ変換」について紹介します。<br>
+          フーリエ変換は画像処理に使用されるなど、世の中で広く使われています。<br>
+
+          <br>画像処理(小見出し的な感じで)<br>
+          画像処理とは、主にコンピュータを使用して、画像を変形したり、色合いを変えたり、<br>
+          別の画像と合成したり、画像データ(画像サイズ、画像解像度など)に関わる情報を取り出す等の処理全般のことです。<br>
+          ここでは画像をフーリエ変換し、画像が複数の網模様で分解出来ることを確認します。<br>
+          また分解した網模様を足し合わせていくことで、分解する前の画像に戻ることも確認します。
+
+          <br><br>
+
+          <div class="showbox left2">
+            <!-- スライドショーを表示する場所 -->
+            <p>
+              <img src="/assets/frie1.1.png" id="slideshow" alt="スライドショー表示領域">
+            </p>
+
+            <!-- スライドショーの制御ボタンを表示 -->
+            <p>
+              <input type="button" class="btn btn-secondary" value="－ 再生／一時停止 －" id="startstopbutton">
+            </p>
+          </div>
+          <br><br>
+          画像をフーリエ変換すると、画像を複数の網模様で分解することが出来ました。<br>
+          また分解した網模様を足し合わせていくことで、分解する前の画像に戻ることも確認出来ました。<br>
+          このようなフーリエ変換を利用した画像の分解、画像の足し合わせは
+          <span class="pad1"></span>
+          <span class="hidden_box1">
+            <label for="label">
+              <span class="underl">CT</span></label>
+          </span>
+          などに使用されています。<br>
+          <div class="hidden_box1">
+            <input type="checkbox" id="label"/>
+            <div class="hidden_show1">
+              <!--非表示ここから-->
+              <div class="text">
+                <p>CT（Computed Tomography：コンピュータ断層撮影）とは、X線などの放射線を用いた測定とコンピュータ処理により、
+                  物体の内部画像（断面図）を再構成する技術のことです。</p>
+              </div>
+              </div>
+              </div>
+          またこのような画像処理技術は
+          <span class="pad2"></span>
+          <span class="hidden_box2">
+            <label for="label2">
+              <span class="underl">画像処理</span></label>
+          </span>
+          エンジニアなどに必要とされています。<br>
+          <div class="hidden_box2">
+            <input type="checkbox" id="label2"/>
+            <div class="hidden_show2">
+              <!--非表示ここから-->
+              <div class="text">
+                <p>画像処理技術の全てがフーリエ変換と関連するとは限りません</p>
+              </div>
+              </div>
+              </div>
+              画像処理エンジニアは画像処理技術を用いることで<br>
+              ・アプリでQRコードを読み取るシステムの作成<br>
+              ・自動車などの障害物がある場合に、ブレーキが作動するシステムの作成<br>
+              ・防犯カメラなどから、不審者の侵入を感知して警報が鳴るシステムの作成<br>
+              などを行います。<br>
+
+
+        </div>
+
+        <div class="padt-40"></div>
+        <!-- ページネーション機能（Bootstrap） -->
+        <nav aria-label="Page navigation">
+          <!-- justify-content-centerでページネーションを中央寄せ -->
+          <ul class="pagination justify-content-center">
+            <li class="page-item active">
+              <span class="page-link">
+                1<span class="sr-only">(current)</span>
+              </span>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="frie2">2</a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="frie3">3</a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="frie2">次へ</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="padb-40"></div>
+
+  </div>
+
+  <!-- ページ読み込み後にリロードしてTEXを表示 -->
+  <script language="JavaScript">
+
+    if (window.name != "least_squares1") {
+      location.reload();
+      window.name = "least_squares1";
+    }
+  </script>
+
+  <script>
+    // スライドショーで見せたい画像ファイル群
+    var imgset = [
+      "/assets/frie1.2.png", "/assets/frie_slide1.png", "/assets/frie_slide2.png", "/assets/frie_slide3.png", "/assets/frie_slide4.png", "/assets/frie_slide5.png", "/assets/frie_slide6.png", "/assets/frie_slide7.png", "/assets/frie_slide8.png", "/assets/frie_slide9.png", "/assets/frie_slide1.png"/* 最後にカンマは不要 */
+    ];
+
+    // 指定画像を順に表示させる
+    var counter = 0;
+    function slideimage() {
+      if (counter >= imgset.length) {
+        // カウンタが画像数よりも大きくなったら0番に戻す
+        counter = 0;
+      }
+      // 対象要素の画像URLを次の画像のURLに切り替える
+      document.getElementById('slideshow').src = imgset[counter];
+      // カウンタを1増やす
+      counter++;
+    }
+
+    // スライドショーを制御
+    var slideid = 0;
+    function startstopshow() {
+      if (slideid == 0) {
+        // 始まっていなければ始める
+        slideid = setInterval(slideimage, 2000); // 1000は切替秒数(ミリ秒)
+      } else {
+        // IDがあれば止める
+        clearInterval(slideid);
+        slideid = 0;
+      }
+    }
+
+    // ボタンクリックに関数を割り当てる
+    document.getElementById('startstopbutton').onclick = startstopshow;
+  </script>

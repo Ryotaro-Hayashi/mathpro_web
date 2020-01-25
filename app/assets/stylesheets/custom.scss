@@ -100,15 +100,6 @@ a:hover {
   margin-top: 220px;
   padding: 35px 0;
 }
-// .content {
-//   width: 960px;
-//   margin: 0 auto;
-// }
-// .main {
-//   width: 700px;
-//   margin: 0 10px;
-//   float: left;
-// }
 
 a img:hover {
   opacity: 0.8;
@@ -204,8 +195,16 @@ a img:hover {
 .padl-20 {
   padding-left: 20px;
 }
-//上に余白40px
 
+.padl-60 {
+  padding-left: 60px;
+}
+
+.padl-175{
+  padding-left: 175px;
+}
+
+//上に余白40px
 .padt-40 {
   padding-top: 40px;
 }
@@ -435,6 +434,12 @@ a img:hover {
   opacity: 1;
 }
 
+.content{
+  padding-top: 150px;
+  padding-bottom: 100px;
+  display: flex;
+}
+
 .btn a {
   background-color: #009cd3;
   color: #ffffff;
@@ -454,8 +459,47 @@ a img:hover {
   background-color: #ffffff;
   color: #009cd3;
 }
-/*強調のbox*/
 
+.btn-flat-horizontal-border a{
+  text-decoration: none;
+  font-size: 35px;
+  position: relative;
+  font-weight: bold;
+  padding: 100px 100px;
+  color: #FFF;
+  background: #009cd3;
+  transition: .4s;
+}
+
+.btn-flat-horizontal-border a > span {
+  border-bottom: solid 5px #FFF;
+  border-top: solid 5px #FFF;
+}
+
+.btn-flat-horizontal-border a:hover span {
+  padding: 10px 0;
+}
+.btn-flat-horizontal-border2 a{
+  text-decoration: none;
+  font-size: 35px;
+  position: relative;
+  font-weight: bold;
+  padding: 100px 90px;
+  color: #FFF;
+  background: #e08113;
+  transition: .4s;
+}
+
+.btn-flat-horizontal-border2 a > span {
+  border-bottom: solid 5px #FFF;
+  border-top: solid 5px #FFF;
+}
+
+.btn-flat-horizontal-border2 a:hover span {
+  padding: 10px 0;
+}
+
+/*強調のbox*/
 .box {
   padding: 0.5em 1em;
   margin-top: 15px;
