@@ -36,34 +36,68 @@
         <div class="caption">2.&ensp;フーリエ変換とは</div>
         <div class="topSpace"></div>
         <div class="text">
+          フーリエ変換を理解するためにはフーリエ級数を理解する必要があります。以下の文章で具体的にフーリエ級数を説明します。<br>
+          フーリエ級数とは「
+          <span class="pad1"></span>
+          <span class="hidden_box1">
+            <label for="label">
+              <span class="underl">周期関数</span></label>
+          </span>
+          $f(x)$を三角関数$\sin nx, \cos nx $($n$は任意の自然数)の和で表現したもの」です。<br>
+          <div class="hidden_box1">
+            <input type="checkbox" id="label"/>
+            <div class="hidden_show1">
+              <!--非表示ここから-->
+              <div class="text">
+                <p>周期関数は以下の図のように周期ごとに取る値が繰り返される任意の関数です。</p>
+              </div>
+              </div>
+              </div>
+          例えば、下のグラフのような関数$f(x)$はとても複雑な関数に見えます。<br>
+          ですが、この関数$f(x)$のフーリエ級数は$3\sin 2x + 2\cos 4x + 4\sin 5x$です。<br>
+          <br>グラフ<br><br>
+          フーリエ級数の式を見てみると<br>
+          ・$3\sin 2x $　...　振幅が$3$、周波数が$2$の$sin$波<br>
+          ・$2\cos 4x $ ...　振幅が$2$、周波数が$4$の$cos$波<br>
+          ・$4\sin 5x $...　振幅が$4$、周波数が5の$sin$波<br>
+          この$3$つの波が足しあわされているということが分かります。<br>
+          周波数は$1$秒間に何個波があるか(音の高さ)、振幅は波の大きさ(音の大きさ)を表す言葉です。<br>
+          横軸を周波数、縦軸を振幅としてグラフにしてみると、以下のグラフになります。<br>
+          <br>グラフ<br><br>
+          今は周期関数で考えましたが、これを拡張して非周期関数で考えた場合にそれぞれの周波数の振幅を求めることがフーリエ変換です。<br>
+          <br>周期関数は以下の図のように関数f(x)が全てのxに対して、f(x+T)=f(x)(Tは正の定数)となる関数です。<br>
+          <br>グラフ<br><br>
+          周期とは、関数$f(x)$が全ての$x$に対して、$f(x+T)=f(x)$($T$は正の定数)となるときの$T$を言います。非周期関数は以下の図のように周期をもたない関数です。<br>
+          <br>グラフ<br><br>
+
+
+
           ・フーリエ変換を理解するためにまずフーリエ級数を理解する必要があります。<br>
 	        ・この章ではフーリエ級数についてのみ、説明します。<br>
-  	      ・フーリエ級数、フーリエ変換といった概念は「周期$\displaystyle 2π$のすべての関数$\displaystyle f(x)$は<br>三角級数で表すことが出来る」というフーリエの主張から生まれたものです。<br>
+  	       ・フーリエ級数、フーリエ変換といった概念は「周期$\displaystyle 2π$のすべての関数$\displaystyle f(x)$は<br>三角級数で表すことが出来る」というフーリエの主張から生まれたものです。<br>
 	        ・フーリエ級数の成り立ちを知るために、主張の意味について考えてみましょう。<br>
-	        ・そもそも、三角級数とは<br>
+	        ・そもそも、ここでいう三角級数とは三角関数を足し合わせた級数のことで<br>
           $\displaystyle\frac{1}{2}, \cos x, \cos 2x, \cos 3x, ..., \cos nx, ...$<br>
           $\displaystyle\sin x, \sin 2x, \sin 3x, ..., \sin nx, ...$<br>
           に定数<br>
           $\displaystyle a_0, a_1, a_2, a_3, ..., a_n, ...$<br>
+          $\displaystyle b_0, b_1, b_2, b_3, ..., b_n, ...$<br>
           を掛けて加えた級数$\displaystyle S$のことです。<br>
           $\displaystyle S=\frac{1}{2}\times a_0 + a_1\times \cos 1x + b_1\times \sin 1x + a_2\times \cos 2x + b_2\times \sin 2x + ...$<br>
           $\displaystyle=\frac{1}{2}a_0 + \displaystyle\sum_{n=1}^{\infty}(a_n\cos nx + b_n\sin nx)$<br><br>
-          ・任意の実数$\displaystyle x$に対して収束する三角級数は周期$\displaystyle 2π$の定義域が実数全体である関数を表します。<br>
+          <!-- ・任意の実数$\displaystyle x$に対して収束する三角級数は周期$\displaystyle 2π$の定義域が実数全体である関数を表します。<br>
           三角級数の収束の定義を使って説明ができる<br>
           注：$\displaystyle a_0,a_n,b_n$といった定数の取り方で三角級数に違いを出せば表す関数も変わるが、<br>&emsp;”すべての”周期$\displaystyle2π$の関数を表せるとは言えない<br>
           ・次に実数全体で定義された周期$\displaystyle2π$の関数$\displaystyle f(x)$を三角級数で表すことを考えてみましょう<br>
           ・$\displaystyle f(x)$を三角級数で表すには、三角級数の係数$\displaystyle(a_0,a_n,b_n)$を求める必要がある。<br>
-	        ・まず三角級数の係数を求めてみましょう。<br>
+	        ・まず三角級数の係数を求めてみましょう。<br> -->
+          ・周期$2π$の関数$f(x)$を三角級数で表すことを考えてみましょう<br>
+	        ・三角級数の係数$(a_0,a_n,b_n)$を求めることができれば、$f(x)$を三角級数で表すことができそうです。<br>
+	        ・$f(x)$が三角級数で表せると仮定して、三角級数の係数を求めてみましょう。<br>
           $\displaystyle a_0$をもとめる<br>
           両辺を$\displaystyle [-π,π]$上で積分する<br>
           $\displaystyle\int_{-\pi}^{\pi} f(x) dx = \int_{-\pi}^{\pi} \{\displaystyle\frac{a_0}{2} +
           \displaystyle\sum_{n=1}^{\infty}(a_n\cos nx + b_n\sin nx)\} dx$<br>
-          $\displaystyle=\displaystyle\frac{a_0}{2} \int_{-\pi}^{\pi} dx + \displaystyle\sum_{n=1}^{\infty}(a_n\int_{-\pi}^{\pi}\cos nx dx
-          + b_n\int_{-\pi}^{\pi}\sin nx dx)$<br>
-          ここで、$\int_{-\pi}^{\pi}\cos nx dx=0, \int_{-\pi}^{\pi}\sin nx dx=0$であるから<br>
-          $\displaystyle\int_{-\pi}^{\pi} f(x) dx = \displaystyle\frac{a_0}{2} \int_{-\pi}^{\pi} dx + \displaystyle\sum_{n=1}^{\infty}(a_n\times 0
-          + b_n\times 0)$<br>
-          $\displaystyle=\displaystyle\frac{a_0}{2}\left[x\right]^\pi_{-\pi}$<br>
           <div class="hidden_box2">
             <label for="label2">
               <span class="underl">展開の途中式</span>
@@ -72,6 +106,12 @@
             <div class="hidden_show2">
               <!--非表示ここから-->
               <div class="text">
+          <p>$\displaystyle=\displaystyle\frac{a_0}{2} \int_{-\pi}^{\pi} dx + \displaystyle\sum_{n=1}^{\infty}(a_n\int_{-\pi}^{\pi}\cos nx dx
+          + b_n\int_{-\pi}^{\pi}\sin nx dx)$<br></p>
+          <p>ここで、$\int_{-\pi}^{\pi}\cos nx dx=0, \int_{-\pi}^{\pi}\sin nx dx=0$であるから<br></p>
+          <p>$\displaystyle\int_{-\pi}^{\pi} f(x) dx = \displaystyle\frac{a_0}{2} \int_{-\pi}^{\pi} dx + \displaystyle\sum_{n=1}^{\infty}(a_n\times 0
+          + b_n\times 0)$<br></p>
+          <p>$\displaystyle=\displaystyle\frac{a_0}{2}\left[x\right]^\pi_{-\pi}$<br></p>
                 <p>$=\displaystyle\frac{a_0}{2}(\pi-(-\pi))$<br></p>
                 <p>$=\displaystyle\frac{a_0}{2}\times 2\pi$<br></p>
               </div>
@@ -167,7 +207,7 @@
                 $\int_{-\pi}^{\pi} \sin nx \sin mx dx$を解くために場合分けをして考える<br>
                 $n\neq m$のとき、和積の公式を利用して<br>
                 $\int_{-\pi}^{\pi}\sin nx \sin mx dx = \int_{-\pi}^{\pi} [-\frac{1}{2}\{\cos (n+m)x + \cos (n-m)x\}]dx$<br>
-                $=\frac{1}{2}[\frac{1}{n+m}\sin (n+m)x+\frac{1}{n-m}\sin(n-m)x]_{-\pi}^{\pi}$<br>
+                $=-\frac{1}{2}[\frac{1}{n+m}\sin (n+m)x+\frac{1}{n-m}\sin(n-m)x]_{-\pi}^{\pi}$<br>
             <div class="hidden_box2">
               <label for="label6">
                 <span class="underl">展開の途中式</span>
@@ -194,7 +234,7 @@
               <div class="hidden_show2">
                 <!--非表示ここから-->
                 <div class="text">
-                  <p>$=\frac{1}{2}\{\pi-\frac{1}{2m}\sin 2m\pi\}-\frac{1}{2}\{(-\pi)-\frac{1}{2m}\sin (-2m\pi)\}$</p>
+                  <p>$=[\frac{1}{2}(\pi-\frac{1}{2m}\sin 2m\pi)]-[\frac{1}{2}\{(-\pi)-\frac{1}{2m}\sin 2m(-\pi)\}]$</p>
                   <p>$=\frac{1}{2}\pi-\frac{1}{2}(-\pi)$<br></p>
                 </div>
               </div>
@@ -204,12 +244,32 @@
                 $b_n = \frac{1}{\pi} \int_{-\pi}^{\pi} f(x) \sin mx dx$<br>
                 ・求めた係数をもつ三角級数をフーリエ級数といい、次のように表す。<br>
                 $f(x) = \frac{1}{2}a_0 + \displaystyle\sum_{n=1}^{\infty}(a_n\cos nx + b_n\sin nx)$<br>
+                $\displaystyle a_0 = \displaystyle\frac{1}{\pi}\int_{-\pi}^{\pi} f(x) dx$<br>
+                $\displaystyle a_n = \frac{1}{\pi} \int_{-\pi}^{\pi} f(x) \cos mx dx$<br>
+                $\displaystyle b_n = \frac{1}{\pi} \int_{-\pi}^{\pi} f(x) \sin mx dx$<br>
           </div>
         </div>
 
       <div class="sub">
         <div class="text-sub">
-          ※現代においては厳密性に欠けるものである
+          以下の2,3年次の講義で扱われています。<br>
+          センサ工学<br>
+          応用数学I<br>
+          パターン認識<br>
+          音声音楽処理<br>
+          システム数学I<br>
+          信号処理応用<br>
+          電気回路<br>
+        </div>
+
+        <div class="text-sub">
+          <br>($3\sin 2x +$~のところ)<br>
+          注：このサイトでは説明を分かりやすくするため、f(tx)を三角関数で表現しましたが、f(x)=xなども三角関数の和で表現できます。<br>
+        </div>
+
+        <div class="text-sub">
+          <br>(フーリエの主張のところ)<br>
+          ※現代においては厳密性に欠けるものである<br>
         </div>
 
         <div class="text-sub">
