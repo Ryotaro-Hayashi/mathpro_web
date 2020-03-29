@@ -1,24 +1,15 @@
-# README
+# プロジェクト学習『マスプロ』で制作したWebサイト
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+~~結局データベース全く使っていないから、Rails使う必要なかった~~
 
-Things you may want to cover:
+## 学んだこと
+* JavaScript での描画（Canvas）
 
-* Ruby version
+* ブランチの使い方
 
-* System dependencies
+## 言語・環境
+* Ruby(2.6.5), Ruby on Rails(5.2.4), GitHub, Sourcetree, Heroku
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## リンク
+https://boiling-anchorage-78859.herokuapp.com/
+（初回アクセスは時間がかかります。）
